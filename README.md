@@ -2,9 +2,9 @@
 
 Production-ready skills for Claude Code. Built and maintained by [OneWave AI](https://www.onewave-ai.com) -- AI consulting for small and mid-size businesses.
 
-**204 skills** across three pillars: **business** (sales, marketing, consulting, ops), **everyday life** (personal finance, travel, fitness, job hunting), and **coding** (engineering, design, AI agent architecture).
+**205 skills** across three pillars: **business** (sales, marketing, consulting, ops), **everyday life** (personal finance, travel, fitness, job hunting), and **coding** (engineering, design, AI agent architecture).
 
-Companion repo: **[Open Agent Stack](https://github.com/OneWave-AI/open-agent-stack)** -- installable plugins, managed agents, multi-agent orchestrators, and 7 design-token themes. Skills here stay single-file and zero-dependency; anything with a manifest, a team, or a build step lives there.
+Companion repo: **[Open Agent Stack](https://github.com/OneWave-AI/open-agent-stack)** -- 27 artifacts that need more than a single file. Highlights: **[vibe-stack](https://github.com/OneWave-AI/open-agent-stack/tree/main/plugins/vibe-stack)** (14 skills: idea to shipped app, with a real motion system and an AI-slop detector), **[sales-desk](https://github.com/OneWave-AI/open-agent-stack/tree/main/plugins/sales-desk)** (the rep's whole daily loop), and **[7 design-token themes](https://github.com/OneWave-AI/open-agent-stack/tree/main/design-styles)**. Skills here stay single-file and zero-dependency; anything with a manifest, a team, or a build step lives there.
 
 ---
 
