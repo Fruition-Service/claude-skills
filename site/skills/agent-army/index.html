@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent Army — Free Claude Skill | Claude Skills Library</title>
+  <meta name="description" content="Deploy a 2-layer parallel agent hierarchy for large, parallelizable work — big refactors, multi-file migrations, codebase-wide audits, bulk generation. A t">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Claude Skills Library">
+  <link rel="canonical" href="https://fruition-service.github.io/claude-skills/skills/agent-army/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Agent Army — Free Claude Skill | Claude Skills Library">
+  <meta property="og:description" content="Deploy a 2-layer parallel agent hierarchy for large, parallelizable work — big refactors, multi-file migrations, codebase-wide audits, bulk generation. A t">
+  <meta property="og:url" content="https://fruition-service.github.io/claude-skills/skills/agent-army/">
+  <meta property="og:site_name" content="Claude Skills Library">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Agent Army — Free Claude Skill | Claude Skills Library">
+  <meta name="twitter:description" content="Deploy a 2-layer parallel agent hierarchy for large, parallelizable work — big refactors, multi-file migrations, codebase-wide audits, bulk generation. A t">
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Agent Army", "description": "Deploy a 2-layer parallel agent hierarchy for large, parallelizable work — big refactors, multi-file migrations, codebase-wide audits, bulk generation. A t", "url": "https://fruition-service.github.io/claude-skills/skills/agent-army/", "isPartOf": {"@type": "WebSite", "name": "Claude Skills Library", "url": "https://fruition-service.github.io/claude-skills/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://fruition-service.github.io/claude-skills/"}, {"@type": "ListItem", "position": 2, "name": "Skills", "item": "https://fruition-service.github.io/claude-skills/#skills"}, {"@type": "ListItem", "position": 3, "name": "Agent Army", "item": "https://fruition-service.github.io/claude-skills/skills/agent-army/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Agent Army", "description": "Deploy a 2-layer parallel agent hierarchy for large, parallelizable work — big refactors, multi-file migrations, codebase-wide audits, bulk generation. A t", "codeRepository": "https://github.com/OneWave-AI/claude-skills/tree/main/agent-army", "programmingLanguage": "Markdown", "license": "https://opensource.org/licenses/MIT", "isAccessibleForFree": true}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the Agent Army Claude skill?", "acceptedAnswer": {"@type": "Answer", "text": "Deploy a 2-layer parallel agent hierarchy for large, parallelizable work — big refactors, multi-file migrations, codebase-wide audits, bulk generation. A t"}}, {"@type": "Question", "name": "How do I install Agent Army?", "acceptedAnswer": {"@type": "Answer", "text": "Create ~/.claude/skills/agent-army/SKILL.md and paste the skill content, or clone the OneWave-AI/claude-skills repository. Claude Code loads skills automatically with no restart."}}, {"@type": "Question", "name": "When should I use Agent Army?", "acceptedAnswer": {"@type": "Answer", "text": "Use Agent Army when your task matches the skill description: Deploy a 2-layer parallel agent hierarchy for large, parallelizable work — big refactors, multi-file migrations, codebase-wide audits, bulk generation. A t"}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Install the Agent Army Claude skill", "description": "Add Agent Army to Claude Code in under a minute.", "step": [{"@type": "HowToStep", "position": 1, "name": "Create the skill folder", "text": "mkdir -p ~/.claude/skills/agent-army"}, {"@type": "HowToStep", "position": 2, "name": "Download SKILL.md", "text": "Save the skill file to ~/.claude/skills/agent-army/SKILL.md"}, {"@type": "HowToStep", "position": 3, "name": "Start using the skill", "text": "Claude Code picks up the skill immediately — describe your task or invoke it by name."}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html">Claude Skills Library</a>
+      <nav aria-label="Primary">
+        <a href="../../index.html">All skills</a>
+        <a href="https://github.com/OneWave-AI/claude-skills/tree/main/agent-army" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <a href="../../index.html">Home</a> / <a href="../../index.html#skills">Skills</a> / <span>Agent Army</span>
+    </nav>
+    <article itemscope itemtype="https://schema.org/SoftwareSourceCode">
+      <p class="eyebrow">AI Agents</p>
+      <h1 itemprop="name">Agent Army</h1>
+      <p class="lead" itemprop="description">Deploy a 2-layer parallel agent hierarchy for large, parallelizable work — big refactors, multi-file migrations, codebase-wide audits, bulk generation. A t</p>
+      <section aria-labelledby="what-is">
+        <h2 id="what-is">What is Agent Army?</h2>
+        <p>Deploy a 2-layer parallel agent hierarchy for large, parallelizable work — big refactors, multi-file migrations, codebase-wide audits, bulk generation. A t This free Claude skill teaches Claude how to handle a specific workflow with structured steps and best practices.</p>
+      </section>
+      <section aria-labelledby="skill-content" class="skill-content">
+        <h2 id="skill-content">Skill instructions</h2>
+        <h2>Agent Army</h2>
+<p>A 2-layer parallel execution framework. The Commander is the top-tier model — Fable by default, or Opus if that&#x27;s the session model — and does the thinking: recon, composition, briefing, verification. It orchestrates swarms of subordinate models whose tiers the user picks at deploy time (see Power Level). Each Layer 1 agent has its own full context window (not a slice). Each spawns Layer 2 sub-agents under it. The result is many independent brains running at once — not one brain divided.</p>
+<pre><code class="language-">
+Commander (you — Fable or Opus, the session model)
+ |
+ |-- Layer 1: Team (3 to 50+, each = own 1M context, L1 tier from power level)
+ |    |-- Agent A (1M) -- Sub-agent A1, A2, ...  (L2 tier)
+ |    |-- Agent B (1M) -- Sub-agent B1, B2, ...  (L2 tier)
+ |    |-- Agent C (1M) -- Sub-agent C1, C2, ...  (L2 tier)
+ |    |-- ... (no cap)
+</code></pre>
+<p><strong>Swarm vs. army:</strong> A swarm splits one context window across sub-agents — one brain, divided. An army gives each Layer 1 member its own window. That difference is the whole point of this skill.</p>
+<h3>When to use</h3>
+<ul>
+<li>Large refactors spanning many files</li>
+<li>Multi-file color / style / naming / API migrations</li>
+<li>Broad codebase audits (security, a11y, performance, dead code)</li>
+<li>Bulk content generation or transformation</li>
+<li>Any task with <strong>6+ independent units of work</strong> that can run simultaneously</li>
+</ul>
+<h3>When NOT to use</h3>
+<ul>
+<li>Fewer than 6 independent units of work — just do it directly</li>
+<li>Heavy sequential dependencies where each step needs the last one&#x27;s output</li>
+<li>Single-file changes</li>
+<li>Tasks needing one coherent authorial voice across all output (parallel agents drift)</li>
+</ul>
+<p>If the task doesn&#x27;t clearly fit, say so and propose doing it inline instead of spinning up an army.</p>
+<p>&lt;mandatory-rules&gt;</p>
+<h3>MANDATORY RULES</h3>
+<ol>
+<li>EVERY Layer 1 agent MUST spawn 2+ sub-agents. No exceptions. If you&#x27;re about to deploy an L1 agent with no sub-agents, STOP and restructure.</li>
+<li>NEVER silently shrink the army. Match the user&#x27;s chosen tier. If you must deviate, say so out loud and why.</li>
+</ol>
+<p>2b. NEVER silently downgrade models. Pass <code>model:</code> explicitly on every Agent call at the user&#x27;s chosen power level. Omitting it inherits the session model — that&#x27;s a silent Max Power bill.</p>
+<ol>
+<li>Sub-agent deployment instructions go INSIDE the Layer 1 brief. If they&#x27;re missing, the sub-agents will never be created.</li>
+<li>Report as agents complete: <code>[Agent N/M complete] name: X files modified, Y flags</code>.</li>
+<li>Show the army plan and pass the Deployment Gate before deploying (Full Mode). Quick Mode composes the plan internally but still passes the Gate.</li>
+<li>After every wave: run the build AND the phantom-completion check (see Verify). A green report from an agent is a claim, not proof.</li>
+<li>&quot;Keep going&quot; / &quot;don&#x27;t stop&quot; = continuous mode: launch a new agent the moment one completes. Don&#x27;t wait, don&#x27;t re-ask.</li>
+</ol>
+<p>&lt;/mandatory-rules&gt;</p>
+<h3>Army Size</h3>
+<p>Confirm a tier before starting. Present this table:</p>
+<pre><code class="language-">
+| Tier         | L1 Agents | Total w/ Sub-agents | Est. Tokens  |
+|--------------|-----------|---------------------|--------------|
+| Conservative | 3         | ~9                  | ~200-500K    |
+| Standard     | 5-10      | ~15-30              | ~500K-1.5M   |
+| Aggressive   | 10-20     | ~30-60              | ~1.5-4M      |
+| Maximum      | 20-50+    | ~60-100+            | ~4M+         |
+| Custom       | you pick  | you pick            | varies       |
+</code></pre>
+<p>Default to <strong>Standard</strong> on &quot;just do it.&quot; After recon (Step 3), recommend a specific number based on what you found — e.g. &quot;35 files across 6 domains → Aggressive: 8 L1 agents, 2-3 sub-agents each (~22 total, ~2M tokens). Adjust?&quot; Token estimates are rough and scale with task complexity.</p>
+<h3>Power Level</h3>
+<p>Size sets how many agents; power sets which models. Ask for both in one question (AskUserQuestion works well — size and power as two questions in one call). Skip asking if the user already named a power level or explicit models.</p>
+<pre><code class="language-">
+| Power Level         | Commander          | Layer 1 | Layer 2 | Best For                                        |
+|---------------------|--------------------|---------|---------|-------------------------------------------------|
+| Max Power           | Fable/Opus (session)| Opus   | Opus    | gnarly refactors, correctness-critical migrations|
+| Heavy (recommended) | Fable/Opus (session)| Opus   | Sonnet  | most large tasks — smart orchestration, fast exec|
+| Balanced            | Fable/Opus (session)| Sonnet | Sonnet  | mechanical migrations with clear patterns        |
+| Economy             | Fable/Opus (session)| Sonnet | Haiku   | high-volume, dead-simple find/replace            |
+</code></pre>
+<p>Rules:</p>
+<ul>
+<li>The <strong>Commander is always the session model</strong> — Fable or Opus, the user&#x27;s choice — and is never delegated. If the session is running Sonnet or Haiku, tell the user to switch (<code>/model</code> or <code>claude --model fable</code>) before deploying: commander quality is the ceiling on army quality.</li>
+<li>Pass the model explicitly on <strong>every</strong> Agent call: <code>model: &quot;&lt;L1 tier&gt;&quot;</code> for team members; L1 briefs instruct <code>model: &quot;&lt;L2 tier&gt;&quot;</code> for sub-agents.</li>
+<li><strong>Per-agent escalation</strong> is allowed at any power level: a heavy or tangled file (1000+ lines, complex logic) can bump that one sub-agent up a tier. Note escalations in the army plan.</li>
+<li><strong>Audit waves run on Opus</strong> regardless of power level — fresh, stronger eyes on the executors&#x27; work. Notify waves can drop to Haiku.</li>
+</ul>
+<h3>Protocol</h3>
+<p><strong>Mode:</strong> If scope is already concrete (file paths, exact changes, tier), skip to Step 3 (Quick Mode). Otherwise start at Step 1 (Full Mode).</p>
+<h4>Step 1: Intake (Full Mode)</h4>
+<p>Confirm in one line if the user already gave context: &quot;Goal: [X]. Scope: [Y]. Tier: [Z]. Power: [P]. Starting.&quot; Otherwise ask for: goal (one sentence), scope (files/dirs/&quot;everything&quot;), constraints (don&#x27;t touch X, match Y), tier, and power level.</p>
+<h4>Step 2: Git Checkpoint</h4>
+<ol>
+<li><code>git status</code> — warn on uncommitted changes, offer to stash/commit first.</li>
+<li><code>git checkout -b agent-army/checkpoint-{timestamp}</code> then switch back. This is the rollback point.</li>
+<li>No git repo? Warn that there&#x27;s no safety net and get explicit confirmation.</li>
+</ol>
+<h4>Step 3: Recon</h4>
+<ol>
+<li>Grep / Glob / Read to find every affected file.</li>
+<li>Count the units of work.</li>
+<li><code>wc -l</code> each file. Flag 500+ line files as <strong>heavy</strong> → assign solo.</li>
+<li>Classify into domains (by directory, import graph, file type, naming pattern).</li>
+<li>Identify shared dependencies — <strong>foundation files</strong> imported across domains. Handle these first (Step 5).</li>
+<li>Identify the build command (package.json, Makefile, etc.).</li>
+</ol>
+<p>Output: <code>Files: N | Heavy: [list] | Domains: [list] | Shared deps: [list] | Build cmd: [cmd]</code></p>
+<h4>Step 4: Compose</h4>
+<ol>
+<li><strong>Foundation Agent</strong> for shared deps — runs <em>before</em> the parallel wave so dependents don&#x27;t conflict.</li>
+<li><strong>Layer 1:</strong> one agent per domain; split large domains across multiple agents.</li>
+<li><strong>Layer 2:</strong> 2+ sub-agents per L1 agent, assigned by <strong>weighted file load</strong>, not file count:</li>
+</ol>
+<p>   - Small (&lt;200 lines): 2-3 per sub-agent</p>
+<p>   - Medium (200-500): 1-2 per sub-agent</p>
+<p>   - Heavy (500+): 1 per sub-agent, solo</p>
+<ol>
+<li>Name every agent. Assign every file to <strong>exactly one</strong> sub-agent — no overlaps, no gaps.</li>
+</ol>
+<p>Output the army plan. Full Mode: pause for &quot;Proceed?&quot; Quick Mode: one-line summary, then deploy.</p>
+<h4>Deployment Gate</h4>
+<p>Output this checklist in your response before deploying. Don&#x27;t check it mentally — write it out.</p>
+<pre><code class="language-">
+DEPLOYMENT GATE:
+[ ] Every L1 brief contains &quot;You MUST spawn N sub-agents&quot;
+[ ] Every sub-agent is named with specific files assigned
+[ ] Every file is owned by exactly one sub-agent (no overlap, no gap)
+[ ] L1 briefs include full sub-agent deployment instructions
+[ ] Tier matches the user&#x27;s selection
+[ ] Power level set: model: &quot;&lt;L1 tier&gt;&quot; on every L1 call; L2 tier + escalations in every brief
+</code></pre>
+<p>All must PASS. Any FAIL → fix the plan before deploying.</p>
+<h4>Step 5: Deploy</h4>
+<ol>
+<li>Foundation Agent first (if any), at the L1 tier. Wait for completion.</li>
+<li>Launch ALL Layer 1 agents in parallel — <code>run_in_background: true</code> and <code>model: &quot;&lt;L1 tier&gt;&quot;</code> on every call, in a single message.</li>
+<li>Each L1 agent spawns its L2 sub-agents in parallel (per its brief).</li>
+<li>Report each completion: <code>[Agent N/M complete] name: results</code>.</li>
+</ol>
+<h4>Step 6: Verify</h4>
+<ol>
+<li><strong>Re-scan</strong> — rerun the Step 3 searches for remaining violations.</li>
+<li><strong>Phantom-completion check</strong> — run <code>git diff --stat</code> and cross-reference against agent reports. Any agent that reported &quot;COMPLETE, N files modified&quot; with no matching diff lied or no-op&#x27;d — re-dispatch it. Trust the diff, not the report.</li>
+<li><strong>Build</strong> — run the build command. Record PASS/FAIL.</li>
+<li><strong>Resolve cross-team flags</strong> from the reports.</li>
+<li>Output the army report:</li>
+</ol>
+<pre><code class="language-">
+Agents: N | Files modified: N (diff-confirmed) | Skipped: N | Build: PASS/FAIL
+Flags: [list] | Phantom completions caught: N | Rollback: git checkout agent-army/checkpoint-{timestamp}
+</code></pre>
+<h3>Waves</h3>
+<p>Each wave is a new, smaller, differently-specialized army. Pause for user approval before each. <strong>Max 4 waves.</strong></p>
+<p>| Wave | Name          | Trigger                                                        | Purpose                                              |</p>
+<p>|------|---------------|----------------------------------------------------------------|------------------------------------------------------|</p>
+<p>| 1    | <strong>Execute</strong>   | always                                                         | make the changes                                     |</p>
+<p>| 2    | <strong>Audit</strong>     | build fails, remaining violations, 20+ files, or flags &gt; 0     | fresh agents review Wave 1 for correctness/edge cases|</p>
+<p>| 3    | <strong>Propagate</strong> | changes touch APIs/types/interfaces; tests or docs reference old patterns | update tests, docs, configs, downstream callers |</p>
+<p>| 4    | <strong>Notify</strong>    | user opts in                                                   | draft PR description, changelog, Slack summary       |</p>
+<p>Each wave&#x27;s report is the next wave&#x27;s recon. After each, rerun Verify; stop when re-scan is clean and build passes, or at 4 waves.</p>
+<h4>Resume / scratchpad</h4>
+<p>For multi-wave or interruptible runs, write <code>.army-state.md</code> after Wave 1: files modified (diff-confirmed), open flags, unresolved issues, decisions. If a run is killed, the next invocation reads this file and resumes from the last clean wave instead of restarting. Skip for single-wave tasks.</p>
+<h3>Layer 1 Prompt Template</h3>
+<p>This is what spawned agents actually see — the most important section in the skill.</p>
+<pre><code class="language-">
+You are [AGENT_NAME], specialist on [DOMAIN].
+
+Objective: [one sentence]
+Approved patterns: [exact values — hex codes, class names, API shapes]
+Forbidden patterns: [what to remove/avoid]
+Your files: [absolute paths with line counts]
+Rules: [constraints]. Skip files already using approved patterns (idempotency).
+Flag issues outside your files in &quot;Flags for Commander&quot; — do NOT fix them.
+
+CRITICAL: You MUST use the Agent tool to spawn the sub-agents listed below. Do
+NOT do the work yourself. Do NOT skip spawning. Deploy ALL sub-agents in a single
+message with multiple Agent tool calls, passing model: &quot;[L2_TIER]&quot; on every call
+[note escalations: except &quot;NAME&quot; which gets model: &quot;[higher tier]&quot;].
+
+Sub-agents:
+- &quot;[NAME]&quot;: [files with line counts]
+- &quot;[NAME]&quot;: [files with line counts]
+
+Pass each sub-agent: objective, their files, approved/forbidden patterns, rules,
+report format. After all complete, aggregate their reports and verify (by re-reading
+or grepping) that no forbidden patterns remain in your domain before reporting back.
+</code></pre>
+<h3>Layer 2 Prompt Template</h3>
+<pre><code class="language-">
+You are [SUB_AGENT_NAME], working under [TEAM_MEMBER_NAME].
+
+Objective: [one sentence]
+Files you own: [absolute paths with line counts — touch only these]
+Approved / Forbidden patterns: [exact values to use and remove]
+Rules: [constraints]. Skip files already correct. Flag issues outside your files —
+do NOT fix them.
+
+Process: read each file fully → check idempotency → apply approved, remove forbidden
+→ re-read to confirm no forbidden patterns remain.
+
+Report: Files Modified (file: N replacements), Files Skipped (already correct),
+Flags for Commander, Issues, Status (COMPLETE/PARTIAL/FAILED).
+</code></pre>
+<h3>Report Format</h3>
+<p>Every agent returns:</p>
+<pre><code class="language-">
+## Report: [Name]
+Files Modified:   [file: N replacements]
+Files Skipped:    [file: reason]
+Flags for Commander: [issue or &quot;None&quot;]
+Issues:           [issue or &quot;None&quot;]
+Status:           COMPLETE / PARTIAL / FAILED
+</code></pre>
+<h3>Anti-patterns</h3>
+<p>These are the failure modes this skill exists to prevent. If you catch yourself doing one, stop and correct.</p>
+<ul>
+<li><strong>Phantom fan-out</strong> — an L1 agent does the work itself instead of spawning sub-agents. The whole speed advantage is gone. Enforced by Mandatory Rule 1 + the Gate.</li>
+<li><strong>Phantom completion</strong> — an agent reports COMPLETE without editing anything. Caught by the <code>git diff --stat</code> cross-check, not by trusting the report.</li>
+<li><strong>Silent shrink</strong> — quietly running 3 agents when the user picked Aggressive. Always surface deviations.</li>
+<li><strong>Model drift</strong> — omitting <code>model:</code> on Agent calls, so every sub-agent silently inherits the commander&#x27;s model. The user picked Economy and got billed Max Power. Enforced by Mandatory Rule 2b + the Gate.</li>
+<li><strong>Overlapping ownership</strong> — two sub-agents editing the same file → conflicts and lost edits. Enforced by exactly-one-owner in the Gate.</li>
+<li><strong>Skipping the foundation</strong> — touching dependents before shared files are updated → cascade of broken imports. Foundation Agent runs first.</li>
+<li><strong>Army for a small job</strong> — 9 agents for 4 files is slower (orchestration overhead) and burns tokens. See &quot;When NOT to use.&quot;</li>
+</ul>
+<h3>Error Handling</h3>
+<ul>
+<li>Sub-agent fails → L1 agent retries its files or spawns a replacement.</li>
+<li>L1 agent fails → Commander spawns a replacement with the same brief.</li>
+<li>Build failure → diff against the checkpoint branch to isolate the break, then run a fix wave.</li>
+<li>Phantom completion → re-dispatch that agent&#x27;s files to a fresh agent.</li>
+<li>Idempotency on re-run → agents check for already-applied patterns first, so running the army twice never double-applies.</li>
+</ul>
+<h3>Worked example</h3>
+<p>User: &quot;Replace all neon Tailwind colors with our sand palette across the site.&quot;</p>
+<p><strong>Recon:</strong> 45 files, 5 domains, 2 shared dependencies (a theme config + a shared <code>&lt;Button&gt;</code>). Build cmd: <code>npm run build</code>. Recommend Aggressive: 1 Foundation Agent + 5 L1 agents, 2-4 sub-agents each (~22 total). User picks <strong>Heavy</strong> power: Fable commander, Opus L1, Sonnet L2.</p>
+<p><strong>Wave 1 (Execute):</strong> Foundation Agent updates the 2 shared files first. Then 5 L1 agents deploy in parallel, each fanning out to sub-agents. Reports: 43 modified, 2 skipped (already correct), 3 flags.</p>
+<p><strong>Verify:</strong> <code>git diff --stat</code> shows 42 files changed — one agent reported a file it never touched (phantom). Re-dispatched; now 43 confirmed. Build passes. 3 flags + 2 edge-case violations remain → Audit wave recommended.</p>
+<p><strong>Wave 2 (Audit):</strong> 3 fresh agents target the flagged files and violations. Fixed. Build clean, re-scan clean. 4 test files import the changed <code>&lt;Button&gt;</code> → Propagate recommended.</p>
+<p><strong>Wave 3 (Propagate):</strong> 3 agents update the 4 test files + 1 doc. Build still green.</p>
+<p><strong>Final:</strong> 3 waves, ~28 agents total, 48 files touched (diff-confirmed), 1 phantom caught, zero violations remaining, clean build. Rollback branch available.</p>
+      </section>
+      <section aria-labelledby="install" class="install">
+        <h2 id="install">Install in Claude Code</h2>
+        <pre><code>mkdir -p ~/.claude/skills/agent-army
+curl -sL https://raw.githubusercontent.com/OneWave-AI/claude-skills/main/agent-army/SKILL.md -o ~/.claude/skills/agent-army/SKILL.md</code></pre>
+      </section>
+      <section aria-labelledby="faq" class="faq">
+        <h2 id="faq">Frequently asked questions</h2>
+        <dl>
+          <dt>What is the Agent Army Claude skill?</dt>
+          <dd>Deploy a 2-layer parallel agent hierarchy for large, parallelizable work — big refactors, multi-file migrations, codebase-wide audits, bulk generation. A t</dd>
+          <dt>Is Agent Army free to use?</dt>
+          <dd>Yes. Skills from the OneWave library are MIT licensed and free for personal and commercial use.</dd>
+          <dt>Where does the skill file go?</dt>
+          <dd>Personal skills live in <code>~/.claude/skills/agent-army/SKILL.md</code>. Project-specific skills go in <code>.claude/skills/</code> inside your repo.</dd>
+        </dl>
+      </section>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>Mirrored from <a href="https://www.onewave-ai.com/resources/claude-skills/agent-army" rel="noopener">OneWave AI</a>. Source: <a href="https://github.com/OneWave-AI/claude-skills" rel="noopener">OneWave-AI/claude-skills</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Board Deck Generator | AI Skills</title>
+  <meta name="description" content="Generate institutional-quality `board-deck.md` content: concise, data-driven, honest about challenges, and focused on the decisions that need board input. Output must be ready for a CEO to present directly or hand to a design team for slide conversion.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Board Deck Generator</h1>
+      <p>Generate institutional-quality `board-deck.md` content: concise, data-driven, honest about challenges, and focused on the decisions that need board input. Output must be ready for a CEO to present directly or hand to a design team for slide conversion.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/document-structure.md</code> -- The required 12-section deck structure with all tables and templates.</li>
+<li><code>references/stage-templates.md</code> -- Early-stage, growth-stage, and pre-IPO emphasis and per-section additions.</li>
+<li><code>references/style-guide.md</code> -- Formatting rules, tone and voice, quality checklist, common mistakes.</li>
+<li><code>references/examples.md</code> -- A fully worked board ask.</li>
+</ul>
+<h2>Inputs</h2>
+<p>Collect from the user. If critical inputs are missing, ask before generating. For non-critical gaps, insert bracketed placeholders like <code>[INSERT Q3 REVENUE]</code>.</p>
+<p>Required:
+- Company name and stage (early-stage / growth-stage / pre-IPO)
+- Reporting period (e.g., Q1 2026)
+- Key financial metrics (ARR/MRR, revenue, burn rate, cash position, runway)
+- Strategic updates (major milestones, wins, setbacks)</p>
+<p>Optional: detailed P&amp;L, product roadmap, GTM metrics, hiring plan, customer logos/NPS, competitive changes, specific board asks, prior board deck, cap table, prior-quarter OKRs.</p>
+<h2>Workflow</h2>
+<ol>
+<li>Identify the stage (early-stage, growth-stage, or pre-IPO) from user input. See <code>references/stage-templates.md</code>.</li>
+<li>Collect and review all provided metrics, updates, and context.</li>
+<li>Flag gaps. Ask the user for missing critical data; mark missing non-critical data with <code>[PLACEHOLDER]</code> notation.</li>
+<li>If the user provides a prior board deck, read it first to maintain continuity in metric tracking, formatting, and narrative threads.</li>
+<li>Build the full document following the section order in <code>references/document-structure.md</code>, applying the stage-appropriate emphasis from <code>references/stage-templates.md</code>.</li>
+<li>Populate every table, narrative, and analysis using provided inputs.</li>
+<li>Add analysis: explain what numbers mean, why they changed, and what to do about them. Do not just report.</li>
+<li>Draft board asks with options, management recommendation, specific request, and timeline. See <code>references/examples.md</code>.</li>
+<li>Apply formatting and tone from <code>references/style-guide.md</code>; run the quality checklist there before finalizing.</li>
+<li>Write the completed deck to <code>board-deck.md</code> in the current working directory (or a user-specified path). Confirm the file path after writing.</li>
+</ol>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

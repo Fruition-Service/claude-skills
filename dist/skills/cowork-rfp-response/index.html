@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cowork RFP Response | AI Skills</title>
+  <meta name="description" content="Respond to an RFP the way a seasoned proposal manager does: decompose every requirement first, decide bid/no-bid honestly, reuse the best prior language, and never claim a capability the source documents do not support. Inputs: the RFP document and a folder of company material (past proposals, case studies, bios, certifications, pricing sheets).">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Cowork RFP Response</h1>
+      <p>Respond to an RFP the way a seasoned proposal manager does: decompose every requirement first, decide bid/no-bid honestly, reuse the best prior language, and never claim a capability the source documents do not support. Inputs: the RFP document and a folder of company material (past proposals, case studies, bios, certifications, pricing sheets).</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Workflow</h2>
+<ol>
+<li><strong>Shred the RFP.</strong> Extract every numbered and implied requirement into a matrix: ID, requirement text (verbatim), type (mandatory/scored/informational), section owner, and any disqualifier ("must have X certification", "minimum N years"). Extract the logistics separately: due date, format, page limits, submission method, Q&amp;A deadline, evaluation criteria and weights.</li>
+<li><strong>Bid/no-bid check.</strong> Before drafting anything, report disqualifiers you cannot document from the company folder and requirements with weak evidence. Ask whether to proceed. This is the most valuable five minutes of the skill.</li>
+<li><strong>Mine the folder.</strong> For each requirement, find the strongest supporting material: prior proposal sections, case studies with named results, team bios, certifications. Record source file and section in the matrix. Mark each requirement <code>STRONG</code> (direct evidence), <code>PARTIAL</code> (adjacent evidence, needs framing), or <code>GAP</code> (nothing found).</li>
+<li><strong>Draft.</strong> Write the response following the RFP's mandated structure exactly. For <code>STRONG</code> items, adapt the best prior language to this client's context. For <code>PARTIAL</code>, draft honest framing and flag it for review. For <code>GAP</code>, insert a clearly marked <code>[GAP: needs input -- suggested approach]</code> block rather than fiction.</li>
+<li><strong>Compliance pass.</strong> Verify every mandatory requirement is addressed where the RFP says it must be, page/format limits hold, and required attachments are listed. Output <code>compliance-matrix.md</code> (the full matrix with response locations) and <code>rfp-response-draft.md</code>.</li>
+<li><strong>Executive summary last.</strong> Write it after the body, leading with the client's stated problem in their own vocabulary and the 2-3 discriminators the evidence actually supports.</li>
+</ol>
+<h2>Rules</h2>
+<ul>
+<li>Never invent capabilities, clients, metrics, or certifications. Every claim traces to a source file; <code>GAP</code> blocks are the honest alternative.</li>
+<li>Use the client's terminology from the RFP, not internal jargon. Evaluators score against their own words.</li>
+<li>Answer the requirement asked, not the adjacent one you have better material for -- then add the better material.</li>
+<li>Respect page limits from the first draft; cutting 40% at the end butchers the good sections.</li>
+<li>Boilerplate is a starting point, not a deliverable. Any reused paragraph must name this client and this context or it gets rewritten.</li>
+<li>Track questions for the Q&amp;A window: ambiguous requirements go in a <code>questions-to-submit.md</code> list, drafted in submission-ready form.</li>
+</ul>
+<h2>Quick Commands</h2>
+<ul>
+<li>"Shred [RFP file]" -- requirements matrix and logistics only</li>
+<li>"Should we bid?" -- steps 1-3, the honest gap report</li>
+<li>"Full response with [folder]" -- complete workflow</li>
+<li>"Compliance check my draft" -- step 5 against an existing draft</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

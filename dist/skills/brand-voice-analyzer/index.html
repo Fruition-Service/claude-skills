@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand Voice Analyzer | AI Skills</title>
+  <meta name="description" content="Ingest a company's existing content, reverse-engineer the voice behind it, produce a definitive brand voice guide any writer can follow, and review new content against an established guide.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Brand Voice Analyzer</h1>
+      <p>Ingest a company's existing content, reverse-engineer the voice behind it, produce a definitive brand voice guide any writer can follow, and review new content against an established guide.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/voice-dimensions.md</code> -- the seven-axis tone spectrum, vocabulary, sentence, personality, audience, and formatting dimensions to extract</li>
+<li><code>references/guide-template.md</code> -- required sections, quality standards, and pre-delivery checklist for <code>brand-voice-guide.md</code></li>
+<li><code>references/review-mode.md</code> -- process and output format for scoring content against a guide</li>
+<li><code>references/metrics.md</code> -- quantitative and qualitative analysis techniques and citation standards</li>
+<li><code>references/edge-cases.md</code> -- handling for thin corpora, multiple voices, regulated industries, rebrands, plus interaction patterns</li>
+</ul>
+<h2>Workflow: Create a New Voice Guide</h2>
+<ol>
+<li>Ask which content sources are available (URLs, files, directories, pasted text).</li>
+<li>Ask about any known brand attributes, values, or existing guidelines.</li>
+<li>Collect the corpus. Pull URLs with WebFetch, locate files with Glob/Read, find public content with WebSearch. Gather website copy, 5-10 blog posts, email campaigns, social posts, sales collateral, and support content. Document each source and its word count.</li>
+<li>Confirm corpus size. Require at least 3,000 words across 2+ content types. If smaller, flag the limitation and mark affected findings as lower confidence.</li>
+<li>Run the full voice extraction across every dimension in <code>references/voice-dimensions.md</code>, citing source examples per the standards in <code>references/metrics.md</code>.</li>
+<li>Present a summary of findings for validation before generating the guide.</li>
+<li>Generate the complete <code>brand-voice-guide.md</code> following <code>references/guide-template.md</code>. Verify it against that checklist before delivery.</li>
+<li>Offer to review a sample piece of content against the new guide.</li>
+</ol>
+<h2>Workflow: Review Content</h2>
+<ol>
+<li>Locate or ask for the <code>brand-voice-guide.md</code>.</li>
+<li>Read the content to be reviewed.</li>
+<li>Run the review process and produce the scored output defined in <code>references/review-mode.md</code>.</li>
+<li>Present findings with actionable, guide-referenced fixes.</li>
+</ol>
+<h2>Workflow: Update an Existing Guide</h2>
+<ol>
+<li>Read the current <code>brand-voice-guide.md</code>.</li>
+<li>Ingest the new content sources and run extraction on the new material.</li>
+<li>Compare findings against the existing guide.</li>
+<li>Propose specific updates with rationale.</li>
+<li>Apply approved changes with Edit.</li>
+</ol>
+<h2>Output Standards</h2>
+<ul>
+<li>Primary output: <code>brand-voice-guide.md</code>. For multiple brands: <code>brand-voice-guide-[company-name].md</code>. Deliver review output inline unless a file is requested.</li>
+<li>Use markdown headers (H1-H4), tables for comparative data, blockquotes for source quotes, code blocks only for literal reproduced text. Bold key terms on first use. No emojis.</li>
+</ul>
+<h2>Operating Principles</h2>
+<ul>
+<li>Never fabricate examples. Every quoted example must come from actual source content.</li>
+<li>Never assert voice attributes without evidence. If the data does not support a conclusion, say so.</li>
+<li>Present findings as observations, not prescriptions, until the user validates them.</li>
+<li>Distinguish voice (consistent: who we are) from tone (shifts by context: how we adapt) in every guide.</li>
+<li>When reviewing, be specific: cite the exact word, phrase, or structure and the guide section it touches.</li>
+<li>Treat the guide as a living document and defer to the user's judgment on subjective calls.</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

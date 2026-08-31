@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animate — Free Claude Skill | Claude Skills Library</title>
+  <meta name="description" content="Generate animated videos and motion graphics from natural language descriptions. Creates a standalone Vite + React project with Framer Motion scenes that a">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Claude Skills Library">
+  <link rel="canonical" href="https://fruition-service.github.io/claude-skills/skills/animate/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Animate — Free Claude Skill | Claude Skills Library">
+  <meta property="og:description" content="Generate animated videos and motion graphics from natural language descriptions. Creates a standalone Vite + React project with Framer Motion scenes that a">
+  <meta property="og:url" content="https://fruition-service.github.io/claude-skills/skills/animate/">
+  <meta property="og:site_name" content="Claude Skills Library">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Animate — Free Claude Skill | Claude Skills Library">
+  <meta name="twitter:description" content="Generate animated videos and motion graphics from natural language descriptions. Creates a standalone Vite + React project with Framer Motion scenes that a">
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Animate", "description": "Generate animated videos and motion graphics from natural language descriptions. Creates a standalone Vite + React project with Framer Motion scenes that a", "url": "https://fruition-service.github.io/claude-skills/skills/animate/", "isPartOf": {"@type": "WebSite", "name": "Claude Skills Library", "url": "https://fruition-service.github.io/claude-skills/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://fruition-service.github.io/claude-skills/"}, {"@type": "ListItem", "position": 2, "name": "Skills", "item": "https://fruition-service.github.io/claude-skills/#skills"}, {"@type": "ListItem", "position": 3, "name": "Animate", "item": "https://fruition-service.github.io/claude-skills/skills/animate/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Animate", "description": "Generate animated videos and motion graphics from natural language descriptions. Creates a standalone Vite + React project with Framer Motion scenes that a", "codeRepository": "https://github.com/OneWave-AI/claude-skills/tree/main/animate", "programmingLanguage": "Markdown", "license": "https://opensource.org/licenses/MIT", "isAccessibleForFree": true}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the Animate Claude skill?", "acceptedAnswer": {"@type": "Answer", "text": "Generate animated videos and motion graphics from natural language descriptions. Creates a standalone Vite + React project with Framer Motion scenes that a"}}, {"@type": "Question", "name": "How do I install Animate?", "acceptedAnswer": {"@type": "Answer", "text": "Create ~/.claude/skills/animate/SKILL.md and paste the skill content, or clone the OneWave-AI/claude-skills repository. Claude Code loads skills automatically with no restart."}}, {"@type": "Question", "name": "When should I use Animate?", "acceptedAnswer": {"@type": "Answer", "text": "Use Animate when your task matches the skill description: Generate animated videos and motion graphics from natural language descriptions. Creates a standalone Vite + React project with Framer Motion scenes that a"}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Install the Animate Claude skill", "description": "Add Animate to Claude Code in under a minute.", "step": [{"@type": "HowToStep", "position": 1, "name": "Create the skill folder", "text": "mkdir -p ~/.claude/skills/animate"}, {"@type": "HowToStep", "position": 2, "name": "Download SKILL.md", "text": "Save the skill file to ~/.claude/skills/animate/SKILL.md"}, {"@type": "HowToStep", "position": 3, "name": "Start using the skill", "text": "Claude Code picks up the skill immediately — describe your task or invoke it by name."}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html">Claude Skills Library</a>
+      <nav aria-label="Primary">
+        <a href="../../index.html">All skills</a>
+        <a href="https://github.com/OneWave-AI/claude-skills/tree/main/animate" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <a href="../../index.html">Home</a> / <a href="../../index.html#skills">Skills</a> / <span>Animate</span>
+    </nav>
+    <article itemscope itemtype="https://schema.org/SoftwareSourceCode">
+      <p class="eyebrow">Design &amp;amp; UI</p>
+      <h1 itemprop="name">Animate</h1>
+      <p class="lead" itemprop="description">Generate animated videos and motion graphics from natural language descriptions. Creates a standalone Vite + React project with Framer Motion scenes that a</p>
+      <section aria-labelledby="what-is">
+        <h2 id="what-is">What is Animate?</h2>
+        <p>Generate animated videos and motion graphics from natural language descriptions. Creates a standalone Vite + React project with Framer Motion scenes that a This free Claude skill teaches Claude how to handle a specific workflow with structured steps and best practices.</p>
+      </section>
+      <section aria-labelledby="skill-content" class="skill-content">
+        <h2 id="skill-content">Skill instructions</h2>
+        <h2>Animation Generator</h2>
+<p>Create animated videos and motion graphics from a natural language description. Outputs a standalone Vite + React + Framer Motion project that plays in the browser.</p>
+<h3>Workflow</h3>
+<h4>Step 1: Parse the Request</h4>
+<p>Break the user&#x27;s description into a scene plan:</p>
+<ul>
+<li><strong>3-7 scenes</strong>, each 3-5 seconds long</li>
+<li>Identify the story arc: hero/intro, problem, solution, features, CTA/outro</li>
+<li>Pick a color palette and typography that fits the brand/mood</li>
+<li>Use <code>$ARGUMENTS</code> for the user&#x27;s animation description</li>
+</ul>
+<h4>Step 2: Choose the Animation Stack</h4>
+<p>Auto-detect the best approach based on the request:</p>
+<p>| Request Type | Stack | When to Use |</p>
+<p>|---|---|---|</p>
+<p>| Product intro, presentation, marketing | <strong>Framer Motion</strong> (default) | Scene-based with text, icons, transitions |</p>
+<p>| Generative art, particles, patterns | <strong>p5.js</strong> | Creative/algorithmic visuals |</p>
+<p>| 3D objects, environments, product renders | <strong>Three.js + react-three-fiber</strong> | 3D scenes needed |</p>
+<p>| Simple text/logo animation | <strong>CSS animations only</strong> | Minimal, no heavy deps |</p>
+<p>Default to <strong>Framer Motion</strong> unless the request clearly needs something else.</p>
+<h4>Step 3: Scaffold the Project</h4>
+<ol>
+<li>Create a directory: <code>~/animations/[project-name]/</code></li>
+<li>Run the scaffold script: <code>bash ~/.claude/skills/animate/scripts/scaffold.sh [project-name] [stack]</code></li>
+<li>Copy template files from <code>~/.claude/skills/animate/assets/template-files/</code> into the project</li>
+</ol>
+<h4>Step 4: Generate Scene Components</h4>
+<p>Read the references for animation presets and scene patterns:</p>
+<ul>
+<li><code>references/animation-presets.md</code> — all available transitions, springs, easings</li>
+<li><code>references/scene-patterns.md</code> — example scene code patterns</li>
+</ul>
+<p>For each scene, create a React component in <code>client/src/components/video/video_scenes/</code>:</p>
+<ul>
+<li>Use <code>motion.div</code> with scene transition presets (fadeBlur, scaleFade, slideLeft, splitHorizontal, morphExpand, etc.)</li>
+<li>Use <code>containerVariants</code> and <code>itemVariants</code> for staggered content reveals</li>
+<li>Use <code>vw</code> units for responsive sizing (works at any resolution)</li>
+<li>Use CSS variables for theming (<code>var(--color-accent)</code>, <code>var(--color-bg-dark)</code>, etc.)</li>
+<li>Use Lucide icons for visual elements</li>
+<li>Use <code>.glass-panel</code> class for frosted glass cards</li>
+<li>Use <code>.text-gradient</code> and <code>.text-gradient-accent</code> for gradient text</li>
+</ul>
+<h4>Step 5: Generate the VideoTemplate</h4>
+<p>Create <code>client/src/components/video/VideoTemplate.tsx</code>:</p>
+<ul>
+<li>Import all scene components</li>
+<li>Define <code>SCENE_DURATIONS</code> object (scene name -&gt; milliseconds)</li>
+<li>Use <code>useVideoPlayer</code> hook to manage scene advancement</li>
+<li>Wrap scenes in <code>AnimatePresence mode=&quot;wait&quot;</code> for smooth transitions</li>
+<li>Each scene renders conditionally based on <code>currentScene</code> index</li>
+</ul>
+<h4>Step 6: Customize Theme</h4>
+<p>Update <code>client/src/index.css</code> with the right colors:</p>
+<ul>
+<li>If the user specified brand colors, update CSS variables</li>
+<li>Choose fonts that match the mood (Space Grotesk for tech, Playfair Display for elegant, etc.)</li>
+<li>Update gradient and glow styles to match the palette</li>
+</ul>
+<h4>Step 7: Gemini 3.1 Pro Enhancement (Optional)</h4>
+<p>If <code>GEMINI_API_KEY</code> environment variable is available:</p>
+<ol>
+<li>Read <code>references/gemini-integration.md</code> for API details</li>
+<li>Send the user&#x27;s description to Gemini 3.1 Pro asking for:</li>
+</ol>
+<p>   - Scene breakdown with descriptions and suggested transitions</p>
+<p>   - Color palette as CSS variables</p>
+<p>   - Copy/headlines for each scene</p>
+<p>   - SVG graphics if applicable</p>
+<ol>
+<li>Use the Gemini output to inform scene generation</li>
+<li>If no API key, skip this step — Claude handles all creative decisions directly</li>
+</ol>
+<h4>Step 8: Build and Preview</h4>
+<pre><code class="language-bash">
+cd ~/animations/[project-name]
+npm install
+npm run dev
+</code></pre>
+<p>Tell the user the animation is running at <code>http://localhost:5173</code> and open it in the browser.</p>
+<h3>Scene Transition Reference (Quick)</h3>
+<p>Pick transitions that match the story beat:</p>
+<ul>
+<li><strong>fadeBlur</strong> — Soft intro/outro, dreamy reveals</li>
+<li><strong>scaleFade</strong> — Confident reveals, product showcases</li>
+<li><strong>slideLeft/slideRight</strong> — Sequential progression, timeline flow</li>
+<li><strong>splitHorizontal/splitVertical</strong> — Dramatic reveals, before/after</li>
+<li><strong>morphExpand</strong> — Grand finale, CTA screens</li>
+<li><strong>clipCircle</strong> — Focus attention, spotlight effect</li>
+<li><strong>perspectiveFlip</strong> — Card flips, perspective changes</li>
+<li><strong>wipe</strong> — Clean transitions, directional flow</li>
+<li><strong>zoomThrough</strong> — Immersive, forward momentum</li>
+<li><strong>crossDissolve</strong> — Gentle, emotional transitions</li>
+</ul>
+<h3>Element Animation Reference (Quick)</h3>
+<ul>
+<li><strong>popIn</strong> — Bouncy scale entrance for icons/badges</li>
+<li><strong>fadeUp/fadeDown</strong> — Subtle content reveals</li>
+<li><strong>slideInLeft/slideInRight</strong> — Directional content</li>
+<li><strong>blurIn</strong> — Soft focus reveals</li>
+<li><strong>elasticScale</strong> — Playful, energetic entrances</li>
+<li><strong>perspectiveRotateIn</strong> — 3D card reveals</li>
+<li><strong>pulse</strong> — Looping attention grab</li>
+<li><strong>float</strong> — Gentle hovering effect</li>
+</ul>
+<h3>Important Rules</h3>
+<ol>
+<li>Always use <code>vw</code> units for sizing so animations look good at any resolution</li>
+<li>Keep scenes between 3-5 seconds each — total video 15-30 seconds</li>
+<li>Use <code>AnimatePresence mode=&quot;wait&quot;</code> so one scene exits before the next enters</li>
+<li>Every scene must have a background treatment (gradient, image, or animated shape)</li>
+<li>Use staggered animations for lists and grids (staggerChildren: 0.1-0.2)</li>
+<li>Include a loading state if assets are heavy</li>
+<li>The project must be completely self-contained — no external dependencies beyond npm packages</li>
+<li>Do NOT use emojis anywhere in the generated code or content</li>
+</ol>
+      </section>
+      <section aria-labelledby="install" class="install">
+        <h2 id="install">Install in Claude Code</h2>
+        <pre><code>mkdir -p ~/.claude/skills/animate
+curl -sL https://raw.githubusercontent.com/OneWave-AI/claude-skills/main/animate/SKILL.md -o ~/.claude/skills/animate/SKILL.md</code></pre>
+      </section>
+      <section aria-labelledby="faq" class="faq">
+        <h2 id="faq">Frequently asked questions</h2>
+        <dl>
+          <dt>What is the Animate Claude skill?</dt>
+          <dd>Generate animated videos and motion graphics from natural language descriptions. Creates a standalone Vite + React project with Framer Motion scenes that a</dd>
+          <dt>Is Animate free to use?</dt>
+          <dd>Yes. Skills from the OneWave library are MIT licensed and free for personal and commercial use.</dd>
+          <dt>Where does the skill file go?</dt>
+          <dd>Personal skills live in <code>~/.claude/skills/animate/SKILL.md</code>. Project-specific skills go in <code>.claude/skills/</code> inside your repo.</dd>
+        </dl>
+      </section>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>Mirrored from <a href="https://www.onewave-ai.com/resources/claude-skills/animate" rel="noopener">OneWave AI</a>. Source: <a href="https://github.com/OneWave-AI/claude-skills" rel="noopener">OneWave-AI/claude-skills</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Style Installer | AI Skills</title>
+  <meta name="description" content="Apply a full design system to a project the way a brand refresh actually works: tokens first, wiring second, components last, and nothing hardcoded that the tokens already define. Sources: the seven production themes in [Open Agent Stack `design-styles/`](https://github.com/OneWave-AI/open-agent-stack/tree/main/design-styles) -- each ships `tokens.json` (W3C design-tokens), `theme.css`, `tailwind.tokens.js`, and a WCAG contrast worksheet -- or any local W3C-format tokens file.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Design Style Installer</h1>
+      <p>Apply a full design system to a project the way a brand refresh actually works: tokens first, wiring second, components last, and nothing hardcoded that the tokens already define. Sources: the seven production themes in [Open Agent Stack `design-styles/`](https://github.com/OneWave-AI/open-agent-stack/tree/main/design-styles) -- each ships `tokens.json` (W3C design-tokens), `theme.css`, `tailwind.tokens.js`, and a WCAG contrast worksheet -- or any local W3C-format tokens file.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Workflow</h2>
+<ol>
+<li><strong>Pick the style.</strong> If the user named one, fetch it from the open-agent-stack repo (or read the local clone). If not, show the seven options with their one-line personalities -- aurora-mesh (soft futuristic dark, gradient mesh), cirrus (light cloud/sky, frosted), liquid-glass (translucent layered), mono-brutalist (stark, type-led), neo-terminal (CRT green-on-black), sand-terra (warm editorial neutrals), tidal (deep ocean blues) -- and ask which fits the product.</li>
+<li><strong>Read the project.</strong> Detect the stack (Tailwind version, CSS modules, styled-components, plain CSS) and inventory the current styling surface: where colors, fonts, radii, and shadows are defined today, and how many components hardcode values outside that.</li>
+<li><strong>Install the tokens.</strong> Wire the theme by stack: Tailwind -- merge <code>tailwind.tokens.js</code> into <code>theme.extend</code> (v4: emit <code>@theme</code> CSS variables); otherwise -- add <code>theme.css</code> custom properties at <code>:root</code>/<code>[data-theme]</code>. Load the theme's fonts properly (next/font or preconnected <code>&lt;link&gt;</code>), never a blocking import chain.</li>
+<li><strong>Repaint.</strong> Replace hardcoded values in components with token references, mapping by role, not by nearest hex: old primary -&gt; new accent, old page background -&gt; <code>bg.base</code>, old card -&gt; <code>surface</code>. Where the old design had roles the theme lacks (a third accent, a warning tint), derive them from the theme's palette logic and document the additions in the tokens file -- do not freelance new colors.</li>
+<li><strong>Verify.</strong> Run the build, then check the money paths render correctly: nav, hero, buttons in all states, forms, cards. Confirm text/background pairs still meet the contrast worksheet's AA levels after any derivations. Output <code>design-install-report.md</code>: tokens installed, files touched, hardcoded values remaining (with paths), and derived tokens added.</li>
+</ol>
+<h2>Rules</h2>
+<ul>
+<li>Tokens are the only source of truth after installation. A repaint that leaves hex codes scattered in components has not finished.</li>
+<li>Map by semantic role, never by visual similarity -- the old light-gray border and the old light-gray disabled-text are different tokens even if they were the same hex.</li>
+<li>Never mix themes. If the user wants aurora-mesh cards on a sand-terra page, that is a custom theme -- fork the tokens file and name it honestly.</li>
+<li>Preserve layout and content exactly: this skill changes paint, not structure. Structural itches go in the report as suggestions.</li>
+<li>Respect the theme's motion tokens too -- durations and easings are part of the style, not decoration to skip.</li>
+<li>Keep the theme's accessibility guarantees: any color you derive gets contrast-checked before it ships.</li>
+</ul>
+<h2>Quick Commands</h2>
+<ul>
+<li>"Install [style] into this project" -- full workflow</li>
+<li>"Show me the styles" -- step 1 gallery with personalities</li>
+<li>"Just the tokens, no repaint" -- steps 1-3</li>
+<li>"What's still hardcoded?" -- the drift audit from step 5</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cowork Contract Renewal Radar | AI Skills</title>
+  <meta name="description" content="Read a folder of contracts the way outside counsel prepping a renewal calendar does: find every date-driven obligation, compute the real decision deadline (notice deadline, not renewal date), and put it somewhere it will actually be seen. Complements `contract-analyzer` (deep single-contract review) -- this skill is the portfolio sweep.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Cowork Contract Renewal Radar</h1>
+      <p>Read a folder of contracts the way outside counsel prepping a renewal calendar does: find every date-driven obligation, compute the real decision deadline (notice deadline, not renewal date), and put it somewhere it will actually be seen. Complements `contract-analyzer` (deep single-contract review) -- this skill is the portfolio sweep.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Workflow</h2>
+<ol>
+<li><strong>Inventory.</strong> Catalog every contract in the folder (PDF, .docx): counterparty, contract type (vendor, customer, lease, SaaS subscription, employment, NDA), and executed vs. draft status. Skip drafts but list them.</li>
+<li><strong>Extract the clock terms</strong> from each executed contract, quoting the clause verbatim with page/section:</li>
+<li>Term start/end dates and initial term length</li>
+<li>Auto-renewal: yes/no, renewal period, and the exact non-renewal notice requirement ("60 days written notice prior to expiration")</li>
+<li>Price escalations tied to renewal (CPI adjustments, fixed % uplifts, "then-current pricing")</li>
+<li>Termination-for-convenience windows and fees</li>
+<li>Any other dated obligation (insurance certificate renewals, option exercise windows)</li>
+<li><strong>Compute decision deadlines.</strong> For every auto-renewing contract, the date that matters is <code>renewal date minus notice period minus a 14-day decision buffer</code>. That is the radar date. Contracts already inside their notice window get flagged <code>URGENT</code> at the top of the report.</li>
+<li><strong>Build the calendar.</strong> Write <code>renewal-calendar.md</code>: chronological table of radar dates for the next 24 months with counterparty, annual value (when stated), what happens if nothing is done, and the verbatim notice clause. Separately list contracts with no end date or missing signature pages as data-quality issues.</li>
+<li><strong>Set reminders.</strong> If calendar write tools (Microsoft 365 / Google Calendar) are connected, create an event on each radar date -- title <code>Renewal decision: [counterparty]</code>, description containing the notice deadline, clause quote, and file path -- after showing the user the list of events to be created and getting approval.</li>
+</ol>
+<h2>Rules</h2>
+<ul>
+<li>The notice deadline is the deliverable, not the renewal date. A calendar that reminds you on the renewal date is a calendar of things it is too late to change.</li>
+<li>Quote clauses verbatim with location. Renewal terms are exactly where paraphrasing creates liability.</li>
+<li>Never mark a contract "no auto-renewal" from silence -- distinguish "clause states no renewal" from "no renewal clause found," and flag the latter for human review.</li>
+<li>Annual value comes from the contract only; no estimates.</li>
+<li>This is calendaring support, not legal advice. Frame judgment calls as "counsel should confirm...".</li>
+<li>On re-runs, diff against the previous calendar: new contracts, changed dates, and passed deadlines get called out first.</li>
+</ul>
+<h2>Scheduled Mode</h2>
+<p>As a monthly Cowork scheduled task: re-sweep the folder for new/amended contracts, update the calendar, and deliver a digest leading with anything entering its decision window in the next 60 days.</p>
+<h2>Quick Commands</h2>
+<ul>
+<li>"Sweep [folder]" -- full workflow</li>
+<li>"What's renewing this quarter?" -- filtered radar view</li>
+<li>"Anything urgent?" -- contracts already inside their notice window</li>
+<li>"Calendar it" -- step 5 against the existing report</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

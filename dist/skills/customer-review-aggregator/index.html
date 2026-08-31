@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Review Aggregator & Analyzer | AI Skills</title>
+  <meta name="description" content="Pull reviews from multiple platforms and extract actionable insights with sentiment analysis, pain-point detection, marketing-claim extraction, and competitor comparison.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Customer Review Aggregator & Analyzer</h1>
+      <p>Pull reviews from multiple platforms and extract actionable insights with sentiment analysis, pain-point detection, marketing-claim extraction, and competitor comparison.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/sources.md</code> - supported platforms and sentiment dimensions</li>
+<li><code>references/intake-prompts.md</code> - scope and data-collection prompts, example use cases</li>
+<li><code>references/output-templates.md</code> - report templates for every analysis type</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li>Define scope. Present the scope prompt from <code>references/intake-prompts.md</code> to capture product, platforms, competitors, analysis focus, and time period.</li>
+<li>Gather review data. Offer the three data-collection methods (paste, CSV upload, URLs via WebFetch) from <code>references/intake-prompts.md</code> and collect the reviews.</li>
+<li>Analyze sentiment. Score overall sentiment and feature-level sentiment using the dimensions in <code>references/sources.md</code>.</li>
+<li>Identify pain points. Cluster negative feedback by theme, rank by frequency, and assign impact plus a recommendation.</li>
+<li>Extract marketing claims. Derive evidence-backed claims from positive reviews, each with supporting quotes, a confidence level, and a use case.</li>
+<li>Compare competitors. When competitors are provided, build the side-by-side comparison and surface weaknesses to exploit.</li>
+<li>Analyze feature requests. Rank requested features by mention count, urgency, and competitor coverage.</li>
+<li>Assemble the report. Populate the full analysis report and offer deliverable formats.</li>
+</ol>
+<p>For all output formats and tables, see <code>references/output-templates.md</code>.</p>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

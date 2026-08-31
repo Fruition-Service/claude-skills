@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cowork Folder Organizer | AI Skills</title>
+  <meta name="description" content="Turn a chaotic folder into an organized, navigable workspace the way Claude Cowork works through a directory: inventory everything first, propose before moving, then execute with a full undo trail. Never destroy information -- every move is logged and reversible.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Cowork Folder Organizer</h1>
+      <p>Turn a chaotic folder into an organized, navigable workspace the way Claude Cowork works through a directory: inventory everything first, propose before moving, then execute with a full undo trail. Never destroy information -- every move is logged and reversible.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Input</h2>
+<p>Take a directory path. If none is provided, ask for one. Confirm scope before touching anything: subdirectories included or not, and whether any paths are off-limits.</p>
+<h2>Workflow</h2>
+<ol>
+<li><strong>Inventory.</strong> Walk the directory. For every file record name, extension, size, modified date, and a one-line content summary (read headers/first lines for documents, metadata for media). Do not open files larger than 50MB; classify by name and type only.</li>
+<li><strong>Classify.</strong> Group files into categories inferred from the actual contents -- not a generic template. Typical clusters: active project files, reference material, financial documents, contracts, media/assets, installers and archives, duplicates, junk (temp files, <code>~$</code> locks, empty files).</li>
+<li><strong>Detect duplicates.</strong> Match by checksum first, then by near-identical names with version suffixes (<code>final</code>, <code>final2</code>, <code>v3</code>, <code>(1)</code>). Identify the canonical copy (newest complete version) and mark the rest.</li>
+<li><strong>Propose.</strong> Present the target folder tree, the naming convention (default: <code>YYYY-MM-DD-descriptive-name.ext</code> for dated documents, <code>client-project-doctype</code> for client work), the duplicate resolution list, and the junk list. Wait for approval before moving anything.</li>
+<li><strong>Execute.</strong> Create the structure, move and rename files, quarantine duplicates and junk into <code>_review-before-deleting/</code> -- never delete outright. Log every operation as <code>old-path -&gt; new-path</code> in <code>_organizer-log.md</code>.</li>
+<li><strong>Index.</strong> Write <code>INDEX.md</code> at the root: the new tree, what lives where, and a table of the 20 most recently active files so the owner can re-orient instantly.</li>
+</ol>
+<h2>Rules</h2>
+<ul>
+<li>Propose first, move second. Never reorganize without showing the plan.</li>
+<li>Never delete. Quarantine to <code>_review-before-deleting/</code> and let the human pull the trigger.</li>
+<li>Preserve anything that looks like the only copy of original work (contracts, signed PDFs, raw footage) in place if its location seems intentional.</li>
+<li>Keep names human-readable. No hash suffixes, no ALL_CAPS, no spaces-to-underscores churn on files that are already well named.</li>
+<li>If the folder is a shared drive, flag files other people may have links to before renaming them.</li>
+<li>Report at the end: files processed, moved, renamed, duplicates found, space reclaimable.</li>
+</ul>
+<h2>Scheduled Mode</h2>
+<p>When run as a recurring Cowork scheduled task (e.g. weekly on Downloads), skip the approval step only for previously approved rules: apply the established convention to new files, quarantine new junk, and post a summary of what moved. Anything that does not match an existing rule goes to <code>_needs-decision/</code> and is listed in the summary.</p>
+<h2>Quick Commands</h2>
+<ul>
+<li>"Organize [path]" -- full workflow with proposal</li>
+<li>"Just show me the plan" -- phases 1-4 only, no changes</li>
+<li>"Dedupe only" -- duplicate detection and quarantine, no restructuring</li>
+<li>"Undo" -- reverse the last run from <code>_organizer-log.md</code></li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

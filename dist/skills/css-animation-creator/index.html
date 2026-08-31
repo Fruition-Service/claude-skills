@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Animation Creator | AI Skills</title>
+  <meta name="description" content="Build production-grade, accessible, GPU-efficient motion for web UIs using CSS, Tailwind, and Framer Motion.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>CSS Animation Creator</h1>
+      <p>Build production-grade, accessible, GPU-efficient motion for web UIs using CSS, Tailwind, and Framer Motion.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Workflow</h2>
+<ol>
+<li>Identify the purpose of the motion: feedback, delight, guidance, or storytelling.</li>
+<li>Choose the technique: CSS transitions for state changes, keyframes for looping or multi-step motion, Framer Motion or JS for orchestration and scroll-linked effects.</li>
+<li>Set timing and easing to match the interaction. Apply the timing and easing tables in <code>references/principles-and-timing.md</code>.</li>
+<li>Author the animation. Pull ready-made keyframes and patterns from the reference files below rather than writing from scratch.</li>
+<li>Constrain animated properties to <code>transform</code> and <code>opacity</code> for GPU acceleration. Apply <code>references/performance.md</code>.</li>
+<li>Honor reduced-motion preferences for every animation. Apply <code>references/accessibility.md</code>.</li>
+<li>Verify on low-end devices and confirm no layout thrash before shipping.</li>
+</ol>
+<h2>Contents</h2>
+<ul>
+<li><code>references/principles-and-timing.md</code> — Disney 12 principles mapped to UI, duration and easing tables.</li>
+<li><code>references/transitions.md</code> — Transition syntax, easing functions, cubic-bezier presets, Tailwind transitions.</li>
+<li><code>references/keyframe-library.md</code> — Keyframe syntax plus fade, scale, bounce, rotate, slide, and attention-seeker keyframes.</li>
+<li><code>references/loading-animations.md</code> — Spinners, dots, skeleton loaders, shimmer, progress bars.</li>
+<li><code>references/micro-interactions.md</code> — Button, hover, icon, form, and success/error interactions.</li>
+<li><code>references/page-transitions.md</code> — View Transitions API, Framer Motion page and shared-layout transitions, staggered lists.</li>
+<li><code>references/scroll-animations.md</code> — Intersection Observer, Framer Motion scroll hooks, native CSS scroll-driven animations.</li>
+<li><code>references/accessibility.md</code> — <code>prefers-reduced-motion</code> CSS, Tailwind motion-safe/reduce, React hook.</li>
+<li><code>references/tailwind-config.md</code> — Drop-in <code>tailwind.config.js</code> animation and keyframe definitions.</li>
+<li><code>references/performance.md</code> — GPU-accelerated properties, <code>will-change</code>, <code>contain</code>, performance checklist.</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expansion Revenue Finder | AI Skills</title>
+  <meta name="description" content="Analyze a customer portfolio and identify every viable upsell, cross-sell, and expansion opportunity, then rank them by revenue potential, effort, and probability of success so the account team knows exactly where to focus. Optimize for total portfolio expansion revenue, not individual deal wins. Ground every recommendation in data signals, not wishful thinking.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Expansion Revenue Finder</h1>
+      <p>Analyze a customer portfolio and identify every viable upsell, cross-sell, and expansion opportunity, then rank them by revenue potential, effort, and probability of success so the account team knows exactly where to focus. Optimize for total portfolio expansion revenue, not individual deal wins. Ground every recommendation in data signals, not wishful thinking.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/data-inputs.md</code> -- where to find account data, what to collect, and the product catalog</li>
+<li><code>references/account-profile.md</code> -- per-account expansion profile and segment benchmarking</li>
+<li><code>references/expansion-triggers.md</code> -- seven trigger categories and the opportunity record template</li>
+<li><code>references/scoring.md</code> -- three-dimension scoring rubric, composite formula, and tier interpretation</li>
+<li><code>references/playbook-template.md</code> -- the full <code>expansion-playbook.md</code> output structure</li>
+<li><code>references/rules-and-edge-cases.md</code> -- behavioral rules and edge-case handling</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li>
+<p><strong>Collect data.</strong> Locate customer data in the working directory and user-specified paths, then assemble the account fields and product catalog. See <code>references/data-inputs.md</code>. If no structured data exists, ask the user to describe their accounts and note reduced scoring confidence.</p>
+</li>
+<li>
+<p><strong>Profile and benchmark each account.</strong> Build an expansion profile per account and compare it against its peer segment to find under-penetration. See <code>references/account-profile.md</code>. Without external benchmarks, use the portfolio's top quartile as the benchmark.</p>
+</li>
+<li>
+<p><strong>Scan for triggers.</strong> Check every trigger category for each account. Record an opportunity only when a trigger fires AND a matching product/feature is available to sell. Capture each as a structured opportunity record. See <code>references/expansion-triggers.md</code>. Flag underutilization as a separate "activation opportunity," not an upsell.</p>
+</li>
+<li>
+<p><strong>Score and tier.</strong> Rate each opportunity on revenue potential, effort, and likelihood (1-10 each), compute the composite, and assign a tier. See <code>references/scoring.md</code>.</p>
+</li>
+<li>
+<p><strong>Generate the playbook.</strong> Write <code>expansion-playbook.md</code> to the working directory (or a user-specified path), sorted by tier and composite score, with pitch, timing, approach, and portfolio-wide insights. See <code>references/playbook-template.md</code>.</p>
+</li>
+</ol>
+<p>Apply the behavioral rules and edge-case handling throughout. See <code>references/rules-and-edge-cases.md</code>.</p>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

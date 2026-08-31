@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Git PR Reviewer — Free Claude Skill | Claude Skills Library</title>
+  <meta name="description" content="Review pull requests for code quality, security issues, and best practices. Use when reviewing PRs, checking code changes, or analyzing diffs before merge.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Claude Skills Library">
+  <link rel="canonical" href="https://fruition-service.github.io/claude-skills/skills/git-pr-reviewer/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Git PR Reviewer — Free Claude Skill | Claude Skills Library">
+  <meta property="og:description" content="Review pull requests for code quality, security issues, and best practices. Use when reviewing PRs, checking code changes, or analyzing diffs before merge.">
+  <meta property="og:url" content="https://fruition-service.github.io/claude-skills/skills/git-pr-reviewer/">
+  <meta property="og:site_name" content="Claude Skills Library">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Git PR Reviewer — Free Claude Skill | Claude Skills Library">
+  <meta name="twitter:description" content="Review pull requests for code quality, security issues, and best practices. Use when reviewing PRs, checking code changes, or analyzing diffs before merge.">
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Git PR Reviewer", "description": "Review pull requests for code quality, security issues, and best practices. Use when reviewing PRs, checking code changes, or analyzing diffs before merge.", "url": "https://fruition-service.github.io/claude-skills/skills/git-pr-reviewer/", "isPartOf": {"@type": "WebSite", "name": "Claude Skills Library", "url": "https://fruition-service.github.io/claude-skills/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://fruition-service.github.io/claude-skills/"}, {"@type": "ListItem", "position": 2, "name": "Skills", "item": "https://fruition-service.github.io/claude-skills/#skills"}, {"@type": "ListItem", "position": 3, "name": "Git PR Reviewer", "item": "https://fruition-service.github.io/claude-skills/skills/git-pr-reviewer/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Git PR Reviewer", "description": "Review pull requests for code quality, security issues, and best practices. Use when reviewing PRs, checking code changes, or analyzing diffs before merge.", "codeRepository": "https://github.com/OneWave-AI/claude-skills/tree/main/git-pr-reviewer", "programmingLanguage": "Markdown", "license": "https://opensource.org/licenses/MIT", "isAccessibleForFree": true}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the Git PR Reviewer Claude skill?", "acceptedAnswer": {"@type": "Answer", "text": "Review pull requests for code quality, security issues, and best practices. Use when reviewing PRs, checking code changes, or analyzing diffs before merge."}}, {"@type": "Question", "name": "How do I install Git PR Reviewer?", "acceptedAnswer": {"@type": "Answer", "text": "Create ~/.claude/skills/git-pr-reviewer/SKILL.md and paste the skill content, or clone the OneWave-AI/claude-skills repository. Claude Code loads skills automatically with no restart."}}, {"@type": "Question", "name": "When should I use Git PR Reviewer?", "acceptedAnswer": {"@type": "Answer", "text": "Use Git PR Reviewer when your task matches the skill description: Review pull requests for code quality, security issues, and best practices. Use when reviewing PRs, checking code changes, or analyzing diffs before merge."}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Install the Git PR Reviewer Claude skill", "description": "Add Git PR Reviewer to Claude Code in under a minute.", "step": [{"@type": "HowToStep", "position": 1, "name": "Create the skill folder", "text": "mkdir -p ~/.claude/skills/git-pr-reviewer"}, {"@type": "HowToStep", "position": 2, "name": "Download SKILL.md", "text": "Save the skill file to ~/.claude/skills/git-pr-reviewer/SKILL.md"}, {"@type": "HowToStep", "position": 3, "name": "Start using the skill", "text": "Claude Code picks up the skill immediately — describe your task or invoke it by name."}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html">Claude Skills Library</a>
+      <nav aria-label="Primary">
+        <a href="../../index.html">All skills</a>
+        <a href="https://github.com/OneWave-AI/claude-skills/tree/main/git-pr-reviewer" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <a href="../../index.html">Home</a> / <a href="../../index.html#skills">Skills</a> / <span>Git PR Reviewer</span>
+    </nav>
+    <article itemscope itemtype="https://schema.org/SoftwareSourceCode">
+      <p class="eyebrow">Engineering</p>
+      <h1 itemprop="name">Git PR Reviewer</h1>
+      <p class="lead" itemprop="description">Review pull requests for code quality, security issues, and best practices. Use when reviewing PRs, checking code changes, or analyzing diffs before merge.</p>
+      <section aria-labelledby="what-is">
+        <h2 id="what-is">What is Git PR Reviewer?</h2>
+        <p>Review pull requests for code quality, security issues, and best practices. Use when reviewing PRs, checking code changes, or analyzing diffs before merge. This free Claude skill teaches Claude how to handle a specific workflow with structured steps and best practices.</p>
+      </section>
+      <section aria-labelledby="skill-content" class="skill-content">
+        <h2 id="skill-content">Skill instructions</h2>
+        <h2>Git PR Reviewer</h2>
+<h3>Instructions</h3>
+<p>When reviewing a pull request:</p>
+<ol>
+<li><strong>Get the diff</strong>: Run <code>git diff main...HEAD</code> or <code>git diff &lt;base-branch&gt;...HEAD</code></li>
+<li><strong>Analyze changed files</strong>: Identify all modified, added, and deleted files</li>
+<li><strong>Review each file</strong> for:</li>
+</ol>
+<p>   - Logic errors and bugs</p>
+<p>   - Security vulnerabilities (SQL injection, XSS, hardcoded secrets)</p>
+<p>   - Performance issues (N+1 queries, unnecessary re-renders, memory leaks)</p>
+<p>   - Code style and consistency</p>
+<p>   - Missing error handling</p>
+<p>   - Test coverage gaps</p>
+<h3>Review Checklist</h3>
+<h4>Security</h4>
+<ul>
+<li>[ ] No hardcoded credentials or API keys</li>
+<li>[ ] Input validation on user data</li>
+<li>[ ] Proper authentication/authorization checks</li>
+<li>[ ] No SQL injection vulnerabilities</li>
+<li>[ ] XSS prevention in place</li>
+</ul>
+<h4>Code Quality</h4>
+<ul>
+<li>[ ] Functions are small and focused</li>
+<li>[ ] No code duplication</li>
+<li>[ ] Clear variable/function naming</li>
+<li>[ ] Proper error handling</li>
+<li>[ ] No unused imports or dead code</li>
+</ul>
+<h4>Performance</h4>
+<ul>
+<li>[ ] No unnecessary database queries</li>
+<li>[ ] Efficient algorithms used</li>
+<li>[ ] Proper caching where needed</li>
+<li>[ ] No memory leaks</li>
+</ul>
+<h4>Testing</h4>
+<ul>
+<li>[ ] New code has tests</li>
+<li>[ ] Edge cases covered</li>
+<li>[ ] Tests are meaningful, not just for coverage</li>
+</ul>
+<h3>Output Format</h3>
+<pre><code class="language-markdown">
+## PR Review Summary
+
+### Overview
+[Brief summary of changes]
+
+### Issues Found
+#### Critical
+- [Issue description + file:line]
+
+#### Warnings
+- [Issue description + file:line]
+
+#### Suggestions
+- [Improvement ideas]
+
+### Approval Status
+[APPROVE / REQUEST CHANGES / NEEDS DISCUSSION]
+</code></pre>
+<h3>Example</h3>
+<pre><code class="language-bash">
+# Review current branch against main
+git diff main...HEAD --stat
+git diff main...HEAD
+</code></pre>
+      </section>
+      <section aria-labelledby="install" class="install">
+        <h2 id="install">Install in Claude Code</h2>
+        <pre><code>mkdir -p ~/.claude/skills/git-pr-reviewer
+curl -sL https://raw.githubusercontent.com/OneWave-AI/claude-skills/main/git-pr-reviewer/SKILL.md -o ~/.claude/skills/git-pr-reviewer/SKILL.md</code></pre>
+      </section>
+      <section aria-labelledby="faq" class="faq">
+        <h2 id="faq">Frequently asked questions</h2>
+        <dl>
+          <dt>What is the Git PR Reviewer Claude skill?</dt>
+          <dd>Review pull requests for code quality, security issues, and best practices. Use when reviewing PRs, checking code changes, or analyzing diffs before merge.</dd>
+          <dt>Is Git PR Reviewer free to use?</dt>
+          <dd>Yes. Skills from the OneWave library are MIT licensed and free for personal and commercial use.</dd>
+          <dt>Where does the skill file go?</dt>
+          <dd>Personal skills live in <code>~/.claude/skills/git-pr-reviewer/SKILL.md</code>. Project-specific skills go in <code>.claude/skills/</code> inside your repo.</dd>
+        </dl>
+      </section>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>Mirrored from <a href="https://www.onewave-ai.com/resources/claude-skills/git-pr-reviewer" rel="noopener">OneWave AI</a>. Source: <a href="https://github.com/OneWave-AI/claude-skills" rel="noopener">OneWave-AI/claude-skills</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Design Critic | AI Skills</title>
+  <meta name="description" content="Some sites are technically fine and still scream "an AI made this in one shot." This skill names exactly why and tells you what to change. It reviews the design *and* the copy, because generated-looking text gives a build away as fast as a centered hero and a purple gradient.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Claude Design Critic</h1>
+      <p>Some sites are technically fine and still scream "an AI made this in one shot." This skill names exactly why and tells you what to change. It reviews the design *and* the copy, because generated-looking text gives a build away as fast as a centered hero and a purple gradient.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <p>Use it as the finishing pass on <code>claude-landing-composer</code> output, on any vibe-coded frontend, or on a live site that feels generic. It pairs with the design tokens from <code>claude-design-system-architect</code> (audit against them when they exist).</p>
+<h2>Step 1 — Take in the target</h2>
+<p>A URL (WebFetch + screenshot), a local project (read the components/styles), or pasted code. Establish: what is this page for, who's the audience, and what's the one action it wants? A critique without the goal is just opinion.</p>
+<h2>Step 2 — Audit across dimensions</h2>
+<p>Go dimension by dimension and flag concrete instances, not vibes:</p>
+<p><strong>Layout &amp; composition</strong>
+- Every section a centered stack? Three-identical-cards reflex? Predictable hero → cards → CTA with no rhythm? Symmetry where asymmetry would feel crafted? Cramped or uniform whitespace?</p>
+<p><strong>Color</strong>
+- Purple or default-AI gradients (the dead giveaway). Too many competing accents. Off-brand or arbitrary hexes not mapped to tokens. Contrast failures (check AA).</p>
+<p><strong>Type</strong>
+- Default system sans at 2–3 sizes. No real modular scale. Weak hierarchy. Generic pairing. Line length / line-height that reads like a default.</p>
+<p><strong>Spacing &amp; detail</strong>
+- Uniform padding everywhere. No optical adjustments. Borders/shadows that are all identical or all heavy.</p>
+<p><strong>Motion</strong>
+- The same fade-up on every element. Motion that decorates instead of directs. <code>prefers-reduced-motion</code> ignored.</p>
+<p><strong>Iconography &amp; assets</strong>
+- Emoji used as UI (replace with Lucide/Heroicons). Generic stock imagery. Placeholder logos left in.</p>
+<p><strong>Copy (review this as hard as the design)</strong>
+- AI tells: "elevate", "unlock", "seamless", "empower", "in today's fast-paced world", "we're thrilled to", "the power of", relentless em-dashes, every sentence a tricolon.
+- Generic value props ("the best way to X"), hedged language, "Learn More" buttons, "Welcome to {Product}" heroes, filler microcopy.
+- Flag the exact lines and rewrite the worst offenders.</p>
+<p><strong>Accessibility &amp; semantics</strong>
+- Heading order, alt text, focus states, semantic landmarks, tap-target sizes.</p>
+<h2>Step 3 — Report with prioritized, specific fixes</h2>
+<p>```markdown</p>
+<h1>Design Critique — {target}</h1>
+<p>Generated: {timestamp} · Goal: {…} · Verdict: {SHIP / FIX FIRST / REBUILD SECTION}</p>
+<h2>The 30-second read</h2>
+<p>The 2–3 things making this look generated, in plain language.</p>
+<h2>Findings (prioritized: High → Low)</h2>
+<p>| # | Dimension | What | Where (selector/line/section) | Why it reads as AI | Fix |</p>
+<h2>Copy rewrites</h2>
+<p>"{exact current line}" → "{rewritten line}"</p>
+<h2>Quick wins (under 30 min, high impact)</h2>
+<h2>Bigger moves (worth the time)</h2>
+<h2>What's already good (keep it)</h2>
+<p>```</p>
+<p>Be specific enough that someone could apply every fix without asking a question. Point to the file/section/line. Where tokens exist, cite the token that should have been used.</p>
+<h2>Step 4 — Offer to apply</h2>
+<p>Offer to implement the high-priority fixes directly (edit the components/copy) and re-audit, or hand a rebuild to <code>claude-landing-composer</code>.</p>
+<h2>House standard</h2>
+<p>Premium = intentional layout rhythm, restrained palette, real type scale, generous whitespace, motion with purpose, human copy. Generated = centered everything, rainbow/purple gradients, default sans, uniform padding, fade-up-on-all, and "elevate your workflow." Push every target from the second toward the first. Never purple, never emoji-as-UI.</p>
+<h2>Guardrails recap</h2>
+<p>Critique design AND copy · every finding is specific and located · cite tokens where they exist · prioritize by impact · offer to apply, then re-audit.</p>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

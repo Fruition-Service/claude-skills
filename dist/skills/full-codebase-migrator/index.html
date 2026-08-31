@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Codebase Migrator | AI Skills</title>
+  <meta name="description" content="Leverage the full 1M token context window to ingest an entire codebase, understand its architecture end-to-end, and produce a comprehensive, file-by-file migration plan that a team can execute sequentially without conflicts.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Full Codebase Migrator</h1>
+      <p>Leverage the full 1M token context window to ingest an entire codebase, understand its architecture end-to-end, and produce a comprehensive, file-by-file migration plan that a team can execute sequentially without conflicts.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/migration-types.md</code> -- supported migration types; when to use and when not to use this skill.</li>
+<li><code>references/ingestion.md</code> -- architecture, glob patterns, metadata collection, read order, context budgeting, and dependency graph construction (Steps 0-2).</li>
+<li><code>references/workflow-detail.md</code> -- per-file assessment, migration order, risk scoring, and effort estimation templates (Steps 3-6).</li>
+<li><code>references/output-template.md</code> -- migration-plan.md and migration-plan.json templates, edge cases, and the final quality checklist (Steps 7-8).</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li>Identify scope. Determine migration type, scope (full repo or directory), output location for migration-plan.md, and any exclusions or constraints. Infer from the user's prompt when already specified. See <code>references/migration-types.md</code> for supported types and fit.</li>
+<li>Ingest the codebase. Glob all source files, collect metadata with Bash (line counts, package manifest, configs, git history, directory tree), then Read every source file. For 500+ file codebases, dispatch Agent sub-agents to read directory subtrees in parallel. See <code>references/ingestion.md</code>.</li>
+<li>Build the dependency graph. Extract every import, build an adjacency list, classify each file into layers, detect circular dependencies, and classify external dependencies. See <code>references/ingestion.md</code>.</li>
+<li>Assess each file. Produce a per-file migration assessment covering layer, complexity, patterns found, required changes, prerequisite dependencies, risk factors, and testing impact. See <code>references/workflow-detail.md</code>.</li>
+<li>Calculate migration order. Run a topological sort by layer, apply practical adjustments (quick wins, high-risk-early, break cycles first), and group files into buildable, PR-sized phases. See <code>references/workflow-detail.md</code>.</li>
+<li>Assess risk. Score each file 1-5 on complexity, centrality, volatility, test coverage, and external coupling. Build the migration-level risk matrix and rollback strategy. See <code>references/workflow-detail.md</code>.</li>
+<li>Estimate effort. Derive per-file, per-phase, and total estimates with overhead and a 20% buffer, then translate into calendar time by team size. See <code>references/workflow-detail.md</code> and the effort calibration table in <code>references/migration-types.md</code>.</li>
+<li>Generate the deliverable. Write migration-plan.md to the output location, and migration-plan.json when machine-readability helps. Verify against the quality checklist before delivering. See <code>references/output-template.md</code>.</li>
+</ol>
+<h2>Edge Cases</h2>
+<p>Codebases too large for context, monorepos, partially migrated codebases, and codebases without tests each need adjusted handling. See <code>references/output-template.md</code>.</p>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

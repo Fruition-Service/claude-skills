@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Client Health Dashboard — Free Claude Skill | Claude Skills Library</title>
+  <meta name="description" content="Generates a comprehensive client health overview across all accounts. Reads CRM data, support tickets, usage metrics, billing, and engagement logs. Calcula">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Claude Skills Library">
+  <link rel="canonical" href="https://fruition-service.github.io/claude-skills/skills/client-health-dashboard/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Client Health Dashboard — Free Claude Skill | Claude Skills Library">
+  <meta property="og:description" content="Generates a comprehensive client health overview across all accounts. Reads CRM data, support tickets, usage metrics, billing, and engagement logs. Calcula">
+  <meta property="og:url" content="https://fruition-service.github.io/claude-skills/skills/client-health-dashboard/">
+  <meta property="og:site_name" content="Claude Skills Library">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Client Health Dashboard — Free Claude Skill | Claude Skills Library">
+  <meta name="twitter:description" content="Generates a comprehensive client health overview across all accounts. Reads CRM data, support tickets, usage metrics, billing, and engagement logs. Calcula">
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Client Health Dashboard", "description": "Generates a comprehensive client health overview across all accounts. Reads CRM data, support tickets, usage metrics, billing, and engagement logs. Calcula", "url": "https://fruition-service.github.io/claude-skills/skills/client-health-dashboard/", "isPartOf": {"@type": "WebSite", "name": "Claude Skills Library", "url": "https://fruition-service.github.io/claude-skills/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://fruition-service.github.io/claude-skills/"}, {"@type": "ListItem", "position": 2, "name": "Skills", "item": "https://fruition-service.github.io/claude-skills/#skills"}, {"@type": "ListItem", "position": 3, "name": "Client Health Dashboard", "item": "https://fruition-service.github.io/claude-skills/skills/client-health-dashboard/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Client Health Dashboard", "description": "Generates a comprehensive client health overview across all accounts. Reads CRM data, support tickets, usage metrics, billing, and engagement logs. Calcula", "codeRepository": "https://github.com/OneWave-AI/claude-skills/tree/main/client-health-dashboard", "programmingLanguage": "Markdown", "license": "https://opensource.org/licenses/MIT", "isAccessibleForFree": true}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the Client Health Dashboard Claude skill?", "acceptedAnswer": {"@type": "Answer", "text": "Generates a comprehensive client health overview across all accounts. Reads CRM data, support tickets, usage metrics, billing, and engagement logs. Calcula"}}, {"@type": "Question", "name": "How do I install Client Health Dashboard?", "acceptedAnswer": {"@type": "Answer", "text": "Create ~/.claude/skills/client-health-dashboard/SKILL.md and paste the skill content, or clone the OneWave-AI/claude-skills repository. Claude Code loads skills automatically with no restart."}}, {"@type": "Question", "name": "When should I use Client Health Dashboard?", "acceptedAnswer": {"@type": "Answer", "text": "Use Client Health Dashboard when your task matches the skill description: Generates a comprehensive client health overview across all accounts. Reads CRM data, support tickets, usage metrics, billing, and engagement logs. Calcula"}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Install the Client Health Dashboard Claude skill", "description": "Add Client Health Dashboard to Claude Code in under a minute.", "step": [{"@type": "HowToStep", "position": 1, "name": "Create the skill folder", "text": "mkdir -p ~/.claude/skills/client-health-dashboard"}, {"@type": "HowToStep", "position": 2, "name": "Download SKILL.md", "text": "Save the skill file to ~/.claude/skills/client-health-dashboard/SKILL.md"}, {"@type": "HowToStep", "position": 3, "name": "Start using the skill", "text": "Claude Code picks up the skill immediately — describe your task or invoke it by name."}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html">Claude Skills Library</a>
+      <nav aria-label="Primary">
+        <a href="../../index.html">All skills</a>
+        <a href="https://github.com/OneWave-AI/claude-skills/tree/main/client-health-dashboard" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <a href="../../index.html">Home</a> / <a href="../../index.html#skills">Skills</a> / <span>Client Health Dashboard</span>
+    </nav>
+    <article itemscope itemtype="https://schema.org/SoftwareSourceCode">
+      <p class="eyebrow">Consulting</p>
+      <h1 itemprop="name">Client Health Dashboard</h1>
+      <p class="lead" itemprop="description">Generates a comprehensive client health overview across all accounts. Reads CRM data, support tickets, usage metrics, billing, and engagement logs. Calcula</p>
+      <section aria-labelledby="what-is">
+        <h2 id="what-is">What is Client Health Dashboard?</h2>
+        <p>Generates a comprehensive client health overview across all accounts. Reads CRM data, support tickets, usage metrics, billing, and engagement logs. Calcula This free Claude skill teaches Claude how to handle a specific workflow with structured steps and best practices.</p>
+      </section>
+      <section aria-labelledby="skill-content" class="skill-content">
+        <h2 id="skill-content">Skill instructions</h2>
+        <h2>Client Health Dashboard</h2>
+<p>Generate a data-driven client health report: pull data from every available source, compute a weighted health score per client, and produce a prioritized risk report (<code>client-health-report.md</code>) sorted by risk with RAG status and actionable recommendations.</p>
+<h3>Contents</h3>
+<ul>
+<li><code>references/data-sources.md</code> -- what to pull from CRM, support, usage, billing, and communication channels</li>
+<li><code>references/scoring-model.md</code> -- dimensions, weights, scoring rules, composite formula, RAG thresholds, trend logic</li>
+<li><code>references/risk-and-recommendations.md</code> -- risk factor triggers, per-dimension recommendation menus, expansion assessment</li>
+<li><code>references/output-format.md</code> -- exact report structure, formatting rules, and missing-data handling</li>
+</ul>
+<h3>Workflow</h3>
+<ol>
+<li>Collect data from every available source. Handle failures gracefully: log what was unavailable and proceed with partial data. Never fabricate data. See <code>references/data-sources.md</code> for the full source list and the fields to extract per client.</li>
+<li>Score each client. Rate the five dimensions 0-100, apply weights, and compute the composite score. Assign RAG status and trend direction. See <code>references/scoring-model.md</code>.</li>
+<li>Analyze risk and generate recommendations. Flag critical and warning risk factors, produce 2-4 specific recommendations targeting each client&#x27;s weakest dimensions, and assess expansion potential for healthy accounts. See <code>references/risk-and-recommendations.md</code>.</li>
+<li>Generate the report. Write <code>client-health-report.md</code> following the exact structure and formatting rules. Handle missing data by scoring neutral (50) and noting gaps. See <code>references/output-format.md</code>.</li>
+<li>Validate before finalizing:</li>
+</ol>
+<p>   - Verify RAG assignments match score ranges.</p>
+<p>   - Confirm section ordering and within-section sorting.</p>
+<p>   - Confirm every client appears exactly once.</p>
+<p>   - Confirm each client has 2-4 specific, actionable recommendations.</p>
+<p>   - Attribute each data point to its source.</p>
+<p>   - Mark data gaps explicitly; never invent data that was not retrieved.</p>
+<h3>Interaction</h3>
+<ul>
+<li>If the user specifies particular clients, filter the report to those only.</li>
+<li>If the user specifies a data source, prioritize it.</li>
+<li>If the user provides CSV/Excel files, parse them as a primary source.</li>
+<li>If the user requests a format variation, adapt accordingly.</li>
+<li>Confirm the output path before writing.</li>
+<li>If no data sources are accessible, explain what is needed and what to provide.</li>
+</ul>
+<h3>Constraints</h3>
+<ul>
+<li>Never fabricate or hallucinate data; report only what was retrieved, attributed to its source.</li>
+<li>Never include credentials, API keys, or PII beyond business contact info.</li>
+<li>Keep health scores mathematically correct per the weighting formula.</li>
+<li>Keep recommendations specific and actionable, not generic.</li>
+<li>Keep the report self-contained, professional, and direct.</li>
+<li>Do not use emojis anywhere in the report or any output.</li>
+</ul>
+      </section>
+      <section aria-labelledby="install" class="install">
+        <h2 id="install">Install in Claude Code</h2>
+        <pre><code>mkdir -p ~/.claude/skills/client-health-dashboard
+curl -sL https://raw.githubusercontent.com/OneWave-AI/claude-skills/main/client-health-dashboard/SKILL.md -o ~/.claude/skills/client-health-dashboard/SKILL.md</code></pre>
+      </section>
+      <section aria-labelledby="faq" class="faq">
+        <h2 id="faq">Frequently asked questions</h2>
+        <dl>
+          <dt>What is the Client Health Dashboard Claude skill?</dt>
+          <dd>Generates a comprehensive client health overview across all accounts. Reads CRM data, support tickets, usage metrics, billing, and engagement logs. Calcula</dd>
+          <dt>Is Client Health Dashboard free to use?</dt>
+          <dd>Yes. Skills from the OneWave library are MIT licensed and free for personal and commercial use.</dd>
+          <dt>Where does the skill file go?</dt>
+          <dd>Personal skills live in <code>~/.claude/skills/client-health-dashboard/SKILL.md</code>. Project-specific skills go in <code>.claude/skills/</code> inside your repo.</dd>
+        </dl>
+      </section>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>Mirrored from <a href="https://www.onewave-ai.com/resources/claude-skills/client-health-dashboard" rel="noopener">OneWave AI</a>. Source: <a href="https://github.com/OneWave-AI/claude-skills" rel="noopener">OneWave-AI/claude-skills</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

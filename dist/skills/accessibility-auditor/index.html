@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibility Auditor | AI Skills</title>
+  <meta name="description" content="Audit a website for accessibility defects and bring it to WCAG 2.1 AA compliance.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Accessibility Auditor</h1>
+      <p>Audit a website for accessibility defects and bring it to WCAG 2.1 AA compliance.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/automated-testing.md</code> - CLI commands, jest-axe, Playwright, and tooling</li>
+<li><code>references/wcag-checklist.md</code> - WCAG Level A/AA criteria and keyboard testing checklist</li>
+<li><code>references/common-fixes.md</code> - Fix patterns for the 7 most common defects plus the sr-only class</li>
+<li><code>references/aria-patterns.md</code> - ARIA markup for tabs, accordion, menu, alert, progress</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li>Run automated checks. Execute the CLI scans and add jest-axe or Playwright assertions per <code>references/automated-testing.md</code>.</li>
+<li>Test the keyboard. Tab through the page and verify order, activation, escape, focus visibility, and absence of traps using the checklist in <code>references/wcag-checklist.md</code>.</li>
+<li>Test with a screen reader. Walk the page with NVDA or VoiceOver and confirm names, roles, and announced state.</li>
+<li>Check WCAG criteria. Audit each Level A and AA criterion in <code>references/wcag-checklist.md</code>.</li>
+<li>Apply fixes. Resolve each finding with the patterns in <code>references/common-fixes.md</code> and <code>references/aria-patterns.md</code>, then re-run step 1 to confirm zero violations.</li>
+</ol>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

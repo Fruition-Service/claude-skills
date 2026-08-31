@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Financial Parser — Free Claude Skill | Claude Skills Library</title>
+  <meta name="description" content="Extract and analyze data from invoices, receipts, bank statements, and financial documents. Categorize expenses, track recurring charges, and generate expe">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Claude Skills Library">
+  <link rel="canonical" href="https://fruition-service.github.io/claude-skills/skills/financial-parser/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Financial Parser — Free Claude Skill | Claude Skills Library">
+  <meta property="og:description" content="Extract and analyze data from invoices, receipts, bank statements, and financial documents. Categorize expenses, track recurring charges, and generate expe">
+  <meta property="og:url" content="https://fruition-service.github.io/claude-skills/skills/financial-parser/">
+  <meta property="og:site_name" content="Claude Skills Library">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Financial Parser — Free Claude Skill | Claude Skills Library">
+  <meta name="twitter:description" content="Extract and analyze data from invoices, receipts, bank statements, and financial documents. Categorize expenses, track recurring charges, and generate expe">
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Financial Parser", "description": "Extract and analyze data from invoices, receipts, bank statements, and financial documents. Categorize expenses, track recurring charges, and generate expe", "url": "https://fruition-service.github.io/claude-skills/skills/financial-parser/", "isPartOf": {"@type": "WebSite", "name": "Claude Skills Library", "url": "https://fruition-service.github.io/claude-skills/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://fruition-service.github.io/claude-skills/"}, {"@type": "ListItem", "position": 2, "name": "Skills", "item": "https://fruition-service.github.io/claude-skills/#skills"}, {"@type": "ListItem", "position": 3, "name": "Financial Parser", "item": "https://fruition-service.github.io/claude-skills/skills/financial-parser/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Financial Parser", "description": "Extract and analyze data from invoices, receipts, bank statements, and financial documents. Categorize expenses, track recurring charges, and generate expe", "codeRepository": "https://github.com/OneWave-AI/claude-skills/tree/main/financial-parser", "programmingLanguage": "Markdown", "license": "https://opensource.org/licenses/MIT", "isAccessibleForFree": true}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the Financial Parser Claude skill?", "acceptedAnswer": {"@type": "Answer", "text": "Extract and analyze data from invoices, receipts, bank statements, and financial documents. Categorize expenses, track recurring charges, and generate expe"}}, {"@type": "Question", "name": "How do I install Financial Parser?", "acceptedAnswer": {"@type": "Answer", "text": "Create ~/.claude/skills/financial-parser/SKILL.md and paste the skill content, or clone the OneWave-AI/claude-skills repository. Claude Code loads skills automatically with no restart."}}, {"@type": "Question", "name": "When should I use Financial Parser?", "acceptedAnswer": {"@type": "Answer", "text": "Use Financial Parser when your task matches the skill description: Extract and analyze data from invoices, receipts, bank statements, and financial documents. Categorize expenses, track recurring charges, and generate expe"}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Install the Financial Parser Claude skill", "description": "Add Financial Parser to Claude Code in under a minute.", "step": [{"@type": "HowToStep", "position": 1, "name": "Create the skill folder", "text": "mkdir -p ~/.claude/skills/financial-parser"}, {"@type": "HowToStep", "position": 2, "name": "Download SKILL.md", "text": "Save the skill file to ~/.claude/skills/financial-parser/SKILL.md"}, {"@type": "HowToStep", "position": 3, "name": "Start using the skill", "text": "Claude Code picks up the skill immediately — describe your task or invoke it by name."}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html">Claude Skills Library</a>
+      <nav aria-label="Primary">
+        <a href="../../index.html">All skills</a>
+        <a href="https://github.com/OneWave-AI/claude-skills/tree/main/financial-parser" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <a href="../../index.html">Home</a> / <a href="../../index.html#skills">Skills</a> / <span>Financial Parser</span>
+    </nav>
+    <article itemscope itemtype="https://schema.org/SoftwareSourceCode">
+      <p class="eyebrow">Strategy &amp;amp; Finance</p>
+      <h1 itemprop="name">Financial Parser</h1>
+      <p class="lead" itemprop="description">Extract and analyze data from invoices, receipts, bank statements, and financial documents. Categorize expenses, track recurring charges, and generate expe</p>
+      <section aria-labelledby="what-is">
+        <h2 id="what-is">What is Financial Parser?</h2>
+        <p>Extract and analyze data from invoices, receipts, bank statements, and financial documents. Categorize expenses, track recurring charges, and generate expe This free Claude skill teaches Claude how to handle a specific workflow with structured steps and best practices.</p>
+      </section>
+      <section aria-labelledby="skill-content" class="skill-content">
+        <h2 id="skill-content">Skill instructions</h2>
+        <h2>Financial Document Parser</h2>
+<p>Extract structured data from financial documents with automatic categorization and analysis.</p>
+<h3>When to Use This Skill</h3>
+<p>Activate when the user:</p>
+<ul>
+<li>Provides invoices, receipts, or bank statements</li>
+<li>Asks to &quot;parse this invoice&quot; or &quot;extract data from this receipt&quot;</li>
+<li>Needs expense categorization</li>
+<li>Wants to track spending patterns</li>
+<li>Asks to generate expense reports</li>
+<li>Mentions financial document analysis</li>
+<li>Provides PDF or image of financial documents</li>
+</ul>
+<h3>Instructions</h3>
+<ol>
+<li><strong>Identify Document Type</strong></li>
+</ol>
+<p>   - Invoice (business to business)</p>
+<p>   - Receipt (point of sale)</p>
+<p>   - Bank statement</p>
+<p>   - Credit card statement</p>
+<p>   - Expense report</p>
+<p>   - Tax document</p>
+<ol>
+<li><strong>Extract Core Information</strong></li>
+</ol>
+<p>   <strong>For Invoices:</strong></p>
+<p>   - Invoice number</p>
+<p>   - Invoice date and due date</p>
+<p>   - Vendor/supplier name and contact</p>
+<p>   - Client/recipient name</p>
+<p>   - Line items (description, quantity, unit price, total)</p>
+<p>   - Subtotal, tax, and grand total</p>
+<p>   - Payment terms</p>
+<p>   - Payment methods accepted</p>
+<p>   <strong>For Receipts:</strong></p>
+<p>   - Merchant name and location</p>
+<p>   - Date and time</p>
+<p>   - Items purchased</p>
+<p>   - Individual prices</p>
+<p>   - Subtotal, tax, total</p>
+<p>   - Payment method</p>
+<p>   - Last 4 digits of card (if present)</p>
+<p>   <strong>For Bank/Credit Card Statements:</strong></p>
+<p>   - Statement period</p>
+<p>   - Account number (last 4 digits)</p>
+<p>   - All transactions (date, description, amount, balance)</p>
+<p>   - Beginning and ending balance</p>
+<p>   - Total credits and debits</p>
+<p>   - Fees or interest charges</p>
+<ol>
+<li><strong>Categorize Expenses</strong></li>
+</ol>
+<p>   - Business expenses: Office supplies, software, equipment</p>
+<p>   - Travel: Transportation, lodging, meals</p>
+<p>   - Utilities: Internet, phone, electricity</p>
+<p>   - Professional services: Legal, accounting, consulting</p>
+<p>   - Marketing: Advertising, subscriptions</p>
+<p>   - Entertainment: Client meals, events</p>
+<p>   - Other: Miscellaneous</p>
+<ol>
+<li><strong>Identify Patterns</strong></li>
+</ol>
+<p>   - Recurring charges (subscriptions)</p>
+<p>   - Duplicate charges</p>
+<p>   - Unusual or high-value transactions</p>
+<p>   - Tax-deductible expenses</p>
+<p>   - Foreign currency transactions</p>
+<ol>
+<li><strong>Generate Structured Output</strong></li>
+</ol>
+<p>   - Create CSV-ready format</p>
+<p>   - Summarize totals by category</p>
+<p>   - Flag items needing attention</p>
+<p>   - Calculate tax implications (if relevant)</p>
+<h3>Output Format</h3>
+<pre><code class="language-markdown">
+# Financial Document Analysis
+
+## Document Details
+- **Type**: Invoice / Receipt / Statement
+- **Date**: [Date]
+- **Vendor/Merchant**: [Name]
+- **Document Number**: [Number]
+- **Total Amount**: $X,XXX.XX
+
+## Line Items
+| Description | Quantity | Unit Price | Total |
+|-------------|----------|------------|-------|
+| [Item] | X | $XX.XX | $XX.XX |
+
+## Financial Summary
+- **Subtotal**: $X,XXX.XX
+- **Tax**: $XXX.XX
+- **Total**: $X,XXX.XX
+- **Payment Method**: [Method]
+
+## Expense Categorization
+| Category | Amount | Items |
+|----------|--------|-------|
+| Software | $XXX | Slack, GitHub |
+| Office | $XX | Supplies |
+
+## Insights
+- Tax-deductible business expenses: $X,XXX
+- Recurring charges detected: 3 subscriptions ($XXX/month)
+- Foreign transaction fees: $XX
+
+## Flagged Items
+- [ ] Large expense ($X,XXX) - verify approval
+- [ ] Duplicate charge detected on [date]
+
+## Export Data (CSV Format)
+</code></pre>
+<p>Date,Vendor,Description,Category,Amount,Tax Deductible</p>
+<p>2025-01-15,Adobe,Creative Cloud,Software,52.99,Yes</p>
+<pre><code class="language-">
+
+## Recommendations
+- Track recurring $XXX/month for [subscription]
+- Consider negotiating bulk discount with [vendor]
+- Set up payment reminder for [invoice due date]
+</code></pre>
+<h3>Examples</h3>
+<p><strong>User</strong>: &quot;Extract data from this invoice PDF&quot;</p>
+<p><strong>Response</strong>: Parse PDF → Extract vendor info, line items, totals → Categorize as business expense → Format as structured data → Generate CSV export</p>
+<p><strong>User</strong>: &quot;Analyze my bank statement and categorize expenses&quot;</p>
+<p><strong>Response</strong>: Extract all transactions → Categorize each (dining, software, travel) → Identify recurring charges → Calculate totals by category → Flag unusual transactions → Generate spending report</p>
+<p><strong>User</strong>: &quot;Parse these 10 receipts and create an expense report&quot;</p>
+<p><strong>Response</strong>: Process each receipt → Extract merchant, date, amount, items → Categorize expenses → Calculate totals → Generate consolidated report → Create CSV for expense submission</p>
+<h3>Best Practices</h3>
+<ul>
+<li>Preserve exact amounts (don&#x27;t round)</li>
+<li>Maintain currency symbols and formats</li>
+<li>Note when data is unclear or illegible</li>
+<li>Flag suspicious or duplicate transactions</li>
+<li>Provide tax-relevant categorization</li>
+<li>Use standard expense categories</li>
+<li>Generate export-ready formats (CSV, JSON)</li>
+<li>Protect sensitive info (mask account numbers)</li>
+<li>Identify missing information (no date, unclear vendor)</li>
+<li>Calculate totals and verify against document</li>
+<li>Note discrepancies or calculation errors</li>
+<li>Include exchange rates for foreign currency</li>
+</ul>
+      </section>
+      <section aria-labelledby="install" class="install">
+        <h2 id="install">Install in Claude Code</h2>
+        <pre><code>mkdir -p ~/.claude/skills/financial-parser
+curl -sL https://raw.githubusercontent.com/OneWave-AI/claude-skills/main/financial-parser/SKILL.md -o ~/.claude/skills/financial-parser/SKILL.md</code></pre>
+      </section>
+      <section aria-labelledby="faq" class="faq">
+        <h2 id="faq">Frequently asked questions</h2>
+        <dl>
+          <dt>What is the Financial Parser Claude skill?</dt>
+          <dd>Extract and analyze data from invoices, receipts, bank statements, and financial documents. Categorize expenses, track recurring charges, and generate expe</dd>
+          <dt>Is Financial Parser free to use?</dt>
+          <dd>Yes. Skills from the OneWave library are MIT licensed and free for personal and commercial use.</dd>
+          <dt>Where does the skill file go?</dt>
+          <dd>Personal skills live in <code>~/.claude/skills/financial-parser/SKILL.md</code>. Project-specific skills go in <code>.claude/skills/</code> inside your repo.</dd>
+        </dl>
+      </section>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>Mirrored from <a href="https://www.onewave-ai.com/resources/claude-skills/financial-parser" rel="noopener">OneWave AI</a>. Source: <a href="https://github.com/OneWave-AI/claude-skills" rel="noopener">OneWave-AI/claude-skills</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

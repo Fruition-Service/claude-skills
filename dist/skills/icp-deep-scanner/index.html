@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICP Deep Scanner | AI Skills</title>
+  <meta name="description" content="Turn the data already sitting in your connected tools into a rigorous, evidence-backed Ideal Customer Profile (ICP) and a library of buyer personas. Most ICPs are invented in a slide deck. This one is reverse-engineered from your actual best customers, your won/lost deals, your support tickets, and your reviews — then written so it can drive real decisions and feed the panel skills.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>ICP Deep Scanner</h1>
+      <p>Turn the data already sitting in your connected tools into a rigorous, evidence-backed Ideal Customer Profile (ICP) and a library of buyer personas. Most ICPs are invented in a slide deck. This one is reverse-engineered from your actual best customers, your won/lost deals, your support tickets, and your reviews — then written so it can drive real decisions and feed the panel skills.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <p>This skill is the data layer beneath <code>customer-panel-of-experts</code>, <code>prospect-panel-simulator</code>, and <code>product-launch-war-room</code>. Run it first; those skills read the persona library it writes.</p>
+<h2>Operating principles (read first)</h2>
+<ul>
+<li><strong>Read-only by default.</strong> You may query and read connected sources. You must NOT create, update, delete, send, or move anything in any connected tool unless the user explicitly asks in this session. Before any write or outbound action, stop and confirm.</li>
+<li><strong>Least data necessary.</strong> Pull aggregates and representative samples, not entire databases. You are building a profile, not exfiltrating a CRM.</li>
+<li><strong>PII minimization.</strong> Persona artifacts are archetypes, not dossiers. Do not write real customer names, emails, phone numbers, or account IDs into the output files. Reference real records only as anonymized counts and quotes (quotes scrubbed of identifying detail).</li>
+<li><strong>Secrets via environment only.</strong> Never read, print, or write credentials. Assume tokens live in environment variables (e.g. <code>$SUPABASE_TOKEN</code>, <code>$OPENAI_API_KEY</code>) or in the MCP connection itself. If a source needs auth that isn't present, list it under "Sources I could not reach" and continue.</li>
+<li><strong>Cite the evidence.</strong> Every claim in the ICP must trace to a source. "Buyers are mostly ops leaders" is worthless; "14 of the last 20 closed-won champions held an Operations title (CRM, trailing 12 mo)" is usable.</li>
+</ul>
+<h2>Step 1 — Inventory connectable sources</h2>
+<p>Ask the user which tools to scan, or detect what's available. Map each to what it tells you:</p>
+<p>| Source (examples) | What to extract | How to reach it |
+|---|---|---|
+| CRM (HubSpot, Salesforce, internal) | Closed-won vs closed-lost firmographics, titles of champions/buyers, deal size, sales cycle, win reasons | MCP connector or read-only API |
+| Email / calendar | Who actually engages, meeting cadence, recurring objection language | Gmail/Calendar MCP, read-only |
+| Support / tickets / chat | Top pain themes, words customers use, where they get stuck | Intercom/Zendesk export, logs |
+| Reviews (G2, Capterra, Trustpilot, App Store) | Verbatim value language, switching triggers, deal-breakers | WebFetch / <code>customer-review-aggregator</code> |
+| Product analytics (GA4, Clarity, Mixpanel) | Activation paths, who sticks, drop-off points | Analytics MCP / API |
+| Billing (Stripe, Mercury) | Real revenue concentration, expansion vs churn by segment | Read-only API |
+| Database (Supabase/Postgres) | Ground-truth usage and cohort behavior | Read-only SQL via <code>$SUPABASE_TOKEN</code> |
+| Public web | Firmographic enrichment, market sizing, competitor positioning | WebSearch / WebFetch |</p>
+<p>Present the list, mark which are reachable now, and confirm scope before scanning. For a wide scan across many sources, dispatch parallel read-only sub-agents (one per source) and merge their findings — see <code>/agent-army</code>.</p>
+<h2>Step 2 — Extract signal from each source</h2>
+<p>For each reachable source, pull:
+- <strong>Firmographics</strong> — industry/vertical, company size, geography, business model, tech stack.
+- <strong>Who buys</strong> — economic buyer, champion, blocker, end user (titles + seniority, from real deals).
+- <strong>Why they buy</strong> — the trigger event, the job-to-be-done, the alternative they abandoned.
+- <strong>Why they don't</strong> — top closed-lost reasons, top objections, top churn reasons.
+- <strong>Language</strong> — the exact words customers use (mine reviews and tickets; do not paraphrase into marketing-speak).
+- <strong>Economics</strong> — ACV, CAC signals, sales-cycle length, expansion behavior, concentration risk.</p>
+<p>Record sample sizes and date ranges for everything. Flag anything based on fewer than ~5 data points as "thin signal."</p>
+<h2>Step 3 — Synthesize the ICP</h2>
+<p>Write <code>icp-profile.md</code>:</p>
+<p>```markdown</p>
+<h1>Ideal Customer Profile — {COMPANY}</h1>
+<p>Generated: {timestamp} · Sources scanned: {list} · Confidence: {High/Med/Low}</p>
+<h2>The ICP in one sentence</h2>
+<p>{Vertical} companies of {size} who {trigger}, evaluated against {alternative}, where the champion is a {title} and the economic buyer is a {title}.</p>
+<h2>Firmographic fit (with evidence)</h2>
+<ul>
+<li>Industry: ... (evidence: N of M closed-won)</li>
+<li>Size: ...</li>
+<li>Geography / model / stack: ...</li>
+</ul>
+<h2>Anti-ICP — who to disqualify</h2>
+<ul>
+<li>{Segment} — closes slow, churns fast, low ACV (evidence)</li>
+</ul>
+<h2>Buying committee</h2>
+<ul>
+<li>Economic buyer · Champion · Blocker · End user — each with real titles + what they care about</li>
+</ul>
+<h2>Triggers &amp; jobs-to-be-done</h2>
+<h2>Top buy reasons / top no-buy reasons (ranked, with counts)</h2>
+<h2>The customer's own language (verbatim, scrubbed)</h2>
+<h2>Economics — ACV, cycle, expansion, concentration risk</h2>
+<h2>Confidence &amp; gaps — what's thin, what to instrument next</h2>
+<p>```</p>
+<h2>Step 4 — Build the persona library</h2>
+<p>Write <code>personas/</code> — one file per persona (3–6 personas: typically the champion, the economic buyer, the blocker, and 1–2 key end users or segment variants). Each persona file is structured so the panel skills can load it directly:</p>
+<h2>```markdown</h2>
+<p>persona_id: ops-leader-champion
+role: Champion
+archetype: "VP of Operations at a 50–200 person services firm"
+based_on: "12 closed-won champions, CRM trailing 12 mo"</p>
+<hr />
+<h1>{Archetype name}</h1>
+<ul>
+<li>Goals / success metrics:</li>
+<li>Pains (verbatim language):</li>
+<li>What earns trust / what triggers skepticism:</li>
+<li>Buying authority &amp; budget reality:</li>
+<li>Objections they raise (real, from lost deals):</li>
+<li>How they talk (tone, vocabulary, 2–3 scrubbed quotes):</li>
+<li>What would make them a hard NO:
+```</li>
+</ul>
+<p>Also write <code>personas/index.md</code> listing every persona, its role in the committee, and its evidence base.</p>
+<h2>Step 5 — Handoff</h2>
+<p>End with:
+- A 5-line ICP summary the user can paste anywhere.
+- "Sources I could not reach" and what auth/access would unlock them.
+- "Confidence ledger" — which conclusions are strong vs. thin.
+- The exact command to run next: <code>customer-panel-of-experts</code> (debate a decision with these personas) or <code>prospect-panel-simulator</code> (pressure-test a pitch against them).</p>
+<h2>Guardrails recap</h2>
+<p>Read-only unless told otherwise · no secrets in output · personas are archetypes, never dossiers · every claim cites its source and sample size · thin signal is labeled, not hidden.</p>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

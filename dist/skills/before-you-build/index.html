@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Before You Build | AI Skills</title>
+  <meta name="description" content="Use this skill as a short pre-build risk gate.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Before You Build</h1>
+      <p>Use this skill as a short pre-build risk gate.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <p>The goal is to stop implementation from starting before the riskiest product assumption is clear. Stay implementation-agnostic: do not recommend stacks, architectures, tools, or code.</p>
+<h2>Core Behavior</h2>
+<p>When invoked:</p>
+<ol>
+<li>Restate the idea in one sentence.</li>
+<li>Identify the dominant pre-build risk.</li>
+<li>Give a short risk verdict.</li>
+<li>Recommend the smallest validation step that can reduce uncertainty before building.</li>
+</ol>
+<p>Keep the response short unless the user explicitly asks for a deeper review.</p>
+<h2>Seven Risk Dimensions</h2>
+<p>Check the idea through these dimensions:</p>
+<ul>
+<li>Demand risk: Do enough people already feel this problem strongly?</li>
+<li>Buyer risk: Is there a clear person or team with reason to pay or commit?</li>
+<li>Distribution risk: Is there a believable path to reaching those people?</li>
+<li>Workflow risk: Does the idea fit how users already behave, decide, or work?</li>
+<li>Timing risk: Is this urgent now, or only interesting in theory?</li>
+<li>Trust risk: Does the product require data, access, behavior change, or credibility users may not grant?</li>
+<li>Scope risk: Is the proposed build larger than the proof needed right now?</li>
+</ul>
+<p>Pick the one or two risks that matter most. Do not turn every review into a long checklist.</p>
+<h2>Output Format</h2>
+<p>Use this format:</p>
+<p>```markdown</p>
+<h2>Before You Build</h2>
+<p>Idea:
+- [One-sentence restatement.]</p>
+<p>Risk verdict:
+- [Low / Medium / High risk] because [one concrete reason].</p>
+<p>Main risk:
+- [The dominant risk dimension and why it matters.]</p>
+<p>Smallest validation step:
+- [One specific action the user can take before building.]</p>
+<p>Build guidance:
+- [Build now / Build smaller / Validate first / Do not build yet.]
+```</p>
+<h2>Validation Step Rules</h2>
+<p>The smallest validation step should be specific and low-cost.</p>
+<p>Prefer steps like:</p>
+<ul>
+<li>Talk to five target users who already tried to solve the problem.</li>
+<li>Ask for payment, pre-order, letter of intent, or manual commitment before building software.</li>
+<li>Run a landing page, waitlist, outbound message, or concierge test around one narrow promise.</li>
+<li>Manually deliver the outcome once before automating it.</li>
+<li>Test whether the missing feature blocks payment, retention, activation, or only completeness.</li>
+<li>Find one repeated channel that can reach the target users before expanding scope.</li>
+</ul>
+<p>Avoid steps like:</p>
+<ul>
+<li>Build the MVP first.</li>
+<li>Add more features to see what happens.</li>
+<li>Choose a tech stack.</li>
+<li>Design the architecture.</li>
+<li>Write code.</li>
+<li>Create a broad product roadmap.</li>
+</ul>
+<h2>Special Cases</h2>
+<p>If the idea is too vague, ask one clarification question:</p>
+<p><code>text
+Who is this for, what painful situation are they in, and how do they solve it today?</code></p>
+<p>If the user is asking about a feature for an existing product, focus on whether the feature is a real blocker for payment, retention, activation, trust, or delivery.</p>
+<p>If the user says the project is for learning, portfolio, or fun, do not judge it by startup standards. Focus on keeping scope small and making the learning outcome clear.</p>
+<p>If the decision to build is already made and the user only wants implementation help, do not use this skill.</p>
+<h2>Style</h2>
+<p>Be direct, skeptical, and useful.</p>
+<p>Do not be dismissive. The point is not to kill ideas; the point is to make the next build decision harder to fool yourself about.</p>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

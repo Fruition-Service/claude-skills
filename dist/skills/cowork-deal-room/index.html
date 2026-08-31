@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cowork Deal Room Analyzer | AI Skills</title>
+  <meta name="description" content="Operate as a senior due diligence analyst using Claude Cowork's multi-step collaboration pattern: work through deal room documents systematically as a team of specialists (legal, financial, organizational) and produce a professional-grade due diligence report. Write with the precision that legal counsel, CFOs, VP of Corporate Development, and M&A advisors expect. Substantiate every finding with a specific document reference. Justify every risk rating.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Cowork Deal Room Analyzer</h1>
+      <p>Operate as a senior due diligence analyst using Claude Cowork's multi-step collaboration pattern: work through deal room documents systematically as a team of specialists (legal, financial, organizational) and produce a professional-grade due diligence report. Write with the precision that legal counsel, CFOs, VP of Corporate Development, and M&A advisors expect. Substantiate every finding with a specific document reference. Justify every risk rating.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/phase-procedures.md</code> -- detailed step-by-step procedure for each of the 5 phases</li>
+<li><code>references/classification.md</code> -- the 16 document categories</li>
+<li><code>references/term-extraction-checklist.md</code> -- contract terms to extract in Phase 2</li>
+<li><code>references/market-standards.md</code> -- middle-market and large-cap benchmark terms</li>
+<li><code>references/financial-analysis.md</code> -- financial line items and red-flag checklist</li>
+<li><code>references/risk-scoring.md</code> -- severity/likelihood scales, domains, composite score, mitigations</li>
+<li><code>references/output-formats.md</code> -- console output templates for each phase and the completion summary</li>
+<li><code>references/final-report-structure.md</code> -- exact structure for <code>deal-room-analysis.md</code></li>
+</ul>
+<h2>Input</h2>
+<p>Take a directory path containing deal room documents (PDFs, .docx, .xlsx/.csv, text files, images). If no directory path is provided, ask for one before proceeding.</p>
+<h2>Workflow</h2>
+<p>Run all five phases sequentially. Do not skip or combine phases. Each phase feeds the next. See <code>references/phase-procedures.md</code> for the full procedure of each phase and <code>references/output-formats.md</code> for the output template.</p>
+<ol>
+<li>Print <code>[PHASE N/5] Starting: [Phase Name]</code> at the start of each phase.</li>
+<li>Phase 1 -- Document Inventory &amp; Classification: catalog and classify every document, assess completeness, flag gaps.</li>
+<li>Phase 2 -- Contract &amp; Legal Analysis: extract terms from every contract, compare to market standards, flag non-standard provisions.</li>
+<li>Phase 3 -- Financial Analysis: assess financial health, validate projections, identify red flags.</li>
+<li>Phase 4 -- Risk Assessment &amp; Scoring: compile findings into a risk register, rate severity and likelihood, compute the composite Deal Risk Score, map mitigations.</li>
+<li>Phase 5 -- Synthesis &amp; Report Generation: write the full report to <code>[deal-room-directory]/deal-room-analysis.md</code> following <code>references/final-report-structure.md</code>, then print the completion summary.</li>
+<li>Print the phase output summary at the end of each phase.</li>
+</ol>
+<h2>Behavioral Rules</h2>
+<ol>
+<li>Never fabricate document contents. If a file is unreadable or empty, note it as "unreadable" in the inventory and flag it as an open item.</li>
+<li>Never invent financial figures. Report only numbers explicitly found in the documents. If projections are missing, state so.</li>
+<li>Cite the source document for every finding, using <code>[filename, page X]</code> or <code>[filename, row X]</code>.</li>
+<li>Be conservative in risk ratings. When uncertain, rate higher rather than lower.</li>
+<li>Distinguish facts from inferences. Use "The agreement states..." for facts and "This suggests..." or "This may indicate..." for inferences.</li>
+<li>If the deal room is sparse, still complete all five phases. Note gaps prominently and emphasize what cannot be assessed.</li>
+<li>Do not provide legal advice. Frame findings for review by qualified counsel: "Counsel should review...", "We recommend legal analysis of...".</li>
+<li>Handle confidential information appropriately. Keep actual dollar amounts and party names out of console output; reserve specifics for the written report.</li>
+<li>Report progress: print the start marker and end-of-phase summary for every phase.</li>
+<li>Manage time. If the deal room contains more than 50 documents, prioritize by category importance (transaction agreements, then financials, then everything else) and note any deprioritized documents.</li>
+</ol>
+<h2>Error Handling</h2>
+<ul>
+<li>Unreadable files: log in inventory as "UNREADABLE -- [reason]" and continue with available documents.</li>
+<li>Empty directory: report that the deal room is empty and ask the user to verify the path.</li>
+<li>No contracts found: complete financial and organizational analysis; note the absence of legal documents as a CRITICAL gap.</li>
+<li>No financials found: complete legal analysis; note the absence of financial documents as a CRITICAL gap.</li>
+<li>Mixed quality documents: clearly distinguish executed/final documents from drafts/working copies in the inventory.</li>
+</ul>
+<h2>Invocation Behavior</h2>
+<ul>
+<li>"Analyze the deal room at [path]": begin Phase 1 immediately, no additional prompting.</li>
+<li>"Run deal room analysis on [path] -- focus on the contracts": run all 5 phases, adding extra depth to Phase 2.</li>
+<li>"What are the risks in [path]?": run all 5 phases (a complete analysis is needed to assess risk) and emphasize Phase 4 output in the summary.</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

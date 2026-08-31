@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typography Scale Builder | AI Skills</title>
+  <meta name="description" content="Typography is the design system's skeleton: most products that look "off" have inconsistent type long before they have bad colors. Build the scale as a system with roles and math, then make the codebase actually use it. Input: the chosen fonts (or run `font-pairing-suggester` first), the product type (marketing site, dense app UI, long-form editorial), and the target range of devices.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Typography Scale Builder</h1>
+      <p>Typography is the design system's skeleton: most products that look "off" have inconsistent type long before they have bad colors. Build the scale as a system with roles and math, then make the codebase actually use it. Input: the chosen fonts (or run `font-pairing-suggester` first), the product type (marketing site, dense app UI, long-form editorial), and the target range of devices.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Workflow</h2>
+<ol>
+<li><strong>Audit what exists.</strong> Inventory every font-size, line-height, letter-spacing, and font-weight in the codebase. The typical finding -- 23 font sizes, 9 of them within 2px of each other -- is the case for the system. Map which are actually distinct roles vs. accumulated drift.</li>
+<li><strong>Choose the scale math.</strong> Base size (16px body floor for marketing/editorial; 13-14px acceptable for dense app UI) and ratio -- modest for UI-heavy products (1.125-1.2, more usable steps, less drama), larger for marketing/editorial (1.25-1.333, real hierarchy). Fluid by default for marketing sites: <code>clamp()</code> per step so headings scale between viewport bounds without breakpoint jumps; fixed steps are fine for app UI.</li>
+<li><strong>Set the companions per step</strong> -- the part single-number "scales" skip: line-height tightens as size grows (body ~1.5-1.6, headings down to 1.1-1.2 at display sizes); letter-spacing goes negative at display sizes (-1% to -2.5%) and slightly positive for small caps/labels; weight roles per font (which weight is body, emphasis, heading, display -- and which loaded weights get deleted because nothing uses them).</li>
+<li><strong>Define the roles.</strong> Semantic tokens, not size names: <code>display</code>, <code>h1</code>-<code>h4</code>, <code>body-lg</code>, <code>body</code>, <code>body-sm</code>, <code>caption</code>, <code>overline</code>, <code>code</code>. Each role = size step + line-height + tracking + weight + family, as one token. Components consume roles; nobody composes raw steps.</li>
+<li><strong>Vertical rhythm.</strong> Spacing-after rules per role (heading margins proportional to their size, paragraph spacing from body line-height), <code>text-wrap: balance</code> on headings, and measure limits (65-75ch for body prose) so line length stays readable at every viewport.</li>
+<li><strong>Export and retrofit.</strong> <code>typography-tokens.json</code>, Tailwind <code>fontSize</code> config (size + line-height + tracking tuples per role; v4 <code>@theme</code>), <code>typography.css</code> with role classes, and <code>TYPOGRAPHY.md</code>. Then map the step-1 inventory onto roles and replace -- with a per-case flag on anything that does not cleanly map (it is either a missing role or drift to delete).</li>
+</ol>
+<h2>Rules</h2>
+<ul>
+<li>Roles over sizes everywhere: <code>text-h2</code>, never <code>text-[28px]</code> -- and no role means the component asks the system for one, not the developer for a number.</li>
+<li>Every step ships with its line-height and tracking. A size without its companions is half a token.</li>
+<li>The scale has as few steps as hierarchy needs -- 7-9 roles cover almost any product; 12+ means roles are duplicating.</li>
+<li>Body text is the anchor: it gets sized for reading first, and the scale grows around it -- never shrink body to make headings look bigger.</li>
+<li>Load only the weights the roles use. Every unused weight is dead bytes on first paint.</li>
+<li>Fluid type gets floor and ceiling checks: the <code>clamp()</code> minimum must stay readable on a 320px phone and the max must not blow the layout on ultrawide.</li>
+</ul>
+<h2>Quick Commands</h2>
+<ul>
+<li>"Build a type system for this project" -- full workflow</li>
+<li>"Audit my typography" -- step 1 only</li>
+<li>"Make my headings fluid" -- fluid conversion of an existing scale</li>
+<li>"Retrofit components" -- step 6 against an existing system</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

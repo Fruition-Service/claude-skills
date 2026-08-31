@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Health Dashboard | AI Skills</title>
+  <meta name="description" content="Generate a data-driven client health report: pull data from every available source, compute a weighted health score per client, and produce a prioritized risk report (`client-health-report.md`) sorted by risk with RAG status and actionable recommendations.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Client Health Dashboard</h1>
+      <p>Generate a data-driven client health report: pull data from every available source, compute a weighted health score per client, and produce a prioritized risk report (`client-health-report.md`) sorted by risk with RAG status and actionable recommendations.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/data-sources.md</code> -- what to pull from CRM, support, usage, billing, and communication channels</li>
+<li><code>references/scoring-model.md</code> -- dimensions, weights, scoring rules, composite formula, RAG thresholds, trend logic</li>
+<li><code>references/risk-and-recommendations.md</code> -- risk factor triggers, per-dimension recommendation menus, expansion assessment</li>
+<li><code>references/output-format.md</code> -- exact report structure, formatting rules, and missing-data handling</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li>Collect data from every available source. Handle failures gracefully: log what was unavailable and proceed with partial data. Never fabricate data. See <code>references/data-sources.md</code> for the full source list and the fields to extract per client.</li>
+<li>Score each client. Rate the five dimensions 0-100, apply weights, and compute the composite score. Assign RAG status and trend direction. See <code>references/scoring-model.md</code>.</li>
+<li>Analyze risk and generate recommendations. Flag critical and warning risk factors, produce 2-4 specific recommendations targeting each client's weakest dimensions, and assess expansion potential for healthy accounts. See <code>references/risk-and-recommendations.md</code>.</li>
+<li>Generate the report. Write <code>client-health-report.md</code> following the exact structure and formatting rules. Handle missing data by scoring neutral (50) and noting gaps. See <code>references/output-format.md</code>.</li>
+<li>Validate before finalizing:</li>
+<li>Verify RAG assignments match score ranges.</li>
+<li>Confirm section ordering and within-section sorting.</li>
+<li>Confirm every client appears exactly once.</li>
+<li>Confirm each client has 2-4 specific, actionable recommendations.</li>
+<li>Attribute each data point to its source.</li>
+<li>Mark data gaps explicitly; never invent data that was not retrieved.</li>
+</ol>
+<h2>Interaction</h2>
+<ul>
+<li>If the user specifies particular clients, filter the report to those only.</li>
+<li>If the user specifies a data source, prioritize it.</li>
+<li>If the user provides CSV/Excel files, parse them as a primary source.</li>
+<li>If the user requests a format variation, adapt accordingly.</li>
+<li>Confirm the output path before writing.</li>
+<li>If no data sources are accessible, explain what is needed and what to provide.</li>
+</ul>
+<h2>Constraints</h2>
+<ul>
+<li>Never fabricate or hallucinate data; report only what was retrieved, attributed to its source.</li>
+<li>Never include credentials, API keys, or PII beyond business contact info.</li>
+<li>Keep health scores mathematically correct per the weighting formula.</li>
+<li>Keep recommendations specific and actionable, not generic.</li>
+<li>Keep the report self-contained, professional, and direct.</li>
+<li>Do not use emojis anywhere in the report or any output.</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

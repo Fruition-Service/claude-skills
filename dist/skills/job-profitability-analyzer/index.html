@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Profitability Analyzer | AI Skills</title>
+  <meta name="description" content="Revenue is vanity, margin per job is survival. Service businesses (agencies, contractors, consultancies, trades) routinely lose money on their "best" clients because nobody allocates the hours. Input: invoices/revenue by job or client, time tracking exports, materials/sub costs, payroll rates, and a rough overhead number. Output: profit per job, per client, per service line -- with receipts.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Job Profitability Analyzer</h1>
+      <p>Revenue is vanity, margin per job is survival. Service businesses (agencies, contractors, consultancies, trades) routinely lose money on their "best" clients because nobody allocates the hours. Input: invoices/revenue by job or client, time tracking exports, materials/sub costs, payroll rates, and a rough overhead number. Output: profit per job, per client, per service line -- with receipts.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Workflow</h2>
+<ol>
+<li><strong>Build the job ledger.</strong> Match every revenue line to a job/client. Match every cost: labor (hours x loaded rate -- wages plus taxes/benefits, ~1.25-1.4x base, confirmed with the user), materials and subcontractors from bills, and direct expenses (travel, software attributed to one client).</li>
+<li><strong>Allocate overhead.</strong> Rent, admin, insurance, tools spread across jobs -- by labor hours by default (state the method). Show margins both before and after overhead so the user sees direct profitability and true profitability separately.</li>
+<li><strong>Rank.</strong> <code>profitability-report.md</code>: every job and client ranked by margin dollars and margin percent, with the effective hourly rate each client actually pays (revenue minus non-labor costs, divided by hours). This one column reorders most people's client list.</li>
+<li><strong>Diagnose the losers.</strong> For bottom-quartile jobs: was it underpricing, scope creep (hours ballooned past estimate), expensive labor mix, or unbilled work? Cite the timesheet and invoice evidence per diagnosis.</li>
+<li><strong>Prescribe.</strong> Per problem client: the raise-price number that hits target margin, the scope boundary to enforce, or the fire-the-client math (hours freed x effective rate of the best clients). Pair with <code>pricing-strategy</code> for the repricing conversation.</li>
+</ol>
+<h2>Rules</h2>
+<ul>
+<li>Loaded labor rates or nothing -- wages alone understate labor cost 25-40% and flatter every margin.</li>
+<li>Unbilled hours are the finding, not noise: track estimated vs. actual vs. billed hours per job explicitly.</li>
+<li>State the overhead allocation method and run the sensitivity: if the ranking flips under a different method, say so.</li>
+<li>No cost data for a job means <code>INCOMPLETE</code>, not a guess -- and chronic time-tracking gaps get called out as the root problem.</li>
+<li>Small samples get honesty: one bad job does not condemn a client; three do. Note the n per client.</li>
+<li>Effective hourly rate is the universal translator -- report it everywhere.</li>
+</ul>
+<h2>Quick Commands</h2>
+<ul>
+<li>"Analyze [files]" -- full workflow</li>
+<li>"Rank my clients" -- client-level table only</li>
+<li>"Why did [job] lose money?" -- single-job autopsy</li>
+<li>"What should I charge [client]?" -- the repricing math</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

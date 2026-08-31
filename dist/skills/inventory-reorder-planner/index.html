@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory Reorder Planner | AI Skills</title>
+  <meta name="description" content="Stockouts burn revenue on the products that sell; overstock buries cash in the ones that do not. Both come from ordering by gut. Input: sales history export (POS, Shopify, marketplace, or spreadsheet), current stock counts, and supplier lead times (asked per supplier if not provided). Output: reorder points per SKU and the purchase list for this week.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Inventory Reorder Planner</h1>
+      <p>Stockouts burn revenue on the products that sell; overstock buries cash in the ones that do not. Both come from ordering by gut. Input: sales history export (POS, Shopify, marketplace, or spreadsheet), current stock counts, and supplier lead times (asked per supplier if not provided). Output: reorder points per SKU and the purchase list for this week.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Workflow</h2>
+<ol>
+<li><strong>Profile every SKU.</strong> From sales history: average daily/weekly velocity, variability, trend (growing/flat/dying), and seasonality where the history is long enough to show it (holiday spikes, summer lulls) -- flagged per SKU, never assumed.</li>
+<li><strong>Classify.</strong> ABC by revenue contribution (A: the ~20% of SKUs driving ~80%), crossed with velocity: <code>WINNERS</code> (high velocity, healthy margin -- never stock out), <code>STEADY</code>, <code>SLOW</code>, <code>DEAD</code> (no sales in 90+ days with stock on hand).</li>
+<li><strong>Compute reorder points.</strong> Per SKU: lead-time demand (velocity x supplier lead time) plus safety stock scaled to demand variability and the SKU's class -- A items get generous buffers, C items get lean ones. Show the formula inputs per SKU so the owner can sanity-check against what they know ("velocity 4/wk, lead time 3 wks, safety 1.5 wks = reorder at 18").</li>
+<li><strong>The purchase list.</strong> <code>reorder-plan.csv</code>: every SKU at or below reorder point, recommended order quantity (covering the review cycle plus lead time, respecting supplier minimums and case packs when known), cost, and supplier -- grouped by supplier to build actual POs. Flag <code>URGENT</code> where projected stockout lands before the order can arrive.</li>
+<li><strong>Free the cash.</strong> The dead-stock report: units, cost tied up, days since last sale, and the exit per item -- bundle with a winner, discount, donate for the writeoff, or return to supplier. Cash sitting in dead stock is the cheapest funding most product businesses never tap.</li>
+</ol>
+<h2>Rules</h2>
+<ul>
+<li>Velocity from real sales only; no history means <code>NEW -- judgment order</code>, clearly separated from computed recommendations.</li>
+<li>Stockout periods bias velocity down -- when the data shows zero-stock stretches, compute velocity from in-stock days only and note it.</li>
+<li>Seasonality is applied only where the data shows it, and the applied multiplier is stated per SKU.</li>
+<li>Supplier constraints (minimums, case packs, price breaks) are asked for, and rounding to meet them is shown, not silent.</li>
+<li>A items err toward buffer, C items err toward lean -- one safety-stock policy for everything is the amateur tell.</li>
+<li>Re-run on a cadence (weekly or per supplier order cycle); each run compares last cycle's recommendation to what actually sold and tightens.</li>
+</ul>
+<h2>Quick Commands</h2>
+<ul>
+<li>"Plan from [sales export] and [stock counts]" -- full workflow</li>
+<li>"What do I order this week?" -- the purchase list only</li>
+<li>"What's about to stock out?" -- URGENT list</li>
+<li>"Where's my cash buried?" -- dead-stock report</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

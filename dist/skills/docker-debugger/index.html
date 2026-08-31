@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Docker Debugger | AI Skills</title>
+  <meta name="description" content="When debugging Docker issues:">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Docker Debugger</h1>
+      <p>When debugging Docker issues:</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Instructions</h2>
+<ol>
+<li><strong>Identify the problem type</strong>: Build, runtime, networking, or performance</li>
+<li><strong>Gather information</strong> using diagnostic commands</li>
+<li><strong>Analyze logs and errors</strong></li>
+<li><strong>Apply fixes</strong></li>
+</ol>
+<h2>Diagnostic Commands</h2>
+<p>```bash</p>
+<h1>Check running containers</h1>
+<p>docker ps -a</p>
+<h1>View container logs</h1>
+<p>docker logs <container_id> --tail 100 -f</p>
+<h1>Inspect container</h1>
+<p>docker inspect <container_id></p>
+<h1>Check resource usage</h1>
+<p>docker stats</p>
+<h1>View container processes</h1>
+<p>docker top <container_id></p>
+<h1>Execute shell in running container</h1>
+<p>docker exec -it <container_id> /bin/sh</p>
+<h1>Check Docker disk usage</h1>
+<p>docker system df</p>
+<h1>View build history</h1>
+<p>docker history <image_name>
+```</p>
+<h2>Common Issues &amp; Solutions</h2>
+<h3>1. Container exits immediately</h3>
+<p>```bash</p>
+<h1>Check exit code</h1>
+<p>docker inspect <container_id> --format='{{.State.ExitCode}}'</p>
+<h1>View last logs</h1>
+<p>docker logs <container_id>
+```</p>
+<p><strong>Fixes</strong>:
+- Ensure CMD/ENTRYPOINT runs a foreground process
+- Check for missing dependencies
+- Verify environment variables</p>
+<h3>2. Build fails</h3>
+<p>```dockerfile</p>
+<h1>Use multi-stage builds for smaller images</h1>
+<p>FROM node:20-alpine AS builder
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+COPY . .
+RUN npm run build</p>
+<p>FROM node:20-alpine AS runner
+WORKDIR /app
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/node_modules ./node_modules
+CMD ["node", "dist/index.js"]
+```</p>
+<h3>3. Networking issues</h3>
+<p>```bash</p>
+<h1>List networks</h1>
+<p>docker network ls</p>
+<h1>Inspect network</h1>
+<p>docker network inspect <network_name></p>
+<h1>Check container IP</h1>
+<p>docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <container>
+```</p>
+<h3>4. Volume permission issues</h3>
+<p>```dockerfile</p>
+<h1>Create non-root user</h1>
+<p>RUN addgroup -g 1001 -S appgroup &amp;&amp; \
+    adduser -u 1001 -S appuser -G appgroup</p>
+<h1>Set ownership</h1>
+<p>COPY --chown=appuser:appgroup . .</p>
+<p>USER appuser
+```</p>
+<h2>Dockerfile Best Practices</h2>
+<p>```dockerfile</p>
+<h1>1. Use specific tags, not :latest</h1>
+<p>FROM node:20.10-alpine</p>
+<h1>2. Set working directory</h1>
+<p>WORKDIR /app</p>
+<h1>3. Copy dependency files first (better caching)</h1>
+<p>COPY package*.json ./
+RUN npm ci --only=production</p>
+<h1>4. Copy source after dependencies</h1>
+<p>COPY . .</p>
+<h1>5. Use non-root user</h1>
+<p>USER node</p>
+<h1>6. Set proper labels</h1>
+<p>LABEL maintainer="you@example.com"
+LABEL version="1.0"</p>
+<h1>7. Use HEALTHCHECK</h1>
+<p>HEALTHCHECK --interval=30s --timeout=3s \
+  CMD wget -q --spider http://localhost:3000/health || exit 1</p>
+<h1>8. Expose ports</h1>
+<p>EXPOSE 3000</p>
+<h1>9. Use exec form for CMD</h1>
+<p>CMD ["node", "server.js"]
+```</p>
+<h2>docker-compose Debugging</h2>
+<p>```yaml</p>
+<h1>docker-compose.yml</h1>
+<p>services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # Add for debugging
+    stdin_open: true
+    tty: true
+    # Override command for debugging
+    command: /bin/sh
+    volumes:
+      - .:/app
+    environment:
+      - DEBUG=true
+```</p>
+<p>```bash</p>
+<h1>Rebuild without cache</h1>
+<p>docker-compose build --no-cache</p>
+<h1>View logs</h1>
+<p>docker-compose logs -f app</p>
+<h1>Restart single service</h1>
+<p>docker-compose restart app
+```</p>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

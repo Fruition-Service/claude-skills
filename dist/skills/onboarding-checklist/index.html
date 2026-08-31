@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onboarding Checklist Generator | AI Skills</title>
+  <meta name="description" content="Generate a comprehensive, customized client onboarding checklist saved as `onboarding-checklist.md` in the current working directory. The checklist is actionable, phase-structured, and tailored to the specific engagement type.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Onboarding Checklist Generator</h1>
+      <p>Generate a comprehensive, customized client onboarding checklist saved as `onboarding-checklist.md` in the current working directory. The checklist is actionable, phase-structured, and tailored to the specific engagement type.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/output-template.md</code> -- Full output structure: header block, four phases, handoff criteria, formatting rules.</li>
+<li><code>references/engagement-types.md</code> -- How to classify Consulting vs SaaS vs Agency, and per-type adaptation guidelines.</li>
+<li><code>references/task-banks.md</code> -- Reference task pools per engagement type and phase.</li>
+<li><code>references/email-templates.md</code> -- The five required email templates, their structure, and content guidelines.</li>
+<li><code>references/scaling-and-pitfalls.md</code> -- Timeline and team-size scaling rules, common pitfalls, and the final quality checklist.</li>
+</ul>
+<h2>Required Inputs</h2>
+<p>Gather these before generating. If any are missing, ask for them explicitly:</p>
+<ol>
+<li><strong>Client Type</strong>: Industry, company size, maturity (e.g., "Series B fintech startup").</li>
+<li><strong>Services Purchased</strong>: Exact scope of work or product tiers.</li>
+<li><strong>Team Size</strong>: Number of people on both provider and client sides.</li>
+<li><strong>Tech Stack</strong>: Relevant technologies, platforms, tools, integrations.</li>
+<li><strong>Timeline</strong>: Total onboarding duration and any hard deadlines.</li>
+</ol>
+<h2>Workflow</h2>
+<ol>
+<li>Collect all five required inputs from the user.</li>
+<li>Classify the engagement type (Consulting, SaaS, or Agency) using <code>references/engagement-types.md</code>. This classification drives the structure and tone of the entire checklist.</li>
+<li>Select and customize tasks from <code>references/task-banks.md</code>, adapting language, deadlines, and owners to the specific engagement. Reflect tech-stack items in relevant tasks.</li>
+<li>Apply timeline scaling rules from <code>references/scaling-and-pitfalls.md</code> based on the specified duration.</li>
+<li>Apply team-size scaling rules from <code>references/scaling-and-pitfalls.md</code> based on team composition.</li>
+<li>Generate all five email templates with full body content per <code>references/email-templates.md</code>.</li>
+<li>Compile the complete <code>onboarding-checklist.md</code> following <code>references/output-template.md</code>. Apply the per-type adaptations in <code>references/engagement-types.md</code>.</li>
+<li>Verify the result against the quality checklist and common pitfalls in <code>references/scaling-and-pitfalls.md</code>.</li>
+<li>Write the file to the current working directory using the Write tool.</li>
+<li>Confirm completion and summarize key stats (total tasks, timeline, engagement type, file location).</li>
+</ol>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

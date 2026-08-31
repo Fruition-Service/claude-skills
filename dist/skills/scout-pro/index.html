@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scout Pro | AI Skills</title>
+  <meta name="description" content="Advanced meta-agent that analyzes full conversation context, maps working patterns, recommends multi-skill workflows (not just single skills), and maintains a learning log of what works.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Scout Pro</h1>
+      <p>Advanced meta-agent that analyzes full conversation context, maps working patterns, recommends multi-skill workflows (not just single skills), and maintains a learning log of what works.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li>references/skill-inventory.md - how to scan the skills directory and the category snapshot</li>
+<li>references/chains.md - chain design principles, notation, library, and custom-chain builder</li>
+<li>references/patterns-and-logging.md - pattern recognition, usage log schema, learning, proactive tips</li>
+<li>references/response-format.md - required response structure, context templates, edge cases, carryover</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li><strong>Deep context scan.</strong> Read the full conversation from start to current message. Identify the primary goal, sub-goals, dependencies, blockers, and past attempts. Check session history in <code>~/.claude/</code>. Use the context template in references/response-format.md.</li>
+<li><strong>Inventory skills.</strong> Scan the live <code>/Users/gabe/claude-skills/</code> directory and read each SKILL.md frontmatter. Never recommend a skill without verifying it exists. See references/skill-inventory.md.</li>
+<li><strong>Design chains.</strong> Where the task has multiple steps, design a multi-skill workflow so each step feeds the next. Use the notation, library, and builder protocol in references/chains.md.</li>
+<li><strong>Recognize patterns.</strong> Read <code>~/.claude/rules/session-context.md</code> and <code>~/.claude/projects/</code> memory. Detect recurring tasks, workflow gaps, and underutilized skills. See references/patterns-and-logging.md.</li>
+<li><strong>Log usage.</strong> Read the existing log at <code>~/.claude/scout-pro-usage-log.json</code>, factor past outcomes into current recommendations, then append the new recommendation. Update entries when the user reports an outcome. See references/patterns-and-logging.md.</li>
+<li><strong>Recommend proactively.</strong> Surface valuable unsolicited suggestions grounded in observed patterns.</li>
+<li><strong>Respond.</strong> Emit the analysis using the structure in references/response-format.md.</li>
+</ol>
+<h2>Rules</h2>
+<ol>
+<li>Never recommend a skill without verifying it exists; scan the directory first, every run.</li>
+<li>Always explain the "why" behind a recommendation. Do not just list skills.</li>
+<li>Prefer chains over individual skills when the task has multiple steps.</li>
+<li>Respect the user's time. If a one-skill solution works, do not recommend a five-skill chain.</li>
+<li>Be honest about limitations. If no skill is a great fit, say so.</li>
+<li>Update the usage log on every recommendation.</li>
+<li>Do not hallucinate skills. Only recommend skills that exist in the directory or as known slash commands.</li>
+</ol>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reddit Analyzer — Free Claude Skill | Claude Skills Library</title>
+  <meta name="description" content="Analyze Reddit threads for sentiment, consensus opinions, top arguments, and discussion patterns. Use this when users want to understand Reddit community o">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Claude Skills Library">
+  <link rel="canonical" href="https://fruition-service.github.io/claude-skills/skills/reddit-analyzer/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Reddit Analyzer — Free Claude Skill | Claude Skills Library">
+  <meta property="og:description" content="Analyze Reddit threads for sentiment, consensus opinions, top arguments, and discussion patterns. Use this when users want to understand Reddit community o">
+  <meta property="og:url" content="https://fruition-service.github.io/claude-skills/skills/reddit-analyzer/">
+  <meta property="og:site_name" content="Claude Skills Library">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Reddit Analyzer — Free Claude Skill | Claude Skills Library">
+  <meta name="twitter:description" content="Analyze Reddit threads for sentiment, consensus opinions, top arguments, and discussion patterns. Use this when users want to understand Reddit community o">
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Reddit Analyzer", "description": "Analyze Reddit threads for sentiment, consensus opinions, top arguments, and discussion patterns. Use this when users want to understand Reddit community o", "url": "https://fruition-service.github.io/claude-skills/skills/reddit-analyzer/", "isPartOf": {"@type": "WebSite", "name": "Claude Skills Library", "url": "https://fruition-service.github.io/claude-skills/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://fruition-service.github.io/claude-skills/"}, {"@type": "ListItem", "position": 2, "name": "Skills", "item": "https://fruition-service.github.io/claude-skills/#skills"}, {"@type": "ListItem", "position": 3, "name": "Reddit Analyzer", "item": "https://fruition-service.github.io/claude-skills/skills/reddit-analyzer/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Reddit Analyzer", "description": "Analyze Reddit threads for sentiment, consensus opinions, top arguments, and discussion patterns. Use this when users want to understand Reddit community o", "codeRepository": "https://github.com/OneWave-AI/claude-skills/tree/main/reddit-analyzer", "programmingLanguage": "Markdown", "license": "https://opensource.org/licenses/MIT", "isAccessibleForFree": true}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the Reddit Analyzer Claude skill?", "acceptedAnswer": {"@type": "Answer", "text": "Analyze Reddit threads for sentiment, consensus opinions, top arguments, and discussion patterns. Use this when users want to understand Reddit community o"}}, {"@type": "Question", "name": "How do I install Reddit Analyzer?", "acceptedAnswer": {"@type": "Answer", "text": "Create ~/.claude/skills/reddit-analyzer/SKILL.md and paste the skill content, or clone the OneWave-AI/claude-skills repository. Claude Code loads skills automatically with no restart."}}, {"@type": "Question", "name": "When should I use Reddit Analyzer?", "acceptedAnswer": {"@type": "Answer", "text": "Use Reddit Analyzer when your task matches the skill description: Analyze Reddit threads for sentiment, consensus opinions, top arguments, and discussion patterns. Use this when users want to understand Reddit community o"}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Install the Reddit Analyzer Claude skill", "description": "Add Reddit Analyzer to Claude Code in under a minute.", "step": [{"@type": "HowToStep", "position": 1, "name": "Create the skill folder", "text": "mkdir -p ~/.claude/skills/reddit-analyzer"}, {"@type": "HowToStep", "position": 2, "name": "Download SKILL.md", "text": "Save the skill file to ~/.claude/skills/reddit-analyzer/SKILL.md"}, {"@type": "HowToStep", "position": 3, "name": "Start using the skill", "text": "Claude Code picks up the skill immediately — describe your task or invoke it by name."}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html">Claude Skills Library</a>
+      <nav aria-label="Primary">
+        <a href="../../index.html">All skills</a>
+        <a href="https://github.com/OneWave-AI/claude-skills/tree/main/reddit-analyzer" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <a href="../../index.html">Home</a> / <a href="../../index.html#skills">Skills</a> / <span>Reddit Analyzer</span>
+    </nav>
+    <article itemscope itemtype="https://schema.org/SoftwareSourceCode">
+      <p class="eyebrow">Everyday Life</p>
+      <h1 itemprop="name">Reddit Analyzer</h1>
+      <p class="lead" itemprop="description">Analyze Reddit threads for sentiment, consensus opinions, top arguments, and discussion patterns. Use this when users want to understand Reddit community o</p>
+      <section aria-labelledby="what-is">
+        <h2 id="what-is">What is Reddit Analyzer?</h2>
+        <p>Analyze Reddit threads for sentiment, consensus opinions, top arguments, and discussion patterns. Use this when users want to understand Reddit community o This free Claude skill teaches Claude how to handle a specific workflow with structured steps and best practices.</p>
+      </section>
+      <section aria-labelledby="skill-content" class="skill-content">
+        <h2 id="skill-content">Skill instructions</h2>
+        <h2>Reddit Thread Analyzer</h2>
+<p>Extract deep insights from Reddit discussions including sentiment, key arguments, and community consensus.</p>
+<p>Given a Reddit thread URL or a question about Reddit opinions, analyze the discussion comprehensively to surface meaningful patterns and insights.</p>
+<h3>Instructions</h3>
+<h4>1. Fetch and Parse Thread Data</h4>
+<p>Use WebFetch to load the Reddit thread and extract:</p>
+<ul>
+<li>Post title, body, author, score, and timestamp</li>
+<li>All comments (not just top-level)</li>
+<li>Comment scores, awards, and timestamps</li>
+<li>Note verified contributors or expert flair</li>
+</ul>
+<h4>2. Analyze Overall Sentiment</h4>
+<p>Determine the dominant sentiment and emotional tone:</p>
+<ul>
+<li><strong>Overall sentiment</strong>: Positive, negative, neutral, or mixed</li>
+<li><strong>Sentiment distribution</strong>: Approximate percentages</li>
+<li><strong>Emotional tone</strong>: Excited, frustrated, skeptical, supportive, angry, enthusiastic</li>
+<li><strong>Shift over time</strong>: Note if sentiment changes throughout discussion</li>
+</ul>
+<h4>3. Extract Key Arguments</h4>
+<p>Identify the most impactful points:</p>
+<p><strong>Top Arguments in Favor</strong> (3-5 points):</p>
+<ul>
+<li>Quote the argument</li>
+<li>Note comment score</li>
+<li>Identify supporting evidence or reasoning</li>
+</ul>
+<p><strong>Top Arguments Against</strong> (3-5 points):</p>
+<ul>
+<li>Quote the argument</li>
+<li>Note comment score</li>
+<li>Identify counter-points and rebuttals</li>
+</ul>
+<p><strong>Expert or Verified Opinions</strong>:</p>
+<ul>
+<li>Highlight comments from verified experts</li>
+<li>Note OP responses and clarifications</li>
+</ul>
+<h4>4. Find Consensus Points</h4>
+<p>Determine what the community agrees on:</p>
+<ul>
+<li>Points with broad agreement (high scores, no controversy)</li>
+<li>Emerging patterns across multiple comments</li>
+<li>Common ground between opposing viewpoints</li>
+</ul>
+<h4>5. Identify Controversial Topics</h4>
+<p>Flag heavily debated points:</p>
+<ul>
+<li>Topics with mixed upvotes/downvotes</li>
+<li>Arguments that sparked long comment chains</li>
+<li>Divisive issues where community is split</li>
+</ul>
+<h4>6. Provide Structured Analysis</h4>
+<p>Format the analysis clearly:</p>
+<pre><code class="language-markdown">
+# Reddit Analysis: [Thread Title]
+
+## Executive Summary
+[2-3 sentence overview of the discussion and main takeaway]
+
+## Overall Sentiment
+- **Dominant Sentiment**: Positive/Negative/Neutral/Mixed (X%)
+- **Emotional Tone**: [excited/frustrated/skeptical/etc.]
+- **Community Alignment**: High/Medium/Low
+
+## Top Arguments
+
+### In Favor
+1. **[Main point]** (+XXX score)
+   &gt; &quot;[Direct quote from comment]&quot;
+   - [Brief explanation of reasoning]
+
+2. **[Main point]** (+XXX score)
+   &gt; &quot;[Direct quote]&quot;
+
+### Against
+1. **[Main point]** (+XXX score)
+   &gt; &quot;[Direct quote]&quot;
+
+## Community Consensus
+- [Point most people agree on]
+- [Another consensus point]
+
+## Controversial Topics
+- [Divisive issue] - Community split roughly 50/50
+- [Another debate point]
+
+## Notable Insights
+- **Expert Opinion**: [Quote from verified expert] (+XXX)
+- **Surprising Take**: [Unexpected perspective that gained traction]
+- **Most Helpful**: [Most practical or actionable advice]
+
+## Key Quotes
+&gt; &quot;[Memorable quote]&quot; - u/username (+XXX score)
+&gt; &quot;[Another impactful quote]&quot; - u/username (+XXX score)
+
+## Discussion Quality
+- Civility: High/Medium/Low
+- Depth: Superficial/Moderate/Deep
+- Evidence-based: Yes/No/Mixed
+</code></pre>
+<h3>Best Practices</h3>
+<ul>
+<li><strong>Focus on highly upvoted comments</strong> for consensus</li>
+<li><strong>Include exact scores</strong> to show community agreement level</li>
+<li><strong>Quote directly</strong> rather than paraphrasing</li>
+<li><strong>Preserve nuance</strong> - avoid oversimplifying complex debates</li>
+<li><strong>Note OP responses</strong> - original poster often adds important context</li>
+<li><strong>Distinguish facts from opinions</strong> clearly</li>
+<li><strong>Highlight constructive vs. unproductive</strong> discussions</li>
+<li><strong>Consider recency</strong> - early comments may be less informed than later ones</li>
+</ul>
+<h3>Example Analysis</h3>
+<p><strong>User</strong>: &quot;What does Reddit think about the new iPhone?&quot;</p>
+<p><strong>Analysis steps</strong>:</p>
+<ol>
+<li>Fetch r/apple or r/iPhone thread</li>
+<li>Analyze 300+ comments</li>
+<li>Determine sentiment: Mixed (55% positive, 45% negative)</li>
+<li>Extract top pros: Camera improvements (+450), Performance (+380)</li>
+<li>Extract top cons: High price (+420), Incremental updates (+390)</li>
+<li>Note consensus: Good phone, but expensive for what you get</li>
+<li>Identify controversy: Whether it&#x27;s worth upgrading from iPhone 14</li>
+<li>Surface expert opinions from tech reviewers</li>
+<li>Deliver structured report with quotes and scores</li>
+</ol>
+<p>---</p>
+<p><strong>Remember</strong>: Focus on substance over noise. Prioritize well-reasoned arguments over emotional reactions.</p>
+      </section>
+      <section aria-labelledby="install" class="install">
+        <h2 id="install">Install in Claude Code</h2>
+        <pre><code>mkdir -p ~/.claude/skills/reddit-analyzer
+curl -sL https://raw.githubusercontent.com/OneWave-AI/claude-skills/main/reddit-analyzer/SKILL.md -o ~/.claude/skills/reddit-analyzer/SKILL.md</code></pre>
+      </section>
+      <section aria-labelledby="faq" class="faq">
+        <h2 id="faq">Frequently asked questions</h2>
+        <dl>
+          <dt>What is the Reddit Analyzer Claude skill?</dt>
+          <dd>Analyze Reddit threads for sentiment, consensus opinions, top arguments, and discussion patterns. Use this when users want to understand Reddit community o</dd>
+          <dt>Is Reddit Analyzer free to use?</dt>
+          <dd>Yes. Skills from the OneWave library are MIT licensed and free for personal and commercial use.</dd>
+          <dt>Where does the skill file go?</dt>
+          <dd>Personal skills live in <code>~/.claude/skills/reddit-analyzer/SKILL.md</code>. Project-specific skills go in <code>.claude/skills/</code> inside your repo.</dd>
+        </dl>
+      </section>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>Mirrored from <a href="https://www.onewave-ai.com/resources/claude-skills/reddit-analyzer" rel="noopener">OneWave AI</a>. Source: <a href="https://github.com/OneWave-AI/claude-skills" rel="noopener">OneWave-AI/claude-skills</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

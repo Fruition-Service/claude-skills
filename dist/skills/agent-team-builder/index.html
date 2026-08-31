@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Team Builder | AI Skills</title>
+  <meta name="description" content="Design and generate production-ready multi-agent team configurations for business workflows through an interactive discovery session. This skill generates configuration files; it does not execute or deploy agents.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Agent Team Builder</h1>
+      <p>Design and generate production-ready multi-agent team configurations for business workflows through an interactive discovery session. This skill generates configuration files; it does not execute or deploy agents.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/team-templates.md</code> — Sales, Support, Research, and Content team starting points.</li>
+<li><code>references/config-schema.md</code> — Full <code>team-config.yaml</code> schema plus advanced features (A2A messaging, scaling, shared context).</li>
+<li><code>references/output-files.md</code> — Files to generate and the final response format.</li>
+</ul>
+<h2>Workflow</h2>
+<p>Always complete discovery before designing. Never generate a team config without understanding the business process first.</p>
+<ol>
+<li><strong>Run discovery.</strong> Ask the user, one area at a time:</li>
+<li>Process name (what to automate).</li>
+<li>Current state (who is involved, handoff points).</li>
+<li>Pain points (where delays, errors, or bottlenecks occur).</li>
+<li>Volume (runs per day/week/month).</li>
+<li>Success metrics (time, error rate, satisfaction).</li>
+<li>Constraints (compliance, approval gates, human-in-the-loop).</li>
+<li>
+<p>Integrations (CRM, email, Slack, databases, APIs).</p>
+</li>
+<li>
+<p><strong>Design the team architecture.</strong> Determine the minimum number of agents (typically 3-7). Select role types as needed:</p>
+</li>
+<li>Coordinator — orchestrates workflow, routes tasks, handles exceptions.</li>
+<li>Specialist — deep expertise in one domain.</li>
+<li>Validator — quality assurance, compliance checking, output review.</li>
+<li>Interface — handles external communication.</li>
+<li>Data — manages retrieval, transformation, and storage.</li>
+</ol>
+<p>Pick a communication pattern: hub-and-spoke (sequential), pipeline (linear), mesh (collaborative), or broadcast (notification). Start from a template in <code>references/team-templates.md</code> when one fits.</p>
+<ol>
+<li>
+<p><strong>Specify each agent.</strong> Define: Agent ID, Role Title, full production-ready System Prompt, Tool Access (least privilege), Input Schema, Output Schema, Handoff Rules, Escalation Rules, Success Criteria, and Failure Modes.</p>
+</li>
+<li>
+<p><strong>Generate the configuration files.</strong> Produce <code>team-config.yaml</code>, per-agent <code>agents/{id}/prompt.md</code>, <code>workflow.md</code>, and <code>test-scenarios.yaml</code> per <code>references/output-files.md</code>, conforming to <code>references/config-schema.md</code>.</p>
+</li>
+<li>
+<p><strong>Present the design</strong> using the response format in <code>references/output-files.md</code>.</p>
+</li>
+</ol>
+<h2>Execution Rules</h2>
+<ol>
+<li>Always start with discovery.</li>
+<li>Apply principle of least privilege — give each agent only the tools and access it needs.</li>
+<li>Design for failure — every agent gets failure modes and recovery strategies.</li>
+<li>Keep a human in the loop — include escalation paths for high-stakes decisions.</li>
+<li>Define measurable outcomes — every agent gets trackable success criteria.</li>
+<li>Start small — recommend 3-4 agents and expand based on performance data.</li>
+<li>Document everything — keep the generated config self-documenting and maintainable.</li>
+<li>Generate test scenarios so the team can be validated before deployment.</li>
+<li>Recommend a pilot phase before full deployment.</li>
+<li>Never include API keys, passwords, or secrets in generated config; use environment variable references.</li>
+</ol>
+<p>The generated <code>team-config.yaml</code> is designed to be consumed by an agent orchestration framework. Treat all generated system prompts as starting points to refine against real-world performance.</p>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

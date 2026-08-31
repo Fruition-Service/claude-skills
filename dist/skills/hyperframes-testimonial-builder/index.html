@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HyperFrames Testimonial Builder | AI Skills</title>
+  <meta name="description" content="Nothing sells like a customer saying it. This skill takes the proof a business already has -- Google reviews, testimonial emails, case-study numbers, NPS comments -- and directs it into renderable HyperFrames video. It owns the selection and the story; for composition mechanics, captions, transitions, and TTS, invoke the `hyperframes` skill (`hyperframes-cli` for `init`/`lint`/`preview`/`render`, `hyperframes-media` for voiceover).">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>HyperFrames Testimonial Builder</h1>
+      <p>Nothing sells like a customer saying it. This skill takes the proof a business already has -- Google reviews, testimonial emails, case-study numbers, NPS comments -- and directs it into renderable HyperFrames video. It owns the selection and the story; for composition mechanics, captions, transitions, and TTS, invoke the `hyperframes` skill (`hyperframes-cli` for `init`/`lint`/`preview`/`render`, `hyperframes-media` for voiceover).</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Step 1 -- Gather the proof</h2>
+<p>Take whatever exists: pasted reviews, a review export, <code>customer-review-aggregator</code> output, case-study docs, or a profile URL to pull from. For each candidate quote capture the text verbatim, the name/attribution available, the specific result mentioned, and the source.</p>
+<p>Select for specificity: "They saved us $40K and two weeks" outperforms "Great company, highly recommend" every time. Rank candidates by concrete detail, emotional arc (skeptic-to-believer beats always-happy), and relevance to the audience the video targets.</p>
+<h2>Step 2 -- Pick the format</h2>
+<ul>
+<li><strong>Spotlight (20-30s)</strong> -- one strong story: setup (the problem in the customer's words), the turn, the result, CTA.</li>
+<li><strong>Review wall (15-25s)</strong> -- 4-6 short quotes in rhythm, star ratings and names, momentum building to an aggregate line ("300+ five-star reviews") and CTA.</li>
+<li><strong>Proof reel (30-45s)</strong> -- stats-forward: animated counters for the numbers (customers served, dollars saved, rating), interleaved with the two best quote lines.</li>
+</ul>
+<h2>Step 3 -- Build the composition</h2>
+<ul>
+<li>Quote text is the hero visual: large, readable, animated in phrase by phrase, timed to the VO. Attribution (first name, business/role, star row) small and consistent.</li>
+<li>Verbatim always -- trim with ellipses where needed, never rewrite a customer's words into marketing-speak; the texture of real speech is the credibility.</li>
+<li>Brand rules honored: the business's palette and type (reuse a <code>claude-design-system-architect</code> or <code>design-style-installer</code> token set if present); no purple, no emoji.</li>
+<li>Captions synced (muted autoplay is the default viewing mode), counters and star fills animated deterministically per HyperFrames seek-safety rules, VO via the media pipeline reading the quotes with a neutral warm voice -- or silence with music-bed timing if the user prefers.</li>
+<li>Lint and preview before declaring done; never claim it renders without running the pipeline.</li>
+</ul>
+<h2>Step 4 -- Deliver</h2>
+<p>Platform cuts (9:16, 1:1, 16:9), a thumbnail frame, and the caption text for the post. Note where each cut runs best: review wall for the Google Business Profile and Instagram, spotlight for the website hero and proposals, proof reel for paid.</p>
+<h2>Rules</h2>
+<ul>
+<li>Real quotes from real customers only. Never fabricate, composite, or "improve" a testimonial -- fabricated social proof is a legal problem, not a style choice.</li>
+<li>Get-permission reminder in the deliverable: quotes from private emails need the customer's OK before public use; public reviews are fair to feature.</li>
+<li>Attribution as strong as permitted: full name and business beats first name beats anonymous, in that order of asking.</li>
+<li>One result number per beat -- stacked stats blur; sequenced stats land.</li>
+<li>The CTA matches where the proof points: reviews about service -&gt; book a call; reviews about results -&gt; see pricing.</li>
+</ul>
+<h2>Quick Commands</h2>
+<ul>
+<li>"Testimonial video from [reviews/file]" -- full workflow, format recommended</li>
+<li>"Review wall from my Google reviews" -- wall format from a profile or export</li>
+<li>"Spotlight [customer story]" -- single-story treatment</li>
+<li>"Proof reel from [case study]" -- stats-forward cut</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

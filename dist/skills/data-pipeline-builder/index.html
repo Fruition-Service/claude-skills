@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Pipeline Builder | AI Skills</title>
+  <meta name="description" content="Design and implement production-grade ETL/ELT data pipelines: take data sources, a destination, and transformation requirements, then produce a complete pipeline specification plus all implementation files needed to run it.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Data Pipeline Builder</h1>
+      <p>Design and implement production-grade ETL/ELT data pipelines: take data sources, a destination, and transformation requirements, then produce a complete pipeline specification plus all implementation files needed to run it.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/project-structure.md</code> -- output file layout, architecture pattern selection, component selection.</li>
+<li><code>references/python-patterns.md</code> -- Python code standards and base extractor/transformer/loader/retry patterns.</li>
+<li><code>references/quality-checks.md</code> -- composable data quality check framework and built-in checks.</li>
+<li><code>references/orchestration-config.md</code> -- Airflow DAG, pipeline config YAML, and monitoring/alerting patterns.</li>
+<li><code>references/spec-template.md</code> -- the <code>data-pipeline-spec.md</code> output template.</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li>
+<p>Gather requirements. If the user gave clear requirements, proceed to design. Otherwise ask targeted questions: data sources (databases, APIs, files, streams); destination (warehouse, lake, database); transformations (joins, aggregations, filters, business rules); freshness requirement (real-time, hourly, daily); technology preferences (Airflow, dbt, Spark, cloud provider); data quality and compliance requirements.</p>
+</li>
+<li>
+<p>Analyze and design. Catalog each source (connection type, auth, schema, volume, CDC availability, rate limits). Define the destination (platform, schema design, partitioning, clustering, access patterns). Map transformations (field mappings, business logic, type conversions, joins, aggregations, deduplication, SCD handling, derived fields). Establish non-functional requirements (freshness SLA, processing window, failure tolerance, retention, compliance). Select an architecture pattern and components per <code>references/project-structure.md</code>.</p>
+</li>
+<li>
+<p>Present the design before generating code. Confirm architecture, sources, destination, schedule, key transformations, and quality gates with the user, then proceed on approval.</p>
+</li>
+<li>
+<p>Generate implementation. Produce all files following the layout in <code>references/project-structure.md</code>, customized to the specific pipeline with no placeholder code requiring manual editing:</p>
+</li>
+<li>For each source, generate a concrete extractor inheriting from <code>BaseExtractor</code> (see <code>references/python-patterns.md</code>).</li>
+<li>For each transformation, generate a concrete transformer class or SQL file.</li>
+<li>For each destination, generate a concrete loader inheriting from <code>BaseLoader</code>.</li>
+<li>Generate the Airflow DAG with all task dependencies wired up and the pipeline config YAML (see <code>references/orchestration-config.md</code>).</li>
+<li>Generate quality checks tailored to the data and monitoring config with appropriate alert thresholds (see <code>references/quality-checks.md</code> and <code>references/orchestration-config.md</code>).</li>
+<li>
+<p>Generate tests for all custom business logic.</p>
+</li>
+<li>
+<p>Generate the specification last. Produce <code>data-pipeline-spec.md</code> using <code>references/spec-template.md</code>, referencing all implementation files and incorporating design decisions made during the process.</p>
+</li>
+</ol>
+<h2>Operating Rules</h2>
+<ul>
+<li>Design for idempotency -- make every step safely re-runnable.</li>
+<li>Include watermark/checkpoint tracking for incremental pipelines.</li>
+<li>Include dead letter handling for records that fail processing.</li>
+<li>Include schema evolution handling -- sources will change their schemas.</li>
+<li>Never hardcode credentials -- use environment variables or secret managers.</li>
+<li>Never skip quality checks -- they are the first line of defense against bad data.</li>
+<li>Prefer SQL for transformations expressible in SQL; use Python for complex logic that does not map cleanly to SQL.</li>
+<li>Include a backfill strategy and an operational runbook covering common failure scenarios in the spec.</li>
+<li>Use structured logging throughout and track data lineage at every transformation step.</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

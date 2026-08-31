@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Component Generator | AI Skills</title>
+  <meta name="description" content="When creating React components:">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>React Component Generator</h1>
+      <p>When creating React components:</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Instructions</h2>
+<ol>
+<li><strong>Determine component type</strong>: Client or Server component</li>
+<li><strong>Define props interface</strong> with TypeScript</li>
+<li><strong>Implement with best practices</strong></li>
+<li><strong>Add accessibility attributes</strong></li>
+</ol>
+<h2>Templates</h2>
+<h3>Client Component</h3>
+<p>```tsx
+'use client';</p>
+<p>import { useState, useCallback } from 'react';
+import { cn } from '@/lib/utils';</p>
+<p>interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'primary' | 'secondary' | 'ghost';
+  size?: 'sm' | 'md' | 'lg';
+  isLoading?: boolean;
+  children: React.ReactNode;
+}</p>
+<p>export function Button({
+  variant = 'primary',
+  size = 'md',
+  isLoading = false,
+  children,
+  className,
+  disabled,
+  ...props
+}: ButtonProps) {
+  const baseStyles = 'inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2';</p>
+<p>const variants = {
+    primary: 'bg-blue-600 text-white hover:bg-blue-700',
+    secondary: 'bg-gray-200 text-gray-900 hover:bg-gray-300',
+    ghost: 'hover:bg-gray-100',
+  };</p>
+<p>const sizes = {
+    sm: 'h-8 px-3 text-sm',
+    md: 'h-10 px-4',
+    lg: 'h-12 px-6 text-lg',
+  };</p>
+<p>return (
+    <button
+      className={cn(baseStyles, variants[variant], sizes[size], className)}
+      disabled={disabled || isLoading}
+      aria-busy={isLoading}
+      {...props}
+    >
+      {isLoading ? <span className="animate-spin mr-2">⏳</span> : null}
+      {children}
+    </button>
+  );
+}
+```</p>
+<h3>Server Component</h3>
+<p>```tsx
+import { db } from '@/lib/db';</p>
+<p>interface UserListProps {
+  limit?: number;
+}</p>
+<p>export async function UserList({ limit = 10 }: UserListProps) {
+  const users = await db.user.findMany({ take: limit });</p>
+<p>if (users.length === 0) {
+    return <p className="text-gray-500">No users found.</p>;
+  }</p>
+<p>return (
+    <ul role="list" className="divide-y">
+      {users.map((user) =&gt; (
+        <li key={user.id} className="py-4">
+          <span>{user.name}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+```</p>
+<h3>Form Component with React Hook Form</h3>
+<p>```tsx
+'use client';</p>
+<p>import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';</p>
+<p>const schema = z.object({
+  email: z.string().email('Invalid email'),
+  password: z.string().min(8, 'Min 8 characters'),
+});</p>
+<p>type FormData = z.infer<typeof schema>;</p>
+<p>export function LoginForm({ onSubmit }: { onSubmit: (data: FormData) =&gt; void }) {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<FormData>({
+    resolver: zodResolver(schema),
+  });</p>
+<p>return (
+    <form onSubmit={handleSubmit(onSubmit)} noValidate>
+      <div>
+        <label htmlFor="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          aria-invalid={!!errors.email}
+          aria-describedby={errors.email ? 'email-error' : undefined}
+          {...register('email')}
+        />
+        {errors.email &amp;&amp; (
+          <p id="email-error" role="alert">{errors.email.message}</p>
+        )}
+      </div>
+      <button type="submit" disabled={isSubmitting}>
+        {isSubmitting ? 'Loading...' : 'Submit'}
+      </button>
+    </form>
+  );
+}
+```</p>
+<h2>Accessibility Checklist</h2>
+<ul>
+<li>[ ] Use semantic HTML elements</li>
+<li>[ ] Add <code>aria-label</code> for icon-only buttons</li>
+<li>[ ] Include <code>role</code> attributes where needed</li>
+<li>[ ] Ensure keyboard navigation works</li>
+<li>[ ] Add <code>aria-invalid</code> and <code>aria-describedby</code> for form errors</li>
+<li>[ ] Use <code>aria-busy</code> for loading states</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

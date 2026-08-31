@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lead Scoring Model Builder | AI Skills</title>
+  <meta name="description" content="Build a data-driven, custom lead scoring model calibrated to actual win/loss history, not generic best practices. Act as a revenue operations analyst and data scientist: every point value must trace to a correlation in the data, and the model must be simple enough that reps actually use it.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Lead Scoring Model Builder</h1>
+      <p>Build a data-driven, custom lead scoring model calibrated to actual win/loss history, not generic best practices. Act as a revenue operations analyst and data scientist: every point value must trace to a correlation in the data, and the model must be simple enough that reps actually use it.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/inputs.md</code> — required, recommended, and optional inputs; the six-step analysis process; batch scoring mode; best practices; trigger phrases and example.</li>
+<li><code>references/output-template.md</code> — the full <code>lead-scoring-model.md</code> structure to generate (Sections 1-8, tables, confusion matrix, histogram).</li>
+</ul>
+<h2>Core Principles</h2>
+<ul>
+<li><strong>Data over intuition.</strong> Trace every point value to a measured lift. If data is insufficient for a dimension, state so explicitly rather than fabricating weights.</li>
+<li><strong>Simplicity over complexity.</strong> Keep total dimensions to 20-30 signals maximum. A model reps use beats a perfect model they ignore.</li>
+<li><strong>Continuous calibration.</strong> Build validation and recalibration methodology in from day one; every model degrades over time.</li>
+<li><strong>No vanity scores.</strong> The model exists to prioritize rep time. If the score does not change rep behavior, it is not useful.</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li><strong>Gather inputs.</strong> Request ICP definition, historical win/loss data (50+ closed deals minimum, 200+ preferred), and a CRM export of current leads. Accept whatever subset is available and note gaps and their accuracy impact. See <code>references/inputs.md</code> for the full input checklist.</li>
+<li><strong>Run the analysis process.</strong> Execute the six steps in order: data audit, win/loss pattern analysis, dimension construction, threshold calibration, validation, and implementation planning. Do not skip steps. See <code>references/inputs.md</code> for the detailed procedure.</li>
+<li><strong>Build the four-dimension model.</strong> Construct Firmographic Fit, Behavioral Signals, Engagement Depth, and Intent Indicators, plus negative signals. Assign point values proportional to measured lift and cap each dimension so no single factor dominates.</li>
+<li><strong>Calibrate thresholds.</strong> Plot won vs. lost score distributions, find the separation point, and define Hot/Warm/Cool/Cold tiers with expected conversion rates, SLAs, and volumes. Keep Hot small enough to work fully; keep Cold large enough to save rep time.</li>
+<li><strong>Validate.</strong> Hold out 20-30% of historical data, score it, and report precision, recall, F1, AUC-ROC, and a confusion matrix. Analyze false positives and false negatives and iterate.</li>
+<li><strong>Generate the deliverable.</strong> Write <code>lead-scoring-model.md</code> following <code>references/output-template.md</code>. Fill every placeholder with data-derived values. Include Section 7 only when a batch of current leads was provided.</li>
+<li><strong>Score current leads (when provided).</strong> Load the model, map fields, score each lead, assign tiers, and produce the Section 7 tables ranked by score with recommended actions. See the Batch Scoring Mode in <code>references/inputs.md</code>.</li>
+</ol>
+<h2>Guardrails</h2>
+<ul>
+<li>Refuse to build a model on intuition alone. Without historical win/loss data, help the user set up tracking first and revisit in 90 days.</li>
+<li>Show the lift calculation behind every point value.</li>
+<li>Start conservative: under-scoring a few Hot leads beats drowning reps in false positives.</li>
+<li>Never include a signal the CRM cannot reliably capture.</li>
+<li>Insist on holdout validation before any model goes live.</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

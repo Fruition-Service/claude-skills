@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pitch Deck Reviewer — Free Claude Skill | Claude Skills Library</title>
+  <meta name="description" content="Reviews pitch decks and investor presentations. Reads slide content, evaluates narrative flow, problem/solution clarity, market sizing, competitive positio">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Claude Skills Library">
+  <link rel="canonical" href="https://fruition-service.github.io/claude-skills/skills/pitch-deck-reviewer/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Pitch Deck Reviewer — Free Claude Skill | Claude Skills Library">
+  <meta property="og:description" content="Reviews pitch decks and investor presentations. Reads slide content, evaluates narrative flow, problem/solution clarity, market sizing, competitive positio">
+  <meta property="og:url" content="https://fruition-service.github.io/claude-skills/skills/pitch-deck-reviewer/">
+  <meta property="og:site_name" content="Claude Skills Library">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pitch Deck Reviewer — Free Claude Skill | Claude Skills Library">
+  <meta name="twitter:description" content="Reviews pitch decks and investor presentations. Reads slide content, evaluates narrative flow, problem/solution clarity, market sizing, competitive positio">
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Pitch Deck Reviewer", "description": "Reviews pitch decks and investor presentations. Reads slide content, evaluates narrative flow, problem/solution clarity, market sizing, competitive positio", "url": "https://fruition-service.github.io/claude-skills/skills/pitch-deck-reviewer/", "isPartOf": {"@type": "WebSite", "name": "Claude Skills Library", "url": "https://fruition-service.github.io/claude-skills/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://fruition-service.github.io/claude-skills/"}, {"@type": "ListItem", "position": 2, "name": "Skills", "item": "https://fruition-service.github.io/claude-skills/#skills"}, {"@type": "ListItem", "position": 3, "name": "Pitch Deck Reviewer", "item": "https://fruition-service.github.io/claude-skills/skills/pitch-deck-reviewer/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Pitch Deck Reviewer", "description": "Reviews pitch decks and investor presentations. Reads slide content, evaluates narrative flow, problem/solution clarity, market sizing, competitive positio", "codeRepository": "https://github.com/OneWave-AI/claude-skills/tree/main/pitch-deck-reviewer", "programmingLanguage": "Markdown", "license": "https://opensource.org/licenses/MIT", "isAccessibleForFree": true}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the Pitch Deck Reviewer Claude skill?", "acceptedAnswer": {"@type": "Answer", "text": "Reviews pitch decks and investor presentations. Reads slide content, evaluates narrative flow, problem/solution clarity, market sizing, competitive positio"}}, {"@type": "Question", "name": "How do I install Pitch Deck Reviewer?", "acceptedAnswer": {"@type": "Answer", "text": "Create ~/.claude/skills/pitch-deck-reviewer/SKILL.md and paste the skill content, or clone the OneWave-AI/claude-skills repository. Claude Code loads skills automatically with no restart."}}, {"@type": "Question", "name": "When should I use Pitch Deck Reviewer?", "acceptedAnswer": {"@type": "Answer", "text": "Use Pitch Deck Reviewer when your task matches the skill description: Reviews pitch decks and investor presentations. Reads slide content, evaluates narrative flow, problem/solution clarity, market sizing, competitive positio"}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Install the Pitch Deck Reviewer Claude skill", "description": "Add Pitch Deck Reviewer to Claude Code in under a minute.", "step": [{"@type": "HowToStep", "position": 1, "name": "Create the skill folder", "text": "mkdir -p ~/.claude/skills/pitch-deck-reviewer"}, {"@type": "HowToStep", "position": 2, "name": "Download SKILL.md", "text": "Save the skill file to ~/.claude/skills/pitch-deck-reviewer/SKILL.md"}, {"@type": "HowToStep", "position": 3, "name": "Start using the skill", "text": "Claude Code picks up the skill immediately — describe your task or invoke it by name."}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html">Claude Skills Library</a>
+      <nav aria-label="Primary">
+        <a href="../../index.html">All skills</a>
+        <a href="https://github.com/OneWave-AI/claude-skills/tree/main/pitch-deck-reviewer" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <a href="../../index.html">Home</a> / <a href="../../index.html#skills">Skills</a> / <span>Pitch Deck Reviewer</span>
+    </nav>
+    <article itemscope itemtype="https://schema.org/SoftwareSourceCode">
+      <p class="eyebrow">Strategy &amp;amp; Finance</p>
+      <h1 itemprop="name">Pitch Deck Reviewer</h1>
+      <p class="lead" itemprop="description">Reviews pitch decks and investor presentations. Reads slide content, evaluates narrative flow, problem/solution clarity, market sizing, competitive positio</p>
+      <section aria-labelledby="what-is">
+        <h2 id="what-is">What is Pitch Deck Reviewer?</h2>
+        <p>Reviews pitch decks and investor presentations. Reads slide content, evaluates narrative flow, problem/solution clarity, market sizing, competitive positio This free Claude skill teaches Claude how to handle a specific workflow with structured steps and best practices.</p>
+      </section>
+      <section aria-labelledby="skill-content" class="skill-content">
+        <h2 id="skill-content">Skill instructions</h2>
+        <h2>Pitch Deck Reviewer</h2>
+<p>Review a pitch deck with VC-grade rigor and produce a scored, actionable <code>pitch-review.md</code>.</p>
+<h3>Contents</h3>
+<ul>
+<li><code>references/evaluation-framework.md</code> -- The 8 scored dimensions, weights, red flags, scoring guides, design notes, and overall-score calculation.</li>
+<li><code>references/objections-and-benchmarks.md</code> -- Investor objection categories and the canonical successful-deck benchmarks.</li>
+<li><code>references/output-template.md</code> -- The exact <code>pitch-review.md</code> structure to generate.</li>
+</ul>
+<h3>Workflow</h3>
+<ol>
+<li>Ingest the deck. Determine file type and location, then read every slide. Supported inputs: PDF (Read directly; for 10+ pages read in batches via the <code>pages</code> parameter), PowerPoint .pptx (invoke the pptx skill or Read), Google Slides links (WebFetch if public), images PNG/JPG (Read to inspect visually), markdown/text descriptions, and directories of slide images (Glob to enumerate, then Read each). For .pen files, state that they cannot be read directly.</li>
+<li>Build a slide inventory. Catalog each slide by number and primary content before any analysis. Identify company name, stage, and industry. Flag any deck over 20 slides as a concern itself; most successful decks run 10-15.</li>
+<li>Score the 8 dimensions. Apply <code>references/evaluation-framework.md</code>. Score each 1-10 with specific evidence from the deck, then compute the weighted overall score and assign the grade label.</li>
+<li>Write slide-by-slide feedback. Cover every slide with content summary, purpose, effectiveness, strengths, weaknesses, and recommendations.</li>
+<li>Predict investor objections. Generate at least 5 using the categories in <code>references/objections-and-benchmarks.md</code>, each with severity, trigger, suggested verbal response, and deck fix.</li>
+<li>Compare to benchmark decks. Reference at least 2 relevant decks from <code>references/objections-and-benchmarks.md</code>; name where this deck is stronger, weaker, and what to borrow.</li>
+<li>Rank the top 5 improvements by impact and list any missing slides or sections for this stage and industry.</li>
+<li>Assemble <code>pitch-review.md</code> per <code>references/output-template.md</code>. Write the executive summary last. Save it beside the source deck (or the working directory). Show the overall-score math.</li>
+</ol>
+<h3>Calibration</h3>
+<ul>
+<li>Verify any market-size, revenue, or growth claim with WebSearch before accepting it. Never fabricate metrics, comparisons, or statistics.</li>
+<li>Reserve 9-10 on a dimension for work that sets a new standard. Give an overall below 3.0 only when the deck has almost no usable content.</li>
+<li>Adjust for stage: weight pre-product decks toward problem/solution clarity, team, and market; relax traction and financials expectations and note the calibration.</li>
+<li>Score absent major sections (e.g., missing financials or team) 1-2 and flag them in the executive summary and the missing-sections list. Review works in progress rather than refusing.</li>
+<li>Evaluate intentionally unconventional decks (memo-style, demo-first, single-page) on their own terms while noting the divergence from convention.</li>
+<li>For multiple versions, review the latest and note which changes improved the deck and which regressed.</li>
+</ul>
+<h3>Voice</h3>
+<ul>
+<li>Be direct and specific. Replace vague praise with concrete observations.</li>
+<li>Pair every critique with a concrete fix.</li>
+<li>Use investor framing (&quot;This raises a question about...&quot;) over verdicts (&quot;This is bad&quot;).</li>
+<li>Acknowledge what works before identifying gaps. Define any jargon used.</li>
+<li>Write for the founder, to help them improve.</li>
+</ul>
+      </section>
+      <section aria-labelledby="install" class="install">
+        <h2 id="install">Install in Claude Code</h2>
+        <pre><code>mkdir -p ~/.claude/skills/pitch-deck-reviewer
+curl -sL https://raw.githubusercontent.com/OneWave-AI/claude-skills/main/pitch-deck-reviewer/SKILL.md -o ~/.claude/skills/pitch-deck-reviewer/SKILL.md</code></pre>
+      </section>
+      <section aria-labelledby="faq" class="faq">
+        <h2 id="faq">Frequently asked questions</h2>
+        <dl>
+          <dt>What is the Pitch Deck Reviewer Claude skill?</dt>
+          <dd>Reviews pitch decks and investor presentations. Reads slide content, evaluates narrative flow, problem/solution clarity, market sizing, competitive positio</dd>
+          <dt>Is Pitch Deck Reviewer free to use?</dt>
+          <dd>Yes. Skills from the OneWave library are MIT licensed and free for personal and commercial use.</dd>
+          <dt>Where does the skill file go?</dt>
+          <dd>Personal skills live in <code>~/.claude/skills/pitch-deck-reviewer/SKILL.md</code>. Project-specific skills go in <code>.claude/skills/</code> inside your repo.</dd>
+        </dl>
+      </section>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>Mirrored from <a href="https://www.onewave-ai.com/resources/claude-skills/pitch-deck-reviewer" rel="noopener">OneWave AI</a>. Source: <a href="https://github.com/OneWave-AI/claude-skills" rel="noopener">OneWave-AI/claude-skills</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

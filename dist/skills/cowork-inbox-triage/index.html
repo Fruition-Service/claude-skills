@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cowork Inbox Triage | AI Skills</title>
+  <meta name="description" content="Work an inbox the way a good chief of staff does: everything gets a disposition, nothing gets sent without approval, and the owner ends the run with a short list of real decisions instead of 80 unread threads. Uses the connected mail tools (Microsoft 365 or Gmail MCP connectors) for reading, labeling, and drafting.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Cowork Inbox Triage</h1>
+      <p>Work an inbox the way a good chief of staff does: everything gets a disposition, nothing gets sent without approval, and the owner ends the run with a short list of real decisions instead of 80 unread threads. Uses the connected mail tools (Microsoft 365 or Gmail MCP connectors) for reading, labeling, and drafting.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Setup</h2>
+<p>On first run, learn the owner's voice: read 10-15 sent replies and note greeting style, sign-off, sentence length, and formality. Store the profile in the conversation and reuse it for every draft. Ask once which categories matter (default set below) and what the auto-archive rules are.</p>
+<h2>Workflow</h2>
+<ol>
+<li><strong>Sweep.</strong> Pull unread and flagged threads from the last cycle (default: 24 hours). Group by thread, not message.</li>
+<li><strong>Classify</strong> every thread into exactly one bucket:</li>
+<li><code>NEEDS DECISION</code> -- only the owner can answer (pricing, commitments, personnel)</li>
+<li><code>DRAFT READY</code> -- routine reply Claude can write for approval</li>
+<li><code>WAITING ON THEM</code> -- owner already replied; schedule a follow-up check</li>
+<li><code>FYI</code> -- no response needed; summarize in the digest</li>
+<li><code>NOISE</code> -- newsletters, notifications, cold outreach; label/archive per the standing rules</li>
+<li><strong>Draft.</strong> For every <code>DRAFT READY</code> thread, write the reply in the owner's voice as a draft -- never send. Keep drafts shorter than the email being answered.</li>
+<li><strong>Follow-ups.</strong> For <code>WAITING ON THEM</code> threads past their expected response window (default 3 business days), draft a polite bump. For threads with dates in them, propose calendar holds via the calendar write tools.</li>
+<li><strong>Digest.</strong> Post one summary: decisions needed (with one-line context and a recommended answer each), drafts awaiting approval, follow-ups queued, and a one-line count of what was archived.</li>
+</ol>
+<h2>Rules</h2>
+<ul>
+<li>Never send email. Create drafts only; the human sends.</li>
+<li>Never archive anything that mentions money, contracts, legal matters, or a specific person's problem -- misclassified noise is recoverable, a missed client email is not.</li>
+<li>A recommended answer accompanies every <code>NEEDS DECISION</code> item. Surfacing a question without a recommendation is half the job.</li>
+<li>Quote the sender's actual ask in the digest -- do not paraphrase requests into vagueness.</li>
+<li>Respect confidentiality: HR, health, and personal matters get flagged privately, never summarized in a shared channel.</li>
+<li>If the connector lacks write scope, degrade gracefully: produce the digest and paste-ready reply texts instead of drafts.</li>
+</ul>
+<h2>Scheduled Mode</h2>
+<p>As a Cowork scheduled task (weekday mornings), run the full workflow unattended in a cloud session and deliver the digest before the workday starts. Track threads across runs so a bump is never drafted twice for the same silence.</p>
+<h2>Quick Commands</h2>
+<ul>
+<li>"Triage my inbox" -- full run, last 24h</li>
+<li>"Catch me up" -- sweep and digest only, no drafts</li>
+<li>"Draft replies to everything easy" -- classification + drafts only</li>
+<li>"Who am I waiting on?" -- the <code>WAITING ON THEM</code> ledger with days elapsed</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renewal Predictor | AI Skills</title>
+  <meta name="description" content="Predict client renewal likelihood by computing a multi-dimensional Health Score and generating an actionable, evidence-backed risk assessment for every account.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Renewal Predictor</h1>
+      <p>Predict client renewal likelihood by computing a multi-dimensional Health Score and generating an actionable, evidence-backed risk assessment for every account.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Core Mission</h2>
+<p>For every account, answer three questions:</p>
+<ol>
+<li>Will this client renew, and with what confidence?</li>
+<li>What signals are driving that prediction?</li>
+<li>What specific intervention should the team execute right now?</li>
+</ol>
+<h2>Contents</h2>
+<ul>
+<li><code>references/dimension-rubrics.md</code> -- 0-100 scoring criteria, data sources, red/green flags for all 7 dimensions</li>
+<li><code>references/confidence-and-scoring.md</code> -- composite formula, thresholds, confidence calibration, missing-data rules, edge cases</li>
+<li><code>references/signals.md</code> -- compound churn and expansion signals with severity tiers</li>
+<li><code>references/save-plays.md</code> -- intervention templates by priority</li>
+<li><code>references/output-template.md</code> -- exact structure for <code>renewal-forecast.md</code></li>
+<li><code>references/data-templates.md</code> -- CSV templates to request when data is missing</li>
+</ul>
+<h2>Health Score Model</h2>
+<p>The Health Score is a composite metric from 0 to 100, built from seven weighted dimensions. Score each dimension independently on a 0-100 scale using <code>references/dimension-rubrics.md</code>, then combine with these weights:</p>
+<p>| Dimension | Weight |
+|---|---|
+| Engagement Frequency | 20% |
+| Support Ticket Volume and Sentiment | 15% |
+| Feature Adoption | 20% |
+| NPS/CSAT Scores | 10% |
+| Billing History | 10% |
+| Stakeholder Continuity | 10% |
+| Usage Trends | 15% |</p>
+<p>Map the composite score to a prediction category (80-100 Likely to Renew, 60-79 Neutral/Monitor, 40-59 At Risk, 0-39 Likely to Churn). See <code>references/confidence-and-scoring.md</code> for the formula, thresholds, and confidence rules.</p>
+<h2>Execution Protocol</h2>
+<ol>
+<li><strong>Discover available data.</strong> Use Glob to find CSV, JSON, YAML, or XLSX files, CRM exports, meeting notes, or communication logs in the working directory. Use Grep for account names, metric patterns, and keywords like "churn," "cancel," "renew," "escalat," "competitor," "discount," "downgrade." If no data is found, request the templates in <code>references/data-templates.md</code> and stop.</li>
+<li><strong>Parse and normalize.</strong> For each account, extract values for as many of the seven dimensions as the data supports. Normalize every metric to the 0-100 scale in <code>references/dimension-rubrics.md</code>. Flag insufficient, missing, or ambiguous dimensions. Record the raw evidence behind each score.</li>
+<li><strong>Compute Health Scores.</strong> Score each dimension, apply the weights, compute the composite, map to a prediction category, and determine confidence per <code>references/confidence-and-scoring.md</code> (including the missing-data rules).</li>
+<li><strong>Detect signals.</strong> Scan for churn and expansion signals in <code>references/signals.md</code>. Cross-reference across dimensions for compound signals. Tag each with severity and triggering evidence.</li>
+<li><strong>Generate interventions.</strong> For At Risk or Likely to Churn accounts, identify the root cause, select the most impactful play from <code>references/save-plays.md</code>, and assign priority by ARR at risk, renewal proximity, and signal severity, with a clear owner, deadline, and success metric. For Likely to Renew accounts with expansion signals, suggest a specific upsell or cross-sell motion and its trigger.</li>
+<li><strong>Write the forecast.</strong> Generate <code>renewal-forecast.md</code> following <code>references/output-template.md</code>. Support every claim with evidence; make every recommendation actionable and specific.</li>
+</ol>
+<h2>Behavioral Guidelines</h2>
+<ol>
+<li>Evidence over intuition. Every score must cite the specific data that produced it. If data is missing, say so explicitly. Never infer a score without evidence.</li>
+<li>Conservative predictions. When signals conflict, weight negative signals more heavily. A false At Risk flag is cheaper than a missed churn signal.</li>
+<li>Actionable specificity. "Improve engagement" is not a recommendation. "Schedule a QBR with [Champion Name] by [Date] to review Q3 usage trends and introduce the new reporting module" is.</li>
+<li>No false precision. Report whole-number scores. Do not claim 92% confidence when data covers three of seven dimensions.</li>
+<li>Temporal awareness. Weight recent signals more heavily than older ones, and note the recency of the data behind each score.</li>
+<li>Portfolio thinking. Identify systemic themes (e.g., "4 of 12 accounts have champion turnover this quarter") and surface them in the executive summary.</li>
+<li>Renewal proximity urgency. Accounts renewing within 90 days get elevated priority regardless of health score.</li>
+<li>Think in ARR. Frame every classification and priority in terms of revenue impact.</li>
+<li>Assume nothing about data maturity. Adapt depth and precision to the available data, and state what additional data would improve the forecast.</li>
+<li>Never refuse to produce a forecast because data is incomplete. Work with what is available, flag what is not, and deliver with clear confidence markers.</li>
+</ol>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

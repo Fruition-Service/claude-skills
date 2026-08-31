@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sub-Agent Orchestrator | AI Skills</title>
+  <meta name="description" content="Design and execute multi-agent pipelines where each step is a different agent that depends on the previous one. Define roles, dependencies, and handoffs in YAML, then run sequential, parallel, conditional, loop, and map-reduce workflows with retry, timeout, and validation.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Sub-Agent Orchestrator</h1>
+      <p>Design and execute multi-agent pipelines where each step is a different agent that depends on the previous one. Define roles, dependencies, and handoffs in YAML, then run sequential, parallel, conditional, loop, and map-reduce workflows with retry, timeout, and validation.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <p>Unlike Agent Army (homogeneous parallel code changes) and Agent Swarm (homogeneous parallel data processing), this orchestrator coordinates heterogeneous pipelines where the output of A feeds the input of B.</p>
+<h2>Contents</h2>
+<ul>
+<li><code>references/patterns.md</code> -- The six workflow patterns and the comparison to Agent Army/Swarm.</li>
+<li><code>references/workflow-schema.md</code> -- Full YAML workflow definition language.</li>
+<li><code>references/examples.md</code> -- Complete worked workflows (research-to-proposal, lead scoring).</li>
+<li><code>references/execution-engine.md</code> -- Per-step execution model, retry, timeout, validation, edge cases.</li>
+<li><code>references/templates.md</code> -- Reusable workflow scaffolds.</li>
+<li><code>references/visual-and-reporting.md</code> -- Text diagrams and the execution report template.</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li>Determine the mode from the request:</li>
+<li>Run a workflow file: read the YAML at the given path.</li>
+<li>Define and run inline: convert the natural-language description into a workflow YAML (see <code>references/workflow-schema.md</code>), then show it for approval.</li>
+<li>Dry run: parse, validate, resolve inputs, and show the execution plan without deploying agents.</li>
+<li>
+<p>Inspect: parse the YAML and produce a human-readable description plus a text diagram (see <code>references/visual-and-reporting.md</code>).</p>
+</li>
+<li>
+<p>Parse and validate the workflow: confirm required fields, that agent IDs resolve, and that there are no circular dependencies. Report syntax or reference errors with the offending line. See <code>references/execution-engine.md</code>.</p>
+</li>
+<li>
+<p>Resolve inputs: collect every required input from the user before starting; apply defaults for optional inputs.</p>
+</li>
+<li>
+<p>Build the execution DAG and run each step in topological order using the matching execution model (sequential, parallel, conditional, loop, map). See <code>references/execution-engine.md</code>.</p>
+</li>
+<li>
+<p>After each agent completes, validate its output against the agent's schema and rules. On failure, apply the retry/timeout/failure policy (skip, abort, or fallback).</p>
+</li>
+<li>
+<p>On completion, present results using the execution report template in <code>references/visual-and-reporting.md</code>. For partial or failed runs, report what completed, what failed, and any collected partial output.</p>
+</li>
+</ol>
+<h2>Choosing a pattern</h2>
+<p>Match the task shape to a pattern, then scaffold from <code>references/templates.md</code>:</p>
+<ul>
+<li>Strict ordering of distinct steps: sequential chain.</li>
+<li>One input scored or analyzed from multiple angles: parallel fan-out/fan-in.</li>
+<li>Input routed by classification: conditional routing.</li>
+<li>Output must meet a quality bar: loop with a validator.</li>
+<li>Large input chunked and recombined: map-reduce.</li>
+<li>A step needs a backup approach on failure: pipeline with fallback.</li>
+</ul>
+<p>See <code>references/patterns.md</code> for diagrams and examples of each.</p>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investor Update Writer | AI Skills</title>
+  <meta name="description" content="Generate professional, honest, data-driven investor updates that keep investors informed and ready to help, with tone calibrated from seed-stage transparency to growth-stage formality.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Investor Update Writer</h1>
+      <p>Generate professional, honest, data-driven investor updates that keep investors informed and ready to help, with tone calibrated from seed-stage transparency to growth-stage formality.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/output-template.md</code> -- full investor-update.md structure to produce</li>
+<li><code>references/tone-and-cadence.md</code> -- voice by stage; monthly vs quarterly depth</li>
+<li><code>references/industry-metrics.md</code> -- which metrics to emphasize by business model</li>
+<li><code>references/sensitive-situations.md</code> -- handling misses, departures, pivots, down rounds; mistakes to avoid</li>
+<li><code>references/examples.md</code> -- worked request-to-approach examples</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li>
+<p><strong>Gather inputs.</strong> Collect or confirm: company basics (name, period, stage, industry); KPIs (revenue/MRR/ARR current and prior, burn, runway, customer count, growth rate, domain metrics); milestones and wins; challenges and learnings; financial summary (cash, revenue breakdown, expenses, fundraising status); upcoming milestones; and asks. Optional inputs include team changes, customer stories, competitive shifts, roadmap, cohort/retention data, and pipeline. Work with whatever is available and note gaps.</p>
+</li>
+<li>
+<p><strong>Calibrate tone and cadence.</strong> Select the voice for the company's stage and the depth for monthly vs quarterly. See <code>references/tone-and-cadence.md</code>. Honor any explicit tone request.</p>
+</li>
+<li>
+<p><strong>Select industry emphasis.</strong> Choose the metrics that matter for the business model. See <code>references/industry-metrics.md</code>.</p>
+</li>
+<li>
+<p><strong>Draft against the template.</strong> Produce <code>investor-update.md</code> following <code>references/output-template.md</code>. Add the date or period to the filename if the user prefers. Omit sections with no material content.</p>
+</li>
+<li>
+<p><strong>Apply the writing principles.</strong> Lead with the headline. Be honest about challenges and frame them with a response plan. Use numbers, not adjectives. Make it scannable with headers, bold, tables, and bullets. End with specific, actionable asks. Keep the format consistent period over period. Respect reader time (3-5 min monthly, deeper quarterly). Show trajectory with period-over-period comparisons. Use no emojis. Connect every metric to what it means for the business.</p>
+</li>
+<li>
+<p><strong>Handle sensitive content.</strong> For missed targets, departures, pivots, down rounds, or fundraising, follow <code>references/sensitive-situations.md</code>.</p>
+</li>
+<li>
+<p><strong>Integrate data sources.</strong> Given files or connected tools, extract and format automatically: parse CSV/spreadsheets for KPIs and trends; read prior updates for format consistency and period-over-period deltas; pull cash/burn/revenue/expenses from financial documents; pull pipeline, customer counts, deal values, and churn from CRM exports; incorporate usage, activation, and adoption from product analytics. Cross-reference extracted data with user-provided inputs and flag discrepancies.</p>
+</li>
+<li>
+<p><strong>Run the quality checklist.</strong> Confirm before delivering:</p>
+</li>
+<li>TL;DR present, covering the 3-5 most important items</li>
+<li>Every KPI shows current and prior values with percentage change</li>
+<li>At least one challenge or learning described honestly</li>
+<li>Financial summary includes cash position, burn rate, and runway</li>
+<li>Upcoming milestones include specific dates and measurable criteria</li>
+<li>Asks section contains at least one specific, actionable request</li>
+<li>Tone matches company stage and user preference</li>
+<li>No emojis anywhere</li>
+<li>Dollar amounts and percentages formatted consistently</li>
+<li>Readable in under 5 minutes (monthly) or 10 minutes (quarterly)</li>
+<li>Previous-period milestones scored as hit, missed, or partial</li>
+<li>
+<p>Confidentiality notice and contact information included</p>
+</li>
+<li>
+<p><strong>Remind on confidentiality.</strong> Every update includes a confidentiality notice. Advise the user to send via secure channels (not public links), use BCC or a dedicated platform for large lists, review for anything they are not comfortable sharing, and consider separate versions for different investor tiers.</p>
+</li>
+</ol>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

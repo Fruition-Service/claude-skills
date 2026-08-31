@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HyperFrames Sales Demo Builder | AI Skills</title>
+  <meta name="description" content="The best-converting sales video isn't a generic product tour — it's a two-minute walkthrough that names the prospect's company, shows the exact workflow they care about, and ends with one obvious next step. This skill builds that, repeatably, in HyperFrames.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>HyperFrames Sales Demo Builder</h1>
+      <p>The best-converting sales video isn't a generic product tour — it's a two-minute walkthrough that names the prospect's company, shows the exact workflow they care about, and ends with one obvious next step. This skill builds that, repeatably, in HyperFrames.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <p>Use it for: warm follow-up after a discovery call, breaking into a target account, re-engaging a stalled deal, or replacing a live demo with something the buyer can forward internally to the people who weren't on the call.</p>
+<p>For composition/caption/TTS/render mechanics, invoke the <code>hyperframes</code>, <code>hyperframes-cli</code>, and <code>hyperframes-media</code> skills. This skill owns the personalization and the sales narrative.</p>
+<h2>Step 1 — Gather the account context</h2>
+<ul>
+<li><strong>Who</strong> — the prospect/account, the persona of the viewer (champion vs. economic buyer — load from <code>icp-deep-scanner</code> personas if available). The same product gets a different demo for each.</li>
+<li><strong>Their problem</strong> — the specific pain from discovery notes / CRM (read-only) / their public site. Personalize to <em>their</em> job, not a feature list.</li>
+<li><strong>The workflow to show</strong> — the 2–3 moments that prove value for them, not the full product.</li>
+<li><strong>Proof</strong> — the metric, customer, or before/after most relevant to their situation.</li>
+<li><strong>Next step</strong> — book a call, start a trial, loop in a stakeholder.</li>
+</ul>
+<p><strong>Security:</strong> read CRM/notes read-only; never write to the CRM or send anything automatically. Don't put another customer's confidential data into this prospect's video. Secrets via env vars.</p>
+<h2>Step 2 — Script the walkthrough</h2>
+<p>Structure that converts:
+1. <strong>Personalized open</strong> — name them and their problem in the first 10 seconds ("{Name}, you mentioned {pain} — here's exactly how we'd handle that").
+2. <strong>The relevant workflow</strong> — show the 2–3 moments that matter to <em>them</em>, narrated as their use case.
+3. <strong>Proof</strong> — the most relevant result, briefly.
+4. <strong>One clear CTA</strong> — a single next step, with urgency that's real, not manufactured.</p>
+<p>Keep it under ~2–3 minutes. A demo they finish beats a thorough one they abandon.</p>
+<h2>Step 3 — Build &amp; brand the composition</h2>
+<ul>
+<li>Author scene blocks per script beat (<code>hyperframes</code>).</li>
+<li><strong>Brand to the prospect where tasteful</strong> — their logo on the open/close, their use-case language on screen. Reuse a <code>claude-design-system-architect</code> kit for your own brand consistency. No purple, no emoji unless branded.</li>
+<li><strong>Screen content</strong> — use real product screens/recordings or clean mockups; annotate with motion to direct the eye to the value moment.</li>
+<li><strong>Captions</strong> synced to VO (forwarded internally and watched muted).</li>
+<li><strong>Voiceover</strong> — warm, conversational, first-name; generate via the HyperFrames media pipeline (or <code>edge-tts</code> neural voice). Consider a recorded human VO for high-value accounts.</li>
+<li>Lint + preview before delivery; render the final.</li>
+</ul>
+<h2>Step 4 — Deliver</h2>
+<p>```markdown</p>
+<h1>Sales demo: {Account} — {viewer persona}</h1>
+<ul>
+<li>Personalized cold-open line</li>
+<li>Walkthrough script (beats)</li>
+<li>Composition path + render command</li>
+<li>Suggested send copy (email/LinkedIn) to accompany the video</li>
+<li>The single CTA
+```</li>
+</ul>
+<p>Offer to write the accompanying send copy via <code>cold-email-sequence-generator</code>, test the open line in <code>prospect-panel-simulator</code>, and produce a short 30s teaser cut via <code>hyperframes-ad-director</code>.</p>
+<h2>Guardrails recap</h2>
+<p>Personalize to their problem, not your feature list · show only the 2–3 value moments · one CTA · never expose another customer's confidential data · read-only CRM, no auto-send · captions + brand always · lint/preview/render before claiming done.</p>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

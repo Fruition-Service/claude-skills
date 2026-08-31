@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inventory Reorder Planner — Free Claude Skill | Claude Skills Library</title>
+  <meta name="description" content="Turn sales history and current stock counts into reorder points, order quantities, and a this-week purchase list -- so a product business stops stocking ou">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Claude Skills Library">
+  <link rel="canonical" href="https://fruition-service.github.io/claude-skills/skills/inventory-reorder-planner/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Inventory Reorder Planner — Free Claude Skill | Claude Skills Library">
+  <meta property="og:description" content="Turn sales history and current stock counts into reorder points, order quantities, and a this-week purchase list -- so a product business stops stocking ou">
+  <meta property="og:url" content="https://fruition-service.github.io/claude-skills/skills/inventory-reorder-planner/">
+  <meta property="og:site_name" content="Claude Skills Library">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Inventory Reorder Planner — Free Claude Skill | Claude Skills Library">
+  <meta name="twitter:description" content="Turn sales history and current stock counts into reorder points, order quantities, and a this-week purchase list -- so a product business stops stocking ou">
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Inventory Reorder Planner", "description": "Turn sales history and current stock counts into reorder points, order quantities, and a this-week purchase list -- so a product business stops stocking ou", "url": "https://fruition-service.github.io/claude-skills/skills/inventory-reorder-planner/", "isPartOf": {"@type": "WebSite", "name": "Claude Skills Library", "url": "https://fruition-service.github.io/claude-skills/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://fruition-service.github.io/claude-skills/"}, {"@type": "ListItem", "position": 2, "name": "Skills", "item": "https://fruition-service.github.io/claude-skills/#skills"}, {"@type": "ListItem", "position": 3, "name": "Inventory Reorder Planner", "item": "https://fruition-service.github.io/claude-skills/skills/inventory-reorder-planner/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Inventory Reorder Planner", "description": "Turn sales history and current stock counts into reorder points, order quantities, and a this-week purchase list -- so a product business stops stocking ou", "codeRepository": "https://github.com/OneWave-AI/claude-skills/tree/main/inventory-reorder-planner", "programmingLanguage": "Markdown", "license": "https://opensource.org/licenses/MIT", "isAccessibleForFree": true}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the Inventory Reorder Planner Claude skill?", "acceptedAnswer": {"@type": "Answer", "text": "Turn sales history and current stock counts into reorder points, order quantities, and a this-week purchase list -- so a product business stops stocking ou"}}, {"@type": "Question", "name": "How do I install Inventory Reorder Planner?", "acceptedAnswer": {"@type": "Answer", "text": "Create ~/.claude/skills/inventory-reorder-planner/SKILL.md and paste the skill content, or clone the OneWave-AI/claude-skills repository. Claude Code loads skills automatically with no restart."}}, {"@type": "Question", "name": "When should I use Inventory Reorder Planner?", "acceptedAnswer": {"@type": "Answer", "text": "Use Inventory Reorder Planner when your task matches the skill description: Turn sales history and current stock counts into reorder points, order quantities, and a this-week purchase list -- so a product business stops stocking ou"}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Install the Inventory Reorder Planner Claude skill", "description": "Add Inventory Reorder Planner to Claude Code in under a minute.", "step": [{"@type": "HowToStep", "position": 1, "name": "Create the skill folder", "text": "mkdir -p ~/.claude/skills/inventory-reorder-planner"}, {"@type": "HowToStep", "position": 2, "name": "Download SKILL.md", "text": "Save the skill file to ~/.claude/skills/inventory-reorder-planner/SKILL.md"}, {"@type": "HowToStep", "position": 3, "name": "Start using the skill", "text": "Claude Code picks up the skill immediately — describe your task or invoke it by name."}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html">Claude Skills Library</a>
+      <nav aria-label="Primary">
+        <a href="../../index.html">All skills</a>
+        <a href="https://github.com/OneWave-AI/claude-skills/tree/main/inventory-reorder-planner" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <a href="../../index.html">Home</a> / <a href="../../index.html#skills">Skills</a> / <span>Inventory Reorder Planner</span>
+    </nav>
+    <article itemscope itemtype="https://schema.org/SoftwareSourceCode">
+      <p class="eyebrow">Small Business</p>
+      <h1 itemprop="name">Inventory Reorder Planner</h1>
+      <p class="lead" itemprop="description">Turn sales history and current stock counts into reorder points, order quantities, and a this-week purchase list -- so a product business stops stocking ou</p>
+      <section aria-labelledby="what-is">
+        <h2 id="what-is">What is Inventory Reorder Planner?</h2>
+        <p>Turn sales history and current stock counts into reorder points, order quantities, and a this-week purchase list -- so a product business stops stocking ou This free Claude skill teaches Claude how to handle a specific workflow with structured steps and best practices.</p>
+      </section>
+      <section aria-labelledby="skill-content" class="skill-content">
+        <h2 id="skill-content">Skill instructions</h2>
+        <h2>Inventory Reorder Planner</h2>
+<p>Stockouts burn revenue on the products that sell; overstock buries cash in the ones that do not. Both come from ordering by gut. Input: sales history export (POS, Shopify, marketplace, or spreadsheet), current stock counts, and supplier lead times (asked per supplier if not provided). Output: reorder points per SKU and the purchase list for this week.</p>
+<h3>Workflow</h3>
+<ol>
+<li><strong>Profile every SKU.</strong> From sales history: average daily/weekly velocity, variability, trend (growing/flat/dying), and seasonality where the history is long enough to show it (holiday spikes, summer lulls) -- flagged per SKU, never assumed.</li>
+<li><strong>Classify.</strong> ABC by revenue contribution (A: the ~20% of SKUs driving ~80%), crossed with velocity: <code>WINNERS</code> (high velocity, healthy margin -- never stock out), <code>STEADY</code>, <code>SLOW</code>, <code>DEAD</code> (no sales in 90+ days with stock on hand).</li>
+<li><strong>Compute reorder points.</strong> Per SKU: lead-time demand (velocity x supplier lead time) plus safety stock scaled to demand variability and the SKU&#x27;s class -- A items get generous buffers, C items get lean ones. Show the formula inputs per SKU so the owner can sanity-check against what they know (&quot;velocity 4/wk, lead time 3 wks, safety 1.5 wks = reorder at 18&quot;).</li>
+<li><strong>The purchase list.</strong> <code>reorder-plan.csv</code>: every SKU at or below reorder point, recommended order quantity (covering the review cycle plus lead time, respecting supplier minimums and case packs when known), cost, and supplier -- grouped by supplier to build actual POs. Flag <code>URGENT</code> where projected stockout lands before the order can arrive.</li>
+<li><strong>Free the cash.</strong> The dead-stock report: units, cost tied up, days since last sale, and the exit per item -- bundle with a winner, discount, donate for the writeoff, or return to supplier. Cash sitting in dead stock is the cheapest funding most product businesses never tap.</li>
+</ol>
+<h3>Rules</h3>
+<ul>
+<li>Velocity from real sales only; no history means <code>NEW -- judgment order</code>, clearly separated from computed recommendations.</li>
+<li>Stockout periods bias velocity down -- when the data shows zero-stock stretches, compute velocity from in-stock days only and note it.</li>
+<li>Seasonality is applied only where the data shows it, and the applied multiplier is stated per SKU.</li>
+<li>Supplier constraints (minimums, case packs, price breaks) are asked for, and rounding to meet them is shown, not silent.</li>
+<li>A items err toward buffer, C items err toward lean -- one safety-stock policy for everything is the amateur tell.</li>
+<li>Re-run on a cadence (weekly or per supplier order cycle); each run compares last cycle&#x27;s recommendation to what actually sold and tightens.</li>
+</ul>
+<h3>Quick Commands</h3>
+<ul>
+<li>&quot;Plan from [sales export] and [stock counts]&quot; -- full workflow</li>
+<li>&quot;What do I order this week?&quot; -- the purchase list only</li>
+<li>&quot;What&#x27;s about to stock out?&quot; -- URGENT list</li>
+<li>&quot;Where&#x27;s my cash buried?&quot; -- dead-stock report</li>
+</ul>
+      </section>
+      <section aria-labelledby="install" class="install">
+        <h2 id="install">Install in Claude Code</h2>
+        <pre><code>mkdir -p ~/.claude/skills/inventory-reorder-planner
+curl -sL https://raw.githubusercontent.com/OneWave-AI/claude-skills/main/inventory-reorder-planner/SKILL.md -o ~/.claude/skills/inventory-reorder-planner/SKILL.md</code></pre>
+      </section>
+      <section aria-labelledby="faq" class="faq">
+        <h2 id="faq">Frequently asked questions</h2>
+        <dl>
+          <dt>What is the Inventory Reorder Planner Claude skill?</dt>
+          <dd>Turn sales history and current stock counts into reorder points, order quantities, and a this-week purchase list -- so a product business stops stocking ou</dd>
+          <dt>Is Inventory Reorder Planner free to use?</dt>
+          <dd>Yes. Skills from the OneWave library are MIT licensed and free for personal and commercial use.</dd>
+          <dt>Where does the skill file go?</dt>
+          <dd>Personal skills live in <code>~/.claude/skills/inventory-reorder-planner/SKILL.md</code>. Project-specific skills go in <code>.claude/skills/</code> inside your repo.</dd>
+        </dl>
+      </section>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>Mirrored from <a href="https://www.onewave-ai.com/resources/claude-skills/inventory-reorder-planner" rel="noopener">OneWave AI</a>. Source: <a href="https://github.com/OneWave-AI/claude-skills" rel="noopener">OneWave-AI/claude-skills</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

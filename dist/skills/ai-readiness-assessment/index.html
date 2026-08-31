@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Readiness Assessment Skill | AI Skills</title>
+  <meta name="description" content="Conduct a structured, evidence-based evaluation of a business's readiness for AI adoption across six dimensions, then produce a detailed `ai-readiness-report.md` covering scores, gap analysis, and prioritized next steps. Aligned with OneWave AI's pragmatic, ROI-driven audit methodology.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>AI Readiness Assessment Skill</h1>
+      <p>Conduct a structured, evidence-based evaluation of a business's readiness for AI adoption across six dimensions, then produce a detailed `ai-readiness-report.md` covering scores, gap analysis, and prioritized next steps. Aligned with OneWave AI's pragmatic, ROI-driven audit methodology.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/dimensions.md</code> — The six dimensions, full 1-5 scoring rubric, and key questions per dimension.</li>
+<li><code>references/methodology.md</code> — Information-gathering, scoring math and interpretation table, gap analysis, recommendation priorities, company-size and industry tailoring, and conversation flow.</li>
+<li><code>references/output-template.md</code> — The complete <code>ai-readiness-report.md</code> structure to fill in.</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li>Gather context. Collect information through conversation, document review, and codebase analysis. See <code>references/methodology.md</code> (Phase 1) for channels and the question set in <code>references/dimensions.md</code>.</li>
+<li>Score the six dimensions. Rate each from 1 to 5 against the rubric in <code>references/dimensions.md</code>. Be honest and conservative, use half-points for nuance, and record the evidence behind every score.</li>
+<li>Calculate the overall score. Apply the weighted formula and map it to a readiness level using the table in <code>references/methodology.md</code> (Phase 2).</li>
+<li>Run the gap analysis. For each dimension below 4.0, document current state, target state, the gap, its impact, and the effort to close it (Phase 3).</li>
+<li>Build recommendations. Produce prioritized actions across the five OneWave priority tiers, tailoring for company size and industry (Phase 4 and tailoring section).</li>
+<li>Generate the report. Write <code>ai-readiness-report.md</code> following <code>references/output-template.md</code>, then highlight the top 3 immediate actions.</li>
+</ol>
+<h2>The Six Dimensions</h2>
+<p>| Dimension | Weight |
+|-----------|--------|
+| Data Maturity | 25% |
+| Technology Stack | 20% |
+| Team Skills and Capacity | 20% |
+| Process Documentation | 15% |
+| Budget and Resources | 10% |
+| Organizational Culture | 10% |</p>
+<p>See <code>references/dimensions.md</code> for the full rubric and questions.</p>
+<h2>Core Rules</h2>
+<ol>
+<li>Never inflate scores. A business that scores 2.0 needs to hear that honestly; false optimism wastes money and time.</li>
+<li>Always provide evidence. Back every score with specific observations, not assumptions.</li>
+<li>Be actionable. Pair every identified gap with a concrete recommendation.</li>
+<li>Respect budget realities. Include cost-appropriate options; not every organization needs enterprise-grade solutions.</li>
+<li>Use no jargon without explanation. The report is read by business leaders, not only technologists.</li>
+<li>Flag deal-breakers. When a dimension scores 1.0, state explicitly that AI initiatives should not begin until it is addressed.</li>
+<li>Consider the full cost. Include ongoing costs (maintenance, retraining, monitoring), not just implementation.</li>
+<li>Recommend the right AI. Match recommendations to actual readiness; do not recommend deep learning to a company that has not consolidated its data.</li>
+<li>Maintain OneWave AI alignment. Frame all recommendations within pragmatic, ROI-driven AI adoption. Avoid hype; focus on business value.</li>
+<li>Use no emojis. Keep all output professional and text-based.</li>
+</ol>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

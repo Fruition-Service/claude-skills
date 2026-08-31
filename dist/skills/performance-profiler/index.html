@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Performance Profiler | AI Skills</title>
+  <meta name="description" content="When profiling performance:">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Performance Profiler</h1>
+      <p>When profiling performance:</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Instructions</h2>
+<ol>
+<li><strong>Identify the bottleneck type</strong>: Network, rendering, memory, or compute</li>
+<li><strong>Measure baseline</strong> before optimizing</li>
+<li><strong>Profile with appropriate tools</strong></li>
+<li><strong>Apply optimizations</strong></li>
+<li><strong>Measure improvement</strong></li>
+</ol>
+<h2>Web Performance</h2>
+<h3>Core Web Vitals</h3>
+<p>```bash</p>
+<h1>Lighthouse CLI</h1>
+<p>npx lighthouse https://yoursite.com --view</p>
+<h1>With specific metrics</h1>
+<p>npx lighthouse https://yoursite.com --only-categories=performance
+```</p>
+<p><strong>Target Metrics</strong>:
+| Metric | Good | Needs Work | Poor |
+|--------|------|------------|------|
+| LCP (Largest Contentful Paint) | &lt; 2.5s | 2.5-4s | &gt; 4s |
+| INP (Interaction to Next Paint) | &lt; 200ms | 200-500ms | &gt; 500ms |
+| CLS (Cumulative Layout Shift) | &lt; 0.1 | 0.1-0.25 | &gt; 0.25 |</p>
+<h3>Bundle Analysis</h3>
+<p>```bash</p>
+<h1>Next.js</h1>
+<p>ANALYZE=true npm run build</p>
+<h1>Webpack</h1>
+<p>npx webpack-bundle-analyzer stats.json</p>
+<h1>Vite</h1>
+<p>npx vite-bundle-visualizer
+```</p>
+<h2>React Performance</h2>
+<h3>React DevTools Profiler</h3>
+<ol>
+<li>Install React DevTools browser extension</li>
+<li>Open DevTools → Profiler tab</li>
+<li>Click Record, interact with app, stop recording</li>
+<li>Analyze flame graph for slow components</li>
+</ol>
+<h3>Common React Optimizations</h3>
+<p>```tsx
+// 1. Memoize expensive components
+const MemoizedList = React.memo(function List({ items }) {
+  return items.map(item =&gt; <Item key={item.id} {...item} />);
+});</p>
+<p>// 2. Use useMemo for expensive calculations
+const sortedItems = useMemo(() =&gt; {
+  return [...items].sort((a, b) =&gt; a.name.localeCompare(b.name));
+}, [items]);</p>
+<p>// 3. Use useCallback for stable function references
+const handleClick = useCallback((id: string) =&gt; {
+  setSelected(id);
+}, []);</p>
+<p>// 4. Virtualize long lists
+import { FixedSizeList } from 'react-window';</p>
+<p>function VirtualList({ items }) {
+  return (
+    <FixedSizeList
+      height={400}
+      itemCount={items.length}
+      itemSize={50}
+      width="100%"
+    >
+      {({ index, style }) =&gt; (
+        <div style={style}>{items[index].name}</div>
+      )}
+    </FixedSizeList>
+  );
+}</p>
+<p>// 5. Lazy load components
+const HeavyComponent = React.lazy(() =&gt; import('./HeavyComponent'));</p>
+<p>function App() {
+  return (
+    <Suspense fallback={\<Loading />}>
+      <HeavyComponent />
+    </Suspense>
+  );
+}
+```</p>
+<h2>Node.js Performance</h2>
+<h3>Profiling</h3>
+<p>```bash</p>
+<h1>CPU profile</h1>
+<p>node --prof app.js
+node --prof-process isolate-*.log &gt; profile.txt</p>
+<h1>Heap snapshot</h1>
+<p>node --inspect app.js</p>
+<h1>Then use Chrome DevTools Memory tab</h1>
+<h1>Clinic.js (comprehensive)</h1>
+<p>npx clinic doctor -- node app.js
+npx clinic flame -- node app.js
+npx clinic bubbleprof -- node app.js
+```</p>
+<h3>Memory Leak Detection</h3>
+<p><code>javascript
+// Add to app for debugging
+const used = process.memoryUsage();
+console.log({
+  heapUsed: `${Math.round(used.heapUsed / 1024 / 1024)} MB`,
+  heapTotal: `${Math.round(used.heapTotal / 1024 / 1024)} MB`,
+  external: `${Math.round(used.external / 1024 / 1024)} MB`,
+});</code></p>
+<h2>Database Performance</h2>
+<p>```sql
+-- PostgreSQL: Analyze slow queries
+EXPLAIN ANALYZE SELECT * FROM users WHERE email = 'test@example.com';</p>
+<p>-- Find missing indexes
+SELECT relname, seq_scan, idx_scan
+FROM pg_stat_user_tables
+WHERE seq_scan &gt; idx_scan;
+```</p>
+<h3>Query Optimization</h3>
+<p>```typescript
+// Bad: N+1 query
+const users = await db.user.findMany();
+for (const user of users) {
+  const posts = await db.post.findMany({ where: { userId: user.id } });
+}</p>
+<p>// Good: Single query with include
+const users = await db.user.findMany({
+  include: { posts: true }
+});</p>
+<p>// Good: Select only needed fields
+const users = await db.user.findMany({
+  select: { id: true, name: true, email: true }
+});
+```</p>
+<h2>Quick Wins Checklist</h2>
+<ul>
+<li>[ ] Enable gzip/brotli compression</li>
+<li>[ ] Add caching headers</li>
+<li>[ ] Lazy load images (<code>loading="lazy"</code>)</li>
+<li>[ ] Preconnect to external domains</li>
+<li>[ ] Use CDN for static assets</li>
+<li>[ ] Minimize JavaScript bundle</li>
+<li>[ ] Defer non-critical JS</li>
+<li>[ ] Optimize images (WebP, proper sizing)</li>
+<li>[ ] Add database indexes</li>
+<li>[ ] Use connection pooling</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cowork Home Inventory | AI Skills</title>
+  <meta name="description" content="Build the document everyone wishes they had after the fire, flood, or break-in: a room-by-room inventory with values and proof. Input: a folder of photos (room shots, close-ups, serial-number shots) and receipts (PDF, email exports, images). Output: a structured inventory file plus a gap list of what still needs documenting.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Cowork Home Inventory</h1>
+      <p>Build the document everyone wishes they had after the fire, flood, or break-in: a room-by-room inventory with values and proof. Input: a folder of photos (room shots, close-ups, serial-number shots) and receipts (PDF, email exports, images). Output: a structured inventory file plus a gap list of what still needs documenting.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Workflow</h2>
+<ol>
+<li><strong>Process the photos.</strong> Identify items in each image: what it is, brand/model when visible, condition, and the room (from filename, folder structure, or visual context). Read serial numbers and model plates from close-ups. Group multiple angles of the same item.</li>
+<li><strong>Process the receipts.</strong> Extract item, vendor, date, and price from every receipt. Match receipts to photographed items where possible -- a matched receipt upgrades an item from "estimated" to "documented."</li>
+<li><strong>Value the inventory.</strong> For receipt-matched items: purchase price and date. For unmatched items: estimated replacement cost (current retail for an equivalent, via web search for significant items), clearly labeled <code>ESTIMATE</code>. Never present an estimate as a documented value.</li>
+<li><strong>Build the inventory.</strong> Output <code>home-inventory.csv</code> (or .xlsx via the xlsx skill) -- room, item, brand/model, serial, purchase date, purchase price, replacement estimate, documentation status, photo filename(s), receipt filename -- plus <code>home-inventory-summary.md</code>: totals by room and category, the high-value items list, and overall documented vs. estimated ratio.</li>
+<li><strong>Gap list.</strong> What insurance will ask for that is missing: high-value items with no receipt (jewelry, electronics, instruments -- may need appraisals or serial-number photos), rooms with no coverage, items where only a wide shot exists. Rank by value at risk. Suggest the 20-minute photo walk that closes the worst gaps.</li>
+</ol>
+<h2>Rules</h2>
+<ul>
+<li>Documented and estimated values never blend: every line is labeled, and the summary reports both totals separately.</li>
+<li>Never inflate. Replacement estimates use realistic current retail for equivalent items, not premium substitutes.</li>
+<li>Serial numbers are gold: capture every legible one, and put items that should have one but don't on the gap list.</li>
+<li>Do not catalog people, documents with financial account numbers, or anything in photos beyond the possessions themselves.</li>
+<li>Note policy-relevant thresholds generically ("many policies sub-limit jewelry; confirm your rider") without interpreting the user's actual policy -- unless the policy document is in the folder, in which case cite its stated limits next to the relevant categories.</li>
+<li>Keep the inventory file local and note in the summary that a copy belongs somewhere that survives the house (cloud drive, safe deposit).</li>
+</ul>
+<h2>Update Mode</h2>
+<p>Re-run on the same folder after adding new photos/receipts: append new items, update matched ones, preserve manual edits to the CSV, and report what changed. As a quarterly Cowork scheduled task, sweep the receipts/email-export folder and deliver the diff.</p>
+<h2>Quick Commands</h2>
+<ul>
+<li>"Inventory [folder]" -- full workflow</li>
+<li>"What's undocumented?" -- step 5, the gap list</li>
+<li>"Value check [item]" -- one replacement-cost lookup</li>
+<li>"Update from new photos" -- update mode</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

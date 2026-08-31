@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cowork Invoice Chaser | AI Skills</title>
+  <meta name="description" content="Chase receivables the way a firm-but-warm operator does: know exactly who owes what and for how long, escalate on a schedule, and never send a dunning email to someone who already paid. Inputs: a folder of issued invoices (PDF/.docx) and payment evidence (bank exports, remittance emails, a payments .csv, or a paid-list the user maintains).">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Cowork Invoice Chaser</h1>
+      <p>Chase receivables the way a firm-but-warm operator does: know exactly who owes what and for how long, escalate on a schedule, and never send a dunning email to someone who already paid. Inputs: a folder of issued invoices (PDF/.docx) and payment evidence (bank exports, remittance emails, a payments .csv, or a paid-list the user maintains).</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Workflow</h2>
+<ol>
+<li><strong>Build the ledger.</strong> Extract from every invoice: number, client, contact, issue date, due date, amount, terms. From payment records: date, amount, payer. Reconcile -- match payments to invoices (exact amount first, then partial payments, then aggregated payments covering multiple invoices).</li>
+<li><strong>Age the book.</strong> Produce the AR aging report: current, 1-30, 31-60, 61-90, 90+ days past due, by client. Include total outstanding, weighted average days late, and the three largest exposures.</li>
+<li><strong>Flag before chasing.</strong> List invoices with ambiguous payment status (partial matches, unidentified deposits near the amount) separately. These get a human decision, not a chaser.</li>
+<li><strong>Draft the chasers.</strong> For each confirmed-unpaid invoice, draft an email matched to its escalation stage -- drafts only, never send:</li>
+<li>Due in 3 days: friendly heads-up with invoice attached reference</li>
+<li>1-14 late: polite nudge, assume oversight, restate amount and payment details</li>
+<li>15-45 late: direct, reference prior contact, ask for a payment date</li>
+<li>46-90 late: firm, propose a call, mention terms (late fees only if the invoice/contract actually states them)</li>
+<li>90+: final notice tone, next-steps language, flag to the human for a collections/legal decision</li>
+<li><strong>Digest.</strong> One summary per run: total outstanding and change since last run, payments received, drafts queued by stage, ambiguous items needing a decision, and clients whose pattern changed (reliable payer suddenly 30 days late is a relationship signal, not just an AR line).</li>
+</ol>
+<h2>Rules</h2>
+<ul>
+<li>Never send -- drafts only. A wrong dunning email costs more than a late invoice.</li>
+<li>Never chase an ambiguous invoice. Unmatched payment evidence near the amount means human review first.</li>
+<li>Match tone to relationship: the user can tag clients (<code>key account</code>, <code>standard</code>, <code>problem</code>); key accounts never get form-letter tone regardless of age.</li>
+<li>One email per client per run, covering all their overdue invoices -- three separate nudges in one morning reads as automation and burns goodwill.</li>
+<li>State late fees only when the underlying invoice or contract specifies them. Never invent penalty terms.</li>
+<li>Keep the escalation memory: track what stage each invoice last received so a resent nudge escalates rather than repeats.</li>
+</ul>
+<h2>Scheduled Mode</h2>
+<p>As a weekly Cowork scheduled task: re-scan the folders, reconcile new payments, advance escalation stages, and deliver the digest with drafts ready for approval. The run is idempotent -- no invoice is double-chased within its stage window.</p>
+<h2>Quick Commands</h2>
+<ul>
+<li>"Age my receivables" -- steps 1-2 only</li>
+<li>"Chase everything overdue" -- full workflow</li>
+<li>"Who pays late?" -- client payment-behavior profile from the ledger history</li>
+<li>"Draft the 90+ letters" -- final-notice drafts only</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Mode Converter | AI Skills</title>
+  <meta name="description" content="Build dark mode the way design-mature products do: as a second theme with its own logic, not the light theme with colors flipped. Inversion fails because dark UIs work differently -- elevation is communicated by lighter surfaces instead of shadows, saturated colors vibrate on dark backgrounds, and pure black plus pure white is glare, not contrast.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Dark Mode Converter</h1>
+      <p>Build dark mode the way design-mature products do: as a second theme with its own logic, not the light theme with colors flipped. Inversion fails because dark UIs work differently -- elevation is communicated by lighter surfaces instead of shadows, saturated colors vibrate on dark backgrounds, and pure black plus pure white is glare, not contrast.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Workflow</h2>
+<ol>
+<li><strong>Tokenize first.</strong> Inventory every color in the codebase. If colors are hardcoded in components, lift them into semantic tokens before converting -- <code>bg.base</code>, <code>surface</code>, <code>surface.raised</code>, <code>text.primary</code>, <code>text.muted</code>, <code>border</code>, <code>accent</code>, states. A dark mode built on raw hex replacements breaks on the next feature. (If tokens exist, audit for strays with the same sweep.)</li>
+<li><strong>Design the dark palette</strong> by role, following dark-UI physics: base is dark gray, never <code>#000</code> (<code>#0f1115</code>-<code>#1a1d23</code> territory, or tinted toward the brand hue); elevation gets <em>lighter</em> as surfaces rise (base -&gt; card -&gt; popover each a step up); text is off-white, never <code>#fff</code> (<code>#e8eaed</code>-ish, ~87% white) with muted steps; accents desaturate and lighten 1-2 steps so they do not vibrate; borders drop to low-alpha whites; shadows go darker and tighter or yield to surface-lightness entirely. Verify every text/surface pair at WCAG AA minimum.</li>
+<li><strong>Wire the mechanism</strong> per stack: Tailwind <code>dark:</code> with <code>class</code> strategy (v4: <code>@variant dark</code>), or a <code>[data-theme="dark"]</code> block redefining the custom properties. Add the toggle with three states (light/dark/system), <code>localStorage</code> persistence, <code>prefers-color-scheme</code> default, and the no-flash inline script in <code>&lt;head&gt;</code> that sets the class before first paint.</li>
+<li><strong>Handle the hard parts</strong> -- the places naive conversions die: images and illustrations with baked-in white backgrounds (swap variants, add a subtle surface behind them, or CSS-filter logos where acceptable); charts and data-viz palettes (need their own dark series colors); form controls and <code>color-scheme: dark</code> so native inputs, scrollbars, and autofill match; embedded third-party widgets (map themes, iframes); email templates and open-graph images that never inherit the theme; focus rings that vanish on dark.</li>
+<li><strong>Audit pass.</strong> Screenshot-walk the key routes in both modes (or list them for the user to check): look for stranded light surfaces, double-borders where shadows used to separate, unreadable muted text, and accent buttons that lost their punch. Output <code>dark-mode-report.md</code>: token map (light -&gt; dark by role), files touched, contrast table, and remaining items needing design eyes.</li>
+</ol>
+<h2>Rules</h2>
+<ul>
+<li>Semantic tokens or nothing. <code>dark:bg-gray-800</code> sprinkled across 90 components is a maintenance debt, not a theme -- centralize the mapping.</li>
+<li>Never pure black base, never pure white text. Reserve those for moments, not defaults.</li>
+<li>Elevation flips: light mode says "higher" with shadow, dark mode says it with a lighter surface. Convert the logic, not just the colors.</li>
+<li>Accents recalibrate, brand does not change: adjust lightness/saturation to sit on dark, but the brand hue survives (check contrast of brand-on-dark and flag genuine conflicts for the user rather than silently shifting hue).</li>
+<li>Both modes are first-class from now on: every report includes the rule that new components define both themes' tokens or fail review.</li>
+<li>Test system-preference switching live -- the <code>system</code> setting must react to OS changes without reload.</li>
+</ul>
+<h2>Quick Commands</h2>
+<ul>
+<li>"Convert this project to dark mode" -- full workflow</li>
+<li>"Tokenize my colors first" -- step 1 standalone</li>
+<li>"Just design the dark palette" -- step 2 from existing tokens</li>
+<li>"Dark mode audit" -- step 5 against an existing implementation</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Landing Composer | AI Skills</title>
+  <meta name="description" content="Most AI-built landing pages are instantly recognizable: centered hero, three feature cards, a gradient, generic copy. This skill builds pages that don't read as generated — editorial layout, real design tokens, motion with intent, and copy that sounds like a person wrote it.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Claude Landing Composer</h1>
+      <p>Most AI-built landing pages are instantly recognizable: centered hero, three feature cards, a gradient, generic copy. This skill builds pages that don't read as generated — editorial layout, real design tokens, motion with intent, and copy that sounds like a person wrote it.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <p>Build on a design system from <code>claude-design-system-architect</code> when one exists. Run the result through <code>claude-design-critic</code> before shipping.</p>
+<h2>Step 1 — Plan the page</h2>
+<ul>
+<li><strong>Goal &amp; one action</strong> — what the page must get the visitor to do.</li>
+<li><strong>Audience</strong> — pull a buyer persona from <code>icp-deep-scanner</code> if available so the copy speaks to a real reader.</li>
+<li><strong>Sections</strong> — choose the minimum that earns the goal (hero → proof → how/why → objection-handling → pricing → CTA). Cut anything that doesn't move the visitor forward.</li>
+<li><strong>Tokens</strong> — load the design system. If none exists, generate one first (<code>claude-design-system-architect</code>); do not hardcode arbitrary colors/sizes.</li>
+</ul>
+<h3>Stack &amp; house rules</h3>
+<p>Next.js (App Router) + React + TypeScript + Tailwind v4 + Motion (the library formerly published as Framer Motion) — the default stack. <strong>No purple. No emoji</strong> — use Lucide/Heroicons. Warm/earth tones and dark surfaces welcome. Motion is expected — typewriter, animated counters, spring/stagger reveals — used with restraint.</p>
+<h2>Step 2 — Compose section by section</h2>
+<p>Build each section as a real component using tokens. For each, decide layout, content, and motion deliberately:
+- <strong>Hero</strong> — a sharp headline (not "Welcome to {Product}"), a sub that states the actual value, one primary CTA. Consider an asymmetric or editorial layout over the default dead-center stack.
+- <strong>Proof</strong> — logos, a real metric, or a specific outcome — not "trusted by thousands."
+- <strong>Feature/why</strong> — show the value in context; avoid the three-identical-cards reflex unless it genuinely fits. Vary rhythm and alignment between sections.
+- <strong>Objection handling / FAQ</strong> — answer the real hesitation a prospect has.
+- <strong>Pricing</strong> (if needed) — clear, confident, value-anchored.
+- <strong>CTA</strong> — one action, restated.</p>
+<p><strong>Motion:</strong> entrance reveals on scroll, but vary them — not the identical fade-up on every block. Respect <code>prefers-reduced-motion</code>. Motion should guide the eye to what matters, not decorate everything equally.</p>
+<h2>Step 3 — Write copy that isn't AI-flavored</h2>
+<ul>
+<li>Cut the tells: "elevate", "unlock", "seamless", "in today's fast-paced world", "we're thrilled", em-dash-everything, tricolon-everything.</li>
+<li>Specific &gt; generic. Confident &gt; hedged. Short &gt; padded.</li>
+<li>Match the user's voice: direct, no corporate fluff.</li>
+<li>Write real microcopy (buttons, empty states, captions) — not "Learn More" everywhere.</li>
+</ul>
+<h2>Step 4 — Build it real</h2>
+<p>Write the components, wire the tokens, ensure it's responsive (mobile-first, real breakpoints) and accessible (semantic HTML, focus states, alt text, AA contrast). Run the dev server / build and confirm it compiles before claiming it works.</p>
+<h2>Step 5 — Critique pass (mandatory)</h2>
+<p>Run <code>claude-design-critic</code> (or the anti-ai-frontend review) on the output to strip any remaining generated-looking patterns in both design and copy. Then deliver with the file paths and a short note on the choices made.</p>
+<h2>The anti-generated checklist (apply before shipping)</h2>
+<ul>
+<li>Layout varies between sections; not every section is a centered stack.</li>
+<li>Whitespace is generous and intentional, not uniform.</li>
+<li>One confident accent; no rainbow gradients; never default-purple.</li>
+<li>Headlines are specific and human; no filler value-props.</li>
+<li>Motion has variety and restraint; reduced-motion respected.</li>
+<li>Icons, never emoji. Real microcopy, never "Learn More" x5.</li>
+</ul>
+<h2>Guardrails recap</h2>
+<p>Build on real tokens, never arbitrary values · responsive + accessible + AA contrast · no purple / no emoji · compile/run before claiming done · always finish with a de-AI critique pass.</p>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

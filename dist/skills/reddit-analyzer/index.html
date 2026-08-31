@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reddit Thread Analyzer | AI Skills</title>
+  <meta name="description" content="Extract deep insights from Reddit discussions including sentiment, key arguments, and community consensus.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Reddit Thread Analyzer</h1>
+      <p>Extract deep insights from Reddit discussions including sentiment, key arguments, and community consensus.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <p>Given a Reddit thread URL or a question about Reddit opinions, analyze the discussion comprehensively to surface meaningful patterns and insights.</p>
+<h2>Instructions</h2>
+<h3>1. Fetch and Parse Thread Data</h3>
+<p>Use WebFetch to load the Reddit thread and extract:
+- Post title, body, author, score, and timestamp
+- All comments (not just top-level)
+- Comment scores, awards, and timestamps
+- Note verified contributors or expert flair</p>
+<h3>2. Analyze Overall Sentiment</h3>
+<p>Determine the dominant sentiment and emotional tone:
+- <strong>Overall sentiment</strong>: Positive, negative, neutral, or mixed
+- <strong>Sentiment distribution</strong>: Approximate percentages
+- <strong>Emotional tone</strong>: Excited, frustrated, skeptical, supportive, angry, enthusiastic
+- <strong>Shift over time</strong>: Note if sentiment changes throughout discussion</p>
+<h3>3. Extract Key Arguments</h3>
+<p>Identify the most impactful points:</p>
+<p><strong>Top Arguments in Favor</strong> (3-5 points):
+- Quote the argument
+- Note comment score
+- Identify supporting evidence or reasoning</p>
+<p><strong>Top Arguments Against</strong> (3-5 points):
+- Quote the argument
+- Note comment score
+- Identify counter-points and rebuttals</p>
+<p><strong>Expert or Verified Opinions</strong>:
+- Highlight comments from verified experts
+- Note OP responses and clarifications</p>
+<h3>4. Find Consensus Points</h3>
+<p>Determine what the community agrees on:
+- Points with broad agreement (high scores, no controversy)
+- Emerging patterns across multiple comments
+- Common ground between opposing viewpoints</p>
+<h3>5. Identify Controversial Topics</h3>
+<p>Flag heavily debated points:
+- Topics with mixed upvotes/downvotes
+- Arguments that sparked long comment chains
+- Divisive issues where community is split</p>
+<h3>6. Provide Structured Analysis</h3>
+<p>Format the analysis clearly:</p>
+<p>```markdown</p>
+<h1>Reddit Analysis: [Thread Title]</h1>
+<h2>Executive Summary</h2>
+<p>[2-3 sentence overview of the discussion and main takeaway]</p>
+<h2>Overall Sentiment</h2>
+<ul>
+<li><strong>Dominant Sentiment</strong>: Positive/Negative/Neutral/Mixed (X%)</li>
+<li><strong>Emotional Tone</strong>: [excited/frustrated/skeptical/etc.]</li>
+<li><strong>Community Alignment</strong>: High/Medium/Low</li>
+</ul>
+<h2>Top Arguments</h2>
+<h3>In Favor</h3>
+<ol>
+<li><strong>[Main point]</strong> (+XXX score)<blockquote>
+<p>"[Direct quote from comment]"</p>
+</blockquote>
+</li>
+<li>
+<p>[Brief explanation of reasoning]</p>
+</li>
+<li>
+<p><strong>[Main point]</strong> (+XXX score)</p>
+<blockquote>
+<p>"[Direct quote]"</p>
+</blockquote>
+</li>
+</ol>
+<h3>Against</h3>
+<ol>
+<li><strong>[Main point]</strong> (+XXX score)<blockquote>
+<p>"[Direct quote]"</p>
+</blockquote>
+</li>
+</ol>
+<h2>Community Consensus</h2>
+<ul>
+<li>[Point most people agree on]</li>
+<li>[Another consensus point]</li>
+</ul>
+<h2>Controversial Topics</h2>
+<ul>
+<li>[Divisive issue] - Community split roughly 50/50</li>
+<li>[Another debate point]</li>
+</ul>
+<h2>Notable Insights</h2>
+<ul>
+<li><strong>Expert Opinion</strong>: [Quote from verified expert] (+XXX)</li>
+<li><strong>Surprising Take</strong>: [Unexpected perspective that gained traction]</li>
+<li><strong>Most Helpful</strong>: [Most practical or actionable advice]</li>
+</ul>
+<h2>Key Quotes</h2>
+<blockquote>
+<p>"[Memorable quote]" - u/username (+XXX score)
+"[Another impactful quote]" - u/username (+XXX score)</p>
+</blockquote>
+<h2>Discussion Quality</h2>
+<ul>
+<li>Civility: High/Medium/Low</li>
+<li>Depth: Superficial/Moderate/Deep</li>
+<li>Evidence-based: Yes/No/Mixed
+```</li>
+</ul>
+<h2>Best Practices</h2>
+<ul>
+<li><strong>Focus on highly upvoted comments</strong> for consensus</li>
+<li><strong>Include exact scores</strong> to show community agreement level</li>
+<li><strong>Quote directly</strong> rather than paraphrasing</li>
+<li><strong>Preserve nuance</strong> - avoid oversimplifying complex debates</li>
+<li><strong>Note OP responses</strong> - original poster often adds important context</li>
+<li><strong>Distinguish facts from opinions</strong> clearly</li>
+<li><strong>Highlight constructive vs. unproductive</strong> discussions</li>
+<li><strong>Consider recency</strong> - early comments may be less informed than later ones</li>
+</ul>
+<h2>Example Analysis</h2>
+<p><strong>User</strong>: "What does Reddit think about the new iPhone?"</p>
+<p><strong>Analysis steps</strong>:
+1. Fetch r/apple or r/iPhone thread
+2. Analyze 300+ comments
+3. Determine sentiment: Mixed (55% positive, 45% negative)
+4. Extract top pros: Camera improvements (+450), Performance (+380)
+5. Extract top cons: High price (+420), Incremental updates (+390)
+6. Note consensus: Good phone, but expensive for what you get
+7. Identify controversy: Whether it's worth upgrading from iPhone 14
+8. Surface expert opinions from tech reviewers
+9. Deliver structured report with quotes and scores</p>
+<hr />
+<p><strong>Remember</strong>: Focus on substance over noise. Prioritize well-reasoned arguments over emotional reactions.</p>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

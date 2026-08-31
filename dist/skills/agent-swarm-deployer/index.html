@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Swarm Deployer | AI Skills</title>
+  <meta name="description" content="Deploy a swarm of parallel sub-agents to process massive, independent data tasks (documents, records, rows, items) and aggregate the results. Use this for data operations; use agent-army for code changes.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Agent Swarm Deployer</h1>
+      <p>Deploy a swarm of parallel sub-agents to process massive, independent data tasks (documents, records, rows, items) and aggregate the results. Use this for data operations; use agent-army for code changes.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/overview.md</code> -- swarm vs army comparison, use cases, architecture diagram</li>
+<li><code>references/swarm-design.md</code> -- input/output schemas, batch-size and swarm-size formulas, scaling guidelines</li>
+<li><code>references/agent-brief.md</code> -- agent brief template, data distribution methods, progress tracking</li>
+<li><code>references/aggregation-recovery.md</code> -- merge logic, completeness validation, retry strategy, error-handling table</li>
+<li><code>references/output-formats.md</code> -- CSV/JSON/Markdown/individual-file outputs, final summary report</li>
+<li><code>references/task-configs.md</code> -- ready-made configs for sentiment, lead scoring, content generation, summarization</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li>
+<p>Understand the task. Pin down five things before deploying anything: data source, operation per item, output format, output destination, and quality/validation requirements. If any is ambiguous, ask the user first -- a wrong spec wastes all agent compute.</p>
+</li>
+<li>
+<p>Intake and inventory. Glob/Bash to locate and count items. Read 3-5 samples to learn structure. Estimate tokens per item and total. Report an intake summary (source, total count, item format, sample structure, token estimate).</p>
+</li>
+<li>
+<p>Detect input schema and define output schema. Derive the input schema from samples; define the exact output schema the task requires. See <code>references/swarm-design.md</code>.</p>
+</li>
+<li>
+<p>Design the swarm. Compute batch size from token budget (70% of ~200K usable context per agent) and swarm size from total items. Cap at 20 agents per wave; split into waves beyond that. Present the swarm plan and agent assignments, then get approval. See <code>references/swarm-design.md</code>.</p>
+</li>
+<li>
+<p>Prepare agent briefs. Build a self-contained brief per agent: role, task, input data, output schema with example, quality rules, error protocol, and strict JSON output format. See <code>references/agent-brief.md</code>.</p>
+</li>
+<li>
+<p>Distribute data and deploy. Choose a distribution method for the source type (pre-split CSVs/JSON with Bash; embed inline for small sets; pass file paths for directories). Launch up to 20 agents in parallel via the Agent tool with <code>run_in_background: true</code>, sending all calls in one message. Run later waves after the prior wave completes. See <code>references/agent-brief.md</code>.</p>
+</li>
+<li>
+<p>Track progress. As agents return, record status, processed counts, and cumulative coverage. See <code>references/agent-brief.md</code>.</p>
+</li>
+<li>
+<p>Collect and aggregate. Parse each agent's JSON; validate schema, completeness, and duplicates. Merge into one ordered output and extract failures. Report an aggregation summary with a coverage check and failure analysis. See <code>references/aggregation-recovery.md</code>.</p>
+</li>
+<li>
+<p>Recover failures. Queue all failed and skipped items, deploy a retry agent with enhanced instructions, cap at 2 retries, and mark survivors "unrecoverable". Flag the user if unrecoverable items exceed 10%. See <code>references/aggregation-recovery.md</code>.</p>
+</li>
+<li>
+<p>Write output and summarize. Produce the requested format (CSV, JSON, Markdown, or individual files) plus a final summary covering execution, results, quality metrics, patterns observed, and cost. See <code>references/output-formats.md</code>.</p>
+</li>
+</ol>
+<h2>Anti-Patterns to Avoid</h2>
+<ol>
+<li>Do not use a swarm for sequential tasks. If item N depends on item N-1, use a chain instead.</li>
+<li>Do not deploy one agent per item. Batch items; one-per-agent wastes overhead.</li>
+<li>Do not skip schema definition. Without a schema, merging results from many agents becomes unreliable.</li>
+<li>Do not ignore failures. At 99% success, 1% of 10,000 items is still 100 failures. Always run retries.</li>
+<li>Do not deploy without a sample run. Process 5 items manually first to validate the task and output quality before scaling.</li>
+</ol>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

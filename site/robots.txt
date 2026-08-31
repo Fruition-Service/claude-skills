@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fruition-service.github.io/claude-skills/sitemap.xml

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Database Migrator | AI Skills</title>
+  <meta name="description" content="Move schemas, data, and logic between database providers. This is a cross-provider migration engine, not a schema designer: it handles data type incompatibilities, provider-specific SQL dialects, foreign key ordering, sequence and auto-increment translation, trigger rewrites, and stored procedure conversion. It validates with row counts and checksums and produces an auditable migration-plan.md.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Database Migrator</h1>
+      <p>Move schemas, data, and logic between database providers. This is a cross-provider migration engine, not a schema designer: it handles data type incompatibilities, provider-specific SQL dialects, foreign key ordering, sequence and auto-increment translation, trigger rewrites, and stored procedure conversion. It validates with row counts and checksums and produces an auditable migration-plan.md.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li>references/schema-discovery.md -- Extraction queries for relational, MongoDB, Supabase, and PlanetScale sources.</li>
+<li>references/type-mapping.md -- Data type maps (PG/MySQL/Mongo) and SQL function translation.</li>
+<li>references/script-generation.md -- DDL, sequence, trigger, procedure, and view translation.</li>
+<li>references/data-migration.md -- Export, transform, and import commands per provider.</li>
+<li>references/validation.md -- Row count, checksum, FK integrity, index, and spot-check queries.</li>
+<li>references/rollback-and-downtime.md -- Rollback scripts, backup/restore, downtime estimation.</li>
+<li>references/migration-plan-template.md -- Full migration-plan.md output template.</li>
+<li>references/edge-cases.md -- Large tables, lossy mappings, document flattening, multi-schema, quality checklist.</li>
+</ul>
+<h2>Supported Paths and Complexity</h2>
+<p>Supported source/target pairs: PostgreSQL, MySQL, Supabase (Postgres), PlanetScale (MySQL), and MongoDB, in any direction.</p>
+<ul>
+<li>Low: Same underlying engine (e.g., Postgres to Supabase). Mostly connection and permission changes.</li>
+<li>Medium: Same paradigm, different dialect (e.g., Postgres to MySQL). Requires type mapping and dialect translation.</li>
+<li>Medium-High: Different dialect plus provider constraints (e.g., PlanetScale has no database-level foreign keys).</li>
+<li>High: Paradigm shift (e.g., relational to document). Requires schema redesign, not just translation.</li>
+</ul>
+<h2>When to Use</h2>
+<ul>
+<li>Moving a production database from one provider to another.</li>
+<li>Migrating between self-hosted and managed services.</li>
+<li>Replicating a schema across providers for multi-cloud or disaster recovery.</li>
+<li>Consolidating multiple databases into a single provider.</li>
+<li>Translating a complete data model between relational and MongoDB.</li>
+<li>Producing a validated, auditable migration plan before executing in production.</li>
+</ul>
+<h2>When NOT to Use</h2>
+<ul>
+<li>Designing a new schema from scratch (use database-schema-designer).</li>
+<li>Migrating application code between frameworks (use full-codebase-migrator).</li>
+<li>Changing a few columns or adding one table (write the ALTER statements directly).</li>
+<li>Real-time replication or CDC -- this skill generates point-in-time scripts, not streaming pipelines.</li>
+</ul>
+<h2>Workflow</h2>
+<p>Follow these steps precisely when this skill is invoked.</p>
+<ol>
+<li>
+<p>Gather migration parameters. Establish: source provider and version; target provider and version; connection method (live or dump file); schema scope (which schemas/tables); data migration (schema only or schema + data, full or partial); downtime tolerance; data volume; application dependencies; and output location (default to current directory). If the user already supplied these, skip the questions and proceed.</p>
+</li>
+<li>
+<p>Discover the source schema. Extract tables, columns, types, defaults, constraints, indexes, foreign keys, triggers, procedures, functions, views, sequences, enums, and row counts. For MongoDB, scan collections to infer schema. For Supabase, also extract RLS policies, extensions, and publications. See references/schema-discovery.md.</p>
+</li>
+<li>
+<p>Map data types. Translate every source type to the best target type and flag lossy or precision-changing conversions. Translate provider-specific SQL functions. See references/type-mapping.md.</p>
+</li>
+<li>
+<p>Generate schema scripts. Resolve table creation order by topological sort (defer cyclic foreign keys). Generate DDL, translate sequences/auto-increment, rewrite triggers and stored procedures, and translate views. See references/script-generation.md.</p>
+</li>
+<li>
+<p>Generate data migration scripts. Produce export, transform, and import commands for the source and target providers. See references/data-migration.md.</p>
+</li>
+<li>
+<p>Generate the validation plan. Produce row count, checksum, foreign key integrity, index, trigger/procedure, and sample data spot-check queries for source and target. See references/validation.md.</p>
+</li>
+<li>
+<p>Generate the rollback plan and downtime estimate. Produce reverse-order DROP scripts, backup/restore commands, application rollback steps, and a phased downtime estimate with reduction strategies. See references/rollback-and-downtime.md.</p>
+</li>
+<li>
+<p>Generate migration-plan.md. Assemble the executive summary, scope, schema inventory, type mapping, incompatibilities, scripts, validation, rollback, downtime, risk assessment, checklists, step-by-step execution guide, and required application changes. Use the template in references/migration-plan-template.md.</p>
+</li>
+<li>
+<p>Handle edge cases. Account for extremely large tables, lossy mappings, MongoDB document flattening, PlanetScale foreign key workarounds, Supabase specifics, and multi-schema migrations. Verify the plan against the quality checklist. See references/edge-cases.md.</p>
+</li>
+</ol>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

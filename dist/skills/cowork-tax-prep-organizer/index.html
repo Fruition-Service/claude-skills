@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cowork Tax Prep Organizer | AI Skills</title>
+  <meta name="description" content="Do the part of tax season that actually eats the weekend: finding, identifying, and organizing the documents. Input: one or more folders (Downloads, a documents dump, last year's tax folder for reference). Output: an organized package a CPA can work from and a precise list of what is still missing. This skill organizes; it does not compute taxes or give tax advice.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Cowork Tax Prep Organizer</h1>
+      <p>Do the part of tax season that actually eats the weekend: finding, identifying, and organizing the documents. Input: one or more folders (Downloads, a documents dump, last year's tax folder for reference). Output: an organized package a CPA can work from and a precise list of what is still missing. This skill organizes; it does not compute taxes or give tax advice.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Workflow</h2>
+<ol>
+<li><strong>Build the personal checklist.</strong> From last year's return or folder (if provided) and a few questions (W-2 employment? contract income? brokerage accounts? mortgage? dependents? business entity?), build the expected-documents list: W-2s, 1099-NEC/MISC/INT/DIV/B/R, 1098s, K-1s, property tax bills, charitable receipts, estimated-payment confirmations, prior-year return.</li>
+<li><strong>Sweep.</strong> Walk the folders and identify every tax-relevant document by content, not just filename -- payers, form types, tax year. Match each to the checklist. Flag wrong-year documents (the 2024 1099 hiding in the 2025 pile) and duplicates (the same W-2 downloaded three times).</li>
+<li><strong>Organize.</strong> On approval, copy -- never move -- into a clean structure: <code>tax-2025/income/</code>, <code>deductions/</code>, <code>investments/</code>, <code>business/</code>, <code>prior-year/</code>, with names like <code>1099-nec-acme-corp-2025.pdf</code>. Write <code>INDEX.md</code> mapping checklist to files.</li>
+<li><strong>Chase list.</strong> Output what is expected but missing, with where it likely lives ("Interest income appeared last year from Chase -- no 1099-INT found; check the bank's tax documents page, typically posted by Jan 31"). Sort by what blocks filing vs. nice-to-have.</li>
+<li><strong>Ask-your-CPA list.</strong> Flag items a preparer should look at -- not conclusions: home-office-looking expenses for the self-employed, a brokerage form showing wash-sale codes, K-1 arrived vs. expected, estimated payments that do not sum to the notes. Phrase each as a question for the professional.</li>
+</ol>
+<h2>Rules</h2>
+<ul>
+<li>Never compute tax liability, deductions, or refunds. Identify, organize, and question -- the CPA concludes.</li>
+<li>Copy, never move. Source folders stay intact.</li>
+<li>Tax year discipline: every document is tagged with its year, and wrong-year files are quarantined in the report, not the package.</li>
+<li>"MISSING" means "not found in the provided folders" -- state what was searched.</li>
+<li>Treat everything as sensitive: no SSNs, account numbers, or dollar amounts in console output or digests; specifics live only in the package files.</li>
+<li>If both spouses' or multiple entities' documents are mixed, separate them explicitly and confirm the split before organizing.</li>
+</ul>
+<h2>Scheduled Mode</h2>
+<p>As a monthly Cowork scheduled task during January-April: re-sweep Downloads and the documents folder for newly arrived forms, file them into the package, and update the chase list -- so tax weekend becomes tax hour.</p>
+<h2>Quick Commands</h2>
+<ul>
+<li>"Organize my tax docs from [folder]" -- full workflow</li>
+<li>"What am I missing?" -- steps 1, 2, 4</li>
+<li>"Build my checklist" -- step 1 only</li>
+<li>"Anything my CPA should see?" -- step 5 against the organized package</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

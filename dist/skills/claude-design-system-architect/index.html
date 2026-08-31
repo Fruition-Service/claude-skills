@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Design System Architect | AI Skills</title>
+  <meta name="description" content="A design system is the difference between a site that looks bespoke and one that looks like every other AI-generated landing page. This skill builds the token layer and component language that makes everything downstream look intentional — then exports it in the formats your stack actually uses.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Claude Design System Architect</h1>
+      <p>A design system is the difference between a site that looks bespoke and one that looks like every other AI-generated landing page. This skill builds the token layer and component language that makes everything downstream look intentional — then exports it in the formats your stack actually uses.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <p>Pairs with <code>claude-landing-composer</code> (which consumes these tokens to build pages) and <code>claude-design-critic</code> (which audits against them).</p>
+<h2>Step 1 — Establish the brand inputs</h2>
+<p>From a brief, an existing site (WebFetch / screenshots), or a few reference sites the user likes:
+- <strong>Personality</strong> — 3–5 adjectives (e.g. "warm, editorial, confident, calm"). These drive every later decision.
+- <strong>Audience &amp; context</strong> — who uses it, on what device, in what mood.
+- <strong>Existing equity</strong> — logo, locked colors, fonts already in use.
+- <strong>Anti-references</strong> — what it must NOT look like.</p>
+<h3>Defaults &amp; house rules</h3>
+<p>Unless the brand explicitly overrides:
+- <strong>No purple</strong> anywhere in the palette.
+- <strong>No emoji</strong> in UI — use an icon set (Lucide / Heroicons) and specify it as a token.
+- Lean toward <strong>warm / earth tones</strong> (sand, terracotta, clay) and consider a <strong>dark surface</strong> option.
+- Motion is part of the system, not an afterthought.</p>
+<h2>Step 2 — Build the tokens</h2>
+<p>Design each layer deliberately and document the <em>why</em>:
+- <strong>Color</strong> — a real ramp (50–900) per hue, semantic tokens (<code>surface</code>, <code>text</code>, <code>muted</code>, <code>accent</code>, <code>border</code>, <code>success</code>/<code>warn</code>/<code>danger</code>), and verified contrast (WCAG AA min for body text). Include a dark mode set. No arbitrary hexes scattered later — everything maps to a token.
+- <strong>Type</strong> — a font pairing with rationale, a modular scale (not random px), line-heights and tracking per size, and weights. Prefer characterful, legible pairings over the default system stack that screams "AI made this."
+- <strong>Space &amp; layout</strong> — a spacing scale, container widths, grid, breakpoints. Generous, asymmetric whitespace reads premium; cramped uniform padding reads generated.
+- <strong>Radius / border / elevation</strong> — a small, consistent set. Shadows that match the brand's weight (soft for warm brands, crisp for technical ones).
+- <strong>Motion</strong> — duration + easing tokens, named patterns (entrance, emphasis, transition), and a reduced-motion stance. This is what makes it feel alive.</p>
+<h2>Step 3 — Specify components</h2>
+<p>For the core set (button, input, card, nav, section, badge, modal), specify variants, states (hover/focus/active/disabled), sizing, and accessibility notes — all expressed in the tokens above, never one-off values.</p>
+<h2>Step 4 — Export</h2>
+<p>Produce real files, not prose:
+- <code>tailwind.config</code> extension (or <code>@theme</code> for Tailwind v4) wiring every token.
+- <code>tokens.css</code> — CSS custom properties (light + dark).
+- <code>design-system.md</code> — the usage doc: palette with hexes + contrast, type scale, spacing, motion, component specs, and <strong>do/don't</strong> examples that call out the AI-tell patterns to avoid.</p>
+<h2>Step 5 — Hand off</h2>
+<p>End with a one-screen summary and the next move: <code>claude-landing-composer</code> to build pages on these tokens, or <code>claude-design-critic</code> to retrofit an existing UI onto them.</p>
+<h2>What separates premium from generated (bake this in)</h2>
+<ul>
+<li>Intentional, restrained palette — not 6 competing accent colors.</li>
+<li>A real type scale and characterful fonts — not default sans at 3 sizes.</li>
+<li>Asymmetric, generous whitespace — not uniform padding everywhere.</li>
+<li>Motion with personality — not the same fade-up on every element.</li>
+<li>One confident accent — not rainbow gradients (and never purple-by-default).</li>
+</ul>
+<h2>Guardrails recap</h2>
+<p>Every value is a token, nothing arbitrary · contrast meets AA · dark mode + reduced-motion included · no purple / no emoji unless the brand demands it · export real config files, not descriptions.</p>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

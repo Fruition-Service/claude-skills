@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scout — Free Claude Skill | Claude Skills Library</title>
+  <meta name="description" content="Analyzes current conversation context to recommend the best skills and subagents for the task at hand. Use proactively when unsure which tool, skill, or ag">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Claude Skills Library">
+  <link rel="canonical" href="https://fruition-service.github.io/claude-skills/skills/scout/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Scout — Free Claude Skill | Claude Skills Library">
+  <meta property="og:description" content="Analyzes current conversation context to recommend the best skills and subagents for the task at hand. Use proactively when unsure which tool, skill, or ag">
+  <meta property="og:url" content="https://fruition-service.github.io/claude-skills/skills/scout/">
+  <meta property="og:site_name" content="Claude Skills Library">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Scout — Free Claude Skill | Claude Skills Library">
+  <meta name="twitter:description" content="Analyzes current conversation context to recommend the best skills and subagents for the task at hand. Use proactively when unsure which tool, skill, or ag">
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Scout", "description": "Analyzes current conversation context to recommend the best skills and subagents for the task at hand. Use proactively when unsure which tool, skill, or ag", "url": "https://fruition-service.github.io/claude-skills/skills/scout/", "isPartOf": {"@type": "WebSite", "name": "Claude Skills Library", "url": "https://fruition-service.github.io/claude-skills/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://fruition-service.github.io/claude-skills/"}, {"@type": "ListItem", "position": 2, "name": "Skills", "item": "https://fruition-service.github.io/claude-skills/#skills"}, {"@type": "ListItem", "position": 3, "name": "Scout", "item": "https://fruition-service.github.io/claude-skills/skills/scout/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Scout", "description": "Analyzes current conversation context to recommend the best skills and subagents for the task at hand. Use proactively when unsure which tool, skill, or ag", "codeRepository": "https://github.com/OneWave-AI/claude-skills/tree/main/scout", "programmingLanguage": "Markdown", "license": "https://opensource.org/licenses/MIT", "isAccessibleForFree": true}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the Scout Claude skill?", "acceptedAnswer": {"@type": "Answer", "text": "Analyzes current conversation context to recommend the best skills and subagents for the task at hand. Use proactively when unsure which tool, skill, or ag"}}, {"@type": "Question", "name": "How do I install Scout?", "acceptedAnswer": {"@type": "Answer", "text": "Create ~/.claude/skills/scout/SKILL.md and paste the skill content, or clone the OneWave-AI/claude-skills repository. Claude Code loads skills automatically with no restart."}}, {"@type": "Question", "name": "When should I use Scout?", "acceptedAnswer": {"@type": "Answer", "text": "Use Scout when your task matches the skill description: Analyzes current conversation context to recommend the best skills and subagents for the task at hand. Use proactively when unsure which tool, skill, or ag"}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Install the Scout Claude skill", "description": "Add Scout to Claude Code in under a minute.", "step": [{"@type": "HowToStep", "position": 1, "name": "Create the skill folder", "text": "mkdir -p ~/.claude/skills/scout"}, {"@type": "HowToStep", "position": 2, "name": "Download SKILL.md", "text": "Save the skill file to ~/.claude/skills/scout/SKILL.md"}, {"@type": "HowToStep", "position": 3, "name": "Start using the skill", "text": "Claude Code picks up the skill immediately — describe your task or invoke it by name."}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html">Claude Skills Library</a>
+      <nav aria-label="Primary">
+        <a href="../../index.html">All skills</a>
+        <a href="https://github.com/OneWave-AI/claude-skills/tree/main/scout" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <a href="../../index.html">Home</a> / <a href="../../index.html#skills">Skills</a> / <span>Scout</span>
+    </nav>
+    <article itemscope itemtype="https://schema.org/SoftwareSourceCode">
+      <p class="eyebrow">AI Agents</p>
+      <h1 itemprop="name">Scout</h1>
+      <p class="lead" itemprop="description">Analyzes current conversation context to recommend the best skills and subagents for the task at hand. Use proactively when unsure which tool, skill, or ag</p>
+      <section aria-labelledby="what-is">
+        <h2 id="what-is">What is Scout?</h2>
+        <p>Analyzes current conversation context to recommend the best skills and subagents for the task at hand. Use proactively when unsure which tool, skill, or ag This free Claude skill teaches Claude how to handle a specific workflow with structured steps and best practices.</p>
+      </section>
+      <section aria-labelledby="skill-content" class="skill-content">
+        <h2 id="skill-content">Skill instructions</h2>
+        <h2>Scout Agent</h2>
+<p>You are Scout, a meta-agent that helps users navigate Claude Code&#x27;s capabilities. Your job is to analyze the current conversation and recommend the most effective skills and subagents for the user&#x27;s task.</p>
+<h3>Your Role</h3>
+<ol>
+<li><strong>Analyze Context</strong>: Review the conversation to understand what the user is trying to accomplish</li>
+<li><strong>Recommend Tools</strong>: Suggest the best skills (<code>/skill-name</code>) and subagents (via Task tool) for their needs</li>
+<li><strong>Explain Why</strong>: Provide clear reasoning for each recommendation</li>
+<li><strong>Create Plans</strong>: Outline how to use multiple tools together for complex workflows</li>
+</ol>
+<h3>Available Subagents (via Task tool)</h3>
+<p>Use these for autonomous, multi-step work:</p>
+<ul>
+<li><strong>Explore</strong>: Fast codebase exploration - finding files, searching code, understanding architecture</li>
+<li><strong>Plan</strong>: Software architect for designing implementation strategies</li>
+<li><strong>Frontend Developer</strong>: React, Vue, Angular, TypeScript, responsive design, state management</li>
+<li><strong>Backend Developer</strong>: Node.js, Python, Go, APIs, databases, microservices</li>
+<li><strong>Test Engineer</strong>: Testing strategy, unit tests, integration tests, E2E, TDD</li>
+<li><strong>Code Reviewer</strong>: Code quality, best practices, patterns, refactoring</li>
+<li><strong>Security Auditor</strong>: OWASP Top 10, vulnerabilities, security analysis</li>
+<li><strong>Dependency Auditor</strong>: CVEs, supply chain risks, security vulnerabilities</li>
+<li><strong>API Researcher</strong>: API documentation, OpenAPI specs, endpoint analysis</li>
+<li><strong>Codebase Mapper</strong>: Architecture diagrams, dependency graphs, project structure</li>
+<li><strong>License Auditor</strong>: Open source license compliance</li>
+<li><strong>Compliance Auditor</strong>: GDPR, HIPAA, SOC2, PCI-DSS compliance</li>
+</ul>
+<h3>Available Skills (invoke with /skill-name)</h3>
+<p>Skills are specialized prompts for specific tasks. Key categories:</p>
+<p><strong>Development</strong>:</p>
+<ul>
+<li><code>/code-review-pro</code> - Comprehensive code review</li>
+<li><code>/api-endpoint-scaffolder</code> - Generate REST API endpoints</li>
+<li><code>/react-component-generator</code> - Create React components</li>
+<li><code>/database-schema-designer</code> - Design database schemas</li>
+<li><code>/docker-debugger</code> - Debug Docker issues</li>
+<li><code>/test-coverage-improver</code> - Improve test coverage</li>
+</ul>
+<p><strong>Documentation &amp; Content</strong>:</p>
+<ul>
+<li><code>/api-documentation-writer</code> - Generate API docs</li>
+<li><code>/technical-writer</code> - Technical documentation</li>
+<li><code>/meeting-intelligence</code> - Analyze meeting transcripts</li>
+</ul>
+<p><strong>Analysis</strong>:</p>
+<ul>
+<li><code>/contract-analyzer</code> - Review contracts</li>
+<li><code>/financial-parser</code> - Parse financial documents</li>
+<li><code>/seo-optimizer</code> - SEO analysis</li>
+<li><code>/accessibility-auditor</code> - WCAG compliance</li>
+</ul>
+<p><strong>Sales &amp; Marketing</strong>:</p>
+<ul>
+<li><code>/cold-email-sequence-generator</code> - Email campaigns</li>
+<li><code>/landing-page-copywriter</code> - Landing page copy</li>
+<li><code>/linkedin-post-optimizer</code> - LinkedIn content</li>
+<li><code>/competitor-content-analyzer</code> - Track competitors</li>
+</ul>
+<p><strong>Creative</strong>:</p>
+<ul>
+<li><code>/game-builder</code> - Create browser games</li>
+<li><code>/motion-designer</code> - Animation and motion design</li>
+<li><code>/css-animation-creator</code> - CSS animations</li>
+<li><code>/screenshot-to-code</code> - Convert screenshots to code</li>
+</ul>
+<h3>How to Respond</h3>
+<ol>
+<li><strong>Read the conversation</strong> - Understand the user&#x27;s goal and current progress</li>
+<li><strong>Identify the task type</strong> - Is it coding, research, content, analysis, etc.?</li>
+<li><strong>Match to capabilities</strong> - Which skills/subagents are best suited?</li>
+<li><strong>Provide recommendations</strong> in this format:</li>
+</ol>
+<pre><code class="language-markdown">
+## Scout&#x27;s Recommendations
+
+**Task Identified**: [Brief description of what user is trying to do]
+
+### Recommended Approach
+
+**Primary Tool**: [Skill or Subagent name]
+- Why: [Reasoning]
+- How: [How to invoke it]
+
+**Supporting Tools** (optional):
+- [Additional skills/subagents that could help]
+
+### Suggested Workflow
+1. [Step 1]
+2. [Step 2]
+3. [etc.]
+</code></pre>
+<h3>Important Notes</h3>
+<ul>
+<li>You have access to the full conversation context - use it!</li>
+<li>For complex tasks, recommend combining multiple tools</li>
+<li>If unsure, explore the codebase first to understand what exists</li>
+<li>Always explain the &quot;why&quot; behind recommendations</li>
+</ul>
+      </section>
+      <section aria-labelledby="install" class="install">
+        <h2 id="install">Install in Claude Code</h2>
+        <pre><code>mkdir -p ~/.claude/skills/scout
+curl -sL https://raw.githubusercontent.com/OneWave-AI/claude-skills/main/scout/SKILL.md -o ~/.claude/skills/scout/SKILL.md</code></pre>
+      </section>
+      <section aria-labelledby="faq" class="faq">
+        <h2 id="faq">Frequently asked questions</h2>
+        <dl>
+          <dt>What is the Scout Claude skill?</dt>
+          <dd>Analyzes current conversation context to recommend the best skills and subagents for the task at hand. Use proactively when unsure which tool, skill, or ag</dd>
+          <dt>Is Scout free to use?</dt>
+          <dd>Yes. Skills from the OneWave library are MIT licensed and free for personal and commercial use.</dd>
+          <dt>Where does the skill file go?</dt>
+          <dd>Personal skills live in <code>~/.claude/skills/scout/SKILL.md</code>. Project-specific skills go in <code>.claude/skills/</code> inside your repo.</dd>
+        </dl>
+      </section>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>Mirrored from <a href="https://www.onewave-ai.com/resources/claude-skills/scout" rel="noopener">OneWave AI</a>. Source: <a href="https://github.com/OneWave-AI/claude-skills" rel="noopener">OneWave-AI/claude-skills</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dependency Auditor | AI Skills</title>
+  <meta name="description" content="When auditing dependencies:">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Dependency Auditor</h1>
+      <p>When auditing dependencies:</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Instructions</h2>
+<ol>
+<li><strong>Run security audit</strong></li>
+<li><strong>Check for outdated packages</strong></li>
+<li><strong>Find unused dependencies</strong></li>
+<li><strong>Analyze bundle size impact</strong></li>
+<li><strong>Review and update</strong></li>
+</ol>
+<h2>Security Audit</h2>
+<p>```bash</p>
+<h1>NPM audit</h1>
+<p>npm audit</p>
+<h1>Get JSON output for processing</h1>
+<p>npm audit --json</p>
+<h1>Fix automatically (safe fixes only)</h1>
+<p>npm audit fix</p>
+<h1>Force fix (may have breaking changes)</h1>
+<p>npm audit fix --force</p>
+<h1>PNPM</h1>
+<p>pnpm audit</p>
+<h1>Yarn</h1>
+<p>yarn audit
+```</p>
+<h2>Check Outdated Packages</h2>
+<p>```bash</p>
+<h1>NPM</h1>
+<p>npm outdated</p>
+<h1>Interactive update</h1>
+<p>npx npm-check-updates -i</p>
+<h1>Update all to latest</h1>
+<p>npx npm-check-updates -u
+npm install</p>
+<h1>Check specific package</h1>
+<p>npm view <package> versions
+```</p>
+<h2>Find Unused Dependencies</h2>
+<p>```bash</p>
+<h1>Using depcheck</h1>
+<p>npx depcheck</p>
+<h1>With details</h1>
+<p>npx depcheck --detailed</p>
+<h1>Ignore patterns</h1>
+<p>npx depcheck --ignores="@types/<em>,eslint-</em>"
+```</p>
+<h3>Common False Positives</h3>
+<p>Depcheck may flag these as unused when they're actually needed:
+- <code>@types/*</code> packages (used by TypeScript)
+- ESLint/Prettier plugins (referenced in config)
+- PostCSS plugins (referenced in config)
+- Next.js plugins
+- Babel presets</p>
+<h2>Analyze Bundle Size</h2>
+<p>```bash</p>
+<h1>For Next.js</h1>
+<p>npx @next/bundle-analyzer</p>
+<h1>General purpose</h1>
+<p>npx source-map-explorer dist/*<em>/</em>.js</p>
+<h1>Check package size before installing</h1>
+<p>npx package-phobia <package-name></p>
+<h1>Compare alternatives</h1>
+<p>npx bundlephobia-cli compare lodash ramda
+```</p>
+<h2>Dependency Review Checklist</h2>
+<h3>Security</h3>
+<ul>
+<li>[ ] No critical/high vulnerabilities</li>
+<li>[ ] Dependencies actively maintained</li>
+<li>[ ] No known malicious packages</li>
+<li>[ ] Lock file committed</li>
+</ul>
+<h3>Freshness</h3>
+<ul>
+<li>[ ] No major version behind (unless intentional)</li>
+<li>[ ] Security patches applied</li>
+<li>[ ] Deprecated packages replaced</li>
+</ul>
+<h3>Cleanliness</h3>
+<ul>
+<li>[ ] No unused dependencies</li>
+<li>[ ] No duplicate packages (check lock file)</li>
+<li>[ ] devDependencies vs dependencies correct</li>
+</ul>
+<h2>Update Strategies</h2>
+<h3>Conservative (Recommended)</h3>
+<p>```bash</p>
+<h1>Update patch versions only</h1>
+<p>npm update</p>
+<h1>Update specific package</h1>
+<p>npm install package@latest
+```</p>
+<h3>Aggressive</h3>
+<p>```bash</p>
+<h1>Update everything</h1>
+<p>npx npm-check-updates -u
+npm install
+npm test
+```</p>
+<h3>Interactive</h3>
+<p>```bash
+npx npm-check-updates -i</p>
+<h1>Options:</h1>
+<h1>a - update all</h1>
+<h1>space - toggle selection</h1>
+<h1>enter - apply selected</h1>
+<p>```</p>
+<h2>Package.json Cleanup</h2>
+<p><code>json
+{
+  "dependencies": {
+    // Runtime dependencies only
+  },
+  "devDependencies": {
+    // Build/test tools only
+  },
+  "peerDependencies": {
+    // For libraries only
+  },
+  "optionalDependencies": {
+    // Platform-specific (rare)
+  }
+}</code></p>
+<h2>Lock File Best Practices</h2>
+<ol>
+<li><strong>Always commit</strong> lock files (package-lock.json, pnpm-lock.yaml, yarn.lock)</li>
+<li><strong>Use <code>npm ci</code></strong> in CI/CD (not <code>npm install</code>)</li>
+<li><strong>Regenerate</strong> if corrupted: delete lock file + node_modules, reinstall</li>
+<li><strong>Single lock file</strong> per project (don't mix package managers)</li>
+</ol>
+<h2>Automated Monitoring</h2>
+<p>```yaml</p>
+<h1>.github/dependabot.yml</h1>
+<p>version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    groups:
+      dev-dependencies:
+        dependency-type: "development"
+```</p>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

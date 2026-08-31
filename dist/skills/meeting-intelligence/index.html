@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meeting Intelligence System | AI Skills</title>
+  <meta name="description" content="Transform meeting transcripts into actionable insights, decisions, and follow-ups.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Meeting Intelligence System</h1>
+      <p>Transform meeting transcripts into actionable insights, decisions, and follow-ups.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>When to Use This Skill</h2>
+<p>Activate when the user:
+- Provides a meeting transcript or recording
+- Asks to "analyze this meeting"
+- Needs action items extracted from notes
+- Wants to generate meeting minutes
+- Asks for decisions made in a meeting
+- Needs a follow-up email created
+- Mentions meeting notes or transcripts</p>
+<h2>Instructions</h2>
+<ol>
+<li><strong>Extract Meeting Metadata</strong></li>
+<li>Identify meeting title/topic</li>
+<li>Note participants (if mentioned)</li>
+<li>Determine meeting date/time (if available)</li>
+<li>
+<p>Identify meeting type (standup, planning, retrospective, etc.)</p>
+</li>
+<li>
+<p><strong>Identify Decisions Made</strong></p>
+</li>
+<li>Extract all explicit decisions</li>
+<li>Note who made each decision (if clear)</li>
+<li>Include rationale for decisions (if stated)</li>
+<li>Flag tentative decisions vs. final decisions</li>
+<li>
+<p>Note decisions that need follow-up approval</p>
+</li>
+<li>
+<p><strong>Extract Action Items</strong></p>
+</li>
+<li>List all tasks assigned or volunteered</li>
+<li>Identify owner for each action item</li>
+<li>Note deadlines or timeframes mentioned</li>
+<li>Flag action items without clear owners</li>
+<li>Prioritize action items (if priority discussed)</li>
+<li>
+<p>Note dependencies between action items</p>
+</li>
+<li>
+<p><strong>Identify Blockers and Risks</strong></p>
+</li>
+<li>Extract mentioned blockers</li>
+<li>Note risks or concerns raised</li>
+<li>Identify unresolved issues</li>
+<li>Flag items needing escalation</li>
+<li>
+<p>Note resource constraints mentioned</p>
+</li>
+<li>
+<p><strong>Analyze Discussion Sentiment</strong></p>
+</li>
+<li>Gauge overall meeting tone (productive, tense, confused, aligned)</li>
+<li>Identify areas of agreement and disagreement</li>
+<li>Note team morale indicators</li>
+<li>
+<p>Flag conflict or tension points</p>
+</li>
+<li>
+<p><strong>Extract Key Topics Discussed</strong></p>
+</li>
+<li>Summarize main discussion points</li>
+<li>Note questions raised</li>
+<li>Identify topics needing follow-up</li>
+<li>
+<p>Highlight important context or background</p>
+</li>
+<li>
+<p><strong>Generate Follow-Up Communications</strong></p>
+</li>
+<li>Create meeting minutes/summary</li>
+<li>Draft action item tracking email</li>
+<li>Suggest calendar invites for follow-ups</li>
+<li>Recommend next steps</li>
+</ol>
+<h2>Output Format</h2>
+<p>```markdown</p>
+<h1>Meeting Summary: [Title]</h1>
+<p><strong>Date</strong>: [Date] | <strong>Participants</strong>: [Names]</p>
+<h2>Executive Summary</h2>
+<p>[2-3 sentence overview of meeting purpose and outcome]</p>
+<h2>Decisions Made</h2>
+<ol>
+<li><strong>[Decision]</strong></li>
+<li>Owner: [Name]</li>
+<li>Rationale: [Why]</li>
+<li>Status: Final / Needs approval</li>
+</ol>
+<h2>Action Items</h2>
+<p>| Priority | Action | Owner | Deadline | Status |
+|----------|--------|-------|----------|--------|
+| High | [Task] | [Name] | [Date] | Not started |
+| Medium | [Task] | [Name] | [Date] | Not started |</p>
+<h2>Blockers &amp; Risks</h2>
+<ol>
+<li><strong>[Blocker]</strong> - [Impact] - Needs: [Action]</li>
+<li><strong>[Risk]</strong> - [Mitigation plan]</li>
+</ol>
+<h2>Key Discussion Points</h2>
+<ul>
+<li></li>
+<li></li>
+</ul>
+<h2>Open Questions</h2>
+<ol>
+<li>[Question] - Owner: [Who will answer]</li>
+</ol>
+<h2>Sentiment Analysis</h2>
+<ul>
+<li><strong>Overall Tone</strong>: [productive/tense/etc.]</li>
+<li><strong>Team Alignment</strong>: [high/medium/low]</li>
+<li><strong>Concerns Raised</strong>: [Summary]</li>
+</ul>
+<h2>Follow-Up Email Draft</h2>
+<p>Subject: Action Items from [Meeting Title] - [Date]</p>
+<p>Hi team,</p>
+<p>Thanks for joining today's [meeting type]. Here are our key outcomes:</p>
+<p><strong>Decisions:</strong>
+- [Decision 1]</p>
+<p><strong>Your Action Items:</strong>
+[Name]: [Task] by [Date]</p>
+<p><strong>Blockers:</strong>
+- [Blocker] - please [action]</p>
+<p>Next meeting: [Date/Time]</p>
+<p>Best,
+[Your name]
+```</p>
+<h2>Examples</h2>
+<p><strong>User</strong>: "Analyze this standup transcript"
+<strong>Response</strong>: Extract blockers mentioned → List action items per person → Flag impediments → Note team velocity concerns → Generate summary with focus on blockers</p>
+<p><strong>User</strong>: "Create action items from this product planning meeting"
+<strong>Response</strong>: Identify all decisions (feature prioritization) → Extract action items (design mockups, tech spec) → Assign owners → Set deadlines → Create tracking table → Draft follow-up email</p>
+<h2>Best Practices</h2>
+<ul>
+<li>Be specific with action items (not vague "look into X")</li>
+<li>Always try to identify owners (flag if unclear)</li>
+<li>Differentiate between decisions and proposals</li>
+<li>Preserve important context for decisions</li>
+<li>Flag action items without deadlines</li>
+<li>Note commitments made by each participant</li>
+<li>Include relevant quotes for controversial decisions</li>
+<li>Use clear, scannable formatting</li>
+<li>Prioritize action items by urgency</li>
+<li>Flag dependencies between tasks</li>
+<li>Generate professional, actionable follow-up emails</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

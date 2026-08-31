@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Panel of Experts | AI Skills</title>
+  <meta name="description" content="Put your customers in the room before you spend money or burn trust. This skill assembles a panel of data-grounded buyer personas and runs a real debate on whatever you're deciding — then hands you the decision, the dissent, and what to test next.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Customer Panel of Experts</h1>
+      <p>Put your customers in the room before you spend money or burn trust. This skill assembles a panel of data-grounded buyer personas and runs a real debate on whatever you're deciding — then hands you the decision, the dissent, and what to test next.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <p>It is the flagship of the panel family. It reads the persona library produced by <code>icp-deep-scanner</code> and turns it into a living, arguing room.</p>
+<h2>When to use it</h2>
+<ul>
+<li>"Should we raise prices 20%?" — and what each segment will actually do.</li>
+<li>"Here's the launch campaign for {product}. Will it land?"</li>
+<li>"We're killing {feature} and adding {feature}. Who revolts?"</li>
+<li>"Pick between positioning A and positioning B."</li>
+<li>Any high-stakes call where you'd normally guess what customers think.</li>
+</ul>
+<h2>Step 0 — Get the personas</h2>
+<p>The panel is only as good as its members. In order of preference:
+1. <strong>Use an existing persona library.</strong> Look for <code>personas/</code> and <code>icp-profile.md</code> (output of <code>icp-deep-scanner</code>). Load every persona file and <code>personas/index.md</code>.
+2. <strong>Generate one now.</strong> If none exists and the user has connected tools, run <code>icp-deep-scanner</code> first (read-only) to build it from real data.
+3. <strong>Bootstrap from input.</strong> If there's no data and no time, build 3–5 provisional personas from what the user tells you — and label the entire session <strong>"PROVISIONAL — not grounded in customer data"</strong> at the top and bottom. Never let a guessed panel masquerade as a researched one.</p>
+<h3>Data &amp; security rules</h3>
+<ul>
+<li>Connecting tools is <strong>read-only</strong>. Never write to, send from, or modify a connected source. Confirm before any exception.</li>
+<li>Personas are archetypes. Do not surface real customer names/emails/account IDs in the debate. Quotes must be scrubbed.</li>
+<li>Secrets stay in env vars / the MCP connection — never printed or stored in output.</li>
+</ul>
+<h2>Step 1 — Frame the decision</h2>
+<p>Restate the decision crisply and lock the variables before debating:
+- <strong>The decision:</strong> one sentence, with the specific option(s) on the table.
+- <strong>What changes for the customer:</strong> price, workflow, access, expectation.
+- <strong>Success metric:</strong> what "this went well" means in numbers.
+- <strong>Reversibility:</strong> can we walk it back, and at what cost?</p>
+<p>If the user's ask is vague ("is this a good idea?"), tighten it into a decision with options before proceeding.</p>
+<h2>Step 2 — Seat the panel</h2>
+<p>Select 3–6 personas relevant to THIS decision (a pricing decision needs the economic buyer and a price-sensitive segment; a feature cut needs the power users who rely on it). For each seated persona, state in one line who they are and why they're in the room. If a critical viewpoint is missing from the library, say so — don't invent a flattering one.</p>
+<p>For a deep, parallel debate (many personas × many angles), dispatch one sub-agent per persona via <code>/agent-army</code>, then synthesize. Otherwise run it inline.</p>
+<h2>Step 3 — Run the debate</h2>
+<p>Each persona argues <strong>in character, from their real goals, pains, and language</strong> — not as a generic critic. Structure:</p>
+<ol>
+<li><strong>Gut reaction</strong> — each persona's first, honest read of the decision (one paragraph, in their voice).</li>
+<li><strong>Cross-examination</strong> — personas challenge each other. The economic buyer and the end user often want opposite things; let that tension play out. Surface where one persona's win is another's loss.</li>
+<li><strong>The strongest objection</strong> — the single most dangerous reaction, stated as that customer would actually say it (and would actually act on — churn, downgrade, public complaint, silence).</li>
+<li><strong>What would change their mind</strong> — the concession, proof, or framing that flips a NO to a YES.</li>
+</ol>
+<p>Keep personas honest: include the ones who will hate it. A panel that all agrees is a panel you rigged.</p>
+<h2>Step 4 — Synthesize the decision</h2>
+<p>```markdown</p>
+<h1>Customer Panel — {Decision}</h1>
+<p>Generated: {timestamp} · Panel: {persona list} · Grounding: {data-backed / PROVISIONAL}</p>
+<h2>Recommendation: {GO / GO WITH CHANGES / NO / TEST FIRST}</h2>
+<p>One paragraph: what to do and why, in plain language.</p>
+<h2>Vote by persona</h2>
+<p>| Persona | Verdict | Why | If it ships anyway, they will… |</p>
+<h2>The objections that matter (ranked)</h2>
+<ol>
+<li>{Objection} — who raises it, how likely to act, blast radius, mitigation.</li>
+</ol>
+<h2>What this changes about the plan</h2>
+<ul>
+<li>Concrete edits to the launch / price / product before you commit.</li>
+</ul>
+<h2>What to test before betting the company</h2>
+<ul>
+<li>The cheapest experiment that would de-risk the biggest unknown.</li>
+</ul>
+<h2>Confidence &amp; blind spots</h2>
+<ul>
+<li>Grounding strength, which personas are thin, which viewpoint is missing.
+```</li>
+</ul>
+<h2>Step 5 — Offer the next move</h2>
+<p>Offer to: rerun the panel against a revised plan, hand the strongest objection to <code>prospect-panel-simulator</code> to test live messaging, route a pricing decision to <code>pricing-change-strategist</code>, or escalate a full launch to <code>product-launch-war-room</code>.</p>
+<h2>Guardrails recap</h2>
+<p>Grounded personas beat invented ones — and provisional panels say so loudly · read-only connections · no real PII in output · include the customers who'll hate it · every verdict ties to a persona's real motivation.</p>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Launch War Room | AI Skills</title>
+  <meta name="description" content="A launch fails for boring reasons: nobody owned the objection, the price change leaked, the segment that mattered wasn't in the room. This skill runs the war room that catches those reasons before launch day — adversarial by design, decision-oriented, and grounded in your real customers when data is available.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Product Launch War Room</h1>
+      <p>A launch fails for boring reasons: nobody owned the objection, the price change leaked, the segment that mattered wasn't in the room. This skill runs the war room that catches those reasons before launch day — adversarial by design, decision-oriented, and grounded in your real customers when data is available.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <p>It composes the panel skills (<code>customer-panel-of-experts</code>, <code>prospect-panel-simulator</code>) into a single GTM decision and a rollout plan you can execute.</p>
+<h2>What it's for</h2>
+<ul>
+<li>New product / feature launch</li>
+<li>Repositioning or rebrand</li>
+<li>Price increase or packaging change (hand the rollout to <code>pricing-change-strategist</code>)</li>
+<li>Market or segment expansion</li>
+<li>Sunsetting something customers depend on</li>
+</ul>
+<h2>Step 1 — Define the launch</h2>
+<p>Lock these before any debate:
+- <strong>What's launching</strong> and what specifically changes for the customer.
+- <strong>Audience</strong> — existing customers, prospects, a specific segment, the market.
+- <strong>Goal + metric</strong> — the number that defines success and the window to hit it.
+- <strong>Constraints</strong> — timeline, budget, team, dependencies, hard commitments already made.
+- <strong>Reversibility</strong> — fully reversible / costly / one-way door. This sets how much rigor the war room applies.</p>
+<h2>Step 2 — Convene the room</h2>
+<p>Seat both sides. Use <code>icp-deep-scanner</code> personas where the call is customer-facing; add functional experts for execution risk:
+- <strong>Customer voice</strong> — relevant buyer personas (load from <code>personas/</code>; if absent and tools are connected, run <code>icp-deep-scanner</code> read-only; otherwise mark PROVISIONAL).
+- <strong>The skeptic / pre-mortem lead</strong> — assumes the launch already failed and explains why.
+- <strong>Functional experts</strong> as the launch demands — GTM/demand-gen, sales, product, support/CS, finance, brand. Each owns the risks in their lane.</p>
+<p>For a thorough war room, dispatch parallel sub-agents (one per role) via <code>/agent-army</code>, then synthesize. Connections are read-only; no external sends; no real PII; secrets in env vars only.</p>
+<h2>Step 3 — Pre-mortem and debate</h2>
+<ol>
+<li><strong>Pre-mortem</strong> — "It's 90 days post-launch and it flopped. What happened?" Each role writes the most likely failure in their lane.</li>
+<li><strong>Customer reaction</strong> — run the plan/messaging through the customer or prospect panel. Who's delighted, who churns, who shrugs.</li>
+<li><strong>Cross-fire</strong> — finance vs. growth, sales vs. product, brand vs. speed. Force the real trade-offs into the open.</li>
+<li><strong>Risk register</strong> — every surfaced risk scored by likelihood × blast radius, with an owner and a mitigation.</li>
+</ol>
+<h2>Step 4 — Decide and sequence</h2>
+<p>```markdown</p>
+<h1>Launch War Room — {Launch}</h1>
+<p>Generated: {timestamp} · Room: {roles/personas} · Reversibility: {…} · Grounding: {data / PROVISIONAL}</p>
+<h2>Call: {GO / GO WITH CHANGES / DELAY / NO-GO}</h2>
+<p>The reasoning in one paragraph.</p>
+<h2>Top risks (ranked)</h2>
+<p>| Risk | Likelihood | Blast radius | Owner | Mitigation | Pre-launch or live? |</p>
+<h2>Required changes before launch</h2>
+<ul>
+<li>The non-negotiables surfaced by the room.</li>
+</ul>
+<h2>Phased rollout</h2>
+<ul>
+<li>Phase 0 — prep &amp; internal enablement (sales, support scripts, FAQ)</li>
+<li>Phase 1 — soft launch / segment / beta + what we watch</li>
+<li>Phase 2 — full launch + channels + sequencing</li>
+<li>Phase 3 — post-launch monitoring window</li>
+</ul>
+<h2>Kill criteria &amp; rollback</h2>
+<ul>
+<li>The specific metric thresholds that trigger pause or rollback, and how to walk it back.</li>
+</ul>
+<h2>Owners &amp; timeline</h2>
+<p>| Workstream | Owner | Deadline | Dependency |</p>
+<h2>Comms kit to produce next</h2>
+<ul>
+<li>Customer email, sales talk track, support FAQ, objection handling, public page.
+```</li>
+</ul>
+<h2>Step 5 — Hand off the artifacts</h2>
+<p>Offer to generate the comms kit (<code>cold-email-sequence-generator</code>, <code>landing-page-copywriter</code>, <code>company-announcement-writer</code>), route a price change to <code>pricing-change-strategist</code>, build the launch video with <code>hyperframes-ad-director</code>, or re-run the room against the revised plan.</p>
+<h2>Guardrails recap</h2>
+<p>Adversarial by default — the room's job is to find the failure, not bless the plan · rigor scales with reversibility · kill criteria are mandatory, not optional · read-only connections, no sends, no real PII · provisional grounding is labeled.</p>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

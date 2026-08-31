@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cowork Expense Audit | AI Skills</title>
+  <meta name="description" content="Process an expense folder the way a careful controller does: reconcile receipts against statements, categorize consistently, and separate what is provably documented from what is missing. Input is a directory of receipts (PDF, images), card/bank statements, and any expense exports (.csv/.xlsx). Never invent an amount -- every number in the output traces to a source file.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Cowork Expense Audit</h1>
+      <p>Process an expense folder the way a careful controller does: reconcile receipts against statements, categorize consistently, and separate what is provably documented from what is missing. Input is a directory of receipts (PDF, images), card/bank statements, and any expense exports (.csv/.xlsx). Never invent an amount -- every number in the output traces to a source file.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Workflow</h2>
+<ol>
+<li><strong>Inventory.</strong> Catalog every file: receipts, statements, exports, and unclassifiable items. Note date ranges covered. If statements and receipts cover different periods, say so up front.</li>
+<li><strong>Extract transactions.</strong> Build a master ledger from the statements/exports: date, merchant, amount, currency. From each receipt: merchant, date, total, tax, payment method, line items when legible.</li>
+<li><strong>Reconcile.</strong> Match receipts to statement lines (exact amount+date first, then fuzzy within 3 days and small tip/FX variance). Output three lists: matched, statement lines with no receipt, receipts with no statement line.</li>
+<li><strong>Categorize</strong> every transaction (meals, travel, software, equipment, client entertainment, etc.). Use the company's category list if provided; otherwise propose one and apply it consistently. Tag anything client-billable separately.</li>
+<li><strong>Flag.</strong> Apply the policy if provided; otherwise apply defaults and label them as defaults: duplicate charges, weekend/holiday spend on business cards, round-number amounts, per-transaction limits exceeded, subscriptions appearing monthly with no owner, personal-looking merchants, and split transactions that dodge an approval threshold.</li>
+<li><strong>Report.</strong> Write <code>expense-report.xlsx</code>-ready CSV (or .xlsx if the xlsx skill is available) with the full categorized ledger, plus <code>audit-findings.md</code>: totals by category, reconciliation gaps, flagged items each with severity and the specific source file cited, and a missing-documentation list to chase.</li>
+</ol>
+<h2>Rules</h2>
+<ul>
+<li>Never fabricate or estimate amounts. An unreadable receipt is logged as unreadable, not guessed.</li>
+<li>Flags are questions, not accusations. Write "no receipt located for..." not "unauthorized spend."</li>
+<li>Keep personal card statements strictly scoped: extract only lines the user identifies as business expenses; do not summarize personal activity.</li>
+<li>Show your matching: every matched pair cites both source files; every unmatched item says what was searched.</li>
+<li>Currency: preserve the original currency and note the statement's settled amount; never silently convert.</li>
+<li>If more than 20% of transactions lack receipts, lead the findings memo with that fact -- it is the finding.</li>
+</ul>
+<h2>Scheduled Mode</h2>
+<p>As a monthly Cowork scheduled task pointed at a receipts inbox folder: process new files, append to the running ledger, and deliver the month's report and findings without re-litigating prior months.</p>
+<h2>Quick Commands</h2>
+<ul>
+<li>"Audit [folder]" -- full workflow</li>
+<li>"Reconcile only" -- steps 1-3, the matching report</li>
+<li>"What's missing?" -- unmatched statement lines and the chase list</li>
+<li>"Billable pull" -- client-billable transactions grouped by client</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Runbook Generator — Free Claude Skill | Claude Skills Library</title>
+  <meta name="description" content="Generates comprehensive operational runbooks for any system or process. Reads codebase, infrastructure config, and deployment scripts to produce structured">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Claude Skills Library">
+  <link rel="canonical" href="https://fruition-service.github.io/claude-skills/skills/runbook-generator/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Runbook Generator — Free Claude Skill | Claude Skills Library">
+  <meta property="og:description" content="Generates comprehensive operational runbooks for any system or process. Reads codebase, infrastructure config, and deployment scripts to produce structured">
+  <meta property="og:url" content="https://fruition-service.github.io/claude-skills/skills/runbook-generator/">
+  <meta property="og:site_name" content="Claude Skills Library">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Runbook Generator — Free Claude Skill | Claude Skills Library">
+  <meta name="twitter:description" content="Generates comprehensive operational runbooks for any system or process. Reads codebase, infrastructure config, and deployment scripts to produce structured">
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Runbook Generator", "description": "Generates comprehensive operational runbooks for any system or process. Reads codebase, infrastructure config, and deployment scripts to produce structured", "url": "https://fruition-service.github.io/claude-skills/skills/runbook-generator/", "isPartOf": {"@type": "WebSite", "name": "Claude Skills Library", "url": "https://fruition-service.github.io/claude-skills/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://fruition-service.github.io/claude-skills/"}, {"@type": "ListItem", "position": 2, "name": "Skills", "item": "https://fruition-service.github.io/claude-skills/#skills"}, {"@type": "ListItem", "position": 3, "name": "Runbook Generator", "item": "https://fruition-service.github.io/claude-skills/skills/runbook-generator/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Runbook Generator", "description": "Generates comprehensive operational runbooks for any system or process. Reads codebase, infrastructure config, and deployment scripts to produce structured", "codeRepository": "https://github.com/OneWave-AI/claude-skills/tree/main/runbook-generator", "programmingLanguage": "Markdown", "license": "https://opensource.org/licenses/MIT", "isAccessibleForFree": true}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the Runbook Generator Claude skill?", "acceptedAnswer": {"@type": "Answer", "text": "Generates comprehensive operational runbooks for any system or process. Reads codebase, infrastructure config, and deployment scripts to produce structured"}}, {"@type": "Question", "name": "How do I install Runbook Generator?", "acceptedAnswer": {"@type": "Answer", "text": "Create ~/.claude/skills/runbook-generator/SKILL.md and paste the skill content, or clone the OneWave-AI/claude-skills repository. Claude Code loads skills automatically with no restart."}}, {"@type": "Question", "name": "When should I use Runbook Generator?", "acceptedAnswer": {"@type": "Answer", "text": "Use Runbook Generator when your task matches the skill description: Generates comprehensive operational runbooks for any system or process. Reads codebase, infrastructure config, and deployment scripts to produce structured"}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Install the Runbook Generator Claude skill", "description": "Add Runbook Generator to Claude Code in under a minute.", "step": [{"@type": "HowToStep", "position": 1, "name": "Create the skill folder", "text": "mkdir -p ~/.claude/skills/runbook-generator"}, {"@type": "HowToStep", "position": 2, "name": "Download SKILL.md", "text": "Save the skill file to ~/.claude/skills/runbook-generator/SKILL.md"}, {"@type": "HowToStep", "position": 3, "name": "Start using the skill", "text": "Claude Code picks up the skill immediately — describe your task or invoke it by name."}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html">Claude Skills Library</a>
+      <nav aria-label="Primary">
+        <a href="../../index.html">All skills</a>
+        <a href="https://github.com/OneWave-AI/claude-skills/tree/main/runbook-generator" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <a href="../../index.html">Home</a> / <a href="../../index.html#skills">Skills</a> / <span>Runbook Generator</span>
+    </nav>
+    <article itemscope itemtype="https://schema.org/SoftwareSourceCode">
+      <p class="eyebrow">Engineering</p>
+      <h1 itemprop="name">Runbook Generator</h1>
+      <p class="lead" itemprop="description">Generates comprehensive operational runbooks for any system or process. Reads codebase, infrastructure config, and deployment scripts to produce structured</p>
+      <section aria-labelledby="what-is">
+        <h2 id="what-is">What is Runbook Generator?</h2>
+        <p>Generates comprehensive operational runbooks for any system or process. Reads codebase, infrastructure config, and deployment scripts to produce structured This free Claude skill teaches Claude how to handle a specific workflow with structured steps and best practices.</p>
+      </section>
+      <section aria-labelledby="skill-content" class="skill-content">
+        <h2 id="skill-content">Skill instructions</h2>
+        <h2>Runbook Generator</h2>
+<p>Generate a comprehensive operational <code>runbook.md</code> from a system&#x27;s codebase, infrastructure config, and deployment scripts -- written for on-call engineers working incidents, deployments, and routine operations at 3am.</p>
+<h3>Contents</h3>
+<ul>
+<li><code>references/discovery-patterns.md</code> -- Glob/Grep patterns and config files to inspect during discovery.</li>
+<li><code>references/output-template.md</code> -- The full 9-section runbook.md structure to populate.</li>
+<li><code>references/writing-style.md</code> -- Clarity, urgency, completeness, formatting, and accuracy rules plus output requirements.</li>
+</ul>
+<h3>Workflow</h3>
+<ol>
+<li>Discover the system. Run the Glob patterns in <code>references/discovery-patterns.md</code> (Step 1) to identify the stack and infrastructure.</li>
+<li>Read key configuration. Open and analyze the config files listed in <code>references/discovery-patterns.md</code> (Step 2): IaC, containers, CI/CD, app config, deploy scripts, monitoring, migrations, load balancers, docs.</li>
+<li>Identify operational behavior. Run the Grep patterns in <code>references/discovery-patterns.md</code> (Step 3) to surface health checks, metrics, caching, jobs, migrations, rollback, scaling, backups, TLS, secrets, alerting, and more.</li>
+<li>Generate the runbook. Produce <code>runbook.md</code> following the structure in <code>references/output-template.md</code>. Cover all 9 sections; adapt content to what discovery found; never include purely speculative sections.</li>
+<li>Apply writing standards. Follow every rule in <code>references/writing-style.md</code> -- copy-pasteable commands, expected outputs, sequential steps, P1-first ordering, tables for structured data, and the accuracy rules.</li>
+<li>Verify and flag gaps. Confirm referenced paths and scripts exist. Mark unverifiable details with <code>[VERIFY]</code> and missing sections with <code>[ACTION REQUIRED]: ...</code> so the runbook doubles as a gap analysis.</li>
+</ol>
+<h3>Output</h3>
+<p>Write <code>runbook.md</code> to the project root (or a directory the user specifies). It must be 500+ lines, cover all 9 sections, contain real commands derived from the codebase, include at least one architecture diagram, carry a complete table of contents, and never fabricate infrastructure details. See <code>references/writing-style.md</code> for the full output checklist.</p>
+      </section>
+      <section aria-labelledby="install" class="install">
+        <h2 id="install">Install in Claude Code</h2>
+        <pre><code>mkdir -p ~/.claude/skills/runbook-generator
+curl -sL https://raw.githubusercontent.com/OneWave-AI/claude-skills/main/runbook-generator/SKILL.md -o ~/.claude/skills/runbook-generator/SKILL.md</code></pre>
+      </section>
+      <section aria-labelledby="faq" class="faq">
+        <h2 id="faq">Frequently asked questions</h2>
+        <dl>
+          <dt>What is the Runbook Generator Claude skill?</dt>
+          <dd>Generates comprehensive operational runbooks for any system or process. Reads codebase, infrastructure config, and deployment scripts to produce structured</dd>
+          <dt>Is Runbook Generator free to use?</dt>
+          <dd>Yes. Skills from the OneWave library are MIT licensed and free for personal and commercial use.</dd>
+          <dt>Where does the skill file go?</dt>
+          <dd>Personal skills live in <code>~/.claude/skills/runbook-generator/SKILL.md</code>. Project-specific skills go in <code>.claude/skills/</code> inside your repo.</dd>
+        </dl>
+      </section>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>Mirrored from <a href="https://www.onewave-ai.com/resources/claude-skills/runbook-generator" rel="noopener">OneWave AI</a>. Source: <a href="https://github.com/OneWave-AI/claude-skills" rel="noopener">OneWave-AI/claude-skills</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSV Excel Merger — Free Claude Skill | Claude Skills Library</title>
+  <meta name="description" content="Merge multiple CSV/Excel files with intelligent column matching, data deduplication, and conflict resolution. Handles different schemas, formats, and combi">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Claude Skills Library">
+  <link rel="canonical" href="https://fruition-service.github.io/claude-skills/skills/csv-excel-merger/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="CSV Excel Merger — Free Claude Skill | Claude Skills Library">
+  <meta property="og:description" content="Merge multiple CSV/Excel files with intelligent column matching, data deduplication, and conflict resolution. Handles different schemas, formats, and combi">
+  <meta property="og:url" content="https://fruition-service.github.io/claude-skills/skills/csv-excel-merger/">
+  <meta property="og:site_name" content="Claude Skills Library">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CSV Excel Merger — Free Claude Skill | Claude Skills Library">
+  <meta name="twitter:description" content="Merge multiple CSV/Excel files with intelligent column matching, data deduplication, and conflict resolution. Handles different schemas, formats, and combi">
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "CSV Excel Merger", "description": "Merge multiple CSV/Excel files with intelligent column matching, data deduplication, and conflict resolution. Handles different schemas, formats, and combi", "url": "https://fruition-service.github.io/claude-skills/skills/csv-excel-merger/", "isPartOf": {"@type": "WebSite", "name": "Claude Skills Library", "url": "https://fruition-service.github.io/claude-skills/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://fruition-service.github.io/claude-skills/"}, {"@type": "ListItem", "position": 2, "name": "Skills", "item": "https://fruition-service.github.io/claude-skills/#skills"}, {"@type": "ListItem", "position": 3, "name": "CSV Excel Merger", "item": "https://fruition-service.github.io/claude-skills/skills/csv-excel-merger/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "CSV Excel Merger", "description": "Merge multiple CSV/Excel files with intelligent column matching, data deduplication, and conflict resolution. Handles different schemas, formats, and combi", "codeRepository": "https://github.com/OneWave-AI/claude-skills/tree/main/csv-excel-merger", "programmingLanguage": "Markdown", "license": "https://opensource.org/licenses/MIT", "isAccessibleForFree": true}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the CSV Excel Merger Claude skill?", "acceptedAnswer": {"@type": "Answer", "text": "Merge multiple CSV/Excel files with intelligent column matching, data deduplication, and conflict resolution. Handles different schemas, formats, and combi"}}, {"@type": "Question", "name": "How do I install CSV Excel Merger?", "acceptedAnswer": {"@type": "Answer", "text": "Create ~/.claude/skills/csv-excel-merger/SKILL.md and paste the skill content, or clone the OneWave-AI/claude-skills repository. Claude Code loads skills automatically with no restart."}}, {"@type": "Question", "name": "When should I use CSV Excel Merger?", "acceptedAnswer": {"@type": "Answer", "text": "Use CSV Excel Merger when your task matches the skill description: Merge multiple CSV/Excel files with intelligent column matching, data deduplication, and conflict resolution. Handles different schemas, formats, and combi"}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Install the CSV Excel Merger Claude skill", "description": "Add CSV Excel Merger to Claude Code in under a minute.", "step": [{"@type": "HowToStep", "position": 1, "name": "Create the skill folder", "text": "mkdir -p ~/.claude/skills/csv-excel-merger"}, {"@type": "HowToStep", "position": 2, "name": "Download SKILL.md", "text": "Save the skill file to ~/.claude/skills/csv-excel-merger/SKILL.md"}, {"@type": "HowToStep", "position": 3, "name": "Start using the skill", "text": "Claude Code picks up the skill immediately — describe your task or invoke it by name."}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html">Claude Skills Library</a>
+      <nav aria-label="Primary">
+        <a href="../../index.html">All skills</a>
+        <a href="https://github.com/OneWave-AI/claude-skills/tree/main/csv-excel-merger" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <a href="../../index.html">Home</a> / <a href="../../index.html#skills">Skills</a> / <span>CSV Excel Merger</span>
+    </nav>
+    <article itemscope itemtype="https://schema.org/SoftwareSourceCode">
+      <p class="eyebrow">Operations &amp;amp; People</p>
+      <h1 itemprop="name">CSV Excel Merger</h1>
+      <p class="lead" itemprop="description">Merge multiple CSV/Excel files with intelligent column matching, data deduplication, and conflict resolution. Handles different schemas, formats, and combi</p>
+      <section aria-labelledby="what-is">
+        <h2 id="what-is">What is CSV Excel Merger?</h2>
+        <p>Merge multiple CSV/Excel files with intelligent column matching, data deduplication, and conflict resolution. Handles different schemas, formats, and combi This free Claude skill teaches Claude how to handle a specific workflow with structured steps and best practices.</p>
+      </section>
+      <section aria-labelledby="skill-content" class="skill-content">
+        <h2 id="skill-content">Skill instructions</h2>
+        <h2>CSV/Excel Merger</h2>
+<p>Merge multiple CSV or Excel files with automatic column matching, deduplication, and conflict resolution.</p>
+<h3>Contents</h3>
+<ul>
+<li><a href="#workflow">Workflow</a> — the step-by-step merge process</li>
+<li><a href="#verification">Verification</a> — confirm the merge before handing it back</li>
+<li><a href="#special-cases">Special cases</a> — encoding, compound keys, large files</li>
+<li><a href="#guidelines">Guidelines</a> — quality and transparency standards</li>
+<li><a href="#example-triggers">Example triggers</a></li>
+<li><code>references/merge_strategies.md</code> — column matching, conflict resolution, and dedup options</li>
+<li><code>references/output_template.md</code> — the merge-report format</li>
+</ul>
+<h3>Workflow</h3>
+<ol>
+<li><strong>Inspect the inputs.</strong> Determine file count, format (CSV / Excel / TSV), and whether the files are attached or read from disk. Read each header; identify column names, data types, and encoding (UTF-8, Latin-1). Note the candidate primary key.</li>
+</ol>
+<ol>
+<li><strong>Plan the merge.</strong> Match columns across files to one unified schema, choose a conflict-resolution rule, and pick a deduplication strategy. See <code>references/merge_strategies.md</code> for the matching heuristics and the full set of options.</li>
+</ol>
+<ol>
+<li><strong>Execute the merge</strong> with pandas:</li>
+</ol>
+<p>   ```python</p>
+<p>   import pandas as pd</p>
+<p>   df1 = pd.read_csv(&quot;file1.csv&quot;)</p>
+<p>   df2 = pd.read_csv(&quot;file2.csv&quot;)</p>
+<p>   # Normalize, then map column names onto the unified schema</p>
+<p>   for df in (df1, df2):</p>
+<p>       df.columns = df.columns.str.lower().str.strip()</p>
+<p>   df2 = df2.rename(columns={&quot;firstname&quot;: &quot;first_name&quot;, &quot;e_mail&quot;: &quot;email&quot;})</p>
+<p>   merged = pd.concat([df1, df2], ignore_index=True)</p>
+<p>   merged = merged.drop_duplicates(subset=[&quot;email&quot;], keep=&quot;last&quot;)</p>
+<p>   merged.to_csv(&quot;merged_output.csv&quot;, index=False)</p>
+<p>   ```</p>
+<ol>
+<li><strong>Verify the result</strong> before reporting — see <a href="#verification">Verification</a>.</li>
+</ol>
+<ol>
+<li><strong>Report</strong> using the layout in <code>references/output_template.md</code>, then offer export options: CSV (UTF-8), Excel (.xlsx), JSON, SQL INSERT statements, or Parquet for large datasets.</li>
+</ol>
+<h3>Verification</h3>
+<p>Never hand back a merge without checking it. After merging, assert the row math holds and the key is actually unique:</p>
+<pre><code class="language-python">
+total_in = len(df1) + len(df2)
+assert len(merged) &gt; 0, &quot;merge produced an empty frame&quot;
+assert len(merged) &lt;= total_in, &quot;more rows than inputs — check the concat/join&quot;
+assert merged[&quot;email&quot;].is_unique, &quot;duplicate keys remain after dedup&quot;
+
+print(f&quot;in: {total_in} rows | out: {len(merged)} rows | removed: {total_in - len(merged)}&quot;)
+print(f&quot;null keys: {merged[&#x27;email&#x27;].isna().sum()} | columns: {list(merged.columns)}&quot;)
+</code></pre>
+<p>Report rows in vs. out, duplicates removed, and per-column completeness so the user can sanity-check the numbers against their own expectations.</p>
+<h3>Special cases</h3>
+<ul>
+<li><strong>Compound keys</strong> — when no single column is unique, key on a tuple: <code>subset=[&quot;email&quot;, &quot;company&quot;]</code>.</li>
+<li><strong>Mixed data types</strong> — standardize dates, phone numbers, and country codes; strip whitespace and normalize casing <em>before</em> deduping, or near-duplicates slip through.</li>
+<li><strong>Missing columns</strong> — fill absent columns with empty values and flag them in the report; never silently drop data.</li>
+<li><strong>Large files (&gt;100MB)</strong> — read in chunks (<code>pd.read_csv(path, chunksize=...)</code>), report progress, and estimate memory before loading everything at once.</li>
+</ul>
+<h3>Guidelines</h3>
+<ul>
+<li><strong>Column matching</strong> — prefer exact, then case-insensitive, then fuzzy. Always emit the original → unified mapping so every match is auditable, and allow manual override.</li>
+<li><strong>Data quality</strong> — trim whitespace, standardize formats, flag invalid values, preserve types.</li>
+<li><strong>Transparency</strong> — track the source file for every surviving row, log each merge decision, and report all conflicts with their resolutions.</li>
+<li><strong>Performance</strong> — chunk large files, process in batches, and show progress on long-running merges.</li>
+</ul>
+<h3>Example triggers</h3>
+<ul>
+<li>&quot;Merge these three CSV files&quot;</li>
+<li>&quot;Combine multiple Excel sheets into one file&quot;</li>
+<li>&quot;Deduplicate and merge customer data&quot;</li>
+<li>&quot;Join spreadsheets with different column names&quot;</li>
+<li>&quot;Consolidate contact lists from different sources&quot;</li>
+</ul>
+      </section>
+      <section aria-labelledby="install" class="install">
+        <h2 id="install">Install in Claude Code</h2>
+        <pre><code>mkdir -p ~/.claude/skills/csv-excel-merger
+curl -sL https://raw.githubusercontent.com/OneWave-AI/claude-skills/main/csv-excel-merger/SKILL.md -o ~/.claude/skills/csv-excel-merger/SKILL.md</code></pre>
+      </section>
+      <section aria-labelledby="faq" class="faq">
+        <h2 id="faq">Frequently asked questions</h2>
+        <dl>
+          <dt>What is the CSV Excel Merger Claude skill?</dt>
+          <dd>Merge multiple CSV/Excel files with intelligent column matching, data deduplication, and conflict resolution. Handles different schemas, formats, and combi</dd>
+          <dt>Is CSV Excel Merger free to use?</dt>
+          <dd>Yes. Skills from the OneWave library are MIT licensed and free for personal and commercial use.</dd>
+          <dt>Where does the skill file go?</dt>
+          <dd>Personal skills live in <code>~/.claude/skills/csv-excel-merger/SKILL.md</code>. Project-specific skills go in <code>.claude/skills/</code> inside your repo.</dd>
+        </dl>
+      </section>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>Mirrored from <a href="https://www.onewave-ai.com/resources/claude-skills/csv-excel-merger" rel="noopener">OneWave AI</a>. Source: <a href="https://github.com/OneWave-AI/claude-skills" rel="noopener">OneWave-AI/claude-skills</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

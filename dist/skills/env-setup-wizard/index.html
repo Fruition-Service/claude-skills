@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Environment Setup Wizard | AI Skills</title>
+  <meta name="description" content="When setting up environment configuration:">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Environment Setup Wizard</h1>
+      <p>When setting up environment configuration:</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Instructions</h2>
+<ol>
+<li><strong>Identify required variables</strong> for the project</li>
+<li><strong>Create .env structure</strong> with proper organization</li>
+<li><strong>Set up type-safe access</strong> to env vars</li>
+<li><strong>Add validation</strong> on startup</li>
+<li><strong>Document all variables</strong></li>
+</ol>
+<h2>File Structure</h2>
+<p><code>project/
+├── .env                  # Local development (git-ignored)
+├── .env.example          # Template (committed to git)
+├── .env.local            # Local overrides (git-ignored)
+├── .env.development      # Development defaults
+├── .env.production       # Production defaults
+└── src/
+    └── lib/
+        └── env.ts        # Type-safe env access</code></p>
+<h2>.env.example Template</h2>
+<p>```bash</p>
+<h1>===================</h1>
+<h1>Application</h1>
+<h1>===================</h1>
+<p>NODE_ENV=development
+APP_URL=http://localhost:3000
+PORT=3000</p>
+<h1>===================</h1>
+<h1>Database</h1>
+<h1>===================</h1>
+<p>DATABASE_URL=postgresql://user:password@localhost:5432/dbname</p>
+<h1>===================</h1>
+<h1>Authentication</h1>
+<h1>===================</h1>
+<h1>Generate with: openssl rand -base64 32</h1>
+<p>JWT_SECRET=
+NEXTAUTH_SECRET=
+NEXTAUTH_URL=http://localhost:3000</p>
+<h1>===================</h1>
+<h1>Third-party APIs</h1>
+<h1>===================</h1>
+<h1>Get from: https://stripe.com/dashboard</h1>
+<p>STRIPE_SECRET_KEY=
+STRIPE_PUBLISHABLE_KEY=
+STRIPE_WEBHOOK_SECRET=</p>
+<h1>Get from: https://resend.com</h1>
+<p>RESEND_API_KEY=</p>
+<h1>===================</h1>
+<h1>Storage</h1>
+<h1>===================</h1>
+<p>AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_REGION=us-east-1
+S3_BUCKET_NAME=
+```</p>
+<h2>Type-Safe Environment (Zod)</h2>
+<p>```typescript
+// src/lib/env.ts
+import { z } from 'zod';</p>
+<p>const envSchema = z.object({
+  // App
+  NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
+  APP_URL: z.string().url(),
+  PORT: z.coerce.number().default(3000),</p>
+<p>// Database
+  DATABASE_URL: z.string().min(1),</p>
+<p>// Auth
+  JWT_SECRET: z.string().min(32),
+  NEXTAUTH_SECRET: z.string().min(32),
+  NEXTAUTH_URL: z.string().url(),</p>
+<p>// APIs (optional in dev)
+  STRIPE_SECRET_KEY: z.string().optional(),
+  RESEND_API_KEY: z.string().optional(),
+});</p>
+<p>// Validate on import
+const parsed = envSchema.safeParse(process.env);</p>
+<p>if (!parsed.success) {
+  console.error('Invalid environment variables:');
+  console.error(parsed.error.flatten().fieldErrors);
+  process.exit(1);
+}</p>
+<p>export const env = parsed.data;</p>
+<p>// Type export for use elsewhere
+export type Env = z.infer<typeof envSchema>;
+```</p>
+<h2>Next.js Specific</h2>
+<p>```typescript
+// src/lib/env.ts for Next.js
+import { z } from 'zod';</p>
+<p>// Server-side variables
+const serverSchema = z.object({
+  DATABASE_URL: z.string(),
+  JWT_SECRET: z.string(),
+});</p>
+<p>// Client-side variables (must start with NEXT_PUBLIC_)
+const clientSchema = z.object({
+  NEXT_PUBLIC_APP_URL: z.string().url(),
+  NEXT_PUBLIC_STRIPE_KEY: z.string(),
+});</p>
+<p>export const serverEnv = serverSchema.parse(process.env);
+export const clientEnv = clientSchema.parse({
+  NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
+  NEXT_PUBLIC_STRIPE_KEY: process.env.NEXT_PUBLIC_STRIPE_KEY,
+});
+```</p>
+<h2>T3 Env (Recommended for Next.js)</h2>
+<p>```typescript
+// src/env.mjs
+import { createEnv } from "@t3-oss/env-nextjs";
+import { z } from "zod";</p>
+<p>export const env = createEnv({
+  server: {
+    DATABASE_URL: z.string().url(),
+    NODE_ENV: z.enum(["development", "test", "production"]),
+  },
+  client: {
+    NEXT_PUBLIC_APP_URL: z.string().url(),
+  },
+  runtimeEnv: {
+    DATABASE_URL: process.env.DATABASE_URL,
+    NODE_ENV: process.env.NODE_ENV,
+    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
+  },
+});
+```</p>
+<h2>.gitignore</h2>
+<p>```gitignore</p>
+<h1>Environment files</h1>
+<p>.env
+.env.local
+.env.*.local</p>
+<h1>Keep example</h1>
+<p>!.env.example
+```</p>
+<h2>Security Best Practices</h2>
+<ol>
+<li><strong>Never commit secrets</strong> to git</li>
+<li><strong>Use different values</strong> per environment</li>
+<li><strong>Rotate secrets regularly</strong></li>
+<li><strong>Use secret managers</strong> in production (Vault, AWS Secrets Manager)</li>
+<li><strong>Validate on startup</strong> to fail fast</li>
+<li><strong>Prefix client vars</strong> (NEXT_PUBLIC_, VITE_, REACT_APP_)</li>
+</ol>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

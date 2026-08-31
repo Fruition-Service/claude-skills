@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Agent Client Onboarding System | AI Skills</title>
+  <meta name="description" content="Act as the Commander Agent: an orchestration layer that deploys three parallel specialist agents and synthesizes their output into a comprehensive client onboarding assessment of consultancy quality.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Multi-Agent Client Onboarding System</h1>
+      <p>Act as the Commander Agent: an orchestration layer that deploys three parallel specialist agents and synthesizes their output into a comprehensive client onboarding assessment of consultancy quality.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/agent-prompts.md</code> -- full prompts, output formats, and search patterns for the three specialist agents.</li>
+<li><code>references/final-deliverable-structure.md</code> -- the exact structure of the <code>client-onboarding-report.md</code> deliverable.</li>
+<li><code>references/quality-standards.md</code> -- quality bar, mistakes to avoid, limited-info handling, client-type adaptation, orchestration patterns, and an example invocation.</li>
+</ul>
+<h2>Architecture</h2>
+<p><code>+-------------------+
+                    |  COMMANDER AGENT  |
+                    |  (Orchestrator)   |
+                    +--------+----------+
+                             |
+              +--------------+--------------+
+              |              |              |
+     +--------v---+  +------v------+  +----v--------+
+     |  AGENT 1   |  |  AGENT 2    |  |  AGENT 3    |
+     |  Workflow  |  |  Tech Stack |  |  Strategy   |
+     |  Auditor   |  |  Mapper     |  |  Drafter    |
+     +--------+---+  +------+------+  +----+--------+
+              |              |              |
+              +--------------+--------------+
+                             |
+                    +--------v----------+
+                    |  SYNTHESIS PHASE  |
+                    |  Merge findings   |
+                    +-------------------+</code></p>
+<h2>Input Format</h2>
+<p>Accept a client name plus optional context. Parse these fields from the user message:</p>
+<p><code>Client:  &lt;company name&gt;
+Context: &lt;industry, size, what they do&gt;
+Docs:    &lt;optional path to documents, repos, or data directories&gt;
+URL:     &lt;optional website or product URL&gt;
+Focus:   &lt;optional specific areas of concern&gt;</code></p>
+<p>Given only a company name, run baseline WebSearch before deploying the specialist agents.</p>
+<h2>Workflow</h2>
+<ol>
+<li>
+<p><strong>Parse input.</strong> Extract client name, context, document paths, URLs, and focus areas. On minimal input, proceed with web research to fill gaps rather than blocking.</p>
+</li>
+<li>
+<p><strong>Gather intelligence (Phase 0).</strong> Run no more than 2-3 searches to build the Client Context Brief: identify industry vertical, approximate size, funding stage, public technology choices, and recent news. Define the assessment scope and any user constraints. Assemble the brief in this format:</p>
+</li>
+</ol>
+<p><code>=== CLIENT CONTEXT BRIEF ===
+   Client: [Name]
+   Industry: [Vertical]
+   Size: [Employees / Revenue tier if known]
+   Stage: [Startup / Growth / Enterprise]
+   Primary Business: [What they do]
+   Available Materials: [Docs, repos, URLs]
+   Focus Areas: [User-specified or "General Assessment"]
+   Known Technology: [Any tech already identified]
+   Key Contacts: [If provided]
+   ================================</code></p>
+<ol>
+<li><strong>Deploy three agents in parallel (Phase 1).</strong> Issue three Agent tool calls in a single response so they run concurrently; never run them sequentially. Give each agent the Context Brief, its prompt, output format, and search patterns from <code>references/agent-prompts.md</code>, and point it at any available docs or repos. Wait for all three to complete before synthesizing.</li>
+<li>Agent 1, Workflow Auditor: map workflows, find manual processes, bottlenecks, and automation opportunities.</li>
+<li>Agent 2, Tech Stack Mapper: inventory tools, frameworks, APIs, and integrations; assess tech debt; produce Mermaid diagrams.</li>
+<li>
+<p>Agent 3, Strategy Drafter: draft a prioritized AI implementation roadmap, ICE-scored and phased.</p>
+</li>
+<li>
+<p><strong>Synthesize findings (Phase 2).</strong> Read all three reports. Cross-reference and validate findings, resolve contradictions, and fill gaps where one agent found something others missed. Normalize all scores to a common scale and produce a single prioritized opportunity list. Write the executive narrative for a C-level audience. Verify every Mermaid diagram is valid, every table is complete, ROI numbers are internally consistent, and no template placeholders remain.</p>
+</li>
+<li>
+<p><strong>Write the final report.</strong> Use the Write tool to create <code>client-onboarding-report.md</code> in the current working directory (or a user-specified location), following <code>references/final-deliverable-structure.md</code> exactly.</p>
+</li>
+<li>
+<p><strong>Present a summary.</strong> Report the file location, 3-5 key findings, the top recommendation, the headline ROI number, and the suggested next step.</p>
+</li>
+</ol>
+<h2>Guardrails</h2>
+<ul>
+<li>Hold the deliverable to the bar in <code>references/quality-standards.md</code>: specific, quantified, realistic, risk-aware, actionable, visual, and layered.</li>
+<li>Never invent specific revenue figures; use ranges and stated assumptions.</li>
+<li>Never leave template placeholders such as <code>[X]</code> or <code>[...]</code> in the delivered report.</li>
+<li>Never use emojis anywhere in output.</li>
+<li>Never include the Supabase token or any credentials in the report.</li>
+<li>If an agent fails, note the gap, fill it from other agents where possible, mark affected sections "Partial Assessment -- Additional Access Recommended", and continue rather than blocking.</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dependency Auditor — Free Claude Skill | Claude Skills Library</title>
+  <meta name="description" content="Audit npm dependencies for security vulnerabilities, outdated packages, and unused dependencies. Use when checking for security issues, updating packages,">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Claude Skills Library">
+  <link rel="canonical" href="https://fruition-service.github.io/claude-skills/skills/dependency-auditor/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Dependency Auditor — Free Claude Skill | Claude Skills Library">
+  <meta property="og:description" content="Audit npm dependencies for security vulnerabilities, outdated packages, and unused dependencies. Use when checking for security issues, updating packages,">
+  <meta property="og:url" content="https://fruition-service.github.io/claude-skills/skills/dependency-auditor/">
+  <meta property="og:site_name" content="Claude Skills Library">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dependency Auditor — Free Claude Skill | Claude Skills Library">
+  <meta name="twitter:description" content="Audit npm dependencies for security vulnerabilities, outdated packages, and unused dependencies. Use when checking for security issues, updating packages,">
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Dependency Auditor", "description": "Audit npm dependencies for security vulnerabilities, outdated packages, and unused dependencies. Use when checking for security issues, updating packages,", "url": "https://fruition-service.github.io/claude-skills/skills/dependency-auditor/", "isPartOf": {"@type": "WebSite", "name": "Claude Skills Library", "url": "https://fruition-service.github.io/claude-skills/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://fruition-service.github.io/claude-skills/"}, {"@type": "ListItem", "position": 2, "name": "Skills", "item": "https://fruition-service.github.io/claude-skills/#skills"}, {"@type": "ListItem", "position": 3, "name": "Dependency Auditor", "item": "https://fruition-service.github.io/claude-skills/skills/dependency-auditor/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Dependency Auditor", "description": "Audit npm dependencies for security vulnerabilities, outdated packages, and unused dependencies. Use when checking for security issues, updating packages,", "codeRepository": "https://github.com/OneWave-AI/claude-skills/tree/main/dependency-auditor", "programmingLanguage": "Markdown", "license": "https://opensource.org/licenses/MIT", "isAccessibleForFree": true}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the Dependency Auditor Claude skill?", "acceptedAnswer": {"@type": "Answer", "text": "Audit npm dependencies for security vulnerabilities, outdated packages, and unused dependencies. Use when checking for security issues, updating packages,"}}, {"@type": "Question", "name": "How do I install Dependency Auditor?", "acceptedAnswer": {"@type": "Answer", "text": "Create ~/.claude/skills/dependency-auditor/SKILL.md and paste the skill content, or clone the OneWave-AI/claude-skills repository. Claude Code loads skills automatically with no restart."}}, {"@type": "Question", "name": "When should I use Dependency Auditor?", "acceptedAnswer": {"@type": "Answer", "text": "Use Dependency Auditor when your task matches the skill description: Audit npm dependencies for security vulnerabilities, outdated packages, and unused dependencies. Use when checking for security issues, updating packages,"}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Install the Dependency Auditor Claude skill", "description": "Add Dependency Auditor to Claude Code in under a minute.", "step": [{"@type": "HowToStep", "position": 1, "name": "Create the skill folder", "text": "mkdir -p ~/.claude/skills/dependency-auditor"}, {"@type": "HowToStep", "position": 2, "name": "Download SKILL.md", "text": "Save the skill file to ~/.claude/skills/dependency-auditor/SKILL.md"}, {"@type": "HowToStep", "position": 3, "name": "Start using the skill", "text": "Claude Code picks up the skill immediately — describe your task or invoke it by name."}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html">Claude Skills Library</a>
+      <nav aria-label="Primary">
+        <a href="../../index.html">All skills</a>
+        <a href="https://github.com/OneWave-AI/claude-skills/tree/main/dependency-auditor" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <a href="../../index.html">Home</a> / <a href="../../index.html#skills">Skills</a> / <span>Dependency Auditor</span>
+    </nav>
+    <article itemscope itemtype="https://schema.org/SoftwareSourceCode">
+      <p class="eyebrow">Engineering</p>
+      <h1 itemprop="name">Dependency Auditor</h1>
+      <p class="lead" itemprop="description">Audit npm dependencies for security vulnerabilities, outdated packages, and unused dependencies. Use when checking for security issues, updating packages,</p>
+      <section aria-labelledby="what-is">
+        <h2 id="what-is">What is Dependency Auditor?</h2>
+        <p>Audit npm dependencies for security vulnerabilities, outdated packages, and unused dependencies. Use when checking for security issues, updating packages, This free Claude skill teaches Claude how to handle a specific workflow with structured steps and best practices.</p>
+      </section>
+      <section aria-labelledby="skill-content" class="skill-content">
+        <h2 id="skill-content">Skill instructions</h2>
+        <h2>Dependency Auditor</h2>
+<h3>Instructions</h3>
+<p>When auditing dependencies:</p>
+<ol>
+<li><strong>Run security audit</strong></li>
+<li><strong>Check for outdated packages</strong></li>
+<li><strong>Find unused dependencies</strong></li>
+<li><strong>Analyze bundle size impact</strong></li>
+<li><strong>Review and update</strong></li>
+</ol>
+<h3>Security Audit</h3>
+<pre><code class="language-bash">
+# NPM audit
+npm audit
+
+# Get JSON output for processing
+npm audit --json
+
+# Fix automatically (safe fixes only)
+npm audit fix
+
+# Force fix (may have breaking changes)
+npm audit fix --force
+
+# PNPM
+pnpm audit
+
+# Yarn
+yarn audit
+</code></pre>
+<h3>Check Outdated Packages</h3>
+<pre><code class="language-bash">
+# NPM
+npm outdated
+
+# Interactive update
+npx npm-check-updates -i
+
+# Update all to latest
+npx npm-check-updates -u
+npm install
+
+# Check specific package
+npm view &lt;package&gt; versions
+</code></pre>
+<h3>Find Unused Dependencies</h3>
+<pre><code class="language-bash">
+# Using depcheck
+npx depcheck
+
+# With details
+npx depcheck --detailed
+
+# Ignore patterns
+npx depcheck --ignores=&quot;@types/*,eslint-*&quot;
+</code></pre>
+<h4>Common False Positives</h4>
+<p>Depcheck may flag these as unused when they&#x27;re actually needed:</p>
+<ul>
+<li><code>@types/*</code> packages (used by TypeScript)</li>
+<li>ESLint/Prettier plugins (referenced in config)</li>
+<li>PostCSS plugins (referenced in config)</li>
+<li>Next.js plugins</li>
+<li>Babel presets</li>
+</ul>
+<h3>Analyze Bundle Size</h3>
+<pre><code class="language-bash">
+# For Next.js
+npx @next/bundle-analyzer
+
+# General purpose
+npx source-map-explorer dist/**/*.js
+
+# Check package size before installing
+npx package-phobia &lt;package-name&gt;
+
+# Compare alternatives
+npx bundlephobia-cli compare lodash ramda
+</code></pre>
+<h3>Dependency Review Checklist</h3>
+<h4>Security</h4>
+<ul>
+<li>[ ] No critical/high vulnerabilities</li>
+<li>[ ] Dependencies actively maintained</li>
+<li>[ ] No known malicious packages</li>
+<li>[ ] Lock file committed</li>
+</ul>
+<h4>Freshness</h4>
+<ul>
+<li>[ ] No major version behind (unless intentional)</li>
+<li>[ ] Security patches applied</li>
+<li>[ ] Deprecated packages replaced</li>
+</ul>
+<h4>Cleanliness</h4>
+<ul>
+<li>[ ] No unused dependencies</li>
+<li>[ ] No duplicate packages (check lock file)</li>
+<li>[ ] devDependencies vs dependencies correct</li>
+</ul>
+<h3>Update Strategies</h3>
+<h4>Conservative (Recommended)</h4>
+<pre><code class="language-bash">
+# Update patch versions only
+npm update
+
+# Update specific package
+npm install package@latest
+</code></pre>
+<h4>Aggressive</h4>
+<pre><code class="language-bash">
+# Update everything
+npx npm-check-updates -u
+npm install
+npm test
+</code></pre>
+<h4>Interactive</h4>
+<pre><code class="language-bash">
+npx npm-check-updates -i
+
+# Options:
+# a - update all
+# space - toggle selection
+# enter - apply selected
+</code></pre>
+<h3>Package.json Cleanup</h3>
+<pre><code class="language-json">
+{
+  &quot;dependencies&quot;: {
+    // Runtime dependencies only
+  },
+  &quot;devDependencies&quot;: {
+    // Build/test tools only
+  },
+  &quot;peerDependencies&quot;: {
+    // For libraries only
+  },
+  &quot;optionalDependencies&quot;: {
+    // Platform-specific (rare)
+  }
+}
+</code></pre>
+<h3>Lock File Best Practices</h3>
+<ol>
+<li><strong>Always commit</strong> lock files (package-lock.json, pnpm-lock.yaml, yarn.lock)</li>
+<li><strong>Use <code>npm ci</code></strong> in CI/CD (not <code>npm install</code>)</li>
+<li><strong>Regenerate</strong> if corrupted: delete lock file + node_modules, reinstall</li>
+<li><strong>Single lock file</strong> per project (don&#x27;t mix package managers)</li>
+</ol>
+<h3>Automated Monitoring</h3>
+<pre><code class="language-yaml">
+# .github/dependabot.yml
+version: 2
+updates:
+  - package-ecosystem: &quot;npm&quot;
+    directory: &quot;/&quot;
+    schedule:
+      interval: &quot;weekly&quot;
+    open-pull-requests-limit: 10
+    groups:
+      dev-dependencies:
+        dependency-type: &quot;development&quot;
+</code></pre>
+      </section>
+      <section aria-labelledby="install" class="install">
+        <h2 id="install">Install in Claude Code</h2>
+        <pre><code>mkdir -p ~/.claude/skills/dependency-auditor
+curl -sL https://raw.githubusercontent.com/OneWave-AI/claude-skills/main/dependency-auditor/SKILL.md -o ~/.claude/skills/dependency-auditor/SKILL.md</code></pre>
+      </section>
+      <section aria-labelledby="faq" class="faq">
+        <h2 id="faq">Frequently asked questions</h2>
+        <dl>
+          <dt>What is the Dependency Auditor Claude skill?</dt>
+          <dd>Audit npm dependencies for security vulnerabilities, outdated packages, and unused dependencies. Use when checking for security issues, updating packages,</dd>
+          <dt>Is Dependency Auditor free to use?</dt>
+          <dd>Yes. Skills from the OneWave library are MIT licensed and free for personal and commercial use.</dd>
+          <dt>Where does the skill file go?</dt>
+          <dd>Personal skills live in <code>~/.claude/skills/dependency-auditor/SKILL.md</code>. Project-specific skills go in <code>.claude/skills/</code> inside your repo.</dd>
+        </dl>
+      </section>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>Mirrored from <a href="https://www.onewave-ai.com/resources/claude-skills/dependency-auditor" rel="noopener">OneWave AI</a>. Source: <a href="https://github.com/OneWave-AI/claude-skills" rel="noopener">OneWave-AI/claude-skills</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

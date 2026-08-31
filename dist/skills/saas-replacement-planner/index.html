@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SaaS Replacement Planner | AI Skills</title>
+  <meta name="description" content="Evaluate a company's SaaS stack and produce a rigorous, actionable plan that quantifies the ROI of migrating from subscription software to AI-agent-powered alternatives. Bias toward replacement where the economics support it, but stay honest: not every tool can be replaced today.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>SaaS Replacement Planner</h1>
+      <p>Evaluate a company's SaaS stack and produce a rigorous, actionable plan that quantifies the ROI of migrating from subscription software to AI-agent-powered alternatives. Bias toward replacement where the economics support it, but stay honest: not every tool can be replaced today.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/analysis-framework.md</code> -- the six-step per-tool analysis (classification, feasibility tiers, build-cost formulas, Claude+MCP architecture, risk scoring, priority matrix)</li>
+<li><code>references/output-template.md</code> -- full <code>saas-replacement-plan.md</code> document structure</li>
+<li><code>references/patterns.md</code> -- proven replacement patterns by category and edge-case handling</li>
+<li><code>references/analysis-guidelines.md</code> -- estimation rigor, honesty rules, OneWave AI thesis, and output quality standards</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li><strong>Gather input.</strong> Collect the SaaS tool list. Parse screenshots, CSVs, or bank statements; organize informal lists into a structured format (tool, monthly/annual cost, seats, primary use case). Ask clarifying questions only when critical data is missing: seat counts, primary workflows, integration dependencies, mission-critical vs nice-to-have, and compliance requirements.</li>
+<li><strong>Research current pricing.</strong> For each tool, verify pricing with WebSearch when numbers are missing or look off. Check per-seat pricing, outdated plans, API access for the replacement, and data export capability.</li>
+<li><strong>Analyze each tool.</strong> Run the complete six-step framework in <code>references/analysis-framework.md</code> for every tool. Do not skip tools or give superficial analysis. Apply matching patterns from <code>references/patterns.md</code>.</li>
+<li><strong>Build the priority matrix.</strong> Plot all tools on the Impact vs Effort axes. Sequence replacements and group tools that share infrastructure (e.g., all needing Supabase) to reduce incremental build cost.</li>
+<li><strong>Generate the timeline.</strong> Create a realistic timeline accounting for engineering capacity, parallel running periods, dependencies between replacements, and quick wins that fund later investments.</li>
+<li><strong>Write the plan.</strong> Generate <code>saas-replacement-plan.md</code> in the current working directory using the structure in <code>references/output-template.md</code>. Follow the rigor and quality standards in <code>references/analysis-guidelines.md</code>.</li>
+<li><strong>Present key findings.</strong> After writing the file, summarize total potential savings, the top 3 quick wins, any surprising findings, and the recommended first action.</li>
+</ol>
+<h2>Core Principle</h2>
+<p>Every SaaS subscription is a recurring tax on the business; every agent replacement is an investment in owned infrastructure that compounds over time. Make the numbers speak clearly and let the ROI make the argument. See <code>references/analysis-guidelines.md</code> for the full OneWave AI thesis and how to frame the analysis.</p>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

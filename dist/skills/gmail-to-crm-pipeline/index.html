@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gmail-to-CRM Pipeline | AI Skills</title>
+  <meta name="description" content="Turn a Gmail inbox into a structured sales pipeline using Claude's MCP Connectors -- the Gmail connector reads and drafts email, and the Supabase connector persists CRM data. No external scripts or API keys required.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Gmail-to-CRM Pipeline</h1>
+      <p>Turn a Gmail inbox into a structured sales pipeline using Claude's MCP Connectors -- the Gmail connector reads and drafts email, and the Supabase connector persists CRM data. No external scripts or API keys required.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Workflow</h2>
+<ol>
+<li><strong>Connect.</strong> Verify the Gmail and Supabase MCP Connectors are available. On first run, create the CRM tables and seed config. Load ICP config from the <code>pipeline_config</code> table. See <code>references/configuration.md</code> (first run, error handling) and <code>references/crm-schema.md</code>.</li>
+<li><strong>Search.</strong> Run the targeted Gmail search queries to find unread lead emails over the time window (default: last 24 hours). Collect unique message IDs and deduplicate. See <code>references/gmail-retrieval.md</code>.</li>
+<li><strong>Parse.</strong> Read each unique message, strip signatures and disclaimers, and extract the structured field set. See <code>references/gmail-retrieval.md</code>.</li>
+<li><strong>Extract.</strong> Build the lead profile (contact, company, inquiry, metadata) for each email. Set missing fields to <code>null</code> rather than guessing. See <code>references/lead-extraction.md</code>.</li>
+<li><strong>Score.</strong> Score each lead on ICP fit (0-40), intent (0-35), and urgency (0-25), then apply adjustment modifiers. Map the total to a qualification tier and priority. See <code>references/scoring-model.md</code>.</li>
+<li><strong>Draft.</strong> For each qualified lead (score &gt;= 25), draft a personalized, tier-appropriate response and save it as a Gmail draft. Never auto-send. See <code>references/response-templates.md</code>.</li>
+<li><strong>Log.</strong> Check for duplicates, then insert or update the lead in Supabase, log activity, and set the next action by priority. See <code>references/crm-schema.md</code>.</li>
+<li><strong>Report.</strong> Query the pipeline snapshot and generate <code>lead-pipeline-report.md</code> in the working directory, then display the executive summary. See <code>references/pipeline-report.md</code>.</li>
+</ol>
+<p>Between runs, handle manual lead commands (mark contacted, move stage, disqualify, add note, schedule follow-up, query leads) and ICP/search customization. See <code>references/configuration.md</code>.</p>
+<h2>Hard Rules</h2>
+<ul>
+<li>Never auto-send email -- always create drafts for the user to review and send.</li>
+<li>Never store raw email bodies or credentials in Supabase or any report; store structured data and key quotes only.</li>
+<li>Treat all lead and email content as confidential.</li>
+</ul>
+<h2>Contents</h2>
+<ul>
+<li><code>references/gmail-retrieval.md</code> -- Gmail MCP tools, search queries, parsing rules, extracted field set.</li>
+<li><code>references/lead-extraction.md</code> -- Lead profile JSON schema and extraction guidelines.</li>
+<li><code>references/scoring-model.md</code> -- ICP, intent, urgency scoring tables; tier mapping; adjustment rules.</li>
+<li><code>references/response-templates.md</code> -- Per-tier response templates, personalization rules, anti-patterns, draft creation.</li>
+<li><code>references/crm-schema.md</code> -- Supabase MCP tools, table DDL, logging procedure and SQL.</li>
+<li><code>references/pipeline-report.md</code> -- Report Markdown structure and reporting SQL queries.</li>
+<li><code>references/configuration.md</code> -- First-run setup, customization, manual commands, error handling, privacy, invocation triggers.</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

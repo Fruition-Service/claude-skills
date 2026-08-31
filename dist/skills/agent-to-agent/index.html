@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent-to-Agent (A2A) Communication Protocol | AI Skills</title>
+  <meta name="description" content="Act as the A2A Coordinator: a protocol layer that lets multiple Claude Code agents communicate, collaborate, and delegate work through structured message passing, shared context, and formal handoffs. Orchestrate every interaction through the shared context file `.a2a-context.json` and the Agent tool.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Agent-to-Agent (A2A) Communication Protocol</h1>
+      <p>Act as the A2A Coordinator: a protocol layer that lets multiple Claude Code agents communicate, collaborate, and delegate work through structured message passing, shared context, and formal handoffs. Orchestrate every interaction through the shared context file `.a2a-context.json` and the Agent tool.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/protocol.md</code> — message format, message types, lifecycle, shared context schema, atomic read-modify-write, context size management.</li>
+<li><code>references/registry.md</code> — agent registration, capability discovery, built-in agent templates.</li>
+<li><code>references/patterns.md</code> — request/response, pipeline, fan-out/fan-in, conversation, supervisor.</li>
+<li><code>references/handoff.md</code> — structured handoff, acceptance, rejection, chain tracking.</li>
+<li><code>references/error-handling.md</code> — timeouts, rejections, deadlock detection, degradation, escalation matrix.</li>
+<li><code>references/workflows.md</code> — worked examples (research+writer, code+review, sales+technical).</li>
+<li><code>references/operations.md</code> — coordination commands, best practices, monitoring, security, init detail.</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li>Understand the goal. Determine what the user wants to accomplish with multiple agents.</li>
+<li>Design the team. Decide which agents are needed; draw from the templates in <code>references/registry.md</code> or write custom specs.</li>
+<li>Choose the pattern. Select pipeline, fan-out/fan-in, conversation, or supervisor from <code>references/patterns.md</code>. Prefer pipeline when order matters, fan-out when subtasks are independent.</li>
+<li>Initialize. Locate the project root. Read <code>.a2a-context.json</code> if it exists and report current state; otherwise create it from the template in <code>references/operations.md</code>. Register every agent into the <code>agents</code> section per <code>references/registry.md</code>.</li>
+<li>Execute. Dispatch agents via the Agent tool following the chosen pattern. Structure each agent prompt with identity, context, task, output location, protocol, and constraints (see <code>references/operations.md</code>). For parallelism, issue multiple Agent tool calls in a single response.</li>
+<li>Coordinate handoffs. When an agent transfers a task, require a full handoff payload and an ACK, and append to the task <code>chain</code>. Follow <code>references/handoff.md</code>.</li>
+<li>Monitor and recover. Read <code>.a2a-context.json</code> to track progress. On timeout, rejection, deadlock, or failure, apply the procedures and escalation matrix in <code>references/error-handling.md</code>. Cap retries at 3 before escalating to the user.</li>
+<li>Deliver. Merge all agent findings into the <code>conclusions</code> section and present the final output.</li>
+</ol>
+<h2>Core Rules</h2>
+<ul>
+<li>Treat <code>.a2a-context.json</code> as the single source of truth. Read it before acting; write the complete file back after modifying. Follow the atomic read-modify-write procedure in <code>references/protocol.md</code>.</li>
+<li>Conform every inter-agent message to the schema in <code>references/protocol.md</code>.</li>
+<li>Confine each agent to writing its own section plus shared <code>conclusions</code>. Restrict task assignment changes to the Coordinator.</li>
+<li>Never write secrets to <code>.a2a-context.json</code>; pass sensitive data in-memory through Agent prompts and add the file to <code>.gitignore</code>.</li>
+<li>Require explicit ERROR messages for all failures; never fail silently. Run context summarization when the file exceeds 50KB.</li>
+</ul>
+<h2>Minimal Example: 2-Agent Pipeline</h2>
+<p>```
+User: "Research the top 5 AI frameworks and write a comparison article."</p>
+<p>Coordinator:
+1. Create .a2a-context.json
+2. Register: researcher, writer
+3. Dispatch researcher: "Search for top 5 AI frameworks, compare features, performance, ecosystem"
+4. Read researcher's findings from shared context
+5. Dispatch writer: "Using the research findings, write a 1200-word comparison article"
+6. Read writer's draft from shared context
+7. Present the final article to the user
+```</p>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

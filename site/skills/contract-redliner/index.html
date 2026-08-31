@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contract Redliner — Free Claude Skill | Claude Skills Library</title>
+  <meta name="description" content="Reads a contract and generates redline suggestions with replacement language. Identifies unfavorable terms, missing protections, ambiguous language, liabil">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Claude Skills Library">
+  <link rel="canonical" href="https://fruition-service.github.io/claude-skills/skills/contract-redliner/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Contract Redliner — Free Claude Skill | Claude Skills Library">
+  <meta property="og:description" content="Reads a contract and generates redline suggestions with replacement language. Identifies unfavorable terms, missing protections, ambiguous language, liabil">
+  <meta property="og:url" content="https://fruition-service.github.io/claude-skills/skills/contract-redliner/">
+  <meta property="og:site_name" content="Claude Skills Library">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contract Redliner — Free Claude Skill | Claude Skills Library">
+  <meta name="twitter:description" content="Reads a contract and generates redline suggestions with replacement language. Identifies unfavorable terms, missing protections, ambiguous language, liabil">
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Contract Redliner", "description": "Reads a contract and generates redline suggestions with replacement language. Identifies unfavorable terms, missing protections, ambiguous language, liabil", "url": "https://fruition-service.github.io/claude-skills/skills/contract-redliner/", "isPartOf": {"@type": "WebSite", "name": "Claude Skills Library", "url": "https://fruition-service.github.io/claude-skills/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://fruition-service.github.io/claude-skills/"}, {"@type": "ListItem", "position": 2, "name": "Skills", "item": "https://fruition-service.github.io/claude-skills/#skills"}, {"@type": "ListItem", "position": 3, "name": "Contract Redliner", "item": "https://fruition-service.github.io/claude-skills/skills/contract-redliner/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Contract Redliner", "description": "Reads a contract and generates redline suggestions with replacement language. Identifies unfavorable terms, missing protections, ambiguous language, liabil", "codeRepository": "https://github.com/OneWave-AI/claude-skills/tree/main/contract-redliner", "programmingLanguage": "Markdown", "license": "https://opensource.org/licenses/MIT", "isAccessibleForFree": true}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the Contract Redliner Claude skill?", "acceptedAnswer": {"@type": "Answer", "text": "Reads a contract and generates redline suggestions with replacement language. Identifies unfavorable terms, missing protections, ambiguous language, liabil"}}, {"@type": "Question", "name": "How do I install Contract Redliner?", "acceptedAnswer": {"@type": "Answer", "text": "Create ~/.claude/skills/contract-redliner/SKILL.md and paste the skill content, or clone the OneWave-AI/claude-skills repository. Claude Code loads skills automatically with no restart."}}, {"@type": "Question", "name": "When should I use Contract Redliner?", "acceptedAnswer": {"@type": "Answer", "text": "Use Contract Redliner when your task matches the skill description: Reads a contract and generates redline suggestions with replacement language. Identifies unfavorable terms, missing protections, ambiguous language, liabil"}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Install the Contract Redliner Claude skill", "description": "Add Contract Redliner to Claude Code in under a minute.", "step": [{"@type": "HowToStep", "position": 1, "name": "Create the skill folder", "text": "mkdir -p ~/.claude/skills/contract-redliner"}, {"@type": "HowToStep", "position": 2, "name": "Download SKILL.md", "text": "Save the skill file to ~/.claude/skills/contract-redliner/SKILL.md"}, {"@type": "HowToStep", "position": 3, "name": "Start using the skill", "text": "Claude Code picks up the skill immediately — describe your task or invoke it by name."}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html">Claude Skills Library</a>
+      <nav aria-label="Primary">
+        <a href="../../index.html">All skills</a>
+        <a href="https://github.com/OneWave-AI/claude-skills/tree/main/contract-redliner" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <a href="../../index.html">Home</a> / <a href="../../index.html#skills">Skills</a> / <span>Contract Redliner</span>
+    </nav>
+    <article itemscope itemtype="https://schema.org/SoftwareSourceCode">
+      <p class="eyebrow">Security</p>
+      <h1 itemprop="name">Contract Redliner</h1>
+      <p class="lead" itemprop="description">Reads a contract and generates redline suggestions with replacement language. Identifies unfavorable terms, missing protections, ambiguous language, liabil</p>
+      <section aria-labelledby="what-is">
+        <h2 id="what-is">What is Contract Redliner?</h2>
+        <p>Reads a contract and generates redline suggestions with replacement language. Identifies unfavorable terms, missing protections, ambiguous language, liabil This free Claude skill teaches Claude how to handle a specific workflow with structured steps and best practices.</p>
+      </section>
+      <section aria-labelledby="skill-content" class="skill-content">
+        <h2 id="skill-content">Skill instructions</h2>
+        <h2>Contract Redliner</h2>
+<p>Read a contract and produce a <code>contract-review.md</code> with clause-by-clause analysis, risk ratings, replacement language in tracked-changes format, and negotiation talking points. Unlike contract-analyzer (which only flags issues), produce specific, drop-in replacement language for every problematic clause, ready for negotiation.</p>
+<h3>Contents</h3>
+<ul>
+<li><code>references/risk-categories.md</code> -- the seven risk categories, what to look for in each, and the risk-rating system.</li>
+<li><code>references/redline-format.md</code> -- per-issue redline entry format and tracked-changes conventions.</li>
+<li><code>references/output-template.md</code> -- the full <code>contract-review.md</code> structure to generate.</li>
+<li><code>references/contract-types.md</code> -- per-contract-type focus areas and worked examples.</li>
+</ul>
+<h3>Workflow</h3>
+<ol>
+<li><strong>Ingest the contract.</strong> Accept pasted text, a file path (<code>.txt</code>, <code>.md</code>, <code>.pdf</code>, <code>.docx</code>), or a URL. Load files with the Read tool; for PDFs use the pdf skill or Read PDF support. Parse the full text and identify all numbered sections, clauses, and subclauses.</li>
+</ol>
+<ol>
+<li><strong>Identify type and parties.</strong> Determine contract type, Party A (drafter/company), Party B (signer), governing law, effective date, and term. Apply the matching focus area from <code>references/contract-types.md</code>.</li>
+</ol>
+<ol>
+<li><strong>Analyze every section.</strong> Evaluate each section against the seven risk categories in <code>references/risk-categories.md</code>. Assign each section a rating (CRITICAL / HIGH / MEDIUM / LOW / ACCEPTABLE). Mark fair sections as ACCEPTABLE with a brief note -- do not skip them.</li>
+</ol>
+<ol>
+<li><strong>Generate redlines.</strong> For every issue, produce a redline entry per the format and tracked-changes conventions in <code>references/redline-format.md</code>. Provide complete, standalone replacement language plus a clean accepted version.</li>
+</ol>
+<ol>
+<li><strong>Write <code>contract-review.md</code>.</strong> Generate the file in the working directory (or the directory the user specifies) following <code>references/output-template.md</code> exactly and in order.</li>
+</ol>
+<h3>Mandatory Rules</h3>
+<ul>
+<li>Open every output with this disclaimer verbatim:</li>
+</ul>
+<p>  &gt; LEGAL DISCLAIMER: This analysis is informational only and does not constitute legal advice. Contract interpretation is jurisdiction-specific and fact-dependent. Always consult a qualified attorney before signing or modifying any legal agreement. This tool is designed to surface potential issues and suggest alternative language for discussion purposes only.</p>
+<ul>
+<li>Never provide incomplete replacement language; every redline includes a full, usable clause.</li>
+<li>Never present analysis without quoting the specific contract language being discussed.</li>
+<li>Never assume jurisdiction-specific enforceability; note when a provision&#x27;s enforceability varies by jurisdiction.</li>
+<li>Always produce <code>contract-review.md</code> as the primary deliverable.</li>
+<li>Always use tracked-changes format (<code>[-deletion-]</code> / <code>[+insertion+]</code>) for every suggested change.</li>
+<li>Always include negotiation talking points for every issue rated MEDIUM or above.</li>
+<li>Always analyze from the signing party&#x27;s perspective unless told otherwise.</li>
+</ul>
+<h3>Quality Standards</h3>
+<ul>
+<li><strong>Be exhaustive.</strong> Review every section, not just the obviously problematic ones.</li>
+<li><strong>Be specific.</strong> Quote exact language, reference exact section numbers, provide complete replacement text.</li>
+<li><strong>Be practical.</strong> Frame suggestions a reasonable counterparty would accept; extreme positions undermine credibility.</li>
+<li><strong>Be balanced.</strong> Note favorable provisions too -- this builds credibility for the items that need changing.</li>
+<li><strong>Quantify where possible.</strong> Estimate liability exposure and calculate penalties when the contract permits.</li>
+<li><strong>Reference market standards.</strong> When calling something non-standard, state what the market standard actually is.</li>
+</ul>
+      </section>
+      <section aria-labelledby="install" class="install">
+        <h2 id="install">Install in Claude Code</h2>
+        <pre><code>mkdir -p ~/.claude/skills/contract-redliner
+curl -sL https://raw.githubusercontent.com/OneWave-AI/claude-skills/main/contract-redliner/SKILL.md -o ~/.claude/skills/contract-redliner/SKILL.md</code></pre>
+      </section>
+      <section aria-labelledby="faq" class="faq">
+        <h2 id="faq">Frequently asked questions</h2>
+        <dl>
+          <dt>What is the Contract Redliner Claude skill?</dt>
+          <dd>Reads a contract and generates redline suggestions with replacement language. Identifies unfavorable terms, missing protections, ambiguous language, liabil</dd>
+          <dt>Is Contract Redliner free to use?</dt>
+          <dd>Yes. Skills from the OneWave library are MIT licensed and free for personal and commercial use.</dd>
+          <dt>Where does the skill file go?</dt>
+          <dd>Personal skills live in <code>~/.claude/skills/contract-redliner/SKILL.md</code>. Project-specific skills go in <code>.claude/skills/</code> inside your repo.</dd>
+        </dl>
+      </section>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>Mirrored from <a href="https://www.onewave-ai.com/resources/claude-skills/contract-redliner" rel="noopener">OneWave AI</a>. Source: <a href="https://github.com/OneWave-AI/claude-skills" rel="noopener">OneWave-AI/claude-skills</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Palette Extractor | AI Skills</title>
+  <meta name="description" content="Extract and generate accessible color palettes from images, websites, and designs.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Color Palette Extractor</h1>
+      <p>Extract and generate accessible color palettes from images, websites, and designs.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/output-template.md</code> — full report structure for presenting a palette</li>
+<li><code>references/export-formats.md</code> — CSS, Tailwind, SCSS, JSON, iOS, Android snippets</li>
+<li><code>references/color-theory.md</code> — harmony schemes, accessibility, extraction best practices</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li>
+<p>Identify the source: image file (PNG, JPG, SVG), website URL, screenshot, design mockup, or an existing color code to build from.</p>
+</li>
+<li>
+<p>Extract colors.</p>
+</li>
+<li>From an image: analyze pixel data, identify dominant colors, group similar shades, calculate frequency, and sort by prominence.</li>
+<li>From a website: fetch and parse the CSS, extract color values, and identify brand, accent, text, and background colors.</li>
+<li>
+<p>Cluster with K-means; extract 5-10 dominant colors. Ignore near-white and near-black unless significant.</p>
+</li>
+<li>
+<p>Build the primary palette (5-10 colors): most dominant color, 2-3 supporting colors, 1-2 accents, a background, and a text color. Generate an extended palette with tints, shades, tones, and 50-950 numeric scales. See <code>references/color-theory.md</code>.</p>
+</li>
+<li>
+<p>Run color harmony analysis to produce complementary, analogous, triadic, split-complementary, tetradic, and monochromatic schemes. See <code>references/color-theory.md</code>.</p>
+</li>
+<li>
+<p>Check accessibility: compute WCAG 2.1 contrast ratios for each text/background pairing and test against protanopia, deuteranopia, and tritanopia. Recommend accessible alternatives where a pairing fails. See <code>references/color-theory.md</code>.</p>
+</li>
+<li>
+<p>Format the report following <code>references/output-template.md</code>, and export to the requested formats using <code>references/export-formats.md</code>.</p>
+</li>
+</ol>
+<h2>Output Requirements</h2>
+<p>Deliver palettes that have clear dominant colors, sufficient variations, semantic naming, harmony schemes, contrast ratios that pass accessibility checks, usage guidelines, and exports in multiple formats. Produce professional, accessible palettes ready for immediate use in design systems.</p>
+<h2>Example Triggers</h2>
+<ul>
+<li>"Extract colors from this screenshot"</li>
+<li>"Get color palette from this website"</li>
+<li>"Generate a color scheme from this image"</li>
+<li>"Create Tailwind config from these colors"</li>
+<li>"Find dominant colors in this logo"</li>
+<li>"Build a palette from this hex code"</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

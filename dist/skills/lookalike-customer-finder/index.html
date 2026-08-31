@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lookalike Customer Finder | AI Skills</title>
+  <meta name="description" content="Analyze a company's best customers and find similar companies that match the same profile, producing a high-quality, ranked target account list.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Lookalike Customer Finder</h1>
+      <p>Analyze a company's best customers and find similar companies that match the same profile, producing a high-quality, ranked target account list.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/scoring-model.md</code> - Profile dimensions, weighted scoring model, and score bands.</li>
+<li><code>references/output-template.md</code> - Full Markdown report structure (ICP, ranked lookalikes, market insights, targeting strategy, action plan).</li>
+<li><code>references/data-sources.md</code> - Recommended enrichment tools and data points to gather.</li>
+<li><code>references/examples.md</code> - Best practices, trigger phrases, and an example request.</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li>Collect the best customers provided. If none are given, ask for the top 5-10 accounts.</li>
+<li>Analyze common characteristics across them. See <code>references/scoring-model.md</code> for the five profile dimensions.</li>
+<li>Build the Ideal Customer Profile (ICP) from those shared traits.</li>
+<li>Search the market for companies matching the ICP. Pull firmographics, tech stack, growth signals, and contacts from the tools in <code>references/data-sources.md</code>.</li>
+<li>Score each candidate 0-100 using the weighted scoring model in <code>references/scoring-model.md</code>.</li>
+<li>Rank and tier the companies by score (Tier 1: top 10, Tier 2: next 40, Tier 3: next 50).</li>
+<li>Produce the report following <code>references/output-template.md</code>, including market insights, a tiered targeting strategy, and a quick-start action plan.</li>
+<li>Apply the best practices in <code>references/examples.md</code> throughout: favor quality over quantity, weight growth signals, and enrich contacts before recommending outreach.</li>
+</ol>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,944 @@
+{
+  "source": "https://www.onewave-ai.com/resources/claude-skills",
+  "scraped_at": "2026-08-31T06:59:50Z",
+  "total": 187,
+  "pages": [
+    {
+      "slug": "agent-army",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/agent-army",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "agent-swarm-deployer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/agent-swarm-deployer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "ai-readiness-assessment",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/ai-readiness-assessment",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "agent-team-builder",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/agent-team-builder",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "animate",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/animate",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "accessibility-auditor",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/accessibility-auditor",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "agent-to-agent",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/agent-to-agent",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "api-documentation-writer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/api-documentation-writer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "api-endpoint-scaffolder",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/api-endpoint-scaffolder",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "api-load-tester",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/api-load-tester",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "brand-consistency-checker",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/brand-consistency-checker",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "budget-optimizer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/budget-optimizer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "brand-voice-analyzer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/brand-voice-analyzer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "before-you-build",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/before-you-build",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "board-deck-generator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/board-deck-generator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "cash-flow-forecaster",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/cash-flow-forecaster",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "champion-identifier",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/champion-identifier",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "claude-design-critic",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/claude-design-critic",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "churn-autopsy",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/churn-autopsy",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "claude-landing-composer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/claude-landing-composer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "claude-design-system-architect",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/claude-design-system-architect",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "client-proposal-generator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/client-proposal-generator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "code-review-pro",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/code-review-pro",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "client-health-dashboard",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/client-health-dashboard",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "cold-email-sequence-generator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/cold-email-sequence-generator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "commercial-lease-analyzer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/commercial-lease-analyzer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "competitor-content-analyzer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/competitor-content-analyzer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "competitor-intel-agent",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/competitor-intel-agent",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "company-announcement-writer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/company-announcement-writer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "color-palette-extractor",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/color-palette-extractor",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "competitor-price-tracker",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/competitor-price-tracker",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "contact-hunter",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/contact-hunter",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "compliance-checker",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/compliance-checker",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "cowork-calendar-defrag",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/cowork-calendar-defrag",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "content-repurposer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/content-repurposer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "conversation-archaeologist",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/conversation-archaeologist",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "cowork-contract-renewal-radar",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/cowork-contract-renewal-radar",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "contract-analyzer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/contract-analyzer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "cowork-data-room-builder",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/cowork-data-room-builder",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "contract-redliner",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/contract-redliner",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "cowork-deal-room",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/cowork-deal-room",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "cowork-hiring-screener",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/cowork-hiring-screener",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "cowork-folder-organizer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/cowork-folder-organizer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "cowork-home-inventory",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/cowork-home-inventory",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "cowork-invoice-chaser",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/cowork-invoice-chaser",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "cowork-inbox-triage",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/cowork-inbox-triage",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "cowork-qbr-builder",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/cowork-qbr-builder",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "cowork-medical-bill-auditor",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/cowork-medical-bill-auditor",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "cowork-rfp-response",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/cowork-rfp-response",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "cowork-tax-prep-organizer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/cowork-tax-prep-organizer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "cowork-sop-writer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/cowork-sop-writer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "cowork-vendor-comparison",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/cowork-vendor-comparison",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "cross-conversation-project-manager",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/cross-conversation-project-manager",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "csv-excel-merger",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/csv-excel-merger",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "css-animation-creator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/css-animation-creator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "customer-panel-of-experts",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/customer-panel-of-experts",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "customer-journey-mapper",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/customer-journey-mapper",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "cowork-expense-audit",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/cowork-expense-audit",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "customer-review-aggregator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/customer-review-aggregator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "data-pipeline-builder",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/data-pipeline-builder",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "dark-mode-converter",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/dark-mode-converter",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "database-migrator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/database-migrator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "deal-closer-playbook",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/deal-closer-playbook",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "database-schema-designer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/database-schema-designer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "debate-simulator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/debate-simulator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "deal-momentum-analyzer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/deal-momentum-analyzer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "deal-review-framework",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/deal-review-framework",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "design-export-repair",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/design-export-repair",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "dependency-auditor",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/dependency-auditor",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "design-style-installer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/design-style-installer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "design-system-generator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/design-system-generator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "design-tokens-sync",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/design-tokens-sync",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "docker-debugger",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/docker-debugger",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "email-subject-line-optimizer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/email-subject-line-optimizer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "employee-handbook-builder",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/employee-handbook-builder",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "email-template-generator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/email-template-generator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "env-setup-wizard",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/env-setup-wizard",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "error-boundary-creator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/error-boundary-creator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "executive-dashboard-generator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/executive-dashboard-generator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "expansion-revenue-finder",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/expansion-revenue-finder",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "expert-panel",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/expert-panel",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "financial-goal-planner",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/financial-goal-planner",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "financial-parser",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/financial-parser",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "full-codebase-migrator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/full-codebase-migrator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "flashcard-generator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/flashcard-generator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "gmail-to-crm-pipeline",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/gmail-to-crm-pipeline",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "game-builder",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/game-builder",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "git-pr-reviewer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/git-pr-reviewer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "hiring-scorecard",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/hiring-scorecard",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "font-pairing-suggester",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/font-pairing-suggester",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "hyperframes-explainer-builder",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/hyperframes-explainer-builder",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "hyperframes-sales-demo-builder",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/hyperframes-sales-demo-builder",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "hyperframes-testimonial-builder",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/hyperframes-testimonial-builder",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "hyperframes-ad-director",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/hyperframes-ad-director",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "hyperframes-local-promo",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/hyperframes-local-promo",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "inbound-lead-qualifier",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/inbound-lead-qualifier",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "icp-deep-scanner",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/icp-deep-scanner",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "incident-responder",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/incident-responder",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "intent-signal-aggregator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/intent-signal-aggregator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "internal-email-composer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/internal-email-composer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "inventory-reorder-planner",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/inventory-reorder-planner",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "investor-update-writer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/investor-update-writer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "itinerary-optimizer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/itinerary-optimizer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "job-application-optimizer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/job-application-optimizer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "job-post-writer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/job-post-writer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "job-profitability-analyzer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/job-profitability-analyzer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "landing-page-copywriter",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/landing-page-copywriter",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "knowledge-base-builder",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/knowledge-base-builder",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "landing-page-optimizer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/landing-page-optimizer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "hypothesis-testing-engine",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/hypothesis-testing-engine",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "lead-scoring-model",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/lead-scoring-model",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "linkedin-post-optimizer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/linkedin-post-optimizer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "linkedin-sales-navigator-alt",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/linkedin-sales-navigator-alt",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "lookalike-customer-finder",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/lookalike-customer-finder",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "market-sizing",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/market-sizing",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "local-seo-optimizer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/local-seo-optimizer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "meeting-intelligence",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/meeting-intelligence",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "multi-agent-client-onboarding",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/multi-agent-client-onboarding",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "motion-language-designer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/motion-language-designer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "mvp-case-builder",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/mvp-case-builder",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "okr-generator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/okr-generator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "objection-pattern-detector",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/objection-pattern-detector",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "overnight-repo-auditor",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/overnight-repo-auditor",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "onboarding-checklist",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/onboarding-checklist",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "performance-profiler",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/performance-profiler",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "personalization-at-scale",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/personalization-at-scale",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "meeting-to-tasks",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/meeting-to-tasks",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "pipeline-health-analyzer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/pipeline-health-analyzer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "pitch-deck-reviewer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/pitch-deck-reviewer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "podcast-content-suite",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/podcast-content-suite",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "podcast-studio",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/podcast-studio",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "portfolio-analyzer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/portfolio-analyzer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "presentation-design-enhancer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/presentation-design-enhancer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "pricing-strategy",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/pricing-strategy",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "pricing-change-strategist",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/pricing-change-strategist",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "product-launch-war-room",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/product-launch-war-room",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "quiz-maker",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/quiz-maker",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "prospect-panel-simulator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/prospect-panel-simulator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "prospect-research-compiler",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/prospect-research-compiler",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "quota-setting-calculator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/quota-setting-calculator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "raise-negotiation-prep",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/raise-negotiation-prep",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "react-component-generator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/react-component-generator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "ramping-rep-tracker",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/ramping-rep-tracker",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "reddit-analyzer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/reddit-analyzer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "regex-debugger",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/regex-debugger",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "rep-performance-scorecard",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/rep-performance-scorecard",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "renewal-predictor",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/renewal-predictor",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "responsive-layout-builder",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/responsive-layout-builder",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "review-response-writer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/review-response-writer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "roi-calculator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/roi-calculator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "runbook-generator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/runbook-generator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "saas-replacement-planner",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/saas-replacement-planner",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "sales-call-prep-assistant",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/sales-call-prep-assistant",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "sales-coaching-plan-generator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/sales-coaching-plan-generator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "sales-comp-plan-designer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/sales-comp-plan-designer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "sales-forecast-builder",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/sales-forecast-builder",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "scout",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/scout",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "sales-methodology-implementer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/sales-methodology-implementer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "screenshot-to-code",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/screenshot-to-code",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "scout-pro",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/scout-pro",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "security-pentest-planner",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/security-pentest-planner",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "seo-keyword-cluster-builder",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/seo-keyword-cluster-builder",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "seo-optimizer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/seo-optimizer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "skill-navigator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/skill-navigator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "skill-composer-studio",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/skill-composer-studio",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "slack-message-formatter",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/slack-message-formatter",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "sms-text-optimizer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/sms-text-optimizer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "social-selling-content-generator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/social-selling-content-generator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "sow-generator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/sow-generator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "social-repurposer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/social-repurposer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "stock-photo-finder",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/stock-photo-finder",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "tax-strategy-optimizer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/tax-strategy-optimizer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "sub-agent-orchestrator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/sub-agent-orchestrator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "tech-due-diligence",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/tech-due-diligence",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "technical-writer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/technical-writer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "training-log-analyzer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/training-log-analyzer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "territory-planning-optimizer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/territory-planning-optimizer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "test-coverage-improver",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/test-coverage-improver",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "utm-link-generator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/utm-link-generator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "typography-scale-builder",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/typography-scale-builder",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "weak-signal-synthesizer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/weak-signal-synthesizer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "utm-parameter-generator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/utm-parameter-generator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "webinar-content-repurposer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/webinar-content-repurposer",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "weekly-business-report",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/weekly-business-report",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "webinar-to-content-multiplier",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/webinar-to-content-multiplier",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "workflow-automator",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/workflow-automator",
+      "has_skill_markdown": true
+    },
+    {
+      "slug": "workout-program-designer",
+      "url": "https://www.onewave-ai.com/resources/claude-skills/workout-program-designer",
+      "has_skill_markdown": true
+    }
+  ],
+  "success": 187,
+  "missing_skill_markdown": []
+}

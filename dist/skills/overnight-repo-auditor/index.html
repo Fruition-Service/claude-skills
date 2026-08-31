@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overnight Repo Auditor | AI Skills</title>
+  <meta name="description" content="Autonomously audit an entire codebase overnight and produce a single severity-rated report covering security, performance, accessibility, dependencies, and code quality. Built for Anthropic's Managed Agents runtime (14.5-hour task horizon): run to completion without questions or confirmation, writing structured findings to disk as execution proceeds so partial results survive interruption.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Overnight Repo Auditor</h1>
+      <p>Autonomously audit an entire codebase overnight and produce a single severity-rated report covering security, performance, accessibility, dependencies, and code quality. Built for Anthropic's Managed Agents runtime (14.5-hour task horizon): run to completion without questions or confirmation, writing structured findings to disk as execution proceeds so partial results survive interruption.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/reconnaissance.md</code> -- Phase 1 steps and the reconnaissance report template.</li>
+<li><code>references/shared-rubric.md</code> -- Severity rating rubric and structured finding format. Pass both to every agent.</li>
+<li><code>references/agent-security.md</code> -- Security Auditor brief and output format.</li>
+<li><code>references/agent-performance.md</code> -- Performance Auditor brief and output format.</li>
+<li><code>references/agent-accessibility.md</code> -- Accessibility Auditor brief, skip condition, and output format.</li>
+<li><code>references/agent-dependency.md</code> -- Dependency Auditor brief, skip condition, and output format.</li>
+<li><code>references/agent-code-quality.md</code> -- Code Quality Auditor brief and output format.</li>
+<li><code>references/compilation-and-templates.md</code> -- Phase 3 compilation steps, final report template, and completion message.</li>
+</ul>
+<h2>Operating Rules</h2>
+<ul>
+<li>Run autonomously. Never ask the user for input. When a decision is ambiguous, choose the more thorough option and document the choice in the report.</li>
+<li>Read-only against source. Create only the <code>audit-workspace/</code> directory and <code>overnight-audit-report.md</code>. Never modify, build, or execute project code. The sole exception: the Dependency Auditor may run read-only package-audit commands (<code>npm audit</code>, <code>pip audit</code>, and equivalents).</li>
+<li>Be exhaustive, not sampling-based, while the time window allows.</li>
+</ul>
+<h2>Workflow</h2>
+<h3>Phase 1: Reconnaissance (sequential, ~5-10 min)</h3>
+<ol>
+<li>Scan repository structure, identify languages, frameworks, config files, and estimate lines of code.</li>
+<li>Determine which audit modules are relevant (Security and Code Quality always; Performance always; Accessibility only with frontend/template files; Dependency only with a manifest/lockfile).</li>
+<li>Write <code>audit-workspace/00-reconnaissance.md</code> as the shared context document for all agents.</li>
+</ol>
+<p>Follow <code>references/reconnaissance.md</code> for exact commands and the report template.</p>
+<h3>Phase 2: Parallel Audit Deployment</h3>
+<ol>
+<li>Deploy every relevant audit agent simultaneously via the Agent tool. Use <code>run_in_background: true</code> on every call and send ALL agent calls in a single message.</li>
+<li>Build each agent's prompt by combining: the full reconnaissance report (paste inline -- agents do not share filesystem context automatically), the severity rubric and finding format from <code>references/shared-rubric.md</code>, and the agent-specific brief from its reference file. Each agent writes to its own output file under <code>audit-workspace/</code>.</li>
+<li>Security -&gt; <code>references/agent-security.md</code> -&gt; <code>01-security-audit.md</code></li>
+<li>Performance -&gt; <code>references/agent-performance.md</code> -&gt; <code>02-performance-audit.md</code></li>
+<li>Accessibility -&gt; <code>references/agent-accessibility.md</code> -&gt; <code>03-accessibility-audit.md</code> (honor skip condition)</li>
+<li>Dependency -&gt; <code>references/agent-dependency.md</code> -&gt; <code>04-dependency-audit.md</code> (honor skip condition)</li>
+<li>Code Quality -&gt; <code>references/agent-code-quality.md</code> -&gt; <code>05-code-quality-audit.md</code></li>
+<li>For a targeted run (e.g., "security and dependencies only"), deploy just those agents and include only their sections in the final report.</li>
+</ol>
+<h3>Phase 3: Report Compilation (sequential, ~5-10 min)</h3>
+<ol>
+<li>After all background agents return, read every agent report, deduplicate cross-agent findings, assign final severities, and generate the executive summary with the top-10 priority items.</li>
+<li>Write the compiled <code>overnight-audit-report.md</code> to the repository root, then emit the brief completion message.</li>
+</ol>
+<p>Follow <code>references/compilation-and-templates.md</code> for the deduplication map, final report template, and completion message.</p>
+<h2>Scaling</h2>
+<p>| Codebase Size | Estimated Duration | Agent Strategy |
+|---------------|-------------------|----------------|
+| &lt; 10K lines | 15-30 minutes | All agents, single pass each |
+| 10K - 50K lines | 30-90 minutes | All agents, thorough pass |
+| 50K - 200K lines | 1-4 hours | All agents, may need sub-agents for Security and Code Quality |
+| 200K - 500K lines | 4-8 hours | All agents spawn 2-3 sub-agents each to parallelize file review |
+| 500K+ lines | 8-14 hours | Full sub-agent deployment with file-batch assignments per sub-agent |</p>
+<p>For codebases over 200K lines, each audit agent should spawn sub-agents to parallelize within its domain (for example, Security splits into Auth &amp; Sessions, Data Handling, API Surface, and Infrastructure). Each brief instructs agents to self-organize sub-agent deployment based on the size discovered during their audit.</p>
+<h2>Error Handling</h2>
+<ul>
+<li><strong>Agent failure</strong>: retry the agent once with the same brief. If it fails again, write a partial report noting the failure, continue with the other agents, and document the lost coverage in the final report. Never let one agent block the others.</li>
+<li><strong>File access errors</strong>: skip the file, log it in that agent's Methodology Notes, and continue.</li>
+<li><strong>Timeout management</strong>: prioritize high-risk files first (auth, payments, data handling, public endpoints). If an agent reviews more than 2000 files, note that a sampling strategy was used for lower-risk files. The Commander compiles partial results if the window is closing.</li>
+<li><strong>Re-runs</strong>: a new audit overwrites the previous <code>audit-workspace/</code> directory and <code>overnight-audit-report.md</code>. Suggest the user commit or copy prior results first.</li>
+</ul>
+<h2>Notes</h2>
+<ul>
+<li>Reports describe source code, so treat them with the same sensitivity as the code itself.</li>
+<li>If <code>.gitignore</code> exists but does not list <code>audit-workspace/</code>, suggest adding it to prevent committing audit output.</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

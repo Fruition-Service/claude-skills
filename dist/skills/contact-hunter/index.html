@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Hunter | AI Skills</title>
+  <meta name="description" content="Find and enrich publicly available contact information from multiple sources with full source attribution.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Contact Hunter</h1>
+      <p>Find and enrich publicly available contact information from multiple sources with full source attribution.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <p>This skill guides the search process and organizes results. It does not directly access paid APIs; it produces structured queries, suggests where to look, then validates and formats what is found.</p>
+<h2>Contents</h2>
+<ul>
+<li><code>references/search-queries.md</code> — per-target search briefs and reusable query patterns</li>
+<li><code>references/output-templates.md</code> — data collection template, contact card, bulk CSV, email-pattern report, export formats</li>
+<li><code>references/compliance.md</code> — allowed/not-allowed rules, best practices, verification steps</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li>
+<p>Identify the search type: person, company, role, email verification, or bulk enrichment.</p>
+</li>
+<li>
+<p>Gather search parameters: name, company, job title, location, industry, LinkedIn URL, email domain, and any other identifiers.</p>
+</li>
+<li>
+<p>Select sources to check: LinkedIn, company website (About/Team/Contact/Leadership), GitHub (developers), Twitter/X, professional directories, public databases, and any paid tools the user has access to (ZoomInfo, Apollo.io, Hunter.io, RocketReach).</p>
+</li>
+<li>
+<p>Build the search plan using the query patterns in <code>references/search-queries.md</code>. Produce a per-target brief with LinkedIn, Google, company-website, email-pattern, and GitHub queries.</p>
+</li>
+<li>
+<p>Detect the company email pattern from confirmed addresses, then derive candidate emails. See the email-pattern report in <code>references/output-templates.md</code>.</p>
+</li>
+<li>
+<p>Collect and verify results. Cross-reference multiple sources and run the verification steps in <code>references/compliance.md</code> before recording any field.</p>
+</li>
+<li>
+<p>Format output using the templates in <code>references/output-templates.md</code>: data collection template, individual contact card, or bulk CSV. Export as CSV, JSON, vCard, or CRM-specific CSV (Salesforce, HubSpot) as requested.</p>
+</li>
+<li>
+<p>For enrichment of existing contacts, refresh: current job title, company changes, updated contact info, social profiles, company information, reporting structure, and recent activity.</p>
+</li>
+</ol>
+<h2>Quality bar</h2>
+<p>Ensure every contact record includes all available fields, cites its sources, carries a confidence/verification level and freshness date, follows data-privacy law, is formatted consistently, notes contact preferences, provides role context (tenure, team), flags uncertainties, and suggests verification steps. Operate only within the rules in <code>references/compliance.md</code>.</p>
+<h2>Example triggers</h2>
+<ul>
+<li>"Find the VP of Sales at Acme Corp"</li>
+<li>"Get contact info for John Smith at Microsoft"</li>
+<li>"Find engineering managers at Stripe"</li>
+<li>"Enrich this list of contacts with emails"</li>
+<li>"What's the email pattern at Google?"</li>
+<li>"Find the marketing team at HubSpot"</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

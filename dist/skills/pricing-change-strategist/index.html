@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Change Strategist | AI Skills</title>
+  <meta name="description" content="Raising prices is the highest-leverage move most companies are too scared to make well. Done carelessly it churns your base and lights up Twitter. Done well it's nearly pure margin. This skill plans the change end to end — the math, the segmentation, the grandfathering call, and every word customers will read.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Pricing Change Strategist</h1>
+      <p>Raising prices is the highest-leverage move most companies are too scared to make well. Done carelessly it churns your base and lights up Twitter. Done well it's nearly pure margin. This skill plans the change end to end — the math, the segmentation, the grandfathering call, and every word customers will read.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <p>Pair it with <code>product-launch-war-room</code> (to decide <em>whether</em>) and <code>customer-panel-of-experts</code> (to hear how each segment reacts). This skill owns the <em>how</em>.</p>
+<h2>Step 1 — Establish the baseline</h2>
+<p>Gather (read-only from billing/CRM where connected — Stripe, Mercury, Supabase via <code>$SUPABASE_TOKEN</code>; otherwise ask):
+- Current pricing, tiers, and discount reality (list vs. actual realized).
+- Revenue distribution: ACV by segment, concentration, % on legacy/grandfathered plans.
+- Churn and expansion rates by segment.
+- Cost-to-serve by tier (where the margin actually is).
+- The trigger: why now — cost, value delivered, repositioning, market.</p>
+<p><strong>Security:</strong> read-only. Never modify subscriptions, prices, or send anything. No real customer PII in artifacts — segment in aggregate. Secrets in env vars only.</p>
+<h2>Step 2 — Segment by price sensitivity</h2>
+<p>Split the base into action groups, e.g.:
+- <strong>Anchor accounts</strong> — high revenue, high switching cost → can absorb increase, handle white-glove.
+- <strong>Price-sensitive core</strong> — value-conscious, mobile → highest churn risk, needs the strongest value story.
+- <strong>Legacy / underpriced</strong> — paying far below current value → biggest opportunity, biggest betrayal risk.
+- <strong>At-risk</strong> — already low engagement → may use the increase as an exit cue; decide if you want to keep them.</p>
+<p>For each: current price, proposed price, % change, estimated churn response, net revenue impact.</p>
+<h2>Step 3 — Model the scenarios</h2>
+<p>Build a simple, transparent model (write it out so the math is auditable — never hand-wave aggregates):
+- <strong>Conservative / expected / aggressive</strong> increase levels.
+- For each: projected churn %, retained revenue, net new revenue, payback on any concessions.
+- The break-even churn: how much churn the increase can absorb before it's net-negative.
+- Sensitivity: which assumption the outcome hinges on most.</p>
+<p>State assumptions explicitly and label them assumptions. If billing data is connected, ground the model in real numbers and cite them; if not, mark it as estimated and tell the user what data would tighten it.</p>
+<h2>Step 4 — Decide the policy</h2>
+<ul>
+<li><strong>Grandfathering:</strong> none / time-boxed / permanent for anchors — with the revenue trade-off of each.</li>
+<li><strong>Notice period:</strong> how much warning (longer for larger increases / annual contracts).</li>
+<li><strong>Migration path:</strong> how legacy plans move, and the off-ramp for those who won't.</li>
+<li><strong>Concessions:</strong> annual-prepay discount, lock-in window, feature sweetener to soften the change.</li>
+<li><strong>Sequencing:</strong> new customers first → expansions → renewals → existing base, or a clean date.</li>
+</ul>
+<h2>Step 5 — Produce the comms kit</h2>
+<p>```markdown</p>
+<h1>Price Change Plan — {Company}</h1>
+<p>Generated: {timestamp} · Grounding: {billing-data / estimated}</p>
+<h2>Recommendation</h2>
+<p>Increase {X%} on {segments}, {grandfathering policy}, {notice}, effective {date}.
+Expected: +{$} net revenue, {Y%} churn risk, break-even at {Z%} churn.</p>
+<h2>Segment plan (table)</h2>
+<h2>Scenario model (table + assumptions)</h2>
+<h2>Rollout timeline &amp; sequencing</h2>
+<h2>Risk register &amp; rollback triggers</h2>
+<h2>Comms — ready to send</h2>
+<h3>Customer email (warm, value-first, no apology-for-existing tone)</h3>
+<h3>In-app / banner notice</h3>
+<h3>Sales talk track (for accounts that push back)</h3>
+<h3>Support FAQ + objection handling ("why is it going up", "I'll cancel", "match my old price")</h3>
+<h3>Internal brief (so the team answers consistently)</h3>
+<p>```</p>
+<p>Lead every customer-facing message with <em>value delivered</em>, then the change, then the path forward — never apologize for charging fairly. Match the user's voice: direct, confident, no corporate fluff.</p>
+<h2>Step 6 — Pressure-test</h2>
+<p>Offer to run the email and talk track through <code>prospect-panel-simulator</code> / <code>customer-panel-of-experts</code> before sending, and to set the rollback triggers as a monitoring checklist.</p>
+<h2>Guardrails recap</h2>
+<p>Read-only on billing — never change a subscription · model is transparent and assumptions are labeled · grandfathering and rollback are explicit decisions · comms lead with value, never apology · no real customer PII in artifacts.</p>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

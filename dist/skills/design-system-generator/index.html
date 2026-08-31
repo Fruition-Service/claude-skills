@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design System Generator | AI Skills</title>
+  <meta name="description" content="Generate a token-driven design system: tokens, base components, build config, and documentation.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Design System Generator</h1>
+      <p>Generate a token-driven design system: tokens, base components, build config, and documentation.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/design-tokens.md</code> — color, typography, spacing, shadow, and radius token files plus CSS variable setup.</li>
+<li><code>references/components.md</code> — Button, Input, Card implementations and the component barrel index.</li>
+<li><code>references/config-and-utilities.md</code> — Tailwind config and the <code>cn</code> class-merge helper.</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li>Define design tokens. Create <code>tokens/</code> with colors, typography, spacing, and effects (shadows, radii) per <code>references/design-tokens.md</code>. Replace the reference values with the project brand palette.</li>
+<li>Add CSS variables. Set up <code>:root</code> and <code>.dark</code> custom properties in <code>globals.css</code> using the variable block in <code>references/design-tokens.md</code>.</li>
+<li>Wire the build. Add the <code>cn</code> helper and extend the Tailwind theme from the token files following <code>references/config-and-utilities.md</code>.</li>
+<li>Build base components. Implement Button, Input, and Card from <code>references/components.md</code>, then extend the set as the product requires.</li>
+<li>Export a barrel. Re-export every shipped component from <code>components/ui/index.ts</code> (see <code>references/components.md</code>).</li>
+<li>Document usage and variants. For each component, note its variants, sizes, props, and accessibility behavior so consumers apply it consistently.</li>
+</ol>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

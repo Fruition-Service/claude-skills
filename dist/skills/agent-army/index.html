@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Army | AI Skills</title>
+  <meta name="description" content="A 2-layer parallel execution framework. The Commander is the top-tier model — Fable by default, or Opus if that's the session model — and does the thinking: recon, composition, briefing, verification. It orchestrates swarms of subordinate models whose tiers the user picks at deploy time (see Power Level). Each Layer 1 agent has its own full context window (not a slice). Each spawns Layer 2 sub-agents under it. The result is many independent brains running at once — not one brain divided.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Agent Army</h1>
+      <p>A 2-layer parallel execution framework. The Commander is the top-tier model — Fable by default, or Opus if that's the session model — and does the thinking: recon, composition, briefing, verification. It orchestrates swarms of subordinate models whose tiers the user picks at deploy time (see Power Level). Each Layer 1 agent has its own full context window (not a slice). Each spawns Layer 2 sub-agents under it. The result is many independent brains running at once — not one brain divided.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <p><code>Commander (you — Fable or Opus, the session model)
+ |
+ |-- Layer 1: Team (3 to 50+, each = own 1M context, L1 tier from power level)
+ |    |-- Agent A (1M) -- Sub-agent A1, A2, ...  (L2 tier)
+ |    |-- Agent B (1M) -- Sub-agent B1, B2, ...  (L2 tier)
+ |    |-- Agent C (1M) -- Sub-agent C1, C2, ...  (L2 tier)
+ |    |-- ... (no cap)</code></p>
+<p><strong>Swarm vs. army:</strong> A swarm splits one context window across sub-agents — one brain, divided. An army gives each Layer 1 member its own window. That difference is the whole point of this skill.</p>
+<h2>When to use</h2>
+<ul>
+<li>Large refactors spanning many files</li>
+<li>Multi-file color / style / naming / API migrations</li>
+<li>Broad codebase audits (security, a11y, performance, dead code)</li>
+<li>Bulk content generation or transformation</li>
+<li>Any task with <strong>6+ independent units of work</strong> that can run simultaneously</li>
+</ul>
+<h2>When NOT to use</h2>
+<ul>
+<li>Fewer than 6 independent units of work — just do it directly</li>
+<li>Heavy sequential dependencies where each step needs the last one's output</li>
+<li>Single-file changes</li>
+<li>Tasks needing one coherent authorial voice across all output (parallel agents drift)</li>
+</ul>
+<p>If the task doesn't clearly fit, say so and propose doing it inline instead of spinning up an army.</p>
+<p><mandatory-rules></p>
+<h2>MANDATORY RULES</h2>
+<ol>
+<li>EVERY Layer 1 agent MUST spawn 2+ sub-agents. No exceptions. If you're about to deploy an L1 agent with no sub-agents, STOP and restructure.</li>
+<li>NEVER silently shrink the army. Match the user's chosen tier. If you must deviate, say so out loud and why.
+2b. NEVER silently downgrade models. Pass <code>model:</code> explicitly on every Agent call at the user's chosen power level. Omitting it inherits the session model — that's a silent Max Power bill.</li>
+<li>Sub-agent deployment instructions go INSIDE the Layer 1 brief. If they're missing, the sub-agents will never be created.</li>
+<li>Report as agents complete: <code>[Agent N/M complete] name: X files modified, Y flags</code>.</li>
+<li>Show the army plan and pass the Deployment Gate before deploying (Full Mode). Quick Mode composes the plan internally but still passes the Gate.</li>
+<li>After every wave: run the build AND the phantom-completion check (see Verify). A green report from an agent is a claim, not proof.</li>
+<li>"Keep going" / "don't stop" = continuous mode: launch a new agent the moment one completes. Don't wait, don't re-ask.
+</mandatory-rules></li>
+</ol>
+<h2>Army Size</h2>
+<p>Confirm a tier before starting. Present this table:</p>
+<p><code>| Tier         | L1 Agents | Total w/ Sub-agents | Est. Tokens  |
+|--------------|-----------|---------------------|--------------|
+| Conservative | 3         | ~9                  | ~200-500K    |
+| Standard     | 5-10      | ~15-30              | ~500K-1.5M   |
+| Aggressive   | 10-20     | ~30-60              | ~1.5-4M      |
+| Maximum      | 20-50+    | ~60-100+            | ~4M+         |
+| Custom       | you pick  | you pick            | varies       |</code></p>
+<p>Default to <strong>Standard</strong> on "just do it." After recon (Step 3), recommend a specific number based on what you found — e.g. "35 files across 6 domains → Aggressive: 8 L1 agents, 2-3 sub-agents each (~22 total, ~2M tokens). Adjust?" Token estimates are rough and scale with task complexity.</p>
+<h2>Power Level</h2>
+<p>Size sets how many agents; power sets which models. Ask for both in one question (AskUserQuestion works well — size and power as two questions in one call). Skip asking if the user already named a power level or explicit models.</p>
+<p><code>| Power Level         | Commander          | Layer 1 | Layer 2 | Best For                                        |
+|---------------------|--------------------|---------|---------|-------------------------------------------------|
+| Max Power           | Fable/Opus (session)| Opus   | Opus    | gnarly refactors, correctness-critical migrations|
+| Heavy (recommended) | Fable/Opus (session)| Opus   | Sonnet  | most large tasks — smart orchestration, fast exec|
+| Balanced            | Fable/Opus (session)| Sonnet | Sonnet  | mechanical migrations with clear patterns        |
+| Economy             | Fable/Opus (session)| Sonnet | Haiku   | high-volume, dead-simple find/replace            |</code></p>
+<p>Rules:
+- The <strong>Commander is always the session model</strong> — Fable or Opus, the user's choice — and is never delegated. If the session is running Sonnet or Haiku, tell the user to switch (<code>/model</code> or <code>claude --model fable</code>) before deploying: commander quality is the ceiling on army quality.
+- Pass the model explicitly on <strong>every</strong> Agent call: <code>model: "&lt;L1 tier&gt;"</code> for team members; L1 briefs instruct <code>model: "&lt;L2 tier&gt;"</code> for sub-agents.
+- <strong>Per-agent escalation</strong> is allowed at any power level: a heavy or tangled file (1000+ lines, complex logic) can bump that one sub-agent up a tier. Note escalations in the army plan.
+- <strong>Audit waves run on Opus</strong> regardless of power level — fresh, stronger eyes on the executors' work. Notify waves can drop to Haiku.</p>
+<h2>Protocol</h2>
+<p><strong>Mode:</strong> If scope is already concrete (file paths, exact changes, tier), skip to Step 3 (Quick Mode). Otherwise start at Step 1 (Full Mode).</p>
+<h3>Step 1: Intake (Full Mode)</h3>
+<p>Confirm in one line if the user already gave context: "Goal: [X]. Scope: [Y]. Tier: [Z]. Power: [P]. Starting." Otherwise ask for: goal (one sentence), scope (files/dirs/"everything"), constraints (don't touch X, match Y), tier, and power level.</p>
+<h3>Step 2: Git Checkpoint</h3>
+<ol>
+<li><code>git status</code> — warn on uncommitted changes, offer to stash/commit first.</li>
+<li><code>git checkout -b agent-army/checkpoint-{timestamp}</code> then switch back. This is the rollback point.</li>
+<li>No git repo? Warn that there's no safety net and get explicit confirmation.</li>
+</ol>
+<h3>Step 3: Recon</h3>
+<ol>
+<li>Grep / Glob / Read to find every affected file.</li>
+<li>Count the units of work.</li>
+<li><code>wc -l</code> each file. Flag 500+ line files as <strong>heavy</strong> → assign solo.</li>
+<li>Classify into domains (by directory, import graph, file type, naming pattern).</li>
+<li>Identify shared dependencies — <strong>foundation files</strong> imported across domains. Handle these first (Step 5).</li>
+<li>Identify the build command (package.json, Makefile, etc.).</li>
+</ol>
+<p>Output: <code>Files: N | Heavy: [list] | Domains: [list] | Shared deps: [list] | Build cmd: [cmd]</code></p>
+<h3>Step 4: Compose</h3>
+<ol>
+<li><strong>Foundation Agent</strong> for shared deps — runs <em>before</em> the parallel wave so dependents don't conflict.</li>
+<li><strong>Layer 1:</strong> one agent per domain; split large domains across multiple agents.</li>
+<li><strong>Layer 2:</strong> 2+ sub-agents per L1 agent, assigned by <strong>weighted file load</strong>, not file count:</li>
+<li>Small (&lt;200 lines): 2-3 per sub-agent</li>
+<li>Medium (200-500): 1-2 per sub-agent</li>
+<li>Heavy (500+): 1 per sub-agent, solo</li>
+<li>Name every agent. Assign every file to <strong>exactly one</strong> sub-agent — no overlaps, no gaps.</li>
+</ol>
+<p>Output the army plan. Full Mode: pause for "Proceed?" Quick Mode: one-line summary, then deploy.</p>
+<h3>Deployment Gate</h3>
+<p>Output this checklist in your response before deploying. Don't check it mentally — write it out.</p>
+<p><code>DEPLOYMENT GATE:
+[ ] Every L1 brief contains "You MUST spawn N sub-agents"
+[ ] Every sub-agent is named with specific files assigned
+[ ] Every file is owned by exactly one sub-agent (no overlap, no gap)
+[ ] L1 briefs include full sub-agent deployment instructions
+[ ] Tier matches the user's selection
+[ ] Power level set: model: "&lt;L1 tier&gt;" on every L1 call; L2 tier + escalations in every brief</code></p>
+<p>All must PASS. Any FAIL → fix the plan before deploying.</p>
+<h3>Step 5: Deploy</h3>
+<ol>
+<li>Foundation Agent first (if any), at the L1 tier. Wait for completion.</li>
+<li>Launch ALL Layer 1 agents in parallel — <code>run_in_background: true</code> and <code>model: "&lt;L1 tier&gt;"</code> on every call, in a single message.</li>
+<li>Each L1 agent spawns its L2 sub-agents in parallel (per its brief).</li>
+<li>Report each completion: <code>[Agent N/M complete] name: results</code>.</li>
+</ol>
+<h3>Step 6: Verify</h3>
+<ol>
+<li><strong>Re-scan</strong> — rerun the Step 3 searches for remaining violations.</li>
+<li><strong>Phantom-completion check</strong> — run <code>git diff --stat</code> and cross-reference against agent reports. Any agent that reported "COMPLETE, N files modified" with no matching diff lied or no-op'd — re-dispatch it. Trust the diff, not the report.</li>
+<li><strong>Build</strong> — run the build command. Record PASS/FAIL.</li>
+<li><strong>Resolve cross-team flags</strong> from the reports.</li>
+<li>Output the army report:</li>
+</ol>
+<p><code>Agents: N | Files modified: N (diff-confirmed) | Skipped: N | Build: PASS/FAIL
+Flags: [list] | Phantom completions caught: N | Rollback: git checkout agent-army/checkpoint-{timestamp}</code></p>
+<h2>Waves</h2>
+<p>Each wave is a new, smaller, differently-specialized army. Pause for user approval before each. <strong>Max 4 waves.</strong></p>
+<p>| Wave | Name          | Trigger                                                        | Purpose                                              |
+|------|---------------|----------------------------------------------------------------|------------------------------------------------------|
+| 1    | <strong>Execute</strong>   | always                                                         | make the changes                                     |
+| 2    | <strong>Audit</strong>     | build fails, remaining violations, 20+ files, or flags &gt; 0     | fresh agents review Wave 1 for correctness/edge cases|
+| 3    | <strong>Propagate</strong> | changes touch APIs/types/interfaces; tests or docs reference old patterns | update tests, docs, configs, downstream callers |
+| 4    | <strong>Notify</strong>    | user opts in                                                   | draft PR description, changelog, Slack summary       |</p>
+<p>Each wave's report is the next wave's recon. After each, rerun Verify; stop when re-scan is clean and build passes, or at 4 waves.</p>
+<h3>Resume / scratchpad</h3>
+<p>For multi-wave or interruptible runs, write <code>.army-state.md</code> after Wave 1: files modified (diff-confirmed), open flags, unresolved issues, decisions. If a run is killed, the next invocation reads this file and resumes from the last clean wave instead of restarting. Skip for single-wave tasks.</p>
+<h2>Layer 1 Prompt Template</h2>
+<p>This is what spawned agents actually see — the most important section in the skill.</p>
+<p>```
+You are [AGENT_NAME], specialist on [DOMAIN].</p>
+<p>Objective: [one sentence]
+Approved patterns: [exact values — hex codes, class names, API shapes]
+Forbidden patterns: [what to remove/avoid]
+Your files: [absolute paths with line counts]
+Rules: [constraints]. Skip files already using approved patterns (idempotency).
+Flag issues outside your files in "Flags for Commander" — do NOT fix them.</p>
+<p>CRITICAL: You MUST use the Agent tool to spawn the sub-agents listed below. Do
+NOT do the work yourself. Do NOT skip spawning. Deploy ALL sub-agents in a single
+message with multiple Agent tool calls, passing model: "[L2_TIER]" on every call
+[note escalations: except "NAME" which gets model: "[higher tier]"].</p>
+<p>Sub-agents:
+- "[NAME]": [files with line counts]
+- "[NAME]": [files with line counts]</p>
+<p>Pass each sub-agent: objective, their files, approved/forbidden patterns, rules,
+report format. After all complete, aggregate their reports and verify (by re-reading
+or grepping) that no forbidden patterns remain in your domain before reporting back.
+```</p>
+<h2>Layer 2 Prompt Template</h2>
+<p>```
+You are [SUB_AGENT_NAME], working under [TEAM_MEMBER_NAME].</p>
+<p>Objective: [one sentence]
+Files you own: [absolute paths with line counts — touch only these]
+Approved / Forbidden patterns: [exact values to use and remove]
+Rules: [constraints]. Skip files already correct. Flag issues outside your files —
+do NOT fix them.</p>
+<p>Process: read each file fully → check idempotency → apply approved, remove forbidden
+→ re-read to confirm no forbidden patterns remain.</p>
+<p>Report: Files Modified (file: N replacements), Files Skipped (already correct),
+Flags for Commander, Issues, Status (COMPLETE/PARTIAL/FAILED).
+```</p>
+<h2>Report Format</h2>
+<p>Every agent returns:</p>
+<p>```</p>
+<h2>Report: [Name]</h2>
+<p>Files Modified:   [file: N replacements]
+Files Skipped:    [file: reason]
+Flags for Commander: [issue or "None"]
+Issues:           [issue or "None"]
+Status:           COMPLETE / PARTIAL / FAILED
+```</p>
+<h2>Anti-patterns</h2>
+<p>These are the failure modes this skill exists to prevent. If you catch yourself doing one, stop and correct.</p>
+<ul>
+<li><strong>Phantom fan-out</strong> — an L1 agent does the work itself instead of spawning sub-agents. The whole speed advantage is gone. Enforced by Mandatory Rule 1 + the Gate.</li>
+<li><strong>Phantom completion</strong> — an agent reports COMPLETE without editing anything. Caught by the <code>git diff --stat</code> cross-check, not by trusting the report.</li>
+<li><strong>Silent shrink</strong> — quietly running 3 agents when the user picked Aggressive. Always surface deviations.</li>
+<li><strong>Model drift</strong> — omitting <code>model:</code> on Agent calls, so every sub-agent silently inherits the commander's model. The user picked Economy and got billed Max Power. Enforced by Mandatory Rule 2b + the Gate.</li>
+<li><strong>Overlapping ownership</strong> — two sub-agents editing the same file → conflicts and lost edits. Enforced by exactly-one-owner in the Gate.</li>
+<li><strong>Skipping the foundation</strong> — touching dependents before shared files are updated → cascade of broken imports. Foundation Agent runs first.</li>
+<li><strong>Army for a small job</strong> — 9 agents for 4 files is slower (orchestration overhead) and burns tokens. See "When NOT to use."</li>
+</ul>
+<h2>Error Handling</h2>
+<ul>
+<li>Sub-agent fails → L1 agent retries its files or spawns a replacement.</li>
+<li>L1 agent fails → Commander spawns a replacement with the same brief.</li>
+<li>Build failure → diff against the checkpoint branch to isolate the break, then run a fix wave.</li>
+<li>Phantom completion → re-dispatch that agent's files to a fresh agent.</li>
+<li>Idempotency on re-run → agents check for already-applied patterns first, so running the army twice never double-applies.</li>
+</ul>
+<h2>Worked example</h2>
+<p>User: "Replace all neon Tailwind colors with our sand palette across the site."</p>
+<p><strong>Recon:</strong> 45 files, 5 domains, 2 shared dependencies (a theme config + a shared <code>&lt;Button&gt;</code>). Build cmd: <code>npm run build</code>. Recommend Aggressive: 1 Foundation Agent + 5 L1 agents, 2-4 sub-agents each (~22 total). User picks <strong>Heavy</strong> power: Fable commander, Opus L1, Sonnet L2.</p>
+<p><strong>Wave 1 (Execute):</strong> Foundation Agent updates the 2 shared files first. Then 5 L1 agents deploy in parallel, each fanning out to sub-agents. Reports: 43 modified, 2 skipped (already correct), 3 flags.</p>
+<p><strong>Verify:</strong> <code>git diff --stat</code> shows 42 files changed — one agent reported a file it never touched (phantom). Re-dispatched; now 43 confirmed. Build passes. 3 flags + 2 edge-case violations remain → Audit wave recommended.</p>
+<p><strong>Wave 2 (Audit):</strong> 3 fresh agents target the flagged files and violations. Fixed. Build clean, re-scan clean. 4 test files import the changed <code>&lt;Button&gt;</code> → Propagate recommended.</p>
+<p><strong>Wave 3 (Propagate):</strong> 3 agents update the 4 test files + 1 doc. Build still green.</p>
+<p><strong>Final:</strong> 3 waves, ~28 agents total, 48 files touched (diff-confirmed), 1 phantom caught, zero violations remaining, clean build. Rollback branch available.</p>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

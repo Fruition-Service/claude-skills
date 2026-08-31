@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cowork Medical Bill Auditor | AI Skills</title>
+  <meta name="description" content="Audit medical bills the way a patient advocate does: never pay a bill that has not been matched to its EOB, know exactly what the insurer said the patient owes, and dispute in writing. Input: a folder of provider bills, insurance EOBs (explanation of benefits), and any payment records. This is billing-accuracy support, not medical or legal advice.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Cowork Medical Bill Auditor</h1>
+      <p>Audit medical bills the way a patient advocate does: never pay a bill that has not been matched to its EOB, know exactly what the insurer said the patient owes, and dispute in writing. Input: a folder of provider bills, insurance EOBs (explanation of benefits), and any payment records. This is billing-accuracy support, not medical or legal advice.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Workflow</h2>
+<ol>
+<li><strong>Inventory and pair.</strong> Catalog every document: provider bills (provider, service date, amounts, CPT/procedure codes when shown), EOBs (service date, billed, allowed amount, insurer paid, patient responsibility), payment receipts. Match each bill to its EOB by provider + service date + amounts.</li>
+<li><strong>Audit each pair.</strong> Check: bill's patient-owed amount vs. the EOB's patient-responsibility line (they must match); charges the EOB shows as insurer-paid or write-off still appearing on the bill; duplicate line items across bills for one visit; charges for services on dates with no corresponding visit; in-network providers billing above the allowed amount (balance billing, prohibited in most network contracts and, for many scenarios, under the No Surprises Act).</li>
+<li><strong>Flag the unmatched.</strong> Bills with no EOB (was the claim ever submitted to insurance?) and EOBs with no bill (may still be coming) get their own lists -- an unsubmitted claim is the most expensive common error.</li>
+<li><strong>Report.</strong> <code>bill-audit.md</code>: table of every bill -- status (<code>CORRECT</code>, <code>OVERBILLED</code>, <code>NO-EOB</code>, <code>NEEDS-INFO</code>), what the EOB says the patient owes vs. what the bill demands, and the discrepancy with both documents cited. Lead with total demanded vs. total actually owed per the EOBs.</li>
+<li><strong>Draft the disputes.</strong> For each discrepancy: a dispute letter to the provider's billing office (account number, service date, the specific EOB line, the exact ask) and a short phone script with the two questions to ask and the reference numbers to have ready. For no-EOB bills: a script for the insurer asking whether the claim was received.</li>
+</ol>
+<h2>Rules</h2>
+<ul>
+<li>Never recommend paying a bill that lacks a matching EOB. "Waiting on insurance processing" is a valid status; paying blind is not.</li>
+<li>Every discrepancy cites both documents by filename and line. Disputes without receipts get ignored.</li>
+<li>Do not interpret medical necessity, diagnoses, or whether care was appropriate -- audit the arithmetic and the matching only.</li>
+<li>Deadlines matter: note appeal windows printed on EOBs and flag any bill approaching collections language for priority handling.</li>
+<li>Treat everything as sensitive health information: no conditions, procedures, or amounts in console summaries beyond what the user needs to act; specifics live in the report files.</li>
+<li>Dispute letters state facts and ask questions; no accusations, no legal threats -- escalation language only if the user asks for round two.</li>
+</ul>
+<h2>Quick Commands</h2>
+<ul>
+<li>"Audit [folder]" -- full workflow</li>
+<li>"What do I actually owe?" -- the EOB-verified total vs. billed total</li>
+<li>"Draft the dispute for [bill]" -- one letter and script</li>
+<li>"What's missing an EOB?" -- the unsubmitted-claim risk list</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

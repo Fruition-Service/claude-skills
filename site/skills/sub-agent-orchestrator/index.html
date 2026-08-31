@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sub Agent Orchestrator — Free Claude Skill | Claude Skills Library</title>
+  <meta name="description" content="Manages parent/child agent relationships with task delegation and result aggregation. Supports sequential chains, parallel fans, conditional routing, retry">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Claude Skills Library">
+  <link rel="canonical" href="https://fruition-service.github.io/claude-skills/skills/sub-agent-orchestrator/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Sub Agent Orchestrator — Free Claude Skill | Claude Skills Library">
+  <meta property="og:description" content="Manages parent/child agent relationships with task delegation and result aggregation. Supports sequential chains, parallel fans, conditional routing, retry">
+  <meta property="og:url" content="https://fruition-service.github.io/claude-skills/skills/sub-agent-orchestrator/">
+  <meta property="og:site_name" content="Claude Skills Library">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sub Agent Orchestrator — Free Claude Skill | Claude Skills Library">
+  <meta name="twitter:description" content="Manages parent/child agent relationships with task delegation and result aggregation. Supports sequential chains, parallel fans, conditional routing, retry">
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Sub Agent Orchestrator", "description": "Manages parent/child agent relationships with task delegation and result aggregation. Supports sequential chains, parallel fans, conditional routing, retry", "url": "https://fruition-service.github.io/claude-skills/skills/sub-agent-orchestrator/", "isPartOf": {"@type": "WebSite", "name": "Claude Skills Library", "url": "https://fruition-service.github.io/claude-skills/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://fruition-service.github.io/claude-skills/"}, {"@type": "ListItem", "position": 2, "name": "Skills", "item": "https://fruition-service.github.io/claude-skills/#skills"}, {"@type": "ListItem", "position": 3, "name": "Sub Agent Orchestrator", "item": "https://fruition-service.github.io/claude-skills/skills/sub-agent-orchestrator/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Sub Agent Orchestrator", "description": "Manages parent/child agent relationships with task delegation and result aggregation. Supports sequential chains, parallel fans, conditional routing, retry", "codeRepository": "https://github.com/OneWave-AI/claude-skills/tree/main/sub-agent-orchestrator", "programmingLanguage": "Markdown", "license": "https://opensource.org/licenses/MIT", "isAccessibleForFree": true}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the Sub Agent Orchestrator Claude skill?", "acceptedAnswer": {"@type": "Answer", "text": "Manages parent/child agent relationships with task delegation and result aggregation. Supports sequential chains, parallel fans, conditional routing, retry"}}, {"@type": "Question", "name": "How do I install Sub Agent Orchestrator?", "acceptedAnswer": {"@type": "Answer", "text": "Create ~/.claude/skills/sub-agent-orchestrator/SKILL.md and paste the skill content, or clone the OneWave-AI/claude-skills repository. Claude Code loads skills automatically with no restart."}}, {"@type": "Question", "name": "When should I use Sub Agent Orchestrator?", "acceptedAnswer": {"@type": "Answer", "text": "Use Sub Agent Orchestrator when your task matches the skill description: Manages parent/child agent relationships with task delegation and result aggregation. Supports sequential chains, parallel fans, conditional routing, retry"}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Install the Sub Agent Orchestrator Claude skill", "description": "Add Sub Agent Orchestrator to Claude Code in under a minute.", "step": [{"@type": "HowToStep", "position": 1, "name": "Create the skill folder", "text": "mkdir -p ~/.claude/skills/sub-agent-orchestrator"}, {"@type": "HowToStep", "position": 2, "name": "Download SKILL.md", "text": "Save the skill file to ~/.claude/skills/sub-agent-orchestrator/SKILL.md"}, {"@type": "HowToStep", "position": 3, "name": "Start using the skill", "text": "Claude Code picks up the skill immediately — describe your task or invoke it by name."}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html">Claude Skills Library</a>
+      <nav aria-label="Primary">
+        <a href="../../index.html">All skills</a>
+        <a href="https://github.com/OneWave-AI/claude-skills/tree/main/sub-agent-orchestrator" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <a href="../../index.html">Home</a> / <a href="../../index.html#skills">Skills</a> / <span>Sub Agent Orchestrator</span>
+    </nav>
+    <article itemscope itemtype="https://schema.org/SoftwareSourceCode">
+      <p class="eyebrow">AI Agents</p>
+      <h1 itemprop="name">Sub Agent Orchestrator</h1>
+      <p class="lead" itemprop="description">Manages parent/child agent relationships with task delegation and result aggregation. Supports sequential chains, parallel fans, conditional routing, retry</p>
+      <section aria-labelledby="what-is">
+        <h2 id="what-is">What is Sub Agent Orchestrator?</h2>
+        <p>Manages parent/child agent relationships with task delegation and result aggregation. Supports sequential chains, parallel fans, conditional routing, retry This free Claude skill teaches Claude how to handle a specific workflow with structured steps and best practices.</p>
+      </section>
+      <section aria-labelledby="skill-content" class="skill-content">
+        <h2 id="skill-content">Skill instructions</h2>
+        <h2>Sub-Agent Orchestrator</h2>
+<p>Design and execute multi-agent pipelines where each step is a different agent that depends on the previous one. Define roles, dependencies, and handoffs in YAML, then run sequential, parallel, conditional, loop, and map-reduce workflows with retry, timeout, and validation.</p>
+<p>Unlike Agent Army (homogeneous parallel code changes) and Agent Swarm (homogeneous parallel data processing), this orchestrator coordinates heterogeneous pipelines where the output of A feeds the input of B.</p>
+<h3>Contents</h3>
+<ul>
+<li><code>references/patterns.md</code> -- The six workflow patterns and the comparison to Agent Army/Swarm.</li>
+<li><code>references/workflow-schema.md</code> -- Full YAML workflow definition language.</li>
+<li><code>references/examples.md</code> -- Complete worked workflows (research-to-proposal, lead scoring).</li>
+<li><code>references/execution-engine.md</code> -- Per-step execution model, retry, timeout, validation, edge cases.</li>
+<li><code>references/templates.md</code> -- Reusable workflow scaffolds.</li>
+<li><code>references/visual-and-reporting.md</code> -- Text diagrams and the execution report template.</li>
+</ul>
+<h3>Workflow</h3>
+<ol>
+<li>Determine the mode from the request:</li>
+</ol>
+<p>   - Run a workflow file: read the YAML at the given path.</p>
+<p>   - Define and run inline: convert the natural-language description into a workflow YAML (see <code>references/workflow-schema.md</code>), then show it for approval.</p>
+<p>   - Dry run: parse, validate, resolve inputs, and show the execution plan without deploying agents.</p>
+<p>   - Inspect: parse the YAML and produce a human-readable description plus a text diagram (see <code>references/visual-and-reporting.md</code>).</p>
+<ol>
+<li>Parse and validate the workflow: confirm required fields, that agent IDs resolve, and that there are no circular dependencies. Report syntax or reference errors with the offending line. See <code>references/execution-engine.md</code>.</li>
+</ol>
+<ol>
+<li>Resolve inputs: collect every required input from the user before starting; apply defaults for optional inputs.</li>
+</ol>
+<ol>
+<li>Build the execution DAG and run each step in topological order using the matching execution model (sequential, parallel, conditional, loop, map). See <code>references/execution-engine.md</code>.</li>
+</ol>
+<ol>
+<li>After each agent completes, validate its output against the agent&#x27;s schema and rules. On failure, apply the retry/timeout/failure policy (skip, abort, or fallback).</li>
+</ol>
+<ol>
+<li>On completion, present results using the execution report template in <code>references/visual-and-reporting.md</code>. For partial or failed runs, report what completed, what failed, and any collected partial output.</li>
+</ol>
+<h3>Choosing a pattern</h3>
+<p>Match the task shape to a pattern, then scaffold from <code>references/templates.md</code>:</p>
+<ul>
+<li>Strict ordering of distinct steps: sequential chain.</li>
+<li>One input scored or analyzed from multiple angles: parallel fan-out/fan-in.</li>
+<li>Input routed by classification: conditional routing.</li>
+<li>Output must meet a quality bar: loop with a validator.</li>
+<li>Large input chunked and recombined: map-reduce.</li>
+<li>A step needs a backup approach on failure: pipeline with fallback.</li>
+</ul>
+<p>See <code>references/patterns.md</code> for diagrams and examples of each.</p>
+      </section>
+      <section aria-labelledby="install" class="install">
+        <h2 id="install">Install in Claude Code</h2>
+        <pre><code>mkdir -p ~/.claude/skills/sub-agent-orchestrator
+curl -sL https://raw.githubusercontent.com/OneWave-AI/claude-skills/main/sub-agent-orchestrator/SKILL.md -o ~/.claude/skills/sub-agent-orchestrator/SKILL.md</code></pre>
+      </section>
+      <section aria-labelledby="faq" class="faq">
+        <h2 id="faq">Frequently asked questions</h2>
+        <dl>
+          <dt>What is the Sub Agent Orchestrator Claude skill?</dt>
+          <dd>Manages parent/child agent relationships with task delegation and result aggregation. Supports sequential chains, parallel fans, conditional routing, retry</dd>
+          <dt>Is Sub Agent Orchestrator free to use?</dt>
+          <dd>Yes. Skills from the OneWave library are MIT licensed and free for personal and commercial use.</dd>
+          <dt>Where does the skill file go?</dt>
+          <dd>Personal skills live in <code>~/.claude/skills/sub-agent-orchestrator/SKILL.md</code>. Project-specific skills go in <code>.claude/skills/</code> inside your repo.</dd>
+        </dl>
+      </section>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>Mirrored from <a href="https://www.onewave-ai.com/resources/claude-skills/sub-agent-orchestrator" rel="noopener">OneWave AI</a>. Source: <a href="https://github.com/OneWave-AI/claude-skills" rel="noopener">OneWave-AI/claude-skills</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

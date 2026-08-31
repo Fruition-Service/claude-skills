@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OKR Generator | AI Skills</title>
+  <meta name="description" content="Generate a comprehensive, actionable `okr-plan.md` from user inputs, applying the Google/Intel OKR framework.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>OKR Generator</h1>
+      <p>Generate a comprehensive, actionable `okr-plan.md` from user inputs, applying the Google/Intel OKR framework.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/methodology.md</code> -- Core OKR principles (non-negotiable rules to apply).</li>
+<li><code>references/inputs.md</code> -- The four required inputs plus optional context.</li>
+<li><code>references/output-template.md</code> -- Exact structure of the generated <code>okr-plan.md</code>.</li>
+<li><code>references/best-practices.md</code> -- Appendix content (common mistakes, OKR cycle, grading by KR type, reading list).</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li>Read <code>references/inputs.md</code>. Collect the four required inputs: company goals, team function, quarter/period, current metrics/baseline. If any are missing, ask for them. Never fabricate baselines.</li>
+<li>Read <code>references/methodology.md</code> and apply every core principle. Objectives are qualitative and inspirational (no numbers); key results are quantitative and measurable (always a number).</li>
+<li>Design 3-5 objectives. Attach 3-4 key results to each. Mark each as Committed or Aspirational, targeting roughly 60-70% committed and 30-40% aspirational across the plan.</li>
+<li>Map every objective to at least one company goal. Build both the alignment table and the cascade diagram. Drop any objective that does not ladder up.</li>
+<li>Write a 5-level scoring rubric (0.0, 0.3, 0.5, 0.7, 1.0) for every key result, with KR-specific descriptions.</li>
+<li>List initiatives separately from key results. Initiatives are the activities ("how"); key results are the measured outcomes ("what"). Never conflate them.</li>
+<li>Document dependencies and risks. Assign a single owner role to every objective and key result.</li>
+<li>Define the tracking cadence (weekly check-in, monthly scoring, quarterly retrospective) and include all three templates plus the appendix from <code>references/best-practices.md</code>.</li>
+<li>Generate the full document per <code>references/output-template.md</code> as <code>okr-plan.md</code> in the working directory (or a user-specified path). Produce at least 400 substantive lines, no filler.</li>
+<li>Summarize the plan: objective count and committed/aspirational split, the most ambitious key result, key dependencies/risks, and the recommended first action.</li>
+</ol>
+<h2>Generation Rules</h2>
+<ul>
+<li>Validate inputs before generating; base all targets on the provided baselines (committed: ~10-30% improvement; aspirational: ~50-100%+ or breakthrough).</li>
+<li>Objectives qualitative, key results quantitative. Rewrite any KR lacking a number.</li>
+<li>Every objective maps to a company goal; every KR has a single owner and a scoring rubric.</li>
+<li>Never connect OKR scores to compensation, promotion, or performance reviews. Include the decoupling reminder in the scoring guide.</li>
+<li>Include all templates in full (weekly, monthly, quarterly). Do not abbreviate.</li>
+</ul>
+<h2>Edge Cases</h2>
+<ul>
+<li><strong>Multiple teams</strong>: Generate one plan per team in its own file (e.g., <code>okr-plan-engineering.md</code>, <code>okr-plan-marketing.md</code>).</li>
+<li><strong>Company-level OKRs</strong>: Remove team-to-company alignment; show department-level cascade instead.</li>
+<li><strong>Mid-quarter adjustment</strong>: Preserve original OKRs, mark adjusted ones with <code>[ADJUSTED]</code>, and include rationale per change.</li>
+<li><strong>Previous-quarter scores provided</strong>: Calibrate ambition -- if the team scored 1.0 on everything, push harder; if below 0.4, investigate whether the cause was execution or target-setting.</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

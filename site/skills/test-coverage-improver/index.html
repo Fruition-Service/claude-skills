@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Test Coverage Improver — Free Claude Skill | Claude Skills Library</title>
+  <meta name="description" content="Analyze test coverage gaps and generate tests to improve coverage. Use when improving test coverage, finding untested code, or writing missing tests.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Claude Skills Library">
+  <link rel="canonical" href="https://fruition-service.github.io/claude-skills/skills/test-coverage-improver/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Test Coverage Improver — Free Claude Skill | Claude Skills Library">
+  <meta property="og:description" content="Analyze test coverage gaps and generate tests to improve coverage. Use when improving test coverage, finding untested code, or writing missing tests.">
+  <meta property="og:url" content="https://fruition-service.github.io/claude-skills/skills/test-coverage-improver/">
+  <meta property="og:site_name" content="Claude Skills Library">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Test Coverage Improver — Free Claude Skill | Claude Skills Library">
+  <meta name="twitter:description" content="Analyze test coverage gaps and generate tests to improve coverage. Use when improving test coverage, finding untested code, or writing missing tests.">
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Test Coverage Improver", "description": "Analyze test coverage gaps and generate tests to improve coverage. Use when improving test coverage, finding untested code, or writing missing tests.", "url": "https://fruition-service.github.io/claude-skills/skills/test-coverage-improver/", "isPartOf": {"@type": "WebSite", "name": "Claude Skills Library", "url": "https://fruition-service.github.io/claude-skills/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://fruition-service.github.io/claude-skills/"}, {"@type": "ListItem", "position": 2, "name": "Skills", "item": "https://fruition-service.github.io/claude-skills/#skills"}, {"@type": "ListItem", "position": 3, "name": "Test Coverage Improver", "item": "https://fruition-service.github.io/claude-skills/skills/test-coverage-improver/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Test Coverage Improver", "description": "Analyze test coverage gaps and generate tests to improve coverage. Use when improving test coverage, finding untested code, or writing missing tests.", "codeRepository": "https://github.com/OneWave-AI/claude-skills/tree/main/test-coverage-improver", "programmingLanguage": "Markdown", "license": "https://opensource.org/licenses/MIT", "isAccessibleForFree": true}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the Test Coverage Improver Claude skill?", "acceptedAnswer": {"@type": "Answer", "text": "Analyze test coverage gaps and generate tests to improve coverage. Use when improving test coverage, finding untested code, or writing missing tests."}}, {"@type": "Question", "name": "How do I install Test Coverage Improver?", "acceptedAnswer": {"@type": "Answer", "text": "Create ~/.claude/skills/test-coverage-improver/SKILL.md and paste the skill content, or clone the OneWave-AI/claude-skills repository. Claude Code loads skills automatically with no restart."}}, {"@type": "Question", "name": "When should I use Test Coverage Improver?", "acceptedAnswer": {"@type": "Answer", "text": "Use Test Coverage Improver when your task matches the skill description: Analyze test coverage gaps and generate tests to improve coverage. Use when improving test coverage, finding untested code, or writing missing tests."}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Install the Test Coverage Improver Claude skill", "description": "Add Test Coverage Improver to Claude Code in under a minute.", "step": [{"@type": "HowToStep", "position": 1, "name": "Create the skill folder", "text": "mkdir -p ~/.claude/skills/test-coverage-improver"}, {"@type": "HowToStep", "position": 2, "name": "Download SKILL.md", "text": "Save the skill file to ~/.claude/skills/test-coverage-improver/SKILL.md"}, {"@type": "HowToStep", "position": 3, "name": "Start using the skill", "text": "Claude Code picks up the skill immediately — describe your task or invoke it by name."}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html">Claude Skills Library</a>
+      <nav aria-label="Primary">
+        <a href="../../index.html">All skills</a>
+        <a href="https://github.com/OneWave-AI/claude-skills/tree/main/test-coverage-improver" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <a href="../../index.html">Home</a> / <a href="../../index.html#skills">Skills</a> / <span>Test Coverage Improver</span>
+    </nav>
+    <article itemscope itemtype="https://schema.org/SoftwareSourceCode">
+      <p class="eyebrow">Engineering</p>
+      <h1 itemprop="name">Test Coverage Improver</h1>
+      <p class="lead" itemprop="description">Analyze test coverage gaps and generate tests to improve coverage. Use when improving test coverage, finding untested code, or writing missing tests.</p>
+      <section aria-labelledby="what-is">
+        <h2 id="what-is">What is Test Coverage Improver?</h2>
+        <p>Analyze test coverage gaps and generate tests to improve coverage. Use when improving test coverage, finding untested code, or writing missing tests. This free Claude skill teaches Claude how to handle a specific workflow with structured steps and best practices.</p>
+      </section>
+      <section aria-labelledby="skill-content" class="skill-content">
+        <h2 id="skill-content">Skill instructions</h2>
+        <h2>Test Coverage Improver</h2>
+<h3>Instructions</h3>
+<p>When improving test coverage:</p>
+<ol>
+<li><strong>Run coverage report</strong> to identify gaps</li>
+<li><strong>Prioritize</strong> critical/complex code paths</li>
+<li><strong>Write tests</strong> for uncovered code</li>
+<li><strong>Verify coverage improved</strong></li>
+</ol>
+<h3>Generate Coverage Report</h3>
+<pre><code class="language-bash">
+# Jest
+npx jest --coverage
+
+# Vitest
+npx vitest --coverage
+
+# NYC (Istanbul) for any test runner
+npx nyc npm test
+
+# View HTML report
+open coverage/lcov-report/index.html
+</code></pre>
+<h3>Coverage Targets</h3>
+<p>| Type | Minimum | Good | Excellent |</p>
+<p>|------|---------|------|-----------|</p>
+<p>| Lines | 70% | 80% | 90%+ |</p>
+<p>| Branches | 60% | 75% | 85%+ |</p>
+<p>| Functions | 70% | 80% | 90%+ |</p>
+<p>| Statements | 70% | 80% | 90%+ |</p>
+<h3>Test Templates</h3>
+<h4>Unit Test (Jest/Vitest)</h4>
+<pre><code class="language-typescript">
+import { describe, it, expect, vi, beforeEach } from &#x27;vitest&#x27;;
+import { calculateTotal, formatCurrency } from &#x27;./utils&#x27;;
+
+describe(&#x27;calculateTotal&#x27;, () =&gt; {
+  it(&#x27;should sum all item prices&#x27;, () =&gt; {
+    const items = [
+      { price: 10, quantity: 2 },
+      { price: 5, quantity: 1 },
+    ];
+    expect(calculateTotal(items)).toBe(25);
+  });
+
+  it(&#x27;should return 0 for empty array&#x27;, () =&gt; {
+    expect(calculateTotal([])).toBe(0);
+  });
+
+  it(&#x27;should handle decimal prices&#x27;, () =&gt; {
+    const items = [{ price: 10.99, quantity: 1 }];
+    expect(calculateTotal(items)).toBeCloseTo(10.99);
+  });
+});
+</code></pre>
+<h4>Testing Async Functions</h4>
+<pre><code class="language-typescript">
+describe(&#x27;fetchUser&#x27;, () =&gt; {
+  it(&#x27;should return user data&#x27;, async () =&gt; {
+    const user = await fetchUser(1);
+    expect(user).toEqual({
+      id: 1,
+      name: expect.any(String),
+      email: expect.stringContaining(&#x27;@&#x27;),
+    });
+  });
+
+  it(&#x27;should throw for non-existent user&#x27;, async () =&gt; {
+    await expect(fetchUser(999)).rejects.toThrow(&#x27;User not found&#x27;);
+  });
+});
+</code></pre>
+<h4>Mocking Dependencies</h4>
+<pre><code class="language-typescript">
+import { vi } from &#x27;vitest&#x27;;
+import { sendEmail } from &#x27;./email&#x27;;
+import { createUser } from &#x27;./user&#x27;;
+
+vi.mock(&#x27;./email&#x27;, () =&gt; ({
+  sendEmail: vi.fn().mockResolvedValue({ success: true }),
+}));
+
+describe(&#x27;createUser&#x27;, () =&gt; {
+  beforeEach(() =&gt; {
+    vi.clearAllMocks();
+  });
+
+  it(&#x27;should send welcome email after creating user&#x27;, async () =&gt; {
+    await createUser({ name: &#x27;John&#x27;, email: &#x27;john@test.com&#x27; });
+
+    expect(sendEmail).toHaveBeenCalledWith({
+      to: &#x27;john@test.com&#x27;,
+      template: &#x27;welcome&#x27;,
+    });
+  });
+});
+</code></pre>
+<h4>React Component Testing</h4>
+<pre><code class="language-tsx">
+import { render, screen, fireEvent } from &#x27;@testing-library/react&#x27;;
+import userEvent from &#x27;@testing-library/user-event&#x27;;
+import { Button } from &#x27;./Button&#x27;;
+
+describe(&#x27;Button&#x27;, () =&gt; {
+  it(&#x27;should render children&#x27;, () =&gt; {
+    render(&lt;Button&gt;Click me&lt;/Button&gt;);
+    expect(screen.getByText(&#x27;Click me&#x27;)).toBeInTheDocument();
+  });
+
+  it(&#x27;should call onClick when clicked&#x27;, async () =&gt; {
+    const handleClick = vi.fn();
+    render(&lt;Button onClick={handleClick}&gt;Click&lt;/Button&gt;);
+
+    await userEvent.click(screen.getByRole(&#x27;button&#x27;));
+    expect(handleClick).toHaveBeenCalledTimes(1);
+  });
+
+  it(&#x27;should be disabled when loading&#x27;, () =&gt; {
+    render(&lt;Button isLoading&gt;Submit&lt;/Button&gt;);
+    expect(screen.getByRole(&#x27;button&#x27;)).toBeDisabled();
+  });
+});
+</code></pre>
+<h4>API Route Testing</h4>
+<pre><code class="language-typescript">
+import { createMocks } from &#x27;node-mocks-http&#x27;;
+import handler from &#x27;./api/users&#x27;;
+
+describe(&#x27;GET /api/users&#x27;, () =&gt; {
+  it(&#x27;should return users list&#x27;, async () =&gt; {
+    const { req, res } = createMocks({ method: &#x27;GET&#x27; });
+
+    await handler(req, res);
+
+    expect(res._getStatusCode()).toBe(200);
+    expect(JSON.parse(res._getData())).toHaveProperty(&#x27;users&#x27;);
+  });
+});
+</code></pre>
+<h3>Branch Coverage Checklist</h3>
+<p>Ensure tests cover:</p>
+<ul>
+<li>[ ] If/else branches</li>
+<li>[ ] Ternary operators</li>
+<li>[ ] Switch cases (including default)</li>
+<li>[ ] Try/catch blocks</li>
+<li>[ ] Early returns</li>
+<li>[ ] Nullish coalescing (<code>??</code>)</li>
+<li>[ ] Optional chaining results (<code>?.</code>)</li>
+<li>[ ] Loop conditions (0, 1, many iterations)</li>
+</ul>
+<h3>Coverage Configuration</h3>
+<pre><code class="language-javascript">
+// vitest.config.ts
+export default {
+  test: {
+    coverage: {
+      provider: &#x27;v8&#x27;,
+      reporter: [&#x27;text&#x27;, &#x27;html&#x27;, &#x27;lcov&#x27;],
+      exclude: [
+        &#x27;node_modules/&#x27;,
+        &#x27;**/*.d.ts&#x27;,
+        &#x27;**/*.test.ts&#x27;,
+        &#x27;**/types/&#x27;,
+      ],
+      thresholds: {
+        lines: 80,
+        branches: 75,
+        functions: 80,
+        statements: 80,
+      },
+    },
+  },
+};
+</code></pre>
+<h3>Priority Order for Testing</h3>
+<ol>
+<li><strong>Critical paths</strong>: Auth, payments, data mutations</li>
+<li><strong>Complex logic</strong>: Algorithms, state machines, calculations</li>
+<li><strong>Error handlers</strong>: Catch blocks, error boundaries</li>
+<li><strong>Edge cases</strong>: Empty arrays, null values, boundaries</li>
+<li><strong>Integration points</strong>: API calls, database queries</li>
+</ol>
+      </section>
+      <section aria-labelledby="install" class="install">
+        <h2 id="install">Install in Claude Code</h2>
+        <pre><code>mkdir -p ~/.claude/skills/test-coverage-improver
+curl -sL https://raw.githubusercontent.com/OneWave-AI/claude-skills/main/test-coverage-improver/SKILL.md -o ~/.claude/skills/test-coverage-improver/SKILL.md</code></pre>
+      </section>
+      <section aria-labelledby="faq" class="faq">
+        <h2 id="faq">Frequently asked questions</h2>
+        <dl>
+          <dt>What is the Test Coverage Improver Claude skill?</dt>
+          <dd>Analyze test coverage gaps and generate tests to improve coverage. Use when improving test coverage, finding untested code, or writing missing tests.</dd>
+          <dt>Is Test Coverage Improver free to use?</dt>
+          <dd>Yes. Skills from the OneWave library are MIT licensed and free for personal and commercial use.</dd>
+          <dt>Where does the skill file go?</dt>
+          <dd>Personal skills live in <code>~/.claude/skills/test-coverage-improver/SKILL.md</code>. Project-specific skills go in <code>.claude/skills/</code> inside your repo.</dd>
+        </dl>
+      </section>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>Mirrored from <a href="https://www.onewave-ai.com/resources/claude-skills/test-coverage-improver" rel="noopener">OneWave AI</a>. Source: <a href="https://github.com/OneWave-AI/claude-skills" rel="noopener">OneWave-AI/claude-skills</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

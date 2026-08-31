@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>API Endpoint Scaffolder — Free Claude Skill | Claude Skills Library</title>
+  <meta name="description" content="Generate REST API endpoints with proper structure, validation, error handling, and types. Use when creating new API routes, endpoints, or backend services.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Claude Skills Library">
+  <link rel="canonical" href="https://fruition-service.github.io/claude-skills/skills/api-endpoint-scaffolder/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="API Endpoint Scaffolder — Free Claude Skill | Claude Skills Library">
+  <meta property="og:description" content="Generate REST API endpoints with proper structure, validation, error handling, and types. Use when creating new API routes, endpoints, or backend services.">
+  <meta property="og:url" content="https://fruition-service.github.io/claude-skills/skills/api-endpoint-scaffolder/">
+  <meta property="og:site_name" content="Claude Skills Library">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="API Endpoint Scaffolder — Free Claude Skill | Claude Skills Library">
+  <meta name="twitter:description" content="Generate REST API endpoints with proper structure, validation, error handling, and types. Use when creating new API routes, endpoints, or backend services.">
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "API Endpoint Scaffolder", "description": "Generate REST API endpoints with proper structure, validation, error handling, and types. Use when creating new API routes, endpoints, or backend services.", "url": "https://fruition-service.github.io/claude-skills/skills/api-endpoint-scaffolder/", "isPartOf": {"@type": "WebSite", "name": "Claude Skills Library", "url": "https://fruition-service.github.io/claude-skills/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://fruition-service.github.io/claude-skills/"}, {"@type": "ListItem", "position": 2, "name": "Skills", "item": "https://fruition-service.github.io/claude-skills/#skills"}, {"@type": "ListItem", "position": 3, "name": "API Endpoint Scaffolder", "item": "https://fruition-service.github.io/claude-skills/skills/api-endpoint-scaffolder/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "API Endpoint Scaffolder", "description": "Generate REST API endpoints with proper structure, validation, error handling, and types. Use when creating new API routes, endpoints, or backend services.", "codeRepository": "https://github.com/OneWave-AI/claude-skills/tree/main/api-endpoint-scaffolder", "programmingLanguage": "Markdown", "license": "https://opensource.org/licenses/MIT", "isAccessibleForFree": true}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the API Endpoint Scaffolder Claude skill?", "acceptedAnswer": {"@type": "Answer", "text": "Generate REST API endpoints with proper structure, validation, error handling, and types. Use when creating new API routes, endpoints, or backend services."}}, {"@type": "Question", "name": "How do I install API Endpoint Scaffolder?", "acceptedAnswer": {"@type": "Answer", "text": "Create ~/.claude/skills/api-endpoint-scaffolder/SKILL.md and paste the skill content, or clone the OneWave-AI/claude-skills repository. Claude Code loads skills automatically with no restart."}}, {"@type": "Question", "name": "When should I use API Endpoint Scaffolder?", "acceptedAnswer": {"@type": "Answer", "text": "Use API Endpoint Scaffolder when your task matches the skill description: Generate REST API endpoints with proper structure, validation, error handling, and types. Use when creating new API routes, endpoints, or backend services."}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Install the API Endpoint Scaffolder Claude skill", "description": "Add API Endpoint Scaffolder to Claude Code in under a minute.", "step": [{"@type": "HowToStep", "position": 1, "name": "Create the skill folder", "text": "mkdir -p ~/.claude/skills/api-endpoint-scaffolder"}, {"@type": "HowToStep", "position": 2, "name": "Download SKILL.md", "text": "Save the skill file to ~/.claude/skills/api-endpoint-scaffolder/SKILL.md"}, {"@type": "HowToStep", "position": 3, "name": "Start using the skill", "text": "Claude Code picks up the skill immediately — describe your task or invoke it by name."}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html">Claude Skills Library</a>
+      <nav aria-label="Primary">
+        <a href="../../index.html">All skills</a>
+        <a href="https://github.com/OneWave-AI/claude-skills/tree/main/api-endpoint-scaffolder" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <a href="../../index.html">Home</a> / <a href="../../index.html#skills">Skills</a> / <span>API Endpoint Scaffolder</span>
+    </nav>
+    <article itemscope itemtype="https://schema.org/SoftwareSourceCode">
+      <p class="eyebrow">Engineering</p>
+      <h1 itemprop="name">API Endpoint Scaffolder</h1>
+      <p class="lead" itemprop="description">Generate REST API endpoints with proper structure, validation, error handling, and types. Use when creating new API routes, endpoints, or backend services.</p>
+      <section aria-labelledby="what-is">
+        <h2 id="what-is">What is API Endpoint Scaffolder?</h2>
+        <p>Generate REST API endpoints with proper structure, validation, error handling, and types. Use when creating new API routes, endpoints, or backend services. This free Claude skill teaches Claude how to handle a specific workflow with structured steps and best practices.</p>
+      </section>
+      <section aria-labelledby="skill-content" class="skill-content">
+        <h2 id="skill-content">Skill instructions</h2>
+        <h2>API Endpoint Scaffolder</h2>
+<h3>Instructions</h3>
+<p>When creating a new API endpoint:</p>
+<ol>
+<li><strong>Identify the framework</strong> (Express, Next.js, FastAPI, etc.)</li>
+<li><strong>Determine HTTP method</strong> (GET, POST, PUT, PATCH, DELETE)</li>
+<li><strong>Define request/response types</strong></li>
+<li><strong>Implement with best practices</strong></li>
+</ol>
+<h3>Templates</h3>
+<h4>Next.js App Router (TypeScript)</h4>
+<pre><code class="language-typescript">
+// app/api/[resource]/route.ts
+import { NextRequest, NextResponse } from &#x27;next/server&#x27;;
+import { z } from &#x27;zod&#x27;;
+
+const RequestSchema = z.object({
+  // Define your schema
+});
+
+export async function GET(request: NextRequest) {
+  try {
+    const { searchParams } = new URL(request.url);
+    // Implementation
+    return NextResponse.json({ data }, { status: 200 });
+  } catch (error) {
+    console.error(&#x27;[API] Error:&#x27;, error);
+    return NextResponse.json(
+      { error: &#x27;Internal server error&#x27; },
+      { status: 500 }
+    );
+  }
+}
+
+export async function POST(request: NextRequest) {
+  try {
+    const body = await request.json();
+    const validated = RequestSchema.parse(body);
+    // Implementation
+    return NextResponse.json({ data }, { status: 201 });
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      return NextResponse.json(
+        { error: &#x27;Validation failed&#x27;, details: error.errors },
+        { status: 400 }
+      );
+    }
+    return NextResponse.json(
+      { error: &#x27;Internal server error&#x27; },
+      { status: 500 }
+    );
+  }
+}
+</code></pre>
+<h4>Express (TypeScript)</h4>
+<pre><code class="language-typescript">
+import { Router, Request, Response, NextFunction } from &#x27;express&#x27;;
+import { z } from &#x27;zod&#x27;;
+
+const router = Router();
+
+const CreateSchema = z.object({
+  // Define schema
+});
+
+router.post(&#x27;/&#x27;, async (req: Request, res: Response, next: NextFunction) =&gt; {
+  try {
+    const data = CreateSchema.parse(req.body);
+    // Implementation
+    res.status(201).json({ success: true, data });
+  } catch (error) {
+    next(error);
+  }
+});
+
+export default router;
+</code></pre>
+<h3>Best Practices</h3>
+<ol>
+<li><strong>Always validate input</strong> using Zod, Yup, or similar</li>
+<li><strong>Use proper HTTP status codes</strong>:</li>
+</ol>
+<p>   - 200: Success</p>
+<p>   - 201: Created</p>
+<p>   - 400: Bad Request</p>
+<p>   - 401: Unauthorized</p>
+<p>   - 403: Forbidden</p>
+<p>   - 404: Not Found</p>
+<p>   - 500: Server Error</p>
+<ol>
+<li><strong>Log errors</strong> but don&#x27;t expose internals to clients</li>
+<li><strong>Use consistent response format</strong></li>
+<li><strong>Add rate limiting</strong> for public endpoints</li>
+<li><strong>Document with OpenAPI/Swagger</strong> when possible</li>
+</ol>
+      </section>
+      <section aria-labelledby="install" class="install">
+        <h2 id="install">Install in Claude Code</h2>
+        <pre><code>mkdir -p ~/.claude/skills/api-endpoint-scaffolder
+curl -sL https://raw.githubusercontent.com/OneWave-AI/claude-skills/main/api-endpoint-scaffolder/SKILL.md -o ~/.claude/skills/api-endpoint-scaffolder/SKILL.md</code></pre>
+      </section>
+      <section aria-labelledby="faq" class="faq">
+        <h2 id="faq">Frequently asked questions</h2>
+        <dl>
+          <dt>What is the API Endpoint Scaffolder Claude skill?</dt>
+          <dd>Generate REST API endpoints with proper structure, validation, error handling, and types. Use when creating new API routes, endpoints, or backend services.</dd>
+          <dt>Is API Endpoint Scaffolder free to use?</dt>
+          <dd>Yes. Skills from the OneWave library are MIT licensed and free for personal and commercial use.</dd>
+          <dt>Where does the skill file go?</dt>
+          <dd>Personal skills live in <code>~/.claude/skills/api-endpoint-scaffolder/SKILL.md</code>. Project-specific skills go in <code>.claude/skills/</code> inside your repo.</dd>
+        </dl>
+      </section>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>Mirrored from <a href="https://www.onewave-ai.com/resources/claude-skills/api-endpoint-scaffolder" rel="noopener">OneWave AI</a>. Source: <a href="https://github.com/OneWave-AI/claude-skills" rel="noopener">OneWave-AI/claude-skills</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

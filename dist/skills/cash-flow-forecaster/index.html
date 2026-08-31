@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cash Flow Forecaster | AI Skills</title>
+  <meta name="description" content="Profitable businesses die of cash starvation; the 13-week forecast is the instrument that prevents it. Input: bank/transaction exports (.csv/.xlsx), open invoices (AR), upcoming bills (AP), payroll schedule, and known recurring items. Output: a week-by-week cash position with the crunch points circled.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Cash Flow Forecaster</h1>
+      <p>Profitable businesses die of cash starvation; the 13-week forecast is the instrument that prevents it. Input: bank/transaction exports (.csv/.xlsx), open invoices (AR), upcoming bills (AP), payroll schedule, and known recurring items. Output: a week-by-week cash position with the crunch points circled.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Workflow</h2>
+<ol>
+<li><strong>Establish the baseline.</strong> Current cash across accounts (from the most recent export -- state the as-of date prominently). Reconstruct 8-12 weeks of history to learn the rhythm: payroll cadence, rent day, typical weekly card/vendor spend, revenue deposit patterns.</li>
+<li><strong>Schedule the knowns.</strong> Inflows: open AR placed in the week each invoice is <em>likely</em> paid -- due date plus that customer's historical lateness, not the due date printed on the invoice. Outflows: payroll (with tax deposit timing), rent, loan payments, insurance, subscriptions, credit card due dates, quarterly estimated taxes -- the ambush everyone forgets.</li>
+<li><strong>Model the unknowns.</strong> Recurring-but-variable spend from historical averages, labeled <code>ESTIMATE</code>. New revenue only if the user provides expected deals -- never invent pipeline.</li>
+<li><strong>Build the forecast.</strong> <code>cash-flow-13wk.csv</code> + summary: weekly beginning cash, inflows, outflows, ending cash. Flag every week ending below the user's minimum comfort level (ask; default one payroll cycle) as <code>CRUNCH</code>, and the first crunch week is the headline.</li>
+<li><strong>Scenario the levers.</strong> For each crunch: what closes the gap -- which specific AR to chase this week (pairs with <code>cowork-invoice-chaser</code>), which AP can slide two weeks without damage, where the line of credit covers, what the owner draw pause buys. Concrete moves with amounts, not advice-shaped sentences.</li>
+</ol>
+<h2>Rules</h2>
+<ul>
+<li>Payment behavior beats due dates: a net-30 customer who pays in 55 days forecasts at 55.</li>
+<li>Never fabricate inflows. Hope is not a week-9 deposit; unconfirmed revenue stays out or sits in a clearly separated optimistic scenario.</li>
+<li>Estimates are labeled and totaled separately so the user can see how much of the forecast is soft.</li>
+<li>Weekly granularity, not monthly -- a month that nets positive can contain a week that bounces payroll.</li>
+<li>The as-of date and data gaps are stated up front; a forecast built on a two-week-old balance says so.</li>
+<li>Re-run weekly: roll the window, compare actuals to last week's forecast, and report the misses -- forecast accuracy is a metric.</li>
+</ul>
+<h2>Quick Commands</h2>
+<ul>
+<li>"Forecast from [files]" -- full workflow</li>
+<li>"When's my next crunch?" -- the headline week and its gap</li>
+<li>"What if [customer] pays late?" -- single-scenario rerun</li>
+<li>"Roll the forecast" -- weekly update against actuals</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

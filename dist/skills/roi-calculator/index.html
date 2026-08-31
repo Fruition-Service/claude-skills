@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Implementation ROI Calculator | AI Skills</title>
+  <meta name="description" content="Gather inputs about current operations and produce a comprehensive `roi-analysis.md` with data-backed financial insights and a clear recommendation.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>AI Implementation ROI Calculator</h1>
+      <p>Gather inputs about current operations and produce a comprehensive `roi-analysis.md` with data-backed financial insights and a clear recommendation.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/inputs.md</code> — required and optional inputs, with defaults</li>
+<li><code>references/methodology.md</code> — all calculation formulas and sensitivity/comparison logic</li>
+<li><code>references/output-template.md</code> — full <code>roi-analysis.md</code> structure to fill in</li>
+<li><code>references/rules-and-protocol.md</code> — calculation rules, interaction protocol, quality checklist</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li>Collect inputs. Gather every required cost, time, and labor input. If any required input is missing, ask for it in one organized message grouped by category. Do not guess. See <code>references/inputs.md</code> for the full input list and defaults.</li>
+<li>Apply defaults. For optional parameters the user omits, use the conservative defaults in <code>references/inputs.md</code> and note that defaults were applied.</li>
+<li>Calculate metrics. Compute time savings, cost savings, net monthly savings, ramp-up adjustment, payback period, 12-month ROI, NPV, and productivity gain using the formulas in <code>references/methodology.md</code>.</li>
+<li>Run sensitivity and comparison scenarios. Produce conservative/base/optimistic cases and at least three comparison scenarios per <code>references/methodology.md</code>.</li>
+<li>Generate the report. Write <code>roi-analysis.md</code> to the current working directory following <code>references/output-template.md</code>. Apply the formatting and calculation rules in <code>references/rules-and-protocol.md</code>.</li>
+<li>Verify and summarize. Run the quality checklist in <code>references/rules-and-protocol.md</code>, then report the top 3 findings and the saved file path.</li>
+</ol>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

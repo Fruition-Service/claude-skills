@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Coverage Improver | AI Skills</title>
+  <meta name="description" content="When improving test coverage:">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Test Coverage Improver</h1>
+      <p>When improving test coverage:</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Instructions</h2>
+<ol>
+<li><strong>Run coverage report</strong> to identify gaps</li>
+<li><strong>Prioritize</strong> critical/complex code paths</li>
+<li><strong>Write tests</strong> for uncovered code</li>
+<li><strong>Verify coverage improved</strong></li>
+</ol>
+<h2>Generate Coverage Report</h2>
+<p>```bash</p>
+<h1>Jest</h1>
+<p>npx jest --coverage</p>
+<h1>Vitest</h1>
+<p>npx vitest --coverage</p>
+<h1>NYC (Istanbul) for any test runner</h1>
+<p>npx nyc npm test</p>
+<h1>View HTML report</h1>
+<p>open coverage/lcov-report/index.html
+```</p>
+<h2>Coverage Targets</h2>
+<p>| Type | Minimum | Good | Excellent |
+|------|---------|------|-----------|
+| Lines | 70% | 80% | 90%+ |
+| Branches | 60% | 75% | 85%+ |
+| Functions | 70% | 80% | 90%+ |
+| Statements | 70% | 80% | 90%+ |</p>
+<h2>Test Templates</h2>
+<h3>Unit Test (Jest/Vitest)</h3>
+<p>```typescript
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { calculateTotal, formatCurrency } from './utils';</p>
+<p>describe('calculateTotal', () =&gt; {
+  it('should sum all item prices', () =&gt; {
+    const items = [
+      { price: 10, quantity: 2 },
+      { price: 5, quantity: 1 },
+    ];
+    expect(calculateTotal(items)).toBe(25);
+  });</p>
+<p>it('should return 0 for empty array', () =&gt; {
+    expect(calculateTotal([])).toBe(0);
+  });</p>
+<p>it('should handle decimal prices', () =&gt; {
+    const items = [{ price: 10.99, quantity: 1 }];
+    expect(calculateTotal(items)).toBeCloseTo(10.99);
+  });
+});
+```</p>
+<h3>Testing Async Functions</h3>
+<p>```typescript
+describe('fetchUser', () =&gt; {
+  it('should return user data', async () =&gt; {
+    const user = await fetchUser(1);
+    expect(user).toEqual({
+      id: 1,
+      name: expect.any(String),
+      email: expect.stringContaining('@'),
+    });
+  });</p>
+<p>it('should throw for non-existent user', async () =&gt; {
+    await expect(fetchUser(999)).rejects.toThrow('User not found');
+  });
+});
+```</p>
+<h3>Mocking Dependencies</h3>
+<p>```typescript
+import { vi } from 'vitest';
+import { sendEmail } from './email';
+import { createUser } from './user';</p>
+<p>vi.mock('./email', () =&gt; ({
+  sendEmail: vi.fn().mockResolvedValue({ success: true }),
+}));</p>
+<p>describe('createUser', () =&gt; {
+  beforeEach(() =&gt; {
+    vi.clearAllMocks();
+  });</p>
+<p>it('should send welcome email after creating user', async () =&gt; {
+    await createUser({ name: 'John', email: 'john@test.com' });</p>
+<pre><code>expect(sendEmail).toHaveBeenCalledWith({
+  to: 'john@test.com',
+  template: 'welcome',
+});
+</code></pre>
+<p>});
+});
+```</p>
+<h3>React Component Testing</h3>
+<p>```tsx
+import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { Button } from './Button';</p>
+<p>describe('Button', () =&gt; {
+  it('should render children', () =&gt; {
+    render(<Button>Click me</Button>);
+    expect(screen.getByText('Click me')).toBeInTheDocument();
+  });</p>
+<p>it('should call onClick when clicked', async () =&gt; {
+    const handleClick = vi.fn();
+    render(<Button onClick={handleClick}>Click</Button>);</p>
+<pre><code>await userEvent.click(screen.getByRole('button'));
+expect(handleClick).toHaveBeenCalledTimes(1);
+</code></pre>
+<p>});</p>
+<p>it('should be disabled when loading', () =&gt; {
+    render(<Button isLoading>Submit</Button>);
+    expect(screen.getByRole('button')).toBeDisabled();
+  });
+});
+```</p>
+<h3>API Route Testing</h3>
+<p>```typescript
+import { createMocks } from 'node-mocks-http';
+import handler from './api/users';</p>
+<p>describe('GET /api/users', () =&gt; {
+  it('should return users list', async () =&gt; {
+    const { req, res } = createMocks({ method: 'GET' });</p>
+<pre><code>await handler(req, res);
+
+expect(res._getStatusCode()).toBe(200);
+expect(JSON.parse(res._getData())).toHaveProperty('users');
+</code></pre>
+<p>});
+});
+```</p>
+<h2>Branch Coverage Checklist</h2>
+<p>Ensure tests cover:</p>
+<ul>
+<li>[ ] If/else branches</li>
+<li>[ ] Ternary operators</li>
+<li>[ ] Switch cases (including default)</li>
+<li>[ ] Try/catch blocks</li>
+<li>[ ] Early returns</li>
+<li>[ ] Nullish coalescing (<code>??</code>)</li>
+<li>[ ] Optional chaining results (<code>?.</code>)</li>
+<li>[ ] Loop conditions (0, 1, many iterations)</li>
+</ul>
+<h2>Coverage Configuration</h2>
+<p><code>javascript
+// vitest.config.ts
+export default {
+  test: {
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'html', 'lcov'],
+      exclude: [
+        'node_modules/',
+        '**/*.d.ts',
+        '**/*.test.ts',
+        '**/types/',
+      ],
+      thresholds: {
+        lines: 80,
+        branches: 75,
+        functions: 80,
+        statements: 80,
+      },
+    },
+  },
+};</code></p>
+<h2>Priority Order for Testing</h2>
+<ol>
+<li><strong>Critical paths</strong>: Auth, payments, data mutations</li>
+<li><strong>Complex logic</strong>: Algorithms, state machines, calculations</li>
+<li><strong>Error handlers</strong>: Catch blocks, error boundaries</li>
+<li><strong>Edge cases</strong>: Empty arrays, null values, boundaries</li>
+<li><strong>Integration points</strong>: API calls, database queries</li>
+</ol>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

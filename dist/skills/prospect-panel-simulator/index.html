@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prospect Panel Simulator | AI Skills</title>
+  <meta name="description" content="Before you send the email, run the deck, or publish the pricing page — run it past the people who'd receive it. This skill simulates a panel of your actual prospects and reacts the way the market will: skeptical, busy, half-reading, comparing you to three other options.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Prospect Panel Simulator</h1>
+      <p>Before you send the email, run the deck, or publish the pricing page — run it past the people who'd receive it. This skill simulates a panel of your actual prospects and reacts the way the market will: skeptical, busy, half-reading, comparing you to three other options.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <p>Where <code>customer-panel-of-experts</code> debates a business <em>decision</em> with existing customers, this skill stress-tests a <em>sales or marketing artifact</em> against people who don't know you yet and don't owe you a reply.</p>
+<h2>What it pressure-tests</h2>
+<ul>
+<li>Cold emails and full sequences (does it get a reply, or a delete?)</li>
+<li>Pitch decks and one-pagers (where do they check out?)</li>
+<li>Landing pages and pricing pages (what makes them bounce?)</li>
+<li>Demo scripts and discovery-call openers</li>
+<li>Proposals and SOWs (what gets pushed back on?)</li>
+</ul>
+<h2>Step 0 — Assemble the prospect panel</h2>
+<ol>
+<li><strong>Preferred:</strong> load personas from <code>icp-deep-scanner</code> output (<code>personas/</code>, <code>icp-profile.md</code>) and seat the <strong>buying committee</strong> — economic buyer, champion, blocker, and end user — since a cold artifact hits all of them differently.</li>
+<li><strong>If no library exists</strong> and tools are connected, run <code>icp-deep-scanner</code> (read-only) to ground the panel in real won/lost-deal data and real objection language.</li>
+<li><strong>Bootstrap</strong> from the user's description only as a last resort, labeled <strong>PROVISIONAL</strong>.</li>
+</ol>
+<p>Critically, model <strong>cold-state</strong> prospects: they have low context, low trust, and an alternative they already use. A simulated prospect who reads charitably is useless.</p>
+<h3>Security</h3>
+<p>Read-only connections. No sending, no writing to any tool. No real prospect names/emails in output — these are archetypes. Secrets stay in env vars.</p>
+<h2>Step 1 — Take in the artifact</h2>
+<p>Read exactly what will go out (paste, file, or URL via WebFetch). Note the channel and the moment: a cold email at 7am from an unknown sender is judged differently than a pricing page reached after a demo. Confirm: who is this for, what's the one action it's asking for, and what does the prospect see <em>right before</em> this?</p>
+<h2>Step 2 — Simulate reactions</h2>
+<p>Each panel member reacts in character through the real sequence of a busy buyer:</p>
+<ol>
+<li><strong>First 3 seconds</strong> — subject line / headline / first slide only. Open or delete? Keep scrolling or bounce? Be brutal; most things die here.</li>
+<li><strong>Skim</strong> — what they actually absorb on a fast read, what they skip, where the eye snags.</li>
+<li><strong>Objection</strong> — the specific reason this particular persona hesitates, stated in their words ("we already use X", "no budget this quarter", "who are these guys", "feels generic").</li>
+<li><strong>Trust check</strong> — does anything read as spam, AI-generated, over-promised, or off (the champion and the economic buyer flag different things).</li>
+<li><strong>Verdict + next action</strong> — reply / book / forward to {persona} / ignore / unsubscribe — and the honest probability.</li>
+</ol>
+<p>Let personas disagree: a value prop that excites the end user can spook the economic buyer on price.</p>
+<h2>Step 3 — Report</h2>
+<p>```markdown</p>
+<h1>Prospect Panel — {Artifact}</h1>
+<p>Generated: {timestamp} · Panel: {personas} · Channel: {cold email / LP / deck} · Grounding: {data / PROVISIONAL}</p>
+<h2>Predicted outcome: {STRONG / MIXED / WEAK} — est. reply/convert signal</h2>
+<p>One-line read on whether to send as-is.</p>
+<h2>Reaction by persona</h2>
+<p>| Persona | Opens? | Gets it? | Top objection | Action |</p>
+<h2>Where it loses people (ranked, with the exact line)</h2>
+<ol>
+<li>"{quoted line}" — {persona} → {reaction} → {fix}</li>
+</ol>
+<h2>AI-tell / trust flags</h2>
+<ul>
+<li>Phrases or patterns that read as generic, automated, or over-promised.</li>
+</ul>
+<h2>Rewrite the weak points</h2>
+<ul>
+<li>Before → After on the 2–3 highest-leverage lines.</li>
+</ul>
+<h2>A/B worth running</h2>
+<ul>
+<li>The one variable most worth testing live.
+```</li>
+</ul>
+<h2>Step 4 — Iterate</h2>
+<p>Offer to apply the rewrites and re-run the panel on v2, or hand the winning angle to <code>cold-email-sequence-generator</code> / <code>landing-page-copywriter</code> to scale it.</p>
+<h2>Guardrails recap</h2>
+<p>Model cold, skeptical, time-poor prospects — not friendly readers · ground in real won/lost data when available, flag PROVISIONAL otherwise · read-only, no sending · quote the exact lines that fail · no real prospect PII.</p>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

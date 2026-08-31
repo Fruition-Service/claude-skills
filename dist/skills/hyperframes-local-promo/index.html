@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HyperFrames Local Promo | AI Skills</title>
+  <meta name="description" content="Local businesses need a steady drip of short promo video and have zero production budget -- this skill is the in-house video guy. It directs quick, renderable HyperFrames promos from whatever the business has: phone photos, the menu PDF, the offer details, the logo. Composition mechanics live in the `hyperframes` skill (`hyperframes-cli` for `init`/`lint`/`preview`/`render`, `hyperframes-media` for voiceover and background removal on product shots).">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>HyperFrames Local Promo</h1>
+      <p>Local businesses need a steady drip of short promo video and have zero production budget -- this skill is the in-house video guy. It directs quick, renderable HyperFrames promos from whatever the business has: phone photos, the menu PDF, the offer details, the logo. Composition mechanics live in the `hyperframes` skill (`hyperframes-cli` for `init`/`lint`/`preview`/`render`, `hyperframes-media` for voiceover and background removal on product shots).</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Step 1 -- Take the brief (fast)</h2>
+<p>Promo type -- offer/sale, new item or service, event, announcement (new hours, new location), hiring, or evergreen brand clip -- plus the one detail that matters (the offer terms, the date, the dish), the assets on hand (photos, logo, menu, brand colors), and where it runs. Local promos are volume content: get to the build in minutes, not meetings.</p>
+<h2>Step 2 -- Direct the promo</h2>
+<p>The local promo formula, 15-30 seconds:
+1. <strong>The good part first (0-2s)</strong> -- the dish, the before/after, the offer number. Not the logo, not an intro.
+2. <strong>The details (2-15s)</strong> -- what, when, how much, animated type over the photos. Every fact double-checked against the brief: dates, prices, terms, address.
+3. <strong>The close (last 3-5s)</strong> -- one action ("Book on our site," "This weekend only," "Walk-ins welcome") plus name, location, and logo lockup.</p>
+<p>Photos treated with respect: real phone photos beat stock every time for local trust -- crop and pan them with intent (<code>hyperframes-media</code> background removal to lift product shots onto brand color when it helps). No stock footage of generic smiling people; skip stock entirely rather than fake it (<code>stock-photo-finder</code> only for texture/ambience gaps).</p>
+<h2>Step 3 -- Build and deliver</h2>
+<ul>
+<li>Brand palette and type from whatever exists (even just the logo's colors); no purple, no emoji -- clean icons where needed.</li>
+<li>Big readable type: promos get watched on phones in feeds -- if a detail matters, it is on screen, not only in the VO. Captions synced; VO optional (many local promos work better with motion + music timing than narration).</li>
+<li>Deterministic, seek-safe motion per HyperFrames rules; lint and preview before declaring done -- never claim it renders without running the pipeline.</li>
+<li>Deliver 9:16 (Reels/Stories/TikTok), 1:1 (feed), and a Google Business Profile-friendly cut, plus the post caption with the offer terms restated and the poster frame.</li>
+</ul>
+<h2>Step 4 -- Make it repeatable</h2>
+<p>The second promo should take a tenth of the setup: save the brand tokens, logo lockup scene, and close-scene as the business's template, and offer the content calendar angle -- one promo per week (offer, item spotlight, review feature via <code>hyperframes-testimonial-builder</code>, behind-the-scenes) beats one perfect video per quarter.</p>
+<h2>Rules</h2>
+<ul>
+<li>Offer accuracy is non-negotiable: dates, prices, and terms appear exactly as the owner stated them, and the deliverable restates them for confirmation before render.</li>
+<li>Real photos over stock, always -- authenticity is the local advantage; polish the presentation, not the truth.</li>
+<li>One promo, one message. The offer AND the event AND the hiring pitch is three videos.</li>
+<li>Legibility beats cleverness: 3+ seconds on screen for anything the viewer must read, tested at phone size.</li>
+<li>Alcohol, health/medical, and regulated-service promos get a compliance flag (happy-hour advertising rules, treatment claims) rather than silent confidence.</li>
+</ul>
+<h2>Quick Commands</h2>
+<ul>
+<li>"Promo for [offer/event]" -- full workflow</li>
+<li>"New menu item video from [photos]" -- item spotlight</li>
+<li>"We're hiring clip" -- hiring promo (pairs with <code>job-post-writer</code> for the copy)</li>
+<li>"Weekly promo from the template" -- repeat build on the saved brand template</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

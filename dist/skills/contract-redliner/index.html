@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contract Redliner | AI Skills</title>
+  <meta name="description" content="Read a contract and produce a `contract-review.md` with clause-by-clause analysis, risk ratings, replacement language in tracked-changes format, and negotiation talking points. Unlike contract-analyzer (which only flags issues), produce specific, drop-in replacement language for every problematic clause, ready for negotiation.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Contract Redliner</h1>
+      <p>Read a contract and produce a `contract-review.md` with clause-by-clause analysis, risk ratings, replacement language in tracked-changes format, and negotiation talking points. Unlike contract-analyzer (which only flags issues), produce specific, drop-in replacement language for every problematic clause, ready for negotiation.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/risk-categories.md</code> -- the seven risk categories, what to look for in each, and the risk-rating system.</li>
+<li><code>references/redline-format.md</code> -- per-issue redline entry format and tracked-changes conventions.</li>
+<li><code>references/output-template.md</code> -- the full <code>contract-review.md</code> structure to generate.</li>
+<li><code>references/contract-types.md</code> -- per-contract-type focus areas and worked examples.</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li>
+<p><strong>Ingest the contract.</strong> Accept pasted text, a file path (<code>.txt</code>, <code>.md</code>, <code>.pdf</code>, <code>.docx</code>), or a URL. Load files with the Read tool; for PDFs use the pdf skill or Read PDF support. Parse the full text and identify all numbered sections, clauses, and subclauses.</p>
+</li>
+<li>
+<p><strong>Identify type and parties.</strong> Determine contract type, Party A (drafter/company), Party B (signer), governing law, effective date, and term. Apply the matching focus area from <code>references/contract-types.md</code>.</p>
+</li>
+<li>
+<p><strong>Analyze every section.</strong> Evaluate each section against the seven risk categories in <code>references/risk-categories.md</code>. Assign each section a rating (CRITICAL / HIGH / MEDIUM / LOW / ACCEPTABLE). Mark fair sections as ACCEPTABLE with a brief note -- do not skip them.</p>
+</li>
+<li>
+<p><strong>Generate redlines.</strong> For every issue, produce a redline entry per the format and tracked-changes conventions in <code>references/redline-format.md</code>. Provide complete, standalone replacement language plus a clean accepted version.</p>
+</li>
+<li>
+<p><strong>Write <code>contract-review.md</code>.</strong> Generate the file in the working directory (or the directory the user specifies) following <code>references/output-template.md</code> exactly and in order.</p>
+</li>
+</ol>
+<h2>Mandatory Rules</h2>
+<ul>
+<li>Open every output with this disclaimer verbatim:</li>
+</ul>
+<blockquote>
+<p>LEGAL DISCLAIMER: This analysis is informational only and does not constitute legal advice. Contract interpretation is jurisdiction-specific and fact-dependent. Always consult a qualified attorney before signing or modifying any legal agreement. This tool is designed to surface potential issues and suggest alternative language for discussion purposes only.</p>
+</blockquote>
+<ul>
+<li>Never provide incomplete replacement language; every redline includes a full, usable clause.</li>
+<li>Never present analysis without quoting the specific contract language being discussed.</li>
+<li>Never assume jurisdiction-specific enforceability; note when a provision's enforceability varies by jurisdiction.</li>
+<li>Always produce <code>contract-review.md</code> as the primary deliverable.</li>
+<li>Always use tracked-changes format (<code>[-deletion-]</code> / <code>[+insertion+]</code>) for every suggested change.</li>
+<li>Always include negotiation talking points for every issue rated MEDIUM or above.</li>
+<li>Always analyze from the signing party's perspective unless told otherwise.</li>
+</ul>
+<h2>Quality Standards</h2>
+<ul>
+<li><strong>Be exhaustive.</strong> Review every section, not just the obviously problematic ones.</li>
+<li><strong>Be specific.</strong> Quote exact language, reference exact section numbers, provide complete replacement text.</li>
+<li><strong>Be practical.</strong> Frame suggestions a reasonable counterparty would accept; extreme positions undermine credibility.</li>
+<li><strong>Be balanced.</strong> Note favorable provisions too -- this builds credibility for the items that need changing.</li>
+<li><strong>Quantify where possible.</strong> Estimate liability exposure and calculate penalties when the contract permits.</li>
+<li><strong>Reference market standards.</strong> When calling something non-standard, state what the market standard actually is.</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

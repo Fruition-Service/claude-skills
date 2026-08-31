@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cowork Data Room Builder | AI Skills</title>
+  <meta name="description" content="Prepare a data room the way a banker's analyst does: know what the other side's diligence team will ask for before they ask, find it or flag it, and present it in the structure they expect. Inputs: the deal type (seed/Series A/growth round, acquisition, loan) and one or more folders of company documents.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Cowork Data Room Builder</h1>
+      <p>Prepare a data room the way a banker's analyst does: know what the other side's diligence team will ask for before they ask, find it or flag it, and present it in the structure they expect. Inputs: the deal type (seed/Series A/growth round, acquisition, loan) and one or more folders of company documents.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Workflow</h2>
+<ol>
+<li><strong>Build the request list.</strong> Generate the diligence checklist for the stated deal type and stage: corporate records, cap table and securities, financials, material contracts, IP, employment, tax, insurance, litigation, and (for later stages) customer concentration and compliance. Present it for approval -- the user may know their acquirer's quirks.</li>
+<li><strong>Sweep.</strong> Walk the provided folders and match every document to a checklist item. Classify each match <code>FINAL</code> (executed/signed), <code>DRAFT</code>, or <code>STALE</code> (superseded or older than the period requested). One file can satisfy multiple items.</li>
+<li><strong>Gap report.</strong> Output the checklist with status per item: <code>HAVE</code>, <code>HAVE-BUT-DRAFT</code>, <code>HAVE-BUT-STALE</code>, <code>MISSING</code>. Rank the missing items by how early diligence will hit them (corporate formation docs and cap table before customer contracts). This report is the deliverable that saves the deal timeline.</li>
+<li><strong>Organize.</strong> On approval, build the data room folder structure (numbered top-level sections matching the checklist), copy -- never move -- documents in with clean names (<code>3.2-msa-acme-corp-executed-2025.pdf</code>), and write <code>INDEX.md</code> mapping every checklist item to its file.</li>
+<li><strong>Red-flag pass.</strong> Before anything is shared, list documents that need a decision: unsigned versions where an executed copy should exist, contracts with change-of-control or assignment clauses the deal will trigger, documents containing employee compensation or customer-identifying data that may warrant redaction or a later disclosure phase.</li>
+</ol>
+<h2>Rules</h2>
+<ul>
+<li>Copy, never move. The data room is a curated export; source folders stay untouched.</li>
+<li>Never place a draft where a final belongs without labeling it <code>DRAFT</code> in the filename and index.</li>
+<li>Never redact or exclude documents silently -- list redaction candidates and let counsel decide.</li>
+<li>The gap report states what was searched, so "MISSING" means "not in the provided folders," not "does not exist."</li>
+<li>Stage-appropriate depth: do not demand SOC 2 reports from a pre-seed company; do not omit them for a growth round.</li>
+<li>This is preparation support, not legal or securities advice. Frame judgment calls for counsel.</li>
+</ul>
+<h2>Quick Commands</h2>
+<ul>
+<li>"Build the checklist for [deal type]" -- step 1 only</li>
+<li>"What am I missing?" -- steps 1-3, the gap report</li>
+<li>"Assemble the room from [folders]" -- full workflow</li>
+<li>"Red-flag check" -- step 5 against an existing data room</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

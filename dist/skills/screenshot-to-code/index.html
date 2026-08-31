@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screenshot to Code | AI Skills</title>
+  <meta name="description" content="Convert UI screenshots into production-ready code with accurate styling and structure.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Screenshot to Code</h1>
+      <p>Convert UI screenshots into production-ready code with accurate styling and structure.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>How This Works</h2>
+<p>Given a screenshot of a UI design:
+1. Analyze the visual design thoroughly
+2. Generate clean, modern code that recreates it
+3. Provide complete, runnable implementation</p>
+<h2>Instructions</h2>
+<h3>1. Analyze the Screenshot</h3>
+<p>Examine the image carefully and identify:
+- <strong>Layout structure</strong>: Grid, flexbox, or custom positioning
+- <strong>Components</strong>: Buttons, inputs, cards, navigation, modals, etc.
+- <strong>Visual details</strong>: Colors, fonts, spacing, borders, shadows, borders-radius
+- <strong>Responsive considerations</strong>: Mobile vs. desktop layout cues</p>
+<h3>2. Determine the Framework</h3>
+<p>Ask which framework is preferred:
+- React (with Tailwind CSS or styled-components)
+- Vue.js
+- Plain HTML/CSS
+- Next.js</p>
+<p><strong>Default</strong>: If not specified, use <strong>React with Tailwind CSS</strong> for modern designs, or <strong>plain HTML/CSS</strong> for simple pages.</p>
+<h3>3. Generate Complete Code</h3>
+<p>Create the implementation:</p>
+<p><strong>For React/Vue:</strong>
+- Build component hierarchy (break into logical components)
+- Use semantic HTML elements
+- Implement modern CSS (flexbox, grid, custom properties)
+- Include prop types and sensible defaults</p>
+<p><strong>For HTML/CSS:</strong>
+- Use semantic HTML5 structure
+- Write clean, organized CSS (consider using BEM naming)
+- Make it responsive by default</p>
+<p><strong>Critical requirements:</strong>
+- Match colors EXACTLY (extract hex codes from screenshot)
+- Match spacing and proportions as closely as possible
+- Use appropriate semantic elements (header, nav, main, section, etc.)
+- Include accessibility attributes (alt text, ARIA labels where needed)</p>
+<h3>4. Make It Responsive</h3>
+<ul>
+<li>Use responsive units (rem, em, %, vw/vh) rather than fixed pixels</li>
+<li>Add breakpoints for mobile, tablet, desktop if the design suggests it</li>
+<li>Use <code>min()</code>, <code>max()</code>, <code>clamp()</code> for fluid typography where appropriate</li>
+</ul>
+<h3>5. Deliver Complete Implementation</h3>
+<p>Provide:
+1. <strong>Complete code</strong> (all files needed, fully functional)
+2. <strong>File structure</strong> (explain what each file does)
+3. <strong>Usage instructions</strong> (how to run/use the code)
+4. <strong>Notes on design decisions</strong> (any assumptions or interpretations)</p>
+<h2>Output Format</h2>
+<p>Structure React + Tailwind output like this:</p>
+<p>```jsx
+import React from 'react';</p>
+<p>export default function ComponentName() {
+  return (
+    <div className="...">
+      {/<em> Component structure </em>/}
+    </div>
+  );
+}
+```</p>
+<p>Always include:
+- All necessary imports
+- Any required dependencies
+- Clear comments for complex sections
+- Suggestions for improvements or next steps</p>
+<h2>Best Practices</h2>
+<ul>
+<li><strong>Accuracy</strong>: Match the design as closely as possible</li>
+<li><strong>Modern CSS</strong>: Prefer Grid/Flexbox over floats or tables</li>
+<li><strong>Accessibility</strong>: Include ARIA labels, alt text, semantic HTML</li>
+<li><strong>Performance</strong>: Optimize images, use efficient selectors</li>
+<li><strong>Maintainability</strong>: Write clean, well-organized code with comments</li>
+<li><strong>Responsiveness</strong>: Design mobile-first when possible</li>
+</ul>
+<h2>Common Patterns</h2>
+<p><strong>Navigation Bars</strong>: Flexbox with space-between, sticky positioning
+<strong>Card Grids</strong>: CSS Grid with auto-fit/auto-fill for responsiveness
+<strong>Hero Sections</strong>: Full-height with centered content, background images
+<strong>Forms</strong>: Proper labels, validation states, accessible inputs
+<strong>Modals</strong>: Fixed positioning, backdrop, focus management</p>
+<h2>Handling Unclear Screenshots</h2>
+<p>When the screenshot is unclear or ambiguous:
+- Make reasonable assumptions based on common UI patterns
+- Note the chosen interpretation in comments
+- Suggest alternatives that might be preferred
+- Ask for clarification on critical decisions</p>
+<h2>Example Workflow</h2>
+<p><strong>Input</strong>: Screenshot of a landing page with hero section, feature cards, and footer</p>
+<p><strong>Response</strong>:
+1. Analyze: Hero with large headline, 3-column feature grid, simple footer
+2. Ask: "Would you like this in React with Tailwind or plain HTML/CSS?"
+3. Generate: Complete implementation with responsive design
+4. Deliver: All code files with clear structure and usage instructions</p>
+<hr />
+<p>Aim to produce code so clean and accurate that it could be deployed immediately with minimal modifications.</p>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

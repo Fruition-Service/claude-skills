@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Document Parser | AI Skills</title>
+  <meta name="description" content="Extract structured data from financial documents with automatic categorization and analysis.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Financial Document Parser</h1>
+      <p>Extract structured data from financial documents with automatic categorization and analysis.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>When to Use This Skill</h2>
+<p>Activate when the user:
+- Provides invoices, receipts, or bank statements
+- Asks to "parse this invoice" or "extract data from this receipt"
+- Needs expense categorization
+- Wants to track spending patterns
+- Asks to generate expense reports
+- Mentions financial document analysis
+- Provides PDF or image of financial documents</p>
+<h2>Instructions</h2>
+<ol>
+<li><strong>Identify Document Type</strong></li>
+<li>Invoice (business to business)</li>
+<li>Receipt (point of sale)</li>
+<li>Bank statement</li>
+<li>Credit card statement</li>
+<li>Expense report</li>
+<li>
+<p>Tax document</p>
+</li>
+<li>
+<p><strong>Extract Core Information</strong></p>
+</li>
+</ol>
+<p><strong>For Invoices:</strong>
+   - Invoice number
+   - Invoice date and due date
+   - Vendor/supplier name and contact
+   - Client/recipient name
+   - Line items (description, quantity, unit price, total)
+   - Subtotal, tax, and grand total
+   - Payment terms
+   - Payment methods accepted</p>
+<p><strong>For Receipts:</strong>
+   - Merchant name and location
+   - Date and time
+   - Items purchased
+   - Individual prices
+   - Subtotal, tax, total
+   - Payment method
+   - Last 4 digits of card (if present)</p>
+<p><strong>For Bank/Credit Card Statements:</strong>
+   - Statement period
+   - Account number (last 4 digits)
+   - All transactions (date, description, amount, balance)
+   - Beginning and ending balance
+   - Total credits and debits
+   - Fees or interest charges</p>
+<ol>
+<li><strong>Categorize Expenses</strong></li>
+<li>Business expenses: Office supplies, software, equipment</li>
+<li>Travel: Transportation, lodging, meals</li>
+<li>Utilities: Internet, phone, electricity</li>
+<li>Professional services: Legal, accounting, consulting</li>
+<li>Marketing: Advertising, subscriptions</li>
+<li>Entertainment: Client meals, events</li>
+<li>
+<p>Other: Miscellaneous</p>
+</li>
+<li>
+<p><strong>Identify Patterns</strong></p>
+</li>
+<li>Recurring charges (subscriptions)</li>
+<li>Duplicate charges</li>
+<li>Unusual or high-value transactions</li>
+<li>Tax-deductible expenses</li>
+<li>
+<p>Foreign currency transactions</p>
+</li>
+<li>
+<p><strong>Generate Structured Output</strong></p>
+</li>
+<li>Create CSV-ready format</li>
+<li>Summarize totals by category</li>
+<li>Flag items needing attention</li>
+<li>Calculate tax implications (if relevant)</li>
+</ol>
+<h2>Output Format</h2>
+<p>```markdown</p>
+<h1>Financial Document Analysis</h1>
+<h2>Document Details</h2>
+<ul>
+<li><strong>Type</strong>: Invoice / Receipt / Statement</li>
+<li><strong>Date</strong>: [Date]</li>
+<li><strong>Vendor/Merchant</strong>: [Name]</li>
+<li><strong>Document Number</strong>: [Number]</li>
+<li><strong>Total Amount</strong>: $X,XXX.XX</li>
+</ul>
+<h2>Line Items</h2>
+<p>| Description | Quantity | Unit Price | Total |
+|-------------|----------|------------|-------|
+| [Item] | X | $XX.XX | $XX.XX |</p>
+<h2>Financial Summary</h2>
+<ul>
+<li><strong>Subtotal</strong>: $X,XXX.XX</li>
+<li><strong>Tax</strong>: $XXX.XX</li>
+<li><strong>Total</strong>: $X,XXX.XX</li>
+<li><strong>Payment Method</strong>: [Method]</li>
+</ul>
+<h2>Expense Categorization</h2>
+<p>| Category | Amount | Items |
+|----------|--------|-------|
+| Software | $XXX | Slack, GitHub |
+| Office | $XX | Supplies |</p>
+<h2>Insights</h2>
+<ul>
+<li>Tax-deductible business expenses: $X,XXX</li>
+<li>Recurring charges detected: 3 subscriptions ($XXX/month)</li>
+<li>Foreign transaction fees: $XX</li>
+</ul>
+<h2>Flagged Items</h2>
+<ul>
+<li>[ ] Large expense ($X,XXX) - verify approval</li>
+<li>[ ] Duplicate charge detected on [date]</li>
+</ul>
+<h2>Export Data (CSV Format)</h2>
+<p><code>csv
+Date,Vendor,Description,Category,Amount,Tax Deductible
+2025-01-15,Adobe,Creative Cloud,Software,52.99,Yes</code></p>
+<h2>Recommendations</h2>
+<ul>
+<li>Track recurring $XXX/month for [subscription]</li>
+<li>Consider negotiating bulk discount with [vendor]</li>
+<li>Set up payment reminder for [invoice due date]
+```</li>
+</ul>
+<h2>Examples</h2>
+<p><strong>User</strong>: "Extract data from this invoice PDF"
+<strong>Response</strong>: Parse PDF → Extract vendor info, line items, totals → Categorize as business expense → Format as structured data → Generate CSV export</p>
+<p><strong>User</strong>: "Analyze my bank statement and categorize expenses"
+<strong>Response</strong>: Extract all transactions → Categorize each (dining, software, travel) → Identify recurring charges → Calculate totals by category → Flag unusual transactions → Generate spending report</p>
+<p><strong>User</strong>: "Parse these 10 receipts and create an expense report"
+<strong>Response</strong>: Process each receipt → Extract merchant, date, amount, items → Categorize expenses → Calculate totals → Generate consolidated report → Create CSV for expense submission</p>
+<h2>Best Practices</h2>
+<ul>
+<li>Preserve exact amounts (don't round)</li>
+<li>Maintain currency symbols and formats</li>
+<li>Note when data is unclear or illegible</li>
+<li>Flag suspicious or duplicate transactions</li>
+<li>Provide tax-relevant categorization</li>
+<li>Use standard expense categories</li>
+<li>Generate export-ready formats (CSV, JSON)</li>
+<li>Protect sensitive info (mask account numbers)</li>
+<li>Identify missing information (no date, unclear vendor)</li>
+<li>Calculate totals and verify against document</li>
+<li>Note discrepancies or calculation errors</li>
+<li>Include exchange rates for foreign currency</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

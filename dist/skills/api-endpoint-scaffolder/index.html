@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Endpoint Scaffolder | AI Skills</title>
+  <meta name="description" content="When creating a new API endpoint:">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>API Endpoint Scaffolder</h1>
+      <p>When creating a new API endpoint:</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Instructions</h2>
+<ol>
+<li><strong>Identify the framework</strong> (Express, Next.js, FastAPI, etc.)</li>
+<li><strong>Determine HTTP method</strong> (GET, POST, PUT, PATCH, DELETE)</li>
+<li><strong>Define request/response types</strong></li>
+<li><strong>Implement with best practices</strong></li>
+</ol>
+<h2>Templates</h2>
+<h3>Next.js App Router (TypeScript)</h3>
+<p>```typescript
+// app/api/[resource]/route.ts
+import { NextRequest, NextResponse } from 'next/server';
+import { z } from 'zod';</p>
+<p>const RequestSchema = z.object({
+  // Define your schema
+});</p>
+<p>export async function GET(request: NextRequest) {
+  try {
+    const { searchParams } = new URL(request.url);
+    // Implementation
+    return NextResponse.json({ data }, { status: 200 });
+  } catch (error) {
+    console.error('[API] Error:', error);
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    );
+  }
+}</p>
+<p>export async function POST(request: NextRequest) {
+  try {
+    const body = await request.json();
+    const validated = RequestSchema.parse(body);
+    // Implementation
+    return NextResponse.json({ data }, { status: 201 });
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      return NextResponse.json(
+        { error: 'Validation failed', details: error.errors },
+        { status: 400 }
+      );
+    }
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    );
+  }
+}
+```</p>
+<h3>Express (TypeScript)</h3>
+<p>```typescript
+import { Router, Request, Response, NextFunction } from 'express';
+import { z } from 'zod';</p>
+<p>const router = Router();</p>
+<p>const CreateSchema = z.object({
+  // Define schema
+});</p>
+<p>router.post('/', async (req: Request, res: Response, next: NextFunction) =&gt; {
+  try {
+    const data = CreateSchema.parse(req.body);
+    // Implementation
+    res.status(201).json({ success: true, data });
+  } catch (error) {
+    next(error);
+  }
+});</p>
+<p>export default router;
+```</p>
+<h2>Best Practices</h2>
+<ol>
+<li><strong>Always validate input</strong> using Zod, Yup, or similar</li>
+<li><strong>Use proper HTTP status codes</strong>:</li>
+<li>200: Success</li>
+<li>201: Created</li>
+<li>400: Bad Request</li>
+<li>401: Unauthorized</li>
+<li>403: Forbidden</li>
+<li>404: Not Found</li>
+<li>500: Server Error</li>
+<li><strong>Log errors</strong> but don't expose internals to clients</li>
+<li><strong>Use consistent response format</strong></li>
+<li><strong>Add rate limiting</strong> for public endpoints</li>
+<li><strong>Document with OpenAPI/Swagger</strong> when possible</li>
+</ol>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

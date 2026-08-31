@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cowork SOP Writer | AI Skills</title>
+  <meta name="description" content="Write procedures the way a good operations manager does: capture how the work is actually done, make the implicit explicit, and write for the new hire on their worst day -- not for the expert who already knows. Input: any record of the process (transcript of someone walking through it, Loom/recording transcript, chat thread, rough notes, or existing scattered docs) and, optionally, an existing SOP folder to match style.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Cowork SOP Writer</h1>
+      <p>Write procedures the way a good operations manager does: capture how the work is actually done, make the implicit explicit, and write for the new hire on their worst day -- not for the expert who already knows. Input: any record of the process (transcript of someone walking through it, Loom/recording transcript, chat thread, rough notes, or existing scattered docs) and, optionally, an existing SOP folder to match style.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Workflow</h2>
+<ol>
+<li><strong>Extract the process.</strong> From the source material, pull the sequence of actions, the tools/systems touched, the inputs required to start, the outputs that define done, and who does what. Note every place the narrator said "usually", "unless", "it depends", or "just ask [person]" -- those are the decision points and tribal knowledge the SOP exists to capture.</li>
+<li><strong>Interview the gaps.</strong> List what the source did not cover: unnamed systems, missing credentials/access requirements, undefined edge cases, steps that assume knowledge. Ask the user to fill the critical ones; mark the rest <code>[TO CONFIRM]</code> inline rather than guessing.</li>
+<li><strong>Draft.</strong> Write the SOP: purpose (one sentence), owner and roles, prerequisites, numbered steps (one action per step, the verb first, the system named, the expected result stated), decision points as explicit if/then branches, exceptions and how to handle them, escalation path, and definition of done. Insert <code>[SCREENSHOT: what it should show]</code> placeholders where a visual would prevent an error.</li>
+<li><strong>Pressure-test.</strong> Re-read as the new hire: can every step be executed without asking anyone anything? Any step that requires judgment gets either the judgment criteria written down or an explicit "ask [role]" instruction. Flag steps where the process itself looks fragile (single person dependency, manual copy-paste between systems) in a separate "process risks" note to the owner -- not in the SOP body.</li>
+<li><strong>Library consistency.</strong> If an SOP folder was provided, match its template, heading structure, and naming convention. If none exists, propose one (<code>sop-[team]-[process-name].md</code> with a standard header block: owner, last verified date, systems touched) and offer to retrofit existing docs.</li>
+</ol>
+<h2>Rules</h2>
+<ul>
+<li>Document the process as performed, then flag improvements separately. An SOP that silently "fixes" the process documents fiction.</li>
+<li>One action per step. "Log in and pull the report and email it" is three steps.</li>
+<li>Name real systems and real roles, never "the tool" or "someone from finance."</li>
+<li>Tribal knowledge is the payload: every "it depends" from the source must end up as either written criteria or a named escalation.</li>
+<li>Never fabricate steps to fill a gap -- <code>[TO CONFIRM]</code> beats plausible fiction that a new hire will execute literally.</li>
+<li>Every SOP carries a "last verified" date and an owner. An unowned SOP is already stale.</li>
+</ul>
+<h2>Quick Commands</h2>
+<ul>
+<li>"SOP from [transcript/file]" -- full workflow</li>
+<li>"What's missing?" -- step 2, the gap interview only</li>
+<li>"Match my library at [folder]" -- restyle a draft to the existing template</li>
+<li>"Audit my SOP folder" -- staleness and consistency report across an existing library</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

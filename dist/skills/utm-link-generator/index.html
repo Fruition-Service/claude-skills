@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UTM Link Generator | AI Skills</title>
+  <meta name="description" content="Generate UTM-tagged links under a single naming-governance system: a `utm-registry.json` that enforces canonical conventions, prevents duplicates and naming drift, and outputs platform-ready links for LinkedIn, email, social, and ads.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>UTM Link Generator</h1>
+      <p>Generate UTM-tagged links under a single naming-governance system: a `utm-registry.json` that enforces canonical conventions, prevents duplicates and naming drift, and outputs platform-ready links for LinkedIn, email, social, and ads.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/naming-conventions.md</code> -- enforced rules, UTM parameter reference, canonical source/medium lists, campaign naming pattern.</li>
+<li><code>references/platform-variants.md</code> -- per-platform link templates (LinkedIn, email, social, paid ads).</li>
+<li><code>references/registry-schema.md</code> -- utm-registry.json structure plus validation-report and output-summary templates.</li>
+<li><code>references/bulk-and-registry-ops.md</code> -- bulk generation, registry commands (audit/add/report/export), error handling, integrations, best practices.</li>
+</ul>
+<h2>Capabilities</h2>
+<ol>
+<li>Generate UTM-tagged URLs with validated, consistent parameters.</li>
+<li>Maintain <code>utm-registry.json</code> tracking all links and enforcing conventions.</li>
+<li>Prevent duplicates -- warn when a similar link already exists.</li>
+<li>Format platform-specific variants (LinkedIn, email, social, ads).</li>
+<li>Bulk-generate variants for A/B testing or multi-channel campaigns.</li>
+<li>Validate -- reject malformed URLs, empty parameters, and convention violations.</li>
+<li>Report -- generate campaign tracking summaries from the registry.</li>
+</ol>
+<h2>Workflow</h2>
+<ol>
+<li><strong>Accept input.</strong> Collect destination URL, source, medium, campaign (all required) plus optional term, content, and target platforms. Extract these from a natural-language brief when not given explicitly.</li>
+<li><strong>Validate and normalize.</strong> Lowercase, replace spaces with hyphens, strip non-<code>[a-z0-9-]</code> characters, auto-correct known aliases, reject unknown source/medium values (suggest closest match), validate URL form, enforce the 50-character limit. Report corrections using the template in <code>references/registry-schema.md</code>. Full rules in <code>references/naming-conventions.md</code>.</li>
+<li><strong>Check registry for duplicates.</strong> Read <code>utm-registry.json</code> (create if missing). Return existing link on exact duplicates, allow-with-warning on near duplicates, block on naming conflicts (same campaign, different casing/hyphenation).</li>
+<li><strong>Generate links.</strong> Build <code>{base_url}?utm_source=&amp;utm_medium=&amp;utm_campaign=[&amp;utm_term=][&amp;utm_content=][&amp;utm_id=]</code>. Append with <code>&amp;</code> if the base URL already has query params, URL-encode values, and preserve existing query params and fragment.</li>
+<li><strong>Generate platform variants.</strong> Produce optimized links per requested platform using <code>references/platform-variants.md</code>.</li>
+<li><strong>Update registry.</strong> Append all generated links to <code>utm-registry.json</code> per the schema in <code>references/registry-schema.md</code>, refreshing stats and timestamps.</li>
+<li><strong>Output summary.</strong> Present a copy-paste-ready summary using the template in <code>references/registry-schema.md</code>.</li>
+</ol>
+<p>For bulk runs, registry commands (audit, add source/medium, campaign report, CSV export), error handling, and integration notes, see <code>references/bulk-and-registry-ops.md</code>.</p>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

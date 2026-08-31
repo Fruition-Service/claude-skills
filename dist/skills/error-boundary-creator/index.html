@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error Boundary Creator | AI Skills</title>
+  <meta name="description" content="Add resilient error handling to React and Next.js apps: error boundaries, fallback UIs, async error handling, and error reporting.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Error Boundary Creator</h1>
+      <p>Add resilient error handling to React and Next.js apps: error boundaries, fallback UIs, async error handling, and error reporting.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Workflow</h2>
+<ol>
+<li>Identify error-prone areas: async operations, third-party integrations, and route-level entry points.</li>
+<li>Wrap components in an error boundary. Use a class boundary or the <code>react-error-boundary</code> library. See references/class-boundaries.md.</li>
+<li>For Next.js App Router, add the relevant <code>error.tsx</code>, <code>global-error.tsx</code>, and <code>not-found.tsx</code> segment files. See references/nextjs-error-handling.md.</li>
+<li>Handle errors that boundaries miss (event handlers, promises) and wire up reporting. See references/async-and-reporting.md.</li>
+<li>Design fallback UIs with <code>role="alert"</code> and a recovery action (reset or reload).</li>
+<li>Route caught errors to a single reporting sink and test error states before shipping.</li>
+</ol>
+<h2>Contents</h2>
+<ul>
+<li>references/class-boundaries.md — Basic, resettable, and <code>react-error-boundary</code> patterns.</li>
+<li>references/nextjs-error-handling.md — App Router <code>error.tsx</code>, <code>global-error.tsx</code>, <code>not-found.tsx</code>.</li>
+<li>references/async-and-reporting.md — <code>useAsync</code> hook and the <code>reportError</code> integration module.</li>
+</ul>
+<h2>Best Practices</h2>
+<ol>
+<li>Wrap at the route level for page-level isolation, and wrap third-party components separately.</li>
+<li>Provide meaningful fallbacks with a recovery option.</li>
+<li>Log every caught error to the monitoring service.</li>
+<li>Do not catch errors the code cannot meaningfully handle.</li>
+<li>Test error states in development.</li>
+</ol>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

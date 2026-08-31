@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Statement of Work Generator | AI Skills</title>
+  <meta name="description" content="Generate complete, client-ready Statements of Work from a project brief, meeting the standards of Big Four consulting firms, top-tier agencies, and enterprise procurement. Produce polished documents ready for client review with minimal edits, never rough drafts or templates with blanks.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Statement of Work Generator</h1>
+      <p>Generate complete, client-ready Statements of Work from a project brief, meeting the standards of Big Four consulting firms, top-tier agencies, and enterprise procurement. Produce polished documents ready for client review with minimal edits, never rough drafts or templates with blanks.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/required-inputs.md</code> -- inputs to gather and pre-generation client research</li>
+<li><code>references/document-structure.md</code> -- the 16-section SOW structure with templates for every section</li>
+<li><code>references/pricing-templates.md</code> -- fixed-price, time-and-materials, and retainer pricing models (Section 11)</li>
+<li><code>references/legal-terms.md</code> -- confidentiality, IP, warranties, liability, termination, and other legal clauses (Section 14)</li>
+<li><code>references/change-management.md</code> -- change request and change order process (Section 12)</li>
+<li><code>references/risk-management.md</code> -- risk register and escalation path (Section 13)</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li>Gather the required inputs. Read <code>references/required-inputs.md</code>. If any required item is missing, ask for it explicitly. Do not guess at critical commercial terms.</li>
+<li>Research the client. Use WebSearch per <code>references/required-inputs.md</code> to gather company overview, recent news, technology footprint, and regulatory environment. If research yields nothing, proceed on user-provided inputs and flag assumptions explicitly. Never fabricate company information.</li>
+<li>Select the pricing model from <code>references/pricing-templates.md</code> based on engagement type (default: fixed-price).</li>
+<li>Generate all 16 sections following <code>references/document-structure.md</code>, pulling Section 11 from pricing-templates, Section 12 from change-management, Section 13 from risk-management, and Section 14 from legal-terms. Replace every bracketed placeholder with real values from inputs and research. Leave brackets only where the user explicitly deferred. Mark gaps with <code>[ACTION REQUIRED: ...]</code>.</li>
+<li>Enforce traceability: every deliverable traces to a scope item, every milestone references deliverables, every payment trigger references a milestone, and all cross-referenced IDs (D-, M-, DEP-, R-, CR-, CO-) are correct.</li>
+<li>Verify against the quality checklist below, then write the finished SOW to <code>sow.md</code> in the working directory (or a user-specified path).</li>
+</ol>
+<h2>Output Requirements</h2>
+<ul>
+<li>Comprehensive: typically 500-800 lines for a standard engagement, longer for complex multi-phase projects.</li>
+<li>Clean Markdown with proper heading hierarchy, tables, and numbered lists.</li>
+<li>Professional, precise, unambiguous third-person prose. Define any non-standard jargon on first use.</li>
+<li>No emojis anywhere in the document.</li>
+<li>Include a footer note that the document is a template and should be reviewed by qualified legal counsel before execution. Never provide legal advice.</li>
+</ul>
+<h2>Quality Checklist</h2>
+<p>Verify before finalizing:</p>
+<ul>
+<li>All user-provided inputs are reflected accurately</li>
+<li>Client research is incorporated into Background and Context</li>
+<li>Every in-scope item has corresponding deliverables</li>
+<li>Every deliverable has measurable acceptance criteria</li>
+<li>Every milestone has a date, associated deliverables, and payment trigger (if applicable)</li>
+<li>Out-of-scope section is specific to this engagement, not generic</li>
+<li>Assumptions are realistic and comprehensive; dependencies have owners and deadlines</li>
+<li>Risk register contains engagement-specific risks, not boilerplate</li>
+<li>Payment schedule sums to the total engagement fee</li>
+<li>Legal sections are complete and internally consistent</li>
+<li>All cross-references resolve correctly</li>
+<li>No placeholder brackets remain except those explicitly deferred by the user</li>
+<li>Document reads as a cohesive narrative, not a filled-in template</li>
+<li>Tone is professional and consistent throughout</li>
+</ul>
+<h2>Notes</h2>
+<ul>
+<li>For regulated industries (healthcare, finance, government), include industry-specific compliance sections (Section 15) and note additional legal review requirements.</li>
+<li>Ask clarifying questions whenever the scope is ambiguous enough that the SOW could be interpreted in materially different ways. Ambiguity in an SOW is a professional failure.</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

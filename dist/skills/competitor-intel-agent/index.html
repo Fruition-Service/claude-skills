@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Competitor Intelligence Agent | AI Skills</title>
+  <meta name="description" content="Track competitor activity across multiple dimensions, detect meaningful changes, interpret the signals, and deliver actionable intelligence that builds historical context over time. Act as an analyst that connects dots, not a raw scraper.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Competitor Intelligence Agent</h1>
+      <p>Track competitor activity across multiple dimensions, detect meaningful changes, interpret the signals, and deliver actionable intelligence that builds historical context over time. Act as an analyst that connects dots, not a raw scraper.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/directory-structure.md</code> -- tracking directory layout, <code>config.yaml</code>, and <code>usage-history.json</code> templates</li>
+<li><code>references/monitoring-dimensions.md</code> -- the six monitoring dimensions with per-dimension analysis frameworks, detection protocols, and snapshot output formats</li>
+<li><code>references/intel-report-format.md</code> -- the full intelligence report template</li>
+<li><code>references/scoring-and-rules.md</code> -- change-detection scoring, trend protocol, data-quality rules, execution rules, quick commands</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li>Determine the operating mode on invocation:</li>
+<li>Setup (no tracking directory exists): collect the user's company name and description, competitor URLs/domains, priority monitoring dimensions, and output directory (default <code>./competitor-intel/</code>). Create the directory structure and <code>config.yaml</code>. See <code>references/directory-structure.md</code>.</li>
+<li>Monitoring run (tracking directory exists): proceed to steps 2-7.</li>
+<li>Report only (user wants a report without new monitoring): read existing snapshots and change logs, synthesize trends, and generate strategic recommendations using <code>references/intel-report-format.md</code>.</li>
+<li>Read <code>config.yaml</code> to load the competitor list and settings, then read the most recent snapshot for each competitor and dimension.</li>
+<li>Execute monitoring across all configured dimensions. Apply the detection protocol for each dimension in <code>references/monitoring-dimensions.md</code>.</li>
+<li>Compare new data against previous snapshots. Score every change for magnitude per <code>references/scoring-and-rules.md</code>; flag changes rated 4-5 as immediate alerts.</li>
+<li>Write dated snapshots in the per-dimension output formats and log detected changes under the competitor's <code>changes/</code> folder.</li>
+<li>Generate the intelligence report following <code>references/intel-report-format.md</code>. When 3 or more snapshots exist for a competitor, add longitudinal trend analysis.</li>
+<li>Update <code>usage-history.json</code> with the run metadata.</li>
+</ol>
+<h2>Guardrails</h2>
+<ul>
+<li>Never fabricate competitor data. If a fetch fails or a dimension has no data, state the gap.</li>
+<li>Separate raw data (snapshots) from interpretation (reports).</li>
+<li>Tag every data point with source, timestamp, and confidence; flag data older than 30 days as stale.</li>
+<li>Recommend only legal, ethical competitive responses. Collect only publicly available professional information.</li>
+</ul>
+<p>Apply the detailed change-detection, trend, data-quality, and execution rules in <code>references/scoring-and-rules.md</code> throughout.</p>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

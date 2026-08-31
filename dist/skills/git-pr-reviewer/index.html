@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git PR Reviewer | AI Skills</title>
+  <meta name="description" content="When reviewing a pull request:">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Git PR Reviewer</h1>
+      <p>When reviewing a pull request:</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Instructions</h2>
+<ol>
+<li><strong>Get the diff</strong>: Run <code>git diff main...HEAD</code> or <code>git diff &lt;base-branch&gt;...HEAD</code></li>
+<li><strong>Analyze changed files</strong>: Identify all modified, added, and deleted files</li>
+<li><strong>Review each file</strong> for:</li>
+<li>Logic errors and bugs</li>
+<li>Security vulnerabilities (SQL injection, XSS, hardcoded secrets)</li>
+<li>Performance issues (N+1 queries, unnecessary re-renders, memory leaks)</li>
+<li>Code style and consistency</li>
+<li>Missing error handling</li>
+<li>Test coverage gaps</li>
+</ol>
+<h2>Review Checklist</h2>
+<h3>Security</h3>
+<ul>
+<li>[ ] No hardcoded credentials or API keys</li>
+<li>[ ] Input validation on user data</li>
+<li>[ ] Proper authentication/authorization checks</li>
+<li>[ ] No SQL injection vulnerabilities</li>
+<li>[ ] XSS prevention in place</li>
+</ul>
+<h3>Code Quality</h3>
+<ul>
+<li>[ ] Functions are small and focused</li>
+<li>[ ] No code duplication</li>
+<li>[ ] Clear variable/function naming</li>
+<li>[ ] Proper error handling</li>
+<li>[ ] No unused imports or dead code</li>
+</ul>
+<h3>Performance</h3>
+<ul>
+<li>[ ] No unnecessary database queries</li>
+<li>[ ] Efficient algorithms used</li>
+<li>[ ] Proper caching where needed</li>
+<li>[ ] No memory leaks</li>
+</ul>
+<h3>Testing</h3>
+<ul>
+<li>[ ] New code has tests</li>
+<li>[ ] Edge cases covered</li>
+<li>[ ] Tests are meaningful, not just for coverage</li>
+</ul>
+<h2>Output Format</h2>
+<p>```markdown</p>
+<h2>PR Review Summary</h2>
+<h3>Overview</h3>
+<p>[Brief summary of changes]</p>
+<h3>Issues Found</h3>
+<h4>Critical</h4>
+<ul>
+<li>[Issue description + file:line]</li>
+</ul>
+<h4>Warnings</h4>
+<ul>
+<li>[Issue description + file:line]</li>
+</ul>
+<h4>Suggestions</h4>
+<ul>
+<li>[Improvement ideas]</li>
+</ul>
+<h3>Approval Status</h3>
+<p>[APPROVE / REQUEST CHANGES / NEEDS DISCUSSION]
+```</p>
+<h2>Example</h2>
+<p>```bash</p>
+<h1>Review current branch against main</h1>
+<p>git diff main...HEAD --stat
+git diff main...HEAD
+```</p>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

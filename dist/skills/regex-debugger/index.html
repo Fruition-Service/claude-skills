@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regex Visual Debugger | AI Skills</title>
+  <meta name="description" content="Interactive regex testing, explanation, and debugging tool.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Regex Visual Debugger</h1>
+      <p>Interactive regex testing, explanation, and debugging tool.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>When to Use This Skill</h2>
+<p>Activate when the user:
+- Provides a regex pattern to debug
+- Asks "why isn't my regex working?"
+- Needs a regex pattern explained
+- Wants to test regex against strings
+- Asks to convert regex between flavors (Python, JS, etc.)
+- Needs regex pattern suggestions
+- Mentions regular expressions or pattern matching</p>
+<h2>Instructions</h2>
+<ol>
+<li><strong>Analyze the Regex Pattern</strong></li>
+<li>Parse the regex structure</li>
+<li>Identify each component (groups, quantifiers, character classes)</li>
+<li>Check for common syntax errors</li>
+<li>
+<p>Validate regex syntax for specified flavor</p>
+</li>
+<li>
+<p><strong>Provide Plain English Explanation</strong></p>
+</li>
+<li>Break down pattern piece by piece</li>
+<li>Explain what each part matches</li>
+<li>Describe overall pattern behavior</li>
+<li>Clarify quantifier greediness</li>
+<li>
+<p>Explain capture groups vs. non-capturing groups</p>
+</li>
+<li>
+<p><strong>Visual Breakdown</strong></p>
+</li>
+<li>Show pattern structure hierarchically</li>
+<li>Highlight groups and alternations</li>
+<li>Indicate character classes and ranges</li>
+<li>
+<p>Mark anchors and boundaries</p>
+</li>
+<li>
+<p><strong>Test Against Examples</strong></p>
+</li>
+<li>Test provided test strings</li>
+<li>Show what matches and what doesn't</li>
+<li>Highlight matched portions</li>
+<li>Explain why matches succeed or fail</li>
+<li>
+<p>Show capture group contents</p>
+</li>
+<li>
+<p><strong>Identify Common Issues</strong></p>
+</li>
+<li>Unescaped special characters</li>
+<li>Incorrect quantifiers</li>
+<li>Greedy vs. non-greedy issues</li>
+<li>Anchor misplacement</li>
+<li>Unclosed groups</li>
+<li>
+<p>Flavor-specific incompatibilities</p>
+</li>
+<li>
+<p><strong>Generate Test Cases</strong></p>
+</li>
+<li>Create strings that should match</li>
+<li>Create strings that should NOT match</li>
+<li>Include edge cases</li>
+<li>
+<p>Test boundary conditions</p>
+</li>
+<li>
+<p><strong>Suggest Improvements</strong></p>
+</li>
+<li>More efficient patterns</li>
+<li>More readable alternatives</li>
+<li>Performance optimizations</li>
+<li>
+<p>Edge case handling</p>
+</li>
+<li>
+<p><strong>Convert Between Flavors</strong></p>
+</li>
+<li>Python (re module)</li>
+<li>JavaScript</li>
+<li>Perl</li>
+<li>Java</li>
+<li>.NET</li>
+<li>PHP (PCRE)</li>
+</ol>
+<h2>Output Format</h2>
+<p>```markdown</p>
+<h1>Regex Analysis: <code>pattern</code></h1>
+<h2>Plain English Explanation</h2>
+<p>This pattern matches [description]:
+- <code>^</code> - Start of string
+- <code>[A-Z]</code> - One uppercase letter
+- <code>\d{3}</code> - Exactly 3 digits
+- <code>$</code> - End of string</p>
+<p><strong>Overall</strong>: Matches strings like "A123", "Z999"</p>
+<h2>Visual Structure</h2>
+<p><code>^                 - Start anchor
+[A-Z]            - Character class (uppercase letters)
+\d{3}            - Digit, exactly 3 times
+$                 - End anchor</code></p>
+<h2>Test Results</h2>
+<h3>Matches</h3>
+<ul>
+<li><code>A123</code> -&gt; Full match</li>
+<li><code>Z999</code> -&gt; Full match</li>
+</ul>
+<h3>No Match</h3>
+<ul>
+<li><code>a123</code> -&gt; Lowercase 'a' doesn't match [A-Z]</li>
+<li><code>A12</code> -&gt; Only 2 digits (needs 3)</li>
+<li><code>A1234</code> -&gt; Too many digits</li>
+</ul>
+<h2>Capture Groups</h2>
+<ol>
+<li>Group 1: <code>[captured text]</code></li>
+<li>Group 2: <code>[captured text]</code></li>
+</ol>
+<h2>Issues Found</h2>
+<p><strong>Issue 1</strong>: Pattern is too restrictive
+- <strong>Problem</strong>: Doesn't handle lowercase letters
+- <strong>Fix</strong>: Use <code>[A-Za-z]</code> instead of <code>[A-Z]</code></p>
+<h2>Suggested Improvements</h2>
+<p>```regex</p>
+<h1>More flexible version</h1>
+<p>^[A-Za-z]\d{3,5}$
+<code>``
+**Changes**:
+- Added lowercase letters
+- Changed</code>{3}<code>to</code>{3,5}` for 3-5 digits</p>
+<h2>Generated Test Cases</h2>
+<h3>Should Match</h3>
+<p><code>A123
+Z999
+B456</code></p>
+<h3>Should NOT Match</h3>
+<p><code>1ABC    (starts with digit)
+ABCD    (no digits)
+A12     (too few digits)</code></p>
+<h2>Flavor-Specific Notes</h2>
+<p><strong>JavaScript</strong>: [any JS-specific notes]
+<strong>Python</strong>: [any Python-specific notes]</p>
+<h2>Conversion to Other Flavors</h2>
+<h3>JavaScript</h3>
+<p><code>javascript
+const pattern = /^[A-Z]\d{3}$/;
+const match = str.match(pattern);</code></p>
+<h3>Python</h3>
+<p><code>python
+import re
+pattern = r'^[A-Z]\d{3}$'
+match = re.match(pattern, string)</code></p>
+<h2>Performance Notes</h2>
+<ul>
+<li>Current complexity: O(n)</li>
+<li>No backtracking issues</li>
+<li>Consider using non-capturing groups: <code>(?:...)</code> for better performance
+```</li>
+</ul>
+<h2>Examples</h2>
+<p><strong>User</strong>: "Why doesn't this regex match emails: <code>\w+@\w+\.\w+</code>?"
+<strong>Response</strong>: Analyze pattern → Explain it matches simple emails only → Show test cases (fails on "user+tag@domain.co.uk") → Identify issues (doesn't handle special chars, multiple TLDs) → Provide improved pattern → Generate comprehensive test cases</p>
+<p><strong>User</strong>: "Explain this regex: <code>^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$</code>"
+<strong>Response</strong>: Break down pattern (IP address matcher) → Explain each component → Show it matches valid IPs (0-255 per octet) → Provide test cases → Visualize structure</p>
+<p><strong>User</strong>: "Convert this Python regex to JavaScript: <code>(?P&lt;name&gt;\w+)</code>"
+<strong>Response</strong>: Identify named capture group (Python feature) → Convert to JS equivalent → Explain differences → Show both versions with usage examples</p>
+<h2>Best Practices</h2>
+<ul>
+<li>Always test regex with edge cases</li>
+<li>Explain in plain English first</li>
+<li>Show concrete examples (not just theory)</li>
+<li>Highlight common pitfalls for each pattern</li>
+<li>Provide both positive and negative test cases</li>
+<li>Consider performance implications</li>
+<li>Note flavor-specific features</li>
+<li>Suggest simpler alternatives when possible</li>
+<li>Use non-capturing groups for performance</li>
+<li>Escape special characters properly</li>
+<li>Be explicit about case sensitivity</li>
+<li>Test with Unicode characters if relevant</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

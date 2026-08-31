@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSV/Excel Merger | AI Skills</title>
+  <meta name="description" content="Merge multiple CSV or Excel files with automatic column matching, deduplication, and conflict resolution.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>CSV/Excel Merger</h1>
+      <p>Merge multiple CSV or Excel files with automatic column matching, deduplication, and conflict resolution.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><a href="#workflow">Workflow</a> — the step-by-step merge process</li>
+<li><a href="#verification">Verification</a> — confirm the merge before handing it back</li>
+<li><a href="#special-cases">Special cases</a> — encoding, compound keys, large files</li>
+<li><a href="#guidelines">Guidelines</a> — quality and transparency standards</li>
+<li><a href="#example-triggers">Example triggers</a></li>
+<li><code>references/merge_strategies.md</code> — column matching, conflict resolution, and dedup options</li>
+<li><code>references/output_template.md</code> — the merge-report format</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li>
+<p><strong>Inspect the inputs.</strong> Determine file count, format (CSV / Excel / TSV), and whether the files are attached or read from disk. Read each header; identify column names, data types, and encoding (UTF-8, Latin-1). Note the candidate primary key.</p>
+</li>
+<li>
+<p><strong>Plan the merge.</strong> Match columns across files to one unified schema, choose a conflict-resolution rule, and pick a deduplication strategy. See <code>references/merge_strategies.md</code> for the matching heuristics and the full set of options.</p>
+</li>
+<li>
+<p><strong>Execute the merge</strong> with pandas:</p>
+</li>
+</ol>
+<p>```python
+   import pandas as pd</p>
+<p>df1 = pd.read_csv("file1.csv")
+   df2 = pd.read_csv("file2.csv")</p>
+<p># Normalize, then map column names onto the unified schema
+   for df in (df1, df2):
+       df.columns = df.columns.str.lower().str.strip()
+   df2 = df2.rename(columns={"firstname": "first_name", "e_mail": "email"})</p>
+<p>merged = pd.concat([df1, df2], ignore_index=True)
+   merged = merged.drop_duplicates(subset=["email"], keep="last")
+   merged.to_csv("merged_output.csv", index=False)
+   ```</p>
+<ol>
+<li>
+<p><strong>Verify the result</strong> before reporting — see <a href="#verification">Verification</a>.</p>
+</li>
+<li>
+<p><strong>Report</strong> using the layout in <code>references/output_template.md</code>, then offer export options: CSV (UTF-8), Excel (.xlsx), JSON, SQL INSERT statements, or Parquet for large datasets.</p>
+</li>
+</ol>
+<h2>Verification</h2>
+<p>Never hand back a merge without checking it. After merging, assert the row math holds and the key is actually unique:</p>
+<p>```python
+total_in = len(df1) + len(df2)
+assert len(merged) &gt; 0, "merge produced an empty frame"
+assert len(merged) &lt;= total_in, "more rows than inputs — check the concat/join"
+assert merged["email"].is_unique, "duplicate keys remain after dedup"</p>
+<p>print(f"in: {total_in} rows | out: {len(merged)} rows | removed: {total_in - len(merged)}")
+print(f"null keys: {merged['email'].isna().sum()} | columns: {list(merged.columns)}")
+```</p>
+<p>Report rows in vs. out, duplicates removed, and per-column completeness so the user can sanity-check the numbers against their own expectations.</p>
+<h2>Special cases</h2>
+<ul>
+<li><strong>Compound keys</strong> — when no single column is unique, key on a tuple: <code>subset=["email", "company"]</code>.</li>
+<li><strong>Mixed data types</strong> — standardize dates, phone numbers, and country codes; strip whitespace and normalize casing <em>before</em> deduping, or near-duplicates slip through.</li>
+<li><strong>Missing columns</strong> — fill absent columns with empty values and flag them in the report; never silently drop data.</li>
+<li><strong>Large files (&gt;100MB)</strong> — read in chunks (<code>pd.read_csv(path, chunksize=...)</code>), report progress, and estimate memory before loading everything at once.</li>
+</ul>
+<h2>Guidelines</h2>
+<ul>
+<li><strong>Column matching</strong> — prefer exact, then case-insensitive, then fuzzy. Always emit the original → unified mapping so every match is auditable, and allow manual override.</li>
+<li><strong>Data quality</strong> — trim whitespace, standardize formats, flag invalid values, preserve types.</li>
+<li><strong>Transparency</strong> — track the source file for every surviving row, log each merge decision, and report all conflicts with their resolutions.</li>
+<li><strong>Performance</strong> — chunk large files, process in batches, and show progress on long-running merges.</li>
+</ul>
+<h2>Example triggers</h2>
+<ul>
+<li>"Merge these three CSV files"</li>
+<li>"Combine multiple Excel sheets into one file"</li>
+<li>"Deduplicate and merge customer data"</li>
+<li>"Join spreadsheets with different column names"</li>
+<li>"Consolidate contact lists from different sources"</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

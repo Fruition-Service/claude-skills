@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meeting to Tasks | AI Skills</title>
+  <meta name="description" content="Transform raw meeting transcripts into structured, actionable outputs: decisions, action items, owners, deadlines, and open questions -- including implicit commitments participants may not realize they made.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Meeting to Tasks</h1>
+      <p>Transform raw meeting transcripts into structured, actionable outputs: decisions, action items, owners, deadlines, and open questions -- including implicit commitments participants may not realize they made.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/extraction-schema.md</code> -- YAML field schemas for every extraction phase</li>
+<li><code>references/markers.md</code> -- Decision/action/implicit markers, priority + deadline inference, confidence scoring</li>
+<li><code>references/output-templates.md</code> -- Meeting summary, task files (Linear/GitHub/generic), follow-up email, directory layout</li>
+<li><code>references/meeting-types.md</code> -- Meeting-type detection and per-type focus</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li><strong>Accept input.</strong> Handle plain text, Markdown, pasted text, audio transcript exports (Otter.ai, Fireflies, Rev, Zoom, Google Meet, Microsoft Teams), or structured notes.</li>
+<li><strong>Validate.</strong> Confirm there is enough content (~100 words minimum), identifiable speakers, a discernible topic, and any timestamps. If input is too sparse, ask for the full transcript, the participant list, or the meeting purpose before proceeding.</li>
+<li><strong>Read the full transcript first.</strong> Do not extract from a partial read -- later context can change earlier interpretation.</li>
+<li><strong>Detect the meeting type</strong> and adjust focus per <code>references/meeting-types.md</code>.</li>
+<li><strong>Extract in phases</strong> using the schemas in <code>references/extraction-schema.md</code>: metadata, decisions, action items, open questions, parking lot, discussion points. Apply the markers and inference rules in <code>references/markers.md</code>. Preserve the exact source quote for every item.</li>
+<li><strong>Identify speakers.</strong> Build the participant list from speaker labels and track who said what. When labels are absent, infer from context clues, otherwise mark "Unassigned" and flag for the user to assign.</li>
+<li><strong>Score confidence</strong> on every item (high/medium/low). Flag all low-confidence items for human review per <code>references/markers.md</code>.</li>
+<li><strong>Resolve conflicts and ambiguity:</strong> flag contradictory commitments as "CONFLICT" with both versions; list all candidates for unclear ownership; translate vague deadlines ("soon", "ASAP") to specific dates and flag for confirmation; offer both readings of ambiguous scope; consolidate duplicates.</li>
+<li><strong>Generate outputs</strong> using <code>references/output-templates.md</code>. Confirm which project management format(s) the user wants before generating task files. Always generate the follow-up email, even if unasked.</li>
+<li><strong>Post-process:</strong> deduplicate overlapping items; map dependencies; highlight the critical path; report owner imbalance; warn on deadline clustering; list items missing owners or deadlines.</li>
+</ol>
+<h2>Rules</h2>
+<ul>
+<li>Make action items actionable: start each with a verb, specific enough that the owner knows exactly what to do. Transform "Think about pricing" into "Research competitor pricing and propose new pricing tiers by [date]."</li>
+<li>Err toward capturing too much; a flagged low-confidence item beats a missed commitment.</li>
+<li>Do not editorialize. Report what was said; keep any analysis in clearly labeled "Analysis" sections.</li>
+<li>Respect privacy. If the meeting contains HR issues, personal matters, or confidential information, flag it and ask how to handle it in outputs.</li>
+<li>Handle multi-language transcripts: extract in the primary language and note language-specific nuances.</li>
+<li>Maintain an extraction log noting confidence levels, ambiguities, and decisions made during extraction.</li>
+</ul>
+<h2>Quick Commands</h2>
+<ul>
+<li>"Extract from [file]" -- Full extraction from the specified transcript</li>
+<li>"Just action items" -- Action items only (skip decisions, questions, summary)</li>
+<li>"Generate tasks for Linear" / "Generate tasks for GitHub" -- Action items in that format</li>
+<li>"Draft follow-up email" -- Follow-up email only</li>
+<li>"Who owes what?" -- Owner-grouped view of all action items</li>
+<li>"What was decided?" -- Decisions only</li>
+<li>"What is still open?" -- Open questions and unresolved items</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

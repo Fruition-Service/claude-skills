@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cowork Vendor Comparison | AI Skills</title>
+  <meta name="description" content="Compare vendor proposals the way a procurement lead does: normalize everything to the same units before judging anything, price the full term not the first invoice, and read the terms the sales deck skipped. Input: a folder of quotes/proposals/SOWs (PDF, .docx, .xlsx) and, ideally, one sentence on what the purchase needs to accomplish.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Cowork Vendor Comparison</h1>
+      <p>Compare vendor proposals the way a procurement lead does: normalize everything to the same units before judging anything, price the full term not the first invoice, and read the terms the sales deck skipped. Input: a folder of quotes/proposals/SOWs (PDF, .docx, .xlsx) and, ideally, one sentence on what the purchase needs to accomplish.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Workflow</h2>
+<ol>
+<li><strong>Extract per vendor:</strong> pricing structure (license, usage, implementation, support tiers), contract term and renewal terms, SLAs and remedies, implementation timeline and dependencies, what is in scope vs. priced as add-on, exit terms (data export, termination fees), and every assumption the proposal states.</li>
+<li><strong>Normalize.</strong> Convert all pricing to a common basis -- same seat count, same usage volume, same term. Where a proposal is silent on something another proposal prices (training, integrations, overage rates), mark it <code>UNPRICED -- ask</code>, never zero. Unpriced is not free.</li>
+<li><strong>Compute TCO</strong> over the realistic term (default 3 years): year-one cost, steady-state annual cost, escalators applied, one-time costs amortized, and the exit cost. Show the math per vendor.</li>
+<li><strong>Matrix.</strong> Output <code>vendor-comparison.md</code>: side-by-side table of cost, capability fit against the stated need, SLA strength, implementation risk, and contract flexibility -- each cell citing the source document and page. Follow with a plain-English paragraph per vendor: the honest case for and against.</li>
+<li><strong>Negotiation prep.</strong> For the top 2 vendors: leverage points (their weaknesses vs. the rival's strengths, end-of-quarter timing, multi-year vs. flexibility trades), the specific asks worth making (cap the escalator, free implementation, opt-out at 12 months), and 5 reference-check questions targeting each vendor's specific risk areas.</li>
+</ol>
+<h2>Rules</h2>
+<ul>
+<li>Never judge from unnormalized numbers. A lower sticker with usage pricing can be the expensive option.</li>
+<li>Every cell in the matrix traces to a document and page. "Vendor B has better support" without a citation is vibes.</li>
+<li>Silence is a finding: what a proposal does not say (no uptime SLA, no data-export clause) goes in the matrix as prominently as what it says.</li>
+<li>Do not manufacture a winner. If the vendors genuinely split on cost vs. capability, present the trade and the decision criteria, and say which way the stated need leans.</li>
+<li>Flag lock-in explicitly: proprietary data formats, migration fees, auto-renewals with long notice windows.</li>
+<li>If proposals answer different scopes (one quoted 50 seats, one quoted 200), lead with that mismatch and request aligned quotes before deep comparison.</li>
+</ul>
+<h2>Quick Commands</h2>
+<ul>
+<li>"Compare [folder]" -- full workflow</li>
+<li>"TCO only" -- steps 1-3</li>
+<li>"What's unpriced?" -- the ask-list of gaps per vendor</li>
+<li>"Prep me to negotiate with [vendor]" -- step 5 for one vendor</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

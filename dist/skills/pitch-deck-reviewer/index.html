@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pitch Deck Reviewer | AI Skills</title>
+  <meta name="description" content="Review a pitch deck with VC-grade rigor and produce a scored, actionable `pitch-review.md`.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Pitch Deck Reviewer</h1>
+      <p>Review a pitch deck with VC-grade rigor and produce a scored, actionable `pitch-review.md`.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/evaluation-framework.md</code> -- The 8 scored dimensions, weights, red flags, scoring guides, design notes, and overall-score calculation.</li>
+<li><code>references/objections-and-benchmarks.md</code> -- Investor objection categories and the canonical successful-deck benchmarks.</li>
+<li><code>references/output-template.md</code> -- The exact <code>pitch-review.md</code> structure to generate.</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li>Ingest the deck. Determine file type and location, then read every slide. Supported inputs: PDF (Read directly; for 10+ pages read in batches via the <code>pages</code> parameter), PowerPoint .pptx (invoke the pptx skill or Read), Google Slides links (WebFetch if public), images PNG/JPG (Read to inspect visually), markdown/text descriptions, and directories of slide images (Glob to enumerate, then Read each). For .pen files, state that they cannot be read directly.</li>
+<li>Build a slide inventory. Catalog each slide by number and primary content before any analysis. Identify company name, stage, and industry. Flag any deck over 20 slides as a concern itself; most successful decks run 10-15.</li>
+<li>Score the 8 dimensions. Apply <code>references/evaluation-framework.md</code>. Score each 1-10 with specific evidence from the deck, then compute the weighted overall score and assign the grade label.</li>
+<li>Write slide-by-slide feedback. Cover every slide with content summary, purpose, effectiveness, strengths, weaknesses, and recommendations.</li>
+<li>Predict investor objections. Generate at least 5 using the categories in <code>references/objections-and-benchmarks.md</code>, each with severity, trigger, suggested verbal response, and deck fix.</li>
+<li>Compare to benchmark decks. Reference at least 2 relevant decks from <code>references/objections-and-benchmarks.md</code>; name where this deck is stronger, weaker, and what to borrow.</li>
+<li>Rank the top 5 improvements by impact and list any missing slides or sections for this stage and industry.</li>
+<li>Assemble <code>pitch-review.md</code> per <code>references/output-template.md</code>. Write the executive summary last. Save it beside the source deck (or the working directory). Show the overall-score math.</li>
+</ol>
+<h2>Calibration</h2>
+<ul>
+<li>Verify any market-size, revenue, or growth claim with WebSearch before accepting it. Never fabricate metrics, comparisons, or statistics.</li>
+<li>Reserve 9-10 on a dimension for work that sets a new standard. Give an overall below 3.0 only when the deck has almost no usable content.</li>
+<li>Adjust for stage: weight pre-product decks toward problem/solution clarity, team, and market; relax traction and financials expectations and note the calibration.</li>
+<li>Score absent major sections (e.g., missing financials or team) 1-2 and flag them in the executive summary and the missing-sections list. Review works in progress rather than refusing.</li>
+<li>Evaluate intentionally unconventional decks (memo-style, demo-first, single-page) on their own terms while noting the divergence from convention.</li>
+<li>For multiple versions, review the latest and note which changes improved the deck and which regressed.</li>
+</ul>
+<h2>Voice</h2>
+<ul>
+<li>Be direct and specific. Replace vague praise with concrete observations.</li>
+<li>Pair every critique with a concrete fix.</li>
+<li>Use investor framing ("This raises a question about...") over verdicts ("This is bad").</li>
+<li>Acknowledge what works before identifying gaps. Define any jargon used.</li>
+<li>Write for the founder, to help them improve.</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

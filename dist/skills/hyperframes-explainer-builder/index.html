@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HyperFrames Explainer Builder | AI Skills</title>
+  <meta name="description" content="Every product needs the 75-second answer to "what is this and why do I care," and most teams either skip it or pay an agency five figures for it. This skill directs a real, renderable explainer from whatever source material exists. It owns the narrative and assembly; composition mechanics, captions, transitions, and TTS live in the `hyperframes` skill (`hyperframes-cli` for `init`/`lint`/`preview`/`render`, `hyperframes-media` for voiceover, `website-to-hyperframes` when the source is a site to visually mine).">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>HyperFrames Explainer Builder</h1>
+      <p>Every product needs the 75-second answer to "what is this and why do I care," and most teams either skip it or pay an agency five figures for it. This skill directs a real, renderable explainer from whatever source material exists. It owns the narrative and assembly; composition mechanics, captions, transitions, and TTS live in the `hyperframes` skill (`hyperframes-cli` for `init`/`lint`/`preview`/`render`, `hyperframes-media` for voiceover, `website-to-hyperframes` when the source is a site to visually mine).</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Step 1 -- Extract the story</h2>
+<p>From the URL (fetch and read it), docs, or interview: who it is for, the painful before-state, what the product does (in outcomes, not features), the 2-3 capabilities that prove it, and the action to take. If the source material buries the value proposition in jargon, the script fixes that -- write what the customer would say, not what the About page says.</p>
+<h2>Step 2 -- Write the script</h2>
+<p>The explainer arc, ~150-190 words for 60-90 seconds of comfortable VO:
+1. <strong>Cold open (0-5s)</strong> -- the problem, stated the way the viewer complains about it. No logo intro; nobody waits through a logo.
+2. <strong>The turn (5-15s)</strong> -- product named once, positioned as the answer in one sentence.
+3. <strong>How it works (15-55s)</strong> -- three beats maximum, each one capability shown as an outcome ("invoices chase themselves") with its walkthrough scene.
+4. <strong>Proof (55-70s)</strong> -- one number or one quote, not a wall.
+5. <strong>CTA (70-85s)</strong> -- the single action, spoken and on-screen.</p>
+<p>Every sentence read aloud before it ships; explainer VO exposes written-word clunk instantly.</p>
+<h2>Step 3 -- Build the composition</h2>
+<ul>
+<li>Scene per beat: animated type and simple diagram motion for problem/turn; for "how it works," product-UI scenes -- rebuilt clean in HTML (crisp, brand-consistent, always legible) or screenshots panned with intent, whichever the source supports better.</li>
+<li>Motion serves comprehension: one idea moving at a time, cursor/flow animations that trace what the VO describes, counters for the proof beat. Deterministic and seek-safe per HyperFrames rules.</li>
+<li>Brand tokens honored (reuse <code>design-style-installer</code> / existing token sets; no purple, no emoji); captions synced for muted viewing; VO via the media pipeline -- offer two voice options before rendering the full track.</li>
+<li>Lint and preview before declaring done; never claim it renders without running the pipeline.</li>
+</ul>
+<h2>Step 4 -- Deliver</h2>
+<p>The hero cut (16:9), a square social cut, and a 30s trim (open + best capability + CTA) for ads and email embeds. Include the poster frame and a one-line embed recommendation (muted autoplay with captions for the homepage).</p>
+<h2>Rules</h2>
+<ul>
+<li>Outcomes over features, three beats maximum -- the explainer that explains everything explains nothing.</li>
+<li>Claims trace to the source material; the script never invents numbers, customers, or capabilities the product does not have.</li>
+<li>The viewer's vocabulary, not the industry's: if the site says "workflow orchestration" and customers say "it does the follow-ups for me," the script says the second.</li>
+<li>90 seconds is the ceiling, not the target -- cut until it hurts, then preview.</li>
+<li>UI shown must match the product's current reality closely enough that a trial user recognizes it.</li>
+</ul>
+<h2>Quick Commands</h2>
+<ul>
+<li>"Explainer from [URL]" -- full workflow from a website</li>
+<li>"Explainer from this description" -- interview-driven when there is no site yet</li>
+<li>"Just the script" -- steps 1-2 for approval before building</li>
+<li>"Cut a 30-second version" -- the trim from an existing build</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

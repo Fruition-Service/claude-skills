@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Tokens Sync | AI Skills</title>
+  <meta name="description" content="Keep one source of truth actually true. Every design system decays the same way: a hex gets hardcoded in a hurry, a token gets renamed in Figma but not in Tailwind, a second half-copy of the palette appears in a one-off CSS file. This skill finds the drift, decides direction with the user, and reconciles.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Design Tokens Sync</h1>
+      <p>Keep one source of truth actually true. Every design system decays the same way: a hex gets hardcoded in a hurry, a token gets renamed in Figma but not in Tailwind, a second half-copy of the palette appears in a one-off CSS file. This skill finds the drift, decides direction with the user, and reconciles.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Workflow</h2>
+<ol>
+<li><strong>Locate the truths.</strong> Find every place tokens are defined: <code>tokens.json</code>/<code>*.tokens.json</code> (W3C format), Figma variables export, <code>tailwind.config.*</code> theme, CSS custom properties, TS theme objects, SCSS variable files. If more than one claims to be canonical, ask which wins before touching anything -- direction of sync is a human decision.</li>
+<li><strong>Build the graph.</strong> For each token: canonical value, every downstream definition, and every consumption site. For each raw value in code (hex, px, rem, ms, cubic-bezier): whether a token exists for it.</li>
+<li><strong>Drift report.</strong> Output <code>token-drift-report.md</code> in four buckets:</li>
+<li><code>STALE COPIES</code> -- downstream definitions that no longer match canonical (with both values)</li>
+<li><code>HARDCODED</code> -- raw values in components where a matching token exists (exact match, then near-match within perceptual distance for colors)</li>
+<li><code>ORPHANS</code> -- tokens defined but consumed nowhere</li>
+<li><code>UNTOKENIZED</code> -- raw values appearing 3+ times with no token; these are tokens waiting to be named</li>
+<li><strong>Reconcile on approval.</strong> Stale copies: regenerate downstream from canonical. Hardcoded: replace with token references -- exact matches automatically, near-matches only with per-case confirmation (that slightly-off blue might be intentional). Untokenized: propose names following the existing convention and add to canonical. Orphans: list for deletion; never auto-delete.</li>
+<li><strong>Guard.</strong> Offer to add the cheap tripwire: a script (<code>npm run tokens:check</code>) that re-runs the drift detection and fails CI on new stale copies or hardcoded near-matches, so the system stays synced after you leave.</li>
+</ol>
+<h2>Rules</h2>
+<ul>
+<li>Never sync both directions in one run. Canonical wins; anything flowing the other way (a designer wants the code's newer value) is an explicit canonical edit first.</li>
+<li>Near-match replacement is per-case, never bulk. <code>#0B1121</code> vs <code>#0b1220</code> may be drift or may be a decision.</li>
+<li>Preserve semantic layering: if the system has <code>color.blue.500 -&gt; color.accent -&gt; button.bg</code>, fix references at the right layer instead of flattening everything to primitives.</li>
+<li>Renames propagate everywhere or nowhere -- a half-renamed token is worse than the old name.</li>
+<li>Respect generated files: if <code>theme.css</code> is built from <code>tokens.json</code>, fix the source and rebuild; never hand-edit output.</li>
+<li>The report quantifies health: token coverage percentage (tokenized vs. raw values in components) is the number to move release over release.</li>
+</ul>
+<h2>Quick Commands</h2>
+<ul>
+<li>"Audit my tokens" -- steps 1-3, report only</li>
+<li>"Sync from [source]" -- full reconciliation with the named canonical</li>
+<li>"What's hardcoded?" -- the HARDCODED bucket only</li>
+<li>"Add the CI guard" -- step 5 standalone</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

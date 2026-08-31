@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HyperFrames Ad Director | AI Skills</title>
+  <meta name="description" content="You bring the offer; this skill directs the ad. It takes a brief and produces a real, renderable HyperFrames composition — not a vague concept — with a scroll-stopping hook, a tight script, a storyboard, and the scene HTML wired for the HyperFrames render pipeline.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>HyperFrames Ad Director</h1>
+      <p>You bring the offer; this skill directs the ad. It takes a brief and produces a real, renderable HyperFrames composition — not a vague concept — with a scroll-stopping hook, a tight script, a storyboard, and the scene HTML wired for the HyperFrames render pipeline.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <p>This skill orchestrates the build. For the mechanics of authoring compositions, captions, transitions, and TTS, invoke the <code>hyperframes</code> skill (and <code>hyperframes-cli</code> for <code>init</code>/<code>lint</code>/<code>preview</code>/<code>render</code>, <code>hyperframes-media</code> for voiceover/background-removal). This skill owns the creative direction and the end-to-end assembly.</p>
+<h2>Step 1 — Take the brief</h2>
+<p>Pull or ask for:
+- <strong>Product / offer</strong> and the one thing it does better than the alternative.
+- <strong>Audience</strong> — load buyer personas from <code>icp-deep-scanner</code> output if available, so the hook speaks to a real prospect.
+- <strong>The one action</strong> — what the viewer should do (visit, sign up, book, buy).
+- <strong>Platform &amp; length</strong> — TikTok/Reels/Shorts (15–30s vertical), YouTube pre-roll, paid social, hero loop.
+- <strong>Brand</strong> — colors, type, logo, tone. If a <code>claude-design-system-architect</code> token set exists, reuse it for visual consistency.</p>
+<p>Honor brand rules: no purple and no emoji in any visual output unless the brand kit explicitly calls for them; prefer the brand's own palette and clean iconography.</p>
+<h2>Step 2 — Write the creative</h2>
+<ol>
+<li><strong>Hook (first 1.5s)</strong> — the line/visual that stops the scroll. Write 3 options. The hook is 80% of the ad; spend the most thought here.</li>
+<li><strong>Script</strong> — beat by beat: hook → problem → turn → proof → offer → CTA. Keep it spoken-word tight; cut every word that isn't earning its place.</li>
+<li><strong>Storyboard</strong> — a table of scenes: timecode, on-screen visual, on-screen text, VO line, motion/transition.</li>
+</ol>
+<h2>Step 3 — Build the composition</h2>
+<p>Scaffold and author the HyperFrames project (via the <code>hyperframes</code> / <code>hyperframes-cli</code> skills):
+- One scene block per storyboard beat, timed to the script.
+- <strong>Captions</strong> synced to the VO (most social video is watched muted — captions are not optional).
+- <strong>Motion</strong> that serves the message: entrance on the hook, emphasis on the proof, a clean CTA hold. Deterministic, seek-safe animation per HyperFrames rules.
+- <strong>Transitions</strong> between beats that match the pace (fast cuts for energy, smooth reveals for premium).
+- <strong>Voiceover</strong> — generate via the HyperFrames media pipeline (or <code>edge-tts</code> with a neural voice if the user prefers); keep timing aligned to captions.</p>
+<p>Lint and preview (<code>npx hyperframes lint</code> / <code>preview</code>) before declaring it done. Never claim it renders without running the pipeline.</p>
+<h2>Step 4 — Export the cuts</h2>
+<p>Produce the platform variants the brief needs: 9:16 vertical, 1:1 square, 16:9. Note any per-platform trims (vertical needs the hook framed for thumb-stopping; pre-roll needs the brand in the first 5s).</p>
+<h2>Step 5 — Deliver</h2>
+<p>```markdown</p>
+<h1>Ad: {Product} — {platform}</h1>
+<ul>
+<li>Hook options (3) + chosen</li>
+<li>Full script</li>
+<li>Storyboard table</li>
+<li>Composition path + render command</li>
+<li>Platform cuts produced</li>
+<li>Suggested A/B (hook variant to test)
+```</li>
+</ul>
+<p>Offer to pressure-test the hook and script through <code>prospect-panel-simulator</code> before spending on media, and to spin a longer-form demo via <code>hyperframes-sales-demo-builder</code>.</p>
+<h2>Guardrails recap</h2>
+<p>The hook earns the most effort · captions always (muted autoplay) · reuse the brand kit, no purple/no emoji unless branded · lint + preview before claiming done · ground the message in a real persona.</p>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

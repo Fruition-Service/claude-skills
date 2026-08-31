@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Review Pro | AI Skills</title>
+  <meta name="description" content="Deep code analysis covering security, performance, maintainability, and best practices.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Code Review Pro</h1>
+      <p>Deep code analysis covering security, performance, maintainability, and best practices.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>When to Use This Skill</h2>
+<p>Activate when the user:
+- Asks for a code review
+- Wants security vulnerability scanning
+- Needs performance analysis
+- Asks to "review this code" or "audit this code"
+- Mentions finding bugs or improvements
+- Wants refactoring suggestions
+- Requests best practice validation</p>
+<h2>Instructions</h2>
+<ol>
+<li><strong>Security Analysis (Critical Priority)</strong></li>
+<li>SQL injection vulnerabilities</li>
+<li>XSS (cross-site scripting) risks</li>
+<li>Authentication/authorization issues</li>
+<li>Secrets or credentials in code</li>
+<li>Unsafe deserialization</li>
+<li>Path traversal vulnerabilities</li>
+<li>CSRF protection</li>
+<li>Input validation gaps</li>
+<li>Insecure cryptography</li>
+<li>
+<p>Dependency vulnerabilities</p>
+</li>
+<li>
+<p><strong>Performance Analysis</strong></p>
+</li>
+<li>N+1 query problems</li>
+<li>Inefficient algorithms (check Big O complexity)</li>
+<li>Memory leaks</li>
+<li>Unnecessary re-renders (React/Vue)</li>
+<li>Missing indexes (database queries)</li>
+<li>Blocking operations</li>
+<li>Resource cleanup (file handles, connections)</li>
+<li>Caching opportunities</li>
+<li>Excessive network calls</li>
+<li>
+<p>Large bundle sizes</p>
+</li>
+<li>
+<p><strong>Code Quality &amp; Maintainability</strong></p>
+</li>
+<li>Code duplication (DRY violations)</li>
+<li>Function/method length (should be &lt;50 lines)</li>
+<li>Cyclomatic complexity</li>
+<li>Unclear naming</li>
+<li>Missing error handling</li>
+<li>Inconsistent style</li>
+<li>Missing documentation</li>
+<li>Hard-coded values that should be constants</li>
+<li>God classes/functions</li>
+<li>
+<p>Tight coupling</p>
+</li>
+<li>
+<p><strong>Best Practices</strong></p>
+</li>
+<li>Language-specific idioms</li>
+<li>Framework conventions</li>
+<li>SOLID principles</li>
+<li>Design patterns usage</li>
+<li>Testing approach</li>
+<li>Logging and monitoring</li>
+<li>Accessibility (for UI code)</li>
+<li>Type safety</li>
+<li>
+<p>Null/undefined handling</p>
+</li>
+<li>
+<p><strong>Bugs and Edge Cases</strong></p>
+</li>
+<li>Logic errors</li>
+<li>Off-by-one errors</li>
+<li>Race conditions</li>
+<li>Null pointer exceptions</li>
+<li>Unhandled edge cases</li>
+<li>Timezone issues</li>
+<li>Encoding problems</li>
+<li>
+<p>Floating point precision</p>
+</li>
+<li>
+<p><strong>Provide Actionable Fixes</strong></p>
+</li>
+<li>Show specific code changes</li>
+<li>Explain why change is needed</li>
+<li>Include before/after examples</li>
+<li>Prioritize by severity</li>
+</ol>
+<h2>Output Format</h2>
+<p>```markdown</p>
+<h1>Code Review Report</h1>
+<h2>Critical Issues (Fix Immediately)</h2>
+<h3>1. SQL Injection Vulnerability (line X)</h3>
+<p><strong>Severity</strong>: Critical
+<strong>Issue</strong>: User input directly concatenated into SQL query
+<strong>Impact</strong>: Database compromise, data theft</p>
+<p><strong>Current Code:</strong>
+<code>javascript
+const query = `SELECT * FROM users WHERE email = '${userEmail}'`;</code></p>
+<p><strong>Fixed Code:</strong>
+<code>javascript
+const query = 'SELECT * FROM users WHERE email = ?';
+db.query(query, [userEmail]);</code></p>
+<p><strong>Explanation</strong>: Always use parameterized queries to prevent SQL injection.</p>
+<h2>High Priority Issues</h2>
+<h3>2. Performance: N+1 Query Problem (line Y)</h3>
+<p>[Details...]</p>
+<h2>Medium Priority Issues</h2>
+<h3>3. Code Quality: Function Too Long (line Z)</h3>
+<p>[Details...]</p>
+<h2>Low Priority / Nice to Have</h2>
+<h3>4. Consider Using Const Instead of Let</h3>
+<p>[Details...]</p>
+<h2>Summary</h2>
+<ul>
+<li><strong>Total Issues</strong>: 12</li>
+<li>Critical: 2</li>
+<li>High: 4</li>
+<li>Medium: 4</li>
+<li>Low: 2</li>
+</ul>
+<h2>Quick Wins</h2>
+<p>Changes with high impact and low effort:
+1. [Fix 1]
+2. [Fix 2]</p>
+<h2>Strengths</h2>
+<ul>
+<li>Good error handling in X</li>
+<li>Clear naming conventions</li>
+<li>Well-structured modules</li>
+</ul>
+<h2>Refactoring Opportunities</h2>
+<ol>
+<li><strong>Extract Method</strong>: Lines X-Y could be extracted into <code>calculateDiscount()</code></li>
+<li><strong>Remove Duplication</strong>: [specific code blocks]</li>
+</ol>
+<h2>Resources</h2>
+<ul>
+<li><a href="https://...">OWASP SQL Injection Guide</a></li>
+<li><a href="https://...">Performance Best Practices</a>
+```</li>
+</ul>
+<h2>Examples</h2>
+<p><strong>User</strong>: "Review this authentication code"
+<strong>Response</strong>: Analyze auth logic → Identify security issues (weak password hashing, no rate limiting) → Check token handling → Note missing CSRF protection → Provide specific fixes with code examples → Prioritize by severity</p>
+<p><strong>User</strong>: "Can you find performance issues in this React component?"
+<strong>Response</strong>: Analyze component → Identify unnecessary re-renders → Find missing useMemo/useCallback → Note large state objects → Check for expensive operations in render → Provide optimized version with explanations</p>
+<p><strong>User</strong>: "Review this API endpoint"
+<strong>Response</strong>: Check input validation → Analyze error handling → Test for SQL injection → Review authentication → Check rate limiting → Examine response structure → Suggest improvements with code samples</p>
+<h2>Best Practices</h2>
+<ul>
+<li>Always prioritize security issues first</li>
+<li>Provide specific line numbers for issues</li>
+<li>Include before/after code examples</li>
+<li>Explain <em>why</em> something is a problem</li>
+<li>Consider the language/framework context</li>
+<li>Don't just criticize—acknowledge good code too</li>
+<li>Suggest gradual improvements for large refactors</li>
+<li>Link to documentation for recommendations</li>
+<li>Consider project constraints (legacy code, deadlines)</li>
+<li>Balance perfectionism with pragmatism</li>
+<li>Focus on impactful changes</li>
+<li>Group similar issues together</li>
+<li>Make recommendations actionable</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

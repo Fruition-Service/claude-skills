@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animation Generator | AI Skills</title>
+  <meta name="description" content="Create animated videos and motion graphics from a natural language description. Outputs a standalone Vite + React + Framer Motion project that plays in the browser.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Animation Generator</h1>
+      <p>Create animated videos and motion graphics from a natural language description. Outputs a standalone Vite + React + Framer Motion project that plays in the browser.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Workflow</h2>
+<h3>Step 1: Parse the Request</h3>
+<p>Break the user's description into a scene plan:
+- <strong>3-7 scenes</strong>, each 3-5 seconds long
+- Identify the story arc: hero/intro, problem, solution, features, CTA/outro
+- Pick a color palette and typography that fits the brand/mood
+- Use <code>$ARGUMENTS</code> for the user's animation description</p>
+<h3>Step 2: Choose the Animation Stack</h3>
+<p>Auto-detect the best approach based on the request:</p>
+<p>| Request Type | Stack | When to Use |
+|---|---|---|
+| Product intro, presentation, marketing | <strong>Framer Motion</strong> (default) | Scene-based with text, icons, transitions |
+| Generative art, particles, patterns | <strong>p5.js</strong> | Creative/algorithmic visuals |
+| 3D objects, environments, product renders | <strong>Three.js + react-three-fiber</strong> | 3D scenes needed |
+| Simple text/logo animation | <strong>CSS animations only</strong> | Minimal, no heavy deps |</p>
+<p>Default to <strong>Framer Motion</strong> unless the request clearly needs something else.</p>
+<h3>Step 3: Scaffold the Project</h3>
+<ol>
+<li>Create a directory: <code>~/animations/[project-name]/</code></li>
+<li>Run the scaffold script: <code>bash ~/.claude/skills/animate/scripts/scaffold.sh [project-name] [stack]</code></li>
+<li>Copy template files from <code>~/.claude/skills/animate/assets/template-files/</code> into the project</li>
+</ol>
+<h3>Step 4: Generate Scene Components</h3>
+<p>Read the references for animation presets and scene patterns:
+- <code>references/animation-presets.md</code> — all available transitions, springs, easings
+- <code>references/scene-patterns.md</code> — example scene code patterns</p>
+<p>For each scene, create a React component in <code>client/src/components/video/video_scenes/</code>:
+- Use <code>motion.div</code> with scene transition presets (fadeBlur, scaleFade, slideLeft, splitHorizontal, morphExpand, etc.)
+- Use <code>containerVariants</code> and <code>itemVariants</code> for staggered content reveals
+- Use <code>vw</code> units for responsive sizing (works at any resolution)
+- Use CSS variables for theming (<code>var(--color-accent)</code>, <code>var(--color-bg-dark)</code>, etc.)
+- Use Lucide icons for visual elements
+- Use <code>.glass-panel</code> class for frosted glass cards
+- Use <code>.text-gradient</code> and <code>.text-gradient-accent</code> for gradient text</p>
+<h3>Step 5: Generate the VideoTemplate</h3>
+<p>Create <code>client/src/components/video/VideoTemplate.tsx</code>:
+- Import all scene components
+- Define <code>SCENE_DURATIONS</code> object (scene name -&gt; milliseconds)
+- Use <code>useVideoPlayer</code> hook to manage scene advancement
+- Wrap scenes in <code>AnimatePresence mode="wait"</code> for smooth transitions
+- Each scene renders conditionally based on <code>currentScene</code> index</p>
+<h3>Step 6: Customize Theme</h3>
+<p>Update <code>client/src/index.css</code> with the right colors:
+- If the user specified brand colors, update CSS variables
+- Choose fonts that match the mood (Space Grotesk for tech, Playfair Display for elegant, etc.)
+- Update gradient and glow styles to match the palette</p>
+<h3>Step 7: Gemini 3.1 Pro Enhancement (Optional)</h3>
+<p>If <code>GEMINI_API_KEY</code> environment variable is available:</p>
+<ol>
+<li>Read <code>references/gemini-integration.md</code> for API details</li>
+<li>Send the user's description to Gemini 3.1 Pro asking for:</li>
+<li>Scene breakdown with descriptions and suggested transitions</li>
+<li>Color palette as CSS variables</li>
+<li>Copy/headlines for each scene</li>
+<li>SVG graphics if applicable</li>
+<li>Use the Gemini output to inform scene generation</li>
+<li>If no API key, skip this step — Claude handles all creative decisions directly</li>
+</ol>
+<h3>Step 8: Build and Preview</h3>
+<p><code>bash
+cd ~/animations/[project-name]
+npm install
+npm run dev</code></p>
+<p>Tell the user the animation is running at <code>http://localhost:5173</code> and open it in the browser.</p>
+<h2>Scene Transition Reference (Quick)</h2>
+<p>Pick transitions that match the story beat:</p>
+<ul>
+<li><strong>fadeBlur</strong> — Soft intro/outro, dreamy reveals</li>
+<li><strong>scaleFade</strong> — Confident reveals, product showcases</li>
+<li><strong>slideLeft/slideRight</strong> — Sequential progression, timeline flow</li>
+<li><strong>splitHorizontal/splitVertical</strong> — Dramatic reveals, before/after</li>
+<li><strong>morphExpand</strong> — Grand finale, CTA screens</li>
+<li><strong>clipCircle</strong> — Focus attention, spotlight effect</li>
+<li><strong>perspectiveFlip</strong> — Card flips, perspective changes</li>
+<li><strong>wipe</strong> — Clean transitions, directional flow</li>
+<li><strong>zoomThrough</strong> — Immersive, forward momentum</li>
+<li><strong>crossDissolve</strong> — Gentle, emotional transitions</li>
+</ul>
+<h2>Element Animation Reference (Quick)</h2>
+<ul>
+<li><strong>popIn</strong> — Bouncy scale entrance for icons/badges</li>
+<li><strong>fadeUp/fadeDown</strong> — Subtle content reveals</li>
+<li><strong>slideInLeft/slideInRight</strong> — Directional content</li>
+<li><strong>blurIn</strong> — Soft focus reveals</li>
+<li><strong>elasticScale</strong> — Playful, energetic entrances</li>
+<li><strong>perspectiveRotateIn</strong> — 3D card reveals</li>
+<li><strong>pulse</strong> — Looping attention grab</li>
+<li><strong>float</strong> — Gentle hovering effect</li>
+</ul>
+<h2>Important Rules</h2>
+<ol>
+<li>Always use <code>vw</code> units for sizing so animations look good at any resolution</li>
+<li>Keep scenes between 3-5 seconds each — total video 15-30 seconds</li>
+<li>Use <code>AnimatePresence mode="wait"</code> so one scene exits before the next enters</li>
+<li>Every scene must have a background treatment (gradient, image, or animated shape)</li>
+<li>Use staggered animations for lists and grids (staggerChildren: 0.1-0.2)</li>
+<li>Include a loading state if assets are heavy</li>
+<li>The project must be completely self-contained — no external dependencies beyond npm packages</li>
+<li>Do NOT use emojis anywhere in the generated code or content</li>
+</ol>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

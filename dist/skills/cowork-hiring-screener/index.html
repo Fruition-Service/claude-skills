@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cowork Hiring Screener | AI Skills</title>
+  <meta name="description" content="Screen a resume pile the way a disciplined recruiter does: score against the written requirements, cite evidence from the resume for every score, and never let formatting quality masquerade as candidate quality. Input is a folder of resumes (PDF, .docx, text) and a job description; output is a defensible shortlist.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Cowork Hiring Screener</h1>
+      <p>Screen a resume pile the way a disciplined recruiter does: score against the written requirements, cite evidence from the resume for every score, and never let formatting quality masquerade as candidate quality. Input is a folder of resumes (PDF, .docx, text) and a job description; output is a defensible shortlist.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Workflow</h2>
+<ol>
+<li><strong>Extract requirements.</strong> Parse the JD into must-haves, nice-to-haves, and disqualifiers. Present the rubric for approval before scoring -- the human may reweight. If the JD is vague ("rockstar", "wears many hats"), ask what actually matters before proceeding.</li>
+<li><strong>Inventory.</strong> Catalog every file in the folder. Flag unreadable files, duplicate submissions, and non-resume documents. Report the candidate count before starting.</li>
+<li><strong>Score each candidate</strong> against the rubric: 0-3 per must-have and nice-to-have, with a direct resume quote or specific experience justifying every non-zero score. No quote, no points.</li>
+<li><strong>Rank and tier.</strong> Produce <code>screening-report.md</code>: Tier 1 (interview now), Tier 2 (backup), Tier 3 (decline), each candidate with score breakdown, one-paragraph summary, strongest signal, and biggest gap or open question.</li>
+<li><strong>Draft communications.</strong> Advance emails for Tier 1 (with 2-3 proposed interview slots if calendar tools are connected) and respectful decline drafts for Tier 3. Drafts only -- never send.</li>
+<li><strong>Interview kits.</strong> For each Tier 1 candidate, generate 5-6 questions probing their specific gaps and claims -- "Your resume says you led the Series B data migration; walk me through the hardest call you made" -- not generic behavioral questions. Hand off to <code>hiring-scorecard</code> for structured interview evaluation.</li>
+</ol>
+<h2>Rules</h2>
+<ul>
+<li>Score the content, not the polish. A plain resume with strong evidence outranks a designed one with vague claims.</li>
+<li>Never infer or use protected characteristics (age, gender, ethnicity, family status, graduation years as an age proxy). Score skills and experience only.</li>
+<li>Distinguish "did the thing" from "was near the thing." "Led migration" and "team migrated during my tenure" are different scores.</li>
+<li>Flag inconsistencies (date overlaps, title inflation between sections) as open questions, not disqualifiers.</li>
+<li>Keep every scoring decision auditable: the report must let a hiring manager disagree with specifics, not vibes.</li>
+<li>If the pile exceeds 100 resumes, do a hard-disqualifier pass first and report how many were cut and why before deep-scoring the rest.</li>
+</ul>
+<h2>Quick Commands</h2>
+<ul>
+<li>"Screen [folder] against [JD]" -- full workflow</li>
+<li>"Just the rubric" -- step 1 only, for approval</li>
+<li>"Top 5 only" -- deep-score and report only the strongest candidates</li>
+<li>"Draft the declines" -- Tier 3 communication drafts</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

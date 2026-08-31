@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compliance Checker | AI Skills</title>
+  <meta name="description" content="Perform thorough regulatory compliance audits against one or more frameworks, identify gaps, and produce actionable remediation guidance with evidence requirements suitable for certification preparation.">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Compliance Checker</h1>
+      <p>Perform thorough regulatory compliance audits against one or more frameworks, identify gaps, and produce actionable remediation guidance with evidence requirements suitable for certification preparation.</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <h2>Contents</h2>
+<ul>
+<li><code>references/frameworks.md</code> — the five supported frameworks (GDPR, HIPAA, SOC 2, CCPA, PCI-DSS): scope, key articles/requirements, penalties, and reference links.</li>
+<li><code>references/scan-patterns.md</code> — the seven scan categories, their search patterns, scan execution rules, and common pitfalls to always check.</li>
+<li><code>references/classification.md</code> — compliance status values, risk severity rubric, and the remediation detail fields.</li>
+<li><code>references/cross-framework-mapping.md</code> — control-area-to-framework mapping and the glossary.</li>
+<li><code>references/output-template.md</code> — the full <code>compliance-report.md</code> structure, including per-framework gap-analysis tables and evidence packs.</li>
+</ul>
+<h2>Workflow</h2>
+<p>Run the full methodology for every audit. Do not skip steps.</p>
+<h3>Phase 1: Discovery and Scoping</h3>
+<ol>
+<li>Identify the target: codebase, infrastructure configuration, business process documentation, or a combination.</li>
+<li>Determine applicable frameworks from the data types processed, geographic scope, industry, and business model. See <code>references/frameworks.md</code>. When none are specified, assess all five and note applicability.</li>
+<li>Map the data flow: where regulated data enters, how it is processed, where it is stored, and how it exits.</li>
+<li>Inventory data categories present (PII, PHI, CHD, sensitive PI, special category data).</li>
+</ol>
+<h3>Phase 2: Scanning and Evidence Collection</h3>
+<ol>
+<li>Scan each of the seven categories — PII/sensitive data, data retention, encryption, access controls, audit logging, consent management, and data transfer. Apply the search patterns and execution rules in <code>references/scan-patterns.md</code>. Record exact file paths, line numbers, and snippets for both positive findings and gaps.</li>
+</ol>
+<h3>Phase 3: Gap Analysis</h3>
+<ol>
+<li>Map each finding to specific framework requirements, assign a compliance status, and assign a risk severity to every non-compliant or partial finding. Use the rubric in <code>references/classification.md</code>.</li>
+</ol>
+<h3>Phase 4: Remediation Planning</h3>
+<ol>
+<li>For each non-compliant or partial finding, produce the remediation detail (description, regulatory reference, current state, required state, steps, evidence, effort, dependencies) per <code>references/classification.md</code>. Cross-reference <code>references/cross-framework-mapping.md</code> to flag when one action closes gaps across multiple frameworks.</li>
+</ol>
+<h3>Phase 5: Report Generation</h3>
+<ol>
+<li>Generate <code>compliance-report.md</code> in the project root (or a user-specified location), following the mandatory structure in <code>references/output-template.md</code>. Every section is required; if a section has no findings, state that explicitly.</li>
+</ol>
+<h2>Behavioral Rules</h2>
+<ol>
+<li>Never fabricate findings. Back every finding with scan evidence. When evidence is absent, mark UNABLE TO ASSESS rather than guess.</li>
+<li>Be specific. Reference exact file paths, line numbers, function names, and configuration keys.</li>
+<li>Distinguish technical from organizational controls. Note when a finding requires verifying organizational controls (training, policies, physical security) that code review alone cannot confirm.</li>
+<li>Consider the full stack: application code, database schemas, infrastructure configuration, CI/CD pipelines, dependency manifests, documentation, and environment configuration.</li>
+<li>Prioritize actionable findings. Specify exact changes; avoid vague recommendations like "improve security".</li>
+<li>Respect the scope. Audit only what is provided. Do not assume broader infrastructure without evidence.</li>
+<li>Account for frameworks and libraries that handle compliance concerns (ORM parameterized queries, framework CSRF protection); credit them as positive findings but verify configuration.</li>
+<li>Avoid false positives. Missing a marginal finding is better than reporting a non-gap. Err toward accuracy.</li>
+<li>Cross-reference across frameworks. Note when a single remediation addresses multiple regulations.</li>
+<li>Date and version everything so the report can be compared against future audits.</li>
+</ol>
+<h2>Responding to Requests</h2>
+<ul>
+<li>"Audit this codebase" / "check compliance": Confirm which frameworks to focus on (or assess all five), run Phases 1-5, generate <code>compliance-report.md</code>, and summarize the most critical findings.</li>
+<li>"Check for [framework]": Focus on that framework, still scan all seven categories, and map findings only to it.</li>
+<li>"Check [category]" (e.g., "check encryption"): Focus the scan on that category and map findings to all applicable frameworks.</li>
+<li>"Are we [requirement] compliant?" (e.g., GDPR Art. 17): Focus on the relevant controls, give a direct assessment with evidence, and offer remediation if gaps exist.</li>
+<li>Business process documentation instead of code: Adapt the methodology to document analysis, focus on policy and procedure requirements, and note that technical controls cannot be verified without codebase access.</li>
+</ul>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

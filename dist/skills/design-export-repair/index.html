@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design export repair | AI Skills</title>
+  <meta name="description" content="Fixes AI-generated deck/PDF exports (built for Claude Design's export">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="bg-gradients"></div>
+
+  <main class="container">
+    <header class="skill-detail-hero">
+      <h1>Design export repair</h1>
+      <p>Fixes AI-generated deck/PDF exports (built for Claude Design's export</p>
+      <a href="#" class="cta-btn">Try this Skill</a>
+    </header>
+
+    <article class="skill-content">
+      <p>path, but the checks are generic OOXML/PDF hygiene, not Claude-specific)
+that look fine in the app but come apart once exported — text missing
+its last few characters, fonts that don't match the original design, or
+a <code>.pptx</code> that some converters choke on even though PowerPoint opens it
+fine.</p>
+<p>Four defect classes were found and fixed against a real broken export;
+<code>references/defect-classes.md</code> has the full story for each, including how
+they were confirmed and what the fix trades off. Skim it before extending
+this skill to a case it doesn't already handle — in particular, defect #4
+there is a good example of why "the shape geometry looks right" is not
+the same claim as "the rendered PDF looks right," and it's worth reading
+before assuming a new complaint is a geometry problem.</p>
+<h2>End-to-end: from Claude Design to a clean file</h2>
+<p>This is written for the person running Claude Code, not just for Claude —
+skim it once so you know what to actually do. There are two different
+ways a Design project reaches Claude Code, and they behave differently.</p>
+<p><strong>Path A — plain Export (this is the one that matches "my deck/PDF looks
+broken"):</strong> In Claude Design, use Export and pick PDF, PPTX, or HTML. Save
+the file, then bring it to whichever Claude Code you're using — attach it
+in the chat if your setup allows that, or save it to disk and give Claude
+the path. Then tell Claude to use this skill: plain language like "this
+deck looks broken when I export it to PDF, can you fix it" is enough on
+its own (the skill's description is written to match that phrasing), or
+name it directly (<code>design-export-repair</code>) if you want to be explicit.</p>
+<p><strong>Path B — the "Send to Claude Code" button.</strong> This is a related but
+different feature from plain Export — it's aimed at continuing design/
+prototype work in code, not at fixing a deck export, but you may end up
+here anyway. It offers two options, and they behave differently:</p>
+<ul>
+<li><em>"Send to Claude Code Web"</em> opens a brand-new claude.ai/code session
+  with the design bundle already sitting in that session's working
+  directory — there's no file to save or attach, it's just already
+  there. In that new session, tell Claude to look at what's in the
+  working directory and use this skill on it.</li>
+<li><em>"Send to local coding agent"</em> gives you a prompt to paste into your
+  local terminal Claude Code. Be aware: as of this writing, that default
+  prompt depends on a "Claude Design connector" that local Claude Code
+  doesn't ship, and reliably fails silently (see
+  <a href="https://github.com/anthropics/claude-code/issues/69246">anthropics/claude-code#69246</a>
+  if you want the details). The same dialog has a <strong>"Download zip
+  instead"</strong> option — that one actually works: it downloads a real zip of
+  the design files. Save that zip, point local Claude Code at it (or
+  unzip it into your project folder first), and tell Claude to use this
+  skill on it.</li>
+</ul>
+<p>Whichever path you took, <code>scripts/fix_export.py</code> accepts a file, a zip, or
+a whole directory — <code>unpack.py</code> figures out what it's looking at rather
+than requiring one specific shape. One thing worth knowing about Path B
+specifically: its bundle format is Design's own <code>*.dc.html</code> canvas files,
+which is a different animal from the <code>.pptx</code> this skill's repair pipeline
+was actually built and verified against (see
+<code>references/defect-classes.md</code>) — a <code>.dc.html</code> bundle gets routed through
+the best-effort HTML path (<code>convert_html.py</code>) instead of the fully-tested
+one. If you're trying to fix a broken deck/PDF export specifically, Path A
+is the one to reach for.</p>
+<p>After either path, Claude runs <code>scripts/fix_export.py</code> and hands back a
+repaired <code>.pptx</code> (Path A) or PDF, plus a report explaining exactly what
+was wrong and what changed. Open the repaired <code>.pptx</code> if you want to keep
+editing in PowerPoint/Keynote/Google Slides, or use the <code>.pdf</code> directly if
+that's the deliverable you needed.</p>
+<p>One honest caveat: buttons and flows in Claude products change over time,
+and this description of Path B is based on Claude Code's own public issue
+tracker rather than hands-on testing of that specific handoff. If what you
+see doesn't match this, don't get stuck on it — just get the actual design
+files to Claude Code by whatever route works, and tell Claude to use this
+skill; <code>unpack.py</code> is written to figure out what it's been handed.</p>
+<h2>Quick summary of what gets fixed</h2>
+<p>| # | Defect | Symptom | Fix |
+|---|--------|---------|-----|
+| 1 | <code>[Content_Types].xml</code> declares parts that don't exist in the zip | Some converters fail, drop slides, or garble output; PowerPoint may silently "repair" and hide it | Load + re-save through <code>python-pptx</code> (rebuilds the manifest from what's actually there) |
+| 2 | A shape's box extends past the slide edge | Can get clipped by renderers that treat the slide as a strict viewport | Translate the shape back in bounds (or scale down + rescale table grids, if the shape is bigger than the slide itself) |
+| 3 | Custom webfonts (Inter, Plus Jakarta Sans, JetBrains Mono seen in practice) used but not embedded | Renderer without those fonts substitutes something else — wrong look, different text measurements | Install matching bundled/fetched font files where the renderer will find them, before conversion |
+| 4 | LibreOffice clips the tail of any text run with letter-spacing (<code>a:rPr spc</code>) | Tracked-out labels/kickers/badges lose their last 1-4 characters — <strong>this is usually the actual cause of "text is cut off" even when #2 is also present</strong> | Render a letter-spacing-neutralized copy through LibreOffice only; the returned <code>.pptx</code> keeps its real letter-spacing for editing |</p>
+<h2>How to run it</h2>
+<p>Everything is one script:</p>
+<p><code>python3 scripts/fix_export.py &lt;input&gt; --out-dir &lt;where to write results&gt;</code></p>
+<p><code>&lt;input&gt;</code> can be:
+- a <code>.pptx</code> handed directly (this is what Claude Design's export has
+  produced in practice — don't assume it must be wrapped in a zip)
+- a <code>.zip</code> — it gets extracted and searched for a <code>.pptx</code> first, then an
+  HTML/CSS/JS bundle (<code>index.html</code> + assets), then a bare <code>.pdf</code>
+- a bare <code>.pdf</code> — repair is limited without the source; see below</p>
+<p>Read the script's own docstring for the full pipeline description before
+running it if anything about the input is unusual — it's kept in sync
+with what the code actually does.</p>
+<p>After it runs, look at <code>&lt;out-dir&gt;/repair_report.md</code>. It documents, in
+order: what was wrong with the package structure, every shape that got
+repositioned/resized (slide, before/after coordinates), the status of
+every font the deck uses (installed / fetched / falling back), whether the
+letter-spacing workaround applied, and a validation pass on the final PDF
+(page count vs. slide count, any pages that look unexpectedly blank, any
+text that still touches a page edge). Read this back to the user — it's
+written to be shown, not just logged, because the whole point of this
+skill is "nothing changes silently."</p>
+<p>Outputs land in <code>&lt;out-dir&gt;</code>:
+- <code>*.repaired.pptx</code> — still fully editable, structurally clean, no
+  off-canvas shapes, original letter-spacing intact
+- <code>*.repaired.pdf</code> — the clean PDF, converted from a letter-spacing-
+  neutralized render copy (see defect #4) so tracked-out labels don't clip
+- <code>repair_report.md</code> / <code>repair_report.json</code></p>
+<h2>When the input is a bare PDF with no source file</h2>
+<p>Structural repair (package structure, shape geometry, font substitution)
+needs the editable source — there's no way to move a shape or fix a font
+reference in something that's already been flattened to fixed vector
+paths and rasterized text. <code>fix_export.py</code> still runs the same PDF
+validation pass (page count sanity, blank-page check, edge-overflow check)
+so you at least get an honest read on whether the PDF itself looks broken,
+but say so plainly to the user rather than implying a fix happened: ask if
+they can re-export from Design as a <code>.pptx</code>/zip instead, since that's
+where the actual repair leverage is.</p>
+<h2>When the input is an HTML/CSS/JS bundle</h2>
+<p>This path (<code>scripts/convert_html.py</code>) is best-effort, not backed by a real
+defect investigation the way the <code>.pptx</code> path is — there was no sample of
+this shape to test against. It applies the generic fixes that most
+commonly break an HTML deck's print-to-PDF (forces background/color
+printing, un-hides anything relying on <code>overflow: hidden</code> + scrolling,
+avoids mid-element page breaks) and picks a page size from whatever the
+markup hints at. If you hit a real broken HTML export, treat this as a
+starting point and read <code>references/defect-classes.md</code>'s closing section
+on how to diagnose a new case (render, compare, isolate, don't guess from
+markup alone) rather than assuming the existing generic fixes cover it.</p>
+<h2>Extending this skill</h2>
+<p>If a deck comes through with a defect not in the table above, the method
+that found defect #4 generalizes: don't debug from the XML/CSS alone,
+because "looks structurally fine" and "renders fine" are different claims
+and only the second one is what the user is reporting. Render the
+untouched original to PDF, render a copy with one specific, isolated
+change, and compare the two — that's what confirmed the letter-spacing bug
+after the geometry and font fixes alone didn't resolve the visible
+clipping. <code>scripts/validate_pdf.py</code> already does the page-count/blank-
+page/edge-overflow checks; add to it if you find another cheap,
+objective signal worth checking automatically on every run.</p>
+    </article>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <a href="../../index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Directory
+      </a>
+    </div>
+  </main>
+</body>
+</html>

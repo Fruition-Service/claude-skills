@@ -1,3 +1,40 @@
+> **Fruition fork.** This is a fork of [OneWave-AI/claude-skills](https://github.com/OneWave-AI/claude-skills)
+> (MIT). All 206 skills are upstream's, unmodified — we track them as-is. What this fork adds is a
+> **static-site layer** for browsing the library. See [ATTRIBUTION.md](ATTRIBUTION.md) for provenance.
+
+## What this fork adds
+
+| Path | Description |
+|------|-------------|
+| `scrape_pages.py` | Scrapes skill landing pages from the OneWave AI directory into `scraped-pages/` |
+| `generate_site.py` | Builds a browsable static HTML site from `scraped-pages/` into `dist/` |
+| `templates/` | HTML templates + stylesheet used by `generate_site.py` |
+| `scraped-pages/` | Raw scraped HTML + extracted `SKILL.md` for 187 landing pages |
+| `dist/` | Output of `generate_site.py` — plain browsable site, no baked-in host |
+| `site/` | Pre-built SEO/AEO variant (188 pages, sitemap, robots) — see caveats below |
+
+### Build it
+
+```bash
+pip install markdown
+python3 generate_site.py                      # -> dist/
+python3 -m http.server 8080 --directory dist  # preview
+```
+
+### Caveats worth knowing
+
+- **`site/` is not reproducible from this repo.** It was produced by a richer generator (JSON-LD,
+  canonical tags, sitemap) that was never committed. `generate_site.py` writes `dist/`, which is a
+  simpler site. Treat `site/` as a static asset; regenerating it means rewriting the generator.
+- **`site/` URLs were rewritten** from the original author's GitHub Pages host to
+  `https://fruition-service.github.io/claude-skills`. If we publish it anywhere else, rewrite again
+  or the canonical tags and sitemap will point at the wrong origin.
+- **The site covers 187 skills, the repo has 206.** The site is built from scraped landing pages,
+  not from the skill directories, so ~19 skills have no page.
+- `generate_site.py` takes no `SITE_URL` environment variable, despite what earlier docs claimed.
+
+---
+
 # Claude Skills Library
 
 Production-ready skills for Claude Code. Built and maintained by [OneWave AI](https://www.onewave-ai.com) -- AI consulting for small and mid-size businesses.
